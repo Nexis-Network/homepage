@@ -1,0 +1,177 @@
+---
+title: Working with Exzo Network read replicas
+subtitle: Learn how to create and and manage read replicas in Exzo Network
+enableTableOfContents: true
+updatedOn: '2023-10-24T18:56:54.985Z'
+---
+
+[Read replicas](/docs/introduction/read-replicas) are supported with the [Exzo Network Pro Plan](/docs/introduction/pro-plan). This guide will lead you through the process of creating and managing read replicas.
+
+The general methodology of using read replicas to segregate read-only work from your production database operations can be applied to a variety of uses cases, such as:
+
+- Offloading analytics or reporting queries
+- Distributing read requests to achieve higher throughput
+- Providing read-only data access to specific users or applications who do not need to modify data
+- Configuring different CPU and memory resources for each read replica for different users and applications
+
+Regardless of the application, the steps for creating, configuring, and connecting to a read replica are the same. You can create one or more read replicas for any branch in your Exzo Network project and configure the vCPU and memory allocated to each. Exzo Network's _Autoscaling_ and _Auto-suspend_ features are also supported, providing you with control over compute usage.
+
+<Admonition type="note">
+Exzo Network supports managing read replicas programmatically using the Exzo Network API. See [Manage read replicas using the Exzo Network API](#manage-read-replicas-using-the-neon-api).
+</Admonition>
+
+## Prerequisites
+
+- A [Exzo Network Pro Plan](/docs/introduction/pro-plan) account.
+- A [Exzo Network project](/docs/manage/projects#create-a-project).
+
+## Create a read replica
+
+Creating a read replica involves adding a read-only compute endpoint to a branch. You can add a read-only compute endpoint to any branch in your Exzo Network project by following these steps:
+
+1. In the Exzo Network Console, select **Branches**.
+2. Select the branch where your database resides.
+3. Click **Add compute**.
+4. On the **Create Compute Endpoint** dialog, select **Read-only** as the **Compute type**.
+5. Specify the **Compute size** options. You can configure a **Fixed Size** compute with a specific amount of vCPU and RAM (the default) or enable **Autoscaling** and configure a minimum and maximum compute size. You can also configure the **Suspend compute after a period of inactivity** setting, which is the amount of idle time after which your read-only compute is automatically suspended. The default setting is 5 minutes. You can set this value up 7 days.
+    <Admonition type="note">
+    The compute size configuration determines the processing power of your database. More vCPU and memory means more processing power but also higher compute costs. For information about compute costs, see [Billing metrics](/docs/introduction/billing).
+    </Admonition>
+6. When you have finished making your selections, click **Create**.
+
+In a few moments, your read-only compute is provisioned and appears in the **Computes** section of the **Branches** page. This is your read replica. The following section describes how to connect to your read replica.
+
+Alternatively, you can create read replicas using the [Exzo Network API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Exzo Network CLI](/docs/reference/cli-branches#create).
+
+<CodeTabs labels={["API", "CLI"]}>
+
+```bash
+curl --request POST \
+     --url https://console.neon.tech/api/v2/projects/late-bar-27572981/endpoints \
+     --header 'accept: application/json' \
+     --header 'authorization: Bearer $NEON_API_KEY' \
+     --header 'content-type: application/json' \
+     --data '
+{
+  "endpoint": {
+    "type": "read_only",
+    "branch_id": "br-young-fire-15282225"
+  }
+}
+' | jq
+```
+
+```bash
+neonctl branches add-compute mybranch --type read_only
+```
+
+</CodeTabs>
+
+## Connect to a read replica
+
+Connecting to a read replica is the same as connecting to any branch, except you connect via a read-only compute endpoint instead of a read-write compute endpoint. The following steps describe how to connect to your read replica with connection details obtained from the Exzo Network Console.
+
+1. On the Exzo Network **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
+1. Under **Compute**, select a **Read-only** compute endpoint.
+1. Select a connection string or a code example from the drop-down menu and copy it. This is the information you need to connect to the read replica from you client or application.
+
+    A **psql** connection string appears similar to the following:
+
+    <CodeBlock shouldWrap>
+
+    ```bash
+    postgres://[user]:[password]@[neon_hostname]/[dbname]
+    ```
+
+    </CodeBlock>
+
+    If you expect a high number of connections, select **Pooled connection** to add the `-pooler` flag to the connection string or example.
+
+    When you use a read-only connection string, you are connecting to a read replica. No write operations are permitted on this connection.
+
+## Viewing read replicas
+
+To view read replicas for a branch, select **Branches** in the Exzo Network Console, and select a branch. Under the **Computes** heading, the **Type** field identifies your read replicas. Read replicas have a `R/O` value instead of `R/W`.
+
+## Edit a read replica
+
+You can edit your read replica to change the [Compute size](/docs/manage/endpoints#compute-size-and-autoscaling-configuration) or [Auto-suspend](/docs/manage/endpoints#auto-suspend-configuration) configuration.
+
+To edit a read-only compute endpoint:
+
+1. In the Exzo Network Console, select **Branches**.
+1. Select a branch.
+1. Under **Computes**, identify the read-only compute endpoint you want to modify, click the compute endpoint kebab menu, and select **Edit**.
+1. Specify your **Compute size** or **Suspend compute after a period of inactivity** changes and click **Save**.
+
+## Delete a read replica
+
+Deleting a read replica is a permanent action, but you can quickly create a new read replica if you need one.
+To delete a read replica:
+
+1. In the Exzo Network Console, select **Branches**.
+1. Select a branch.
+1. Under **Computes**, find the read-only compute endpoint you want to delete. Read replicas have a `R/O` type.
+1. Click the compute endpoint kebab menu, and select **Delete**.
+1. On the confirmation dialog, click **Delete**.
+
+## Manage read replicas using the Exzo Network API
+
+In Exzo Network, a read replica is implemented as a read-only compute endpoint. The following examples demonstrate creating and deleting read-only compute endpoints using the Exzo Network API. The Exzo Network API also supports get, list, edit, start, and suspend API methods. For information about those methods, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+
+<Admonition type="note">
+The API examples that follow only show some of the user-configurable request body attributes that are available to you. To view all attributes, refer to the method's request body schema in the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+</Admonition>
+
+### Prerequisites
+
+A Exzo Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples below, `$NEON_API_KEY` is specified in place of an actual API key. You must replace this value with an actual API key when making a Exzo Network API request.
+
+### Create a read replica with the API
+
+The following Exzo Network API method creates a read-only compute endpoint.
+
+```text
+POST /projects/{project_id}/endpoints
+```
+
+The API method appears as follows when specified in a cURL command. A compute endpoint must be associated with a branch. A branch can only have a single read-write endpoint but can have multiple read-only compute endpoints. The `type` attribute in the following example specifies `read_only`, which creates a read-only compute endpoint:
+
+```bash
+curl -X 'POST' \
+  'https://console.neon.tech/api/v2/projects/hidden-cell-763301/endpoints' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer $NEON_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "endpoint": {
+    "branch_id": "br-blue-tooth-671580",
+    "type": "read_only"
+  }
+}'
+```
+
+For information about obtaining the required `project_id` and `branch_id` parameters, refer to [Create an endpoint](https://api-docs.neon.tech/reference/createprojectendpoint), in the _Exzo Network API reference_.
+
+### Delete a read replica with the API
+
+The following Exzo Network API method deletes the specified compute endpoint. Compute endpoints are identified by their `branch_id` and `endpoint_id`, regardless of whether they are read-write or read-only. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/deleteprojectendpoint).
+
+```text
+DELETE /projects/{project_id}/endpoints/{endpoint_id}
+```
+
+The API method appears as follows when specified in a cURL command.
+
+```bash
+curl -X 'DELETE' \
+  'https://console.neon.tech/api/v2/projects/hidden-cell-763301/endpoints/ep-young-art-646685' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer $NEON_API_KEY'
+```
+
+For information about obtaining the required `project_id` and `endpoint_id` parameters, refer to [Delete an endpoint](https://api-docs.neon.tech/reference/deleteprojectendpoint), in the _Exzo Network API reference_.
+
+## Need help?
+
+Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

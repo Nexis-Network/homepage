@@ -1,0 +1,57 @@
+/* glowing-button.css */
+
+.glowing-wrapper-animations:after,
+.glowing-wrapper-borders,
+.glowing-wrapper-borders-error:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.glowing-wrapper {
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+}
+
+.glowing-wrapper-borders,
+.glowing-wrapper-borders-error {
+  -webkit-animation: borderTurnWithTranslate 2.5s linear infinite;
+  animation: borderTurnWithTranslate 2.5s linear infinite;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.glowing-wrapper-borders {
+  background-image: conic-gradient(from 0 at 50% 50%, #09e7d8 0deg, hsla(0, 0%, 100%, 0) 60deg, hsla(0, 0%, 100%, 0) 310deg, #0fe7d9 1turn);
+  width: 120%;
+  height: 100%;
+}
+
+.glowing-wrapper-borders-masker,
+.glowing-wrapper-borders-masker1 {
+  content: "";
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  width: 100%;
+  opacity: 0;
+  padding: 0.06rem;
+  line-height: 100%;
+  transition: opacity 1s;
+  top: 0;
+  left: 0;
+}
