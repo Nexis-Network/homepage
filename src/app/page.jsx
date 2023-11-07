@@ -6,9 +6,7 @@ import AIPage from './ai/page';
 export const metadata = getMetadata(SEO_DATA.index);
 
 const Home = () => (
-  <Layout headerTheme="black" isSignIn footerWithTopBorder withOverflowHidden>
     <AIPage/>
-  </Layout>
 );
 
 export default Home;
