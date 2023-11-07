@@ -90,7 +90,7 @@ const Examples = () => (
           className="flat-breaks md:flat-none mt-3 text-center text-[52px] font-medium leading-none tracking-extra-tight xl:mt-4 xl:text-[44px] lg:text-4xl md:mt-3 md:max-w-xs md:text-[32px]"
           tag="h2"
         >
-          What makes our different
+          What makes EXZO different
         </Heading>
         <p className="mt-3 text-center text-lg font-light leading-snug xl:text-base md:max-w-xs">
           These are some of the features which we makes us best
