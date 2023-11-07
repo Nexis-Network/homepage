@@ -112,14 +112,14 @@ export default {
       text: 'Blog',
       to: LINKS.blog,
     },
-    {
-      text: 'AI',
-      to: LINKS.ai,
-    },
-    {
-      text: 'Pricing',
-      to: LINKS.pricing,
-    },
+    // {
+    //   text: 'AI',
+    //   to: LINKS.ai,
+    // },
+    // {
+    //   text: 'Pricing',
+    //   to: LINKS.pricing,
+    // },
   ],
   footer: [
     {

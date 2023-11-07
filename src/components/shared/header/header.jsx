@@ -170,11 +170,11 @@ const Header = ({
             </ul>
           </nav>
           <div className="flex space-x-5 lg:hidden">
-          <Button
+          {/* <Button
         className="transition-all duration-300 transform active:scale-95 flex-1 h-12 px-2 py-1 font-normal font-title text-sm shadow-sm rounded-[10px] cursor-pointer disabled:pointer-events-none hover:bg-body-balances-200 disabled:bg-container-500 disabled:text-white bg-white/10 border border-white/40 text-white backdrop-blur-[25px]"
       >
         Button text
-      </Button>
+      </Button> */}
           </div>
           <div className="hidden items-center lg:flex lg:gap-x-3 md:gap-x-5">
             {isDocPage && (
