@@ -6,12 +6,17 @@ import ArrowIcon from 'icons/arrow-sm.inline.svg';
 
 const snippet = {
   title: 'pgvector',
-  code: `    CREATE EXTENSION vector;
-    CREATE TABLE items (id BIGSERIAL PRIMARY KEY, embedding VECTOR(3));
-    INSERT INTO items (embedding) VALUES ('[1,2,3]'), ('[4,5,6]');
-    SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 1;`,
-  text: 'Store embeddings and perform vector similarity search in Postgres with pgvector.',
-  linkUrl: '/docs/extensions/pgvector',
+  code: `// SPDX-License-Identifier: MIT
+  pragma solidity ^0.8.20;
+  
+  import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+  import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
+  
+  contract MyToken is ERC20, ERC20Permit {
+      constructor() ERC20("MyToken", "MTK") ERC20Permit("MyToken") {}
+  }`,
+  text: 'Start building the future of Web3 today.',
+  linkUrl: 'https://github.com/exzo-network',
 };
 
 const Integration = () => (

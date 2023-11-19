@@ -20,6 +20,7 @@ const recentPosts = [
   { id: 3, title: 'Improve your customer experience', href: '#', date: 'Feb 21, 2023', datetime: '2023-02-21' },
 ]
 
+// eslint-disable-next-line react/function-component-definition
 export default function Example() {
   return (
     <Popover className="relative">
