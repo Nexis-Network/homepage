@@ -1,8 +1,6 @@
 import CalendarIcon from 'icons/calendar.inline.svg';
 import ConsoleIcon from 'icons/console.inline.svg';
-import aboutUsIcon from 'icons/header-about-us.svg';
-import careersIcon from 'icons/header-careers.svg';
-import partnersIcon from 'icons/header-partners.svg';
+import partnersIcon from 'icons/team.inline.svg';
 import TransactionsIcon from 'icons/transactions.inline.svg';
 
 import LINKS from './links';
@@ -42,7 +40,7 @@ export default {
         text: 'Network',
         items: [
           {
-            icon: TransactionsIcon,
+            icon: partnersIcon,
             text: 'EVM Block Explorer',
             to: 'https://evm.exzoscan.io',
             description: 'Track & explore EVM TXNs on Exzo Network.',
@@ -108,9 +106,38 @@ export default {
           },
         ],
     },
+      {
+        text: 'Community',
+        items: [
+          {
+            text: 'CoinMarketCap',
+            to: 'https://coinmarketcap.com/currencies/exzo-network/',
+         },
+          {
+            text: 'Twitter',
+            to: LINKS.twitter,
+          },
+          {
+            text: 'Telegram',
+            to: 'https://t.me/Exzo_Network',
+         },
+          {
+             text: 'Discord',
+             to: LINKS.discord,
+          },
+          {
+            text: 'GitHub',
+            to: 'https://github.com/orgs/Exzo-Network/',
+          },
+          {
+            text: 'YouTube',
+            to: LINKS.youtube,
+          },
+        ],
+    },
     {
       text: 'Blog',
-      to: LINKS.blog,
+      to: 'https://exzonetwork.medium.com',
     },
     // {
     //   text: 'AI',
@@ -126,28 +153,24 @@ export default {
       text: 'Company',
       links: [
         {
-          text: 'About us',
-          to: LINKS.aboutUs,
+          text: 'Exzo Web Wallet',
+          to: 'https://wallet.exzo.network',
         },
         {
-          text: 'Careers',
-          to: LINKS.careers,
+          text: 'Exzo Wallet Extension',
+          to: 'https://chrome.google.com/webstore/detail/exzo-wallet/jiieejiponjbbnldnklcbamkembhhpka',
         },
         {
-          text: 'Partners',
-          to: LINKS.partners,
+          text: 'Cross-chain Bridge',
+          to: 'https://bridge.exzo.network',
         },
         {
-          text: 'Trust',
-          to: LINKS.trust,
+          text: 'Governance',
+          to: 'https://governance.exzo.network',
         },
         {
-          text: 'Pricing',
-          to: LINKS.pricing,
-        },
-        {
-          text: 'Contact Sales',
-          to: LINKS.contactSales,
+          text: 'Exzo Dex',
+          to: 'https://bridge.exzo.network',
         },
 
         // {
@@ -160,28 +183,28 @@ export default {
       text: 'Resources',
       links: [
         {
-          text: 'AI',
-          to: LINKS.ai,
+          text: 'Developer Docs',
+          to: 'https://docs.exzo.network',
         },
         {
-          text: 'Blog',
-          to: LINKS.blog,
+          text: 'Block Explorer',
+          to: 'https://exzoscan.io',
         },
         {
-          text: 'Docs',
-          to: LINKS.docs,
+          text: 'Native Explorer',
+          to: 'https://exzoscan.io',
         },
         {
-          text: 'Release notes',
-          to: LINKS.releaseNotes,
+          text: 'Tutorials',
+          to: 'https://exzonetwork.medium.com/',
         },
         {
-          text: 'Support',
-          to: LINKS.support,
+          text: 'Developer Chat',
+          to: 'https://t.me/exzo_network_developers_official',
         },
         {
-          text: 'Security',
-          to: LINKS.security,
+          text: 'Testnet Faucet',
+          to: 'https://evm-faucet.exzo.network/',
         },
       ],
     },
@@ -189,28 +212,19 @@ export default {
       text: 'Community',
       links: [
         {
-          text: 'X',
+          text: 'Twitter',
           to: LINKS.twitter,
           icon: 'x-icon',
         },
         {
-          text: 'LinkedIn',
-          to: LINKS.linkedin,
-          icon: 'linkedin-icon',
+           text: 'Discord',
+           to: LINKS.discord,
+           icon: 'telegram-icon',
         },
-        // {
-        //   text: 'Discord',
-        //   to: LINKS.discord,
-        // },
         {
           text: 'GitHub',
-          to: LINKS.github,
+          to: 'https://github.com/orgs/Exzo-Network/',
           icon: 'github-icon',
-        },
-        {
-          text: 'Discourse',
-          to: LINKS.discourse,
-          icon: 'discourse-icon',
         },
         {
           text: 'YouTube',
@@ -219,79 +233,28 @@ export default {
         },
       ],
     },
-    {
-      text: 'Legal',
-      links: [
-        {
-          text: 'Privacy Policy',
-          to: LINKS.privacy,
-        },
-        {
-          text: 'Terms of Service',
-          to: LINKS.terms,
-        },
-        {
-          text: 'DPA',
-          to: LINKS.dpa,
-        },
-        {
-          text: 'Subprocessors List',
-          to: LINKS.subprocessors,
-        },
-        {
-          text: 'Privacy Guide',
-          to: LINKS.privacyGuide,
-        },
-        {
-          text: 'Cookie Policy',
-          to: LINKS.cookiePolicy,
-        },
-      ],
-    },
   ],
   mobile: [
-    {
-      text: 'Docs',
-      to: LINKS.docs,
-    },
-    {
-      text: 'Branching',
-      to: LINKS.branching,
-    },
-    {
-      text: 'About us',
-      to: LINKS.aboutUs,
-    },
-    {
-      text: 'Careers',
-      to: LINKS.careers,
-    },
-    {
-      text: 'Blog',
-      to: LINKS.blog,
-    },
-    {
-      text: 'Pricing',
-      to: LINKS.pricing,
-    },
-    {
-      text: 'Partners',
-      to: LINKS.partners,
-    },
-    {
-      text: 'AI',
-      to: LINKS.ai,
-    },
-    // {
-    //   iconName: 'discord',
-    //   text: 'Discord',
-    //   description: 'Join our community',
-    //   to: LINKS.discord,
-    // },
-    {
-      text: 'GitHub',
-      to: LINKS.github,
-    },
+      {
+        text: 'Exzo Web Wallet',
+        to: 'https://wallet.exzo.network',
+      },
+      {
+        text: 'Exzo Wallet Extension',
+        to: 'https://chrome.google.com/webstore/detail/exzo-wallet/jiieejiponjbbnldnklcbamkembhhpka',
+      },
+      {
+        text: 'Cross-chain Bridge',
+        to: 'https://bridge.exzo.network',
+      },
+      {
+        text: 'Governance',
+        to: 'https://governance.exzo.network',
+      },
+      {
+        text: 'Exzo Dex',
+        to: 'https://bridge.exzo.network',
+      },
   ],
   docSidebar: [
     {

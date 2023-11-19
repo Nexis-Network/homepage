@@ -3,8 +3,6 @@ import path from 'path';
 
 import matter from 'gray-matter';
 
-import { RELEASE_NOTES_DIR_PATH } from 'constants/docs';
-import { getPostSlugs } from 'utils/api-docs';
 import getExcerpt from 'utils/get-excerpt';
 
 // TODO: move this function to utils/api-docs

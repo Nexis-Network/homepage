@@ -1,9 +1,10 @@
-import Examples from 'components/pages/ai/examples';
+// eslint-disable-next-line import/no-unresolved
 import Hero from 'components/pages/ai/hero';
 import Integration from 'components/pages/ai/integration';
 import Logos from 'components/pages/ai/logos';
 import Stats from 'components/pages/ai/stats';
 // import Testimonials from 'components/pages/ai/testimonials';
+import AnimatedBackground from 'components/shared/animatedbackground';
 import CTAWithElephant from 'components/shared/cta-with-elephant';
 import Layout from 'components/shared/layout';
 import SplitViewGrid from 'components/shared/split-view-grid';
@@ -24,23 +25,23 @@ export const metadata = getMetadata(SEO_DATA.ai);
 const items = [
   {
     icon: updateIcon,
-    title: 'Reliable & actively maintained',
-    description: 'The pgvector extension is open-source and actively maintained',
+    title: 'Reliably fast',
+    description: 'Exzo Network has block times of 400 milliseconds — and as hardware gets faster, so will the network.',
   },
   {
     icon: scalabilityIcon,
-    title: 'Amazing scalability',
-    description: 'Grow your vector stores without impacting search performance',
+    title: 'Decentralized',
+    description: 'The Exzo Network is validated by independent nodes, ensuring your data remains secure and censorship resistant.',
   },
   {
     icon: searchIcon,
     title: 'Blazingly fast search',
-    description: 'Use HNSW indexes for fast and scalable vector similarity search in Postgres',
+    description: 'Exzo Network uses a Delegated Proof of Stake network and other innovations minimize its impact on the environment.',
   },
   {
     icon: compatibilityIcon,
-    title: 'Highly compatible',
-    description: 'Use Exzo Network with pgvector in your Postgres and LangChain projects',
+    title: 'Highly scalable',
+    description: 'Get big, quick. Exzo Network is made to handle thousands of transactions per second.',
   },
 ];
 
@@ -84,12 +85,11 @@ const AIPage = () => (
     <SplitViewGrid
       className="mt-52 xl:mt-36 lg:mt-[124px] md:mt-[88px]"
       label="Benefits"
-      title="Vector search with Exzo Network"
-      description="Use the power of HNSW indexes to unlock new levels of efficiency in high-dimensional vector similarity search in Postgres"
+      title="Build on Exzo Network"
+      description="Use the power of Rust & Solidity to unlock new levels of efficiency in all of your Web3 applications."
       items={items}
       isGradientLabel
     />
-    <Examples />
     {/* removed testimonials section for now as part of removing the pg_embedding references */}
     {/* <Testimonials /> */}
     <CTAWithElephant
@@ -98,12 +98,13 @@ const AIPage = () => (
       title="Build your Web3 app now with Exzo Network"
       description="Exzo Network offers a secure, highly-scalable, and low-cost infrastructure for all Web3 applications."
       buttonText="Contact Sales"
-      buttonUrl={LINKS.contactSales}
+      buttonUrl="https://github.com/Exzo-Network"
       linkText="Learn more on GitHub"
       linkUrl="https://github.com/Exzo-Network"
       linkTarget="_blank"
     />
     </div>
+    <AnimatedBackground />
   </Layout>
 );
 
