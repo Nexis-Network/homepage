@@ -7,13 +7,6 @@ import { MDXRemote } from 'next-mdx-remote';
 import PropTypes from 'prop-types';
 import React, { Fragment, forwardRef } from 'react';
 
-import Admonition from 'components/pages/doc/admonition';
-import CodeTabs from 'components/pages/doc/code-tabs';
-import CommunityBanner from 'components/pages/doc/community-banner';
-import DefinitionList from 'components/pages/doc/definition-list';
-import DetailIconCards from 'components/pages/doc/detail-icon-cards';
-import TechnologyNavigation from 'components/pages/doc/technology-navigation';
-import YoutubeIframe from 'components/pages/doc/youtube-iframe';
 import AnchorHeading from 'components/shared/anchor-heading';
 import CodeBlock from 'components/shared/code-block';
 import Link from 'components/shared/link';

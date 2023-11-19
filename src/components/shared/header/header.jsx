@@ -20,6 +20,7 @@ import MobileMenu from 'components/shared/mobile-menu';
 import LINKS from 'constants/links';
 import MENUS from 'constants/menus.js';
 
+
 import '../../../styles/glowing-button.css';
 
 import Highlighter, { HighlighterItem } from '../highlighter/highlighter';
@@ -114,15 +115,9 @@ const Header = ({
                                 className="flex items-center whitespace-nowrap hover:text-primary-2"
                                 to={to}
                               >
-                                <img
-                                  src={icon}
-                                  alt="text"
-                                  width={44}
-                                  height={44}
-                                  className="h-11 w-11 shrink-0"
-                                  loading="lazy"
-                                  aria-hidden
-                                />
+                                <div className="flex-none rounded-full p-1 text-green-400 bg-green-400/30">
+                                    <div className="h-2 w-2 rounded-full bg-current" />
+                                </div>
                                 <span className="ml-3">
                                   <span className="t-md text-gray-5 pr-10 block max-w-sm hover:text-primary-2 font-semibold !leading-none transition-colors duration-200">
                                     {text}
