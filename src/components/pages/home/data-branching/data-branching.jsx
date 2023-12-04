@@ -26,7 +26,7 @@ const DataBranching = () => {
             Data branching
           </Heading>
           <p className="t-xl mt-8 3xl:max-w-[504px] 2xl:mt-7 2xl:max-w-[416px] xl:mt-6 lg:max-w-none">
-            Exzo Network allows you to instantly branch your Postgres database to support modern development
+            Nexis Network allows you to instantly branch your Postgres database to support modern development
             workflows. You can create branches for test environments and for every deployment in
             your CI/CD pipeline.
           </p>

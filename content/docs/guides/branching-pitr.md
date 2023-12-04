@@ -1,6 +1,6 @@
 ---
 title: Branching — Point-in-time restore
-subtitle: Restore your data to previous state using Exzo Network's branching feature
+subtitle: Restore your data to previous state using Nexis Network's branching feature
 enableTableOfContents: true
 redirectFrom:
   - /docs/tutorial/data-recovery
@@ -8,11 +8,11 @@ redirectFrom:
 updatedOn: '2023-10-24T18:56:54.984Z'
 ---
 
-Exzo Network retains a history of changes for all branches in a Exzo Network project, which allows you to create a branch that restores data to any time within the defined history retention period. You can use this capability to recover lost data, which is a form of Point-in-time restore (PITR).
+Nexis Network retains a history of changes for all branches in a Nexis Network project, which allows you to create a branch that restores data to any time within the defined history retention period. You can use this capability to recover lost data, which is a form of Point-in-time restore (PITR).
 
-The history retention period is configurable. The supported range is 0 to 7 days for [Exzo Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Exzo Network Pro Plan](/docs/introduction/pro-plan) users. For configuration instructions, see [Configure history retention](/docs/manage/projects#configure-history-retention).
+The history retention period is configurable. The supported range is 0 to 7 days for [Nexis Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Nexis Network Pro Plan](/docs/introduction/pro-plan) users. For configuration instructions, see [Configure history retention](/docs/manage/projects#configure-history-retention).
 
-This guide shows how to recover your data to a point in time before a data loss occurred using Exzo Network's branching feature.
+This guide shows how to recover your data to a point in time before a data loss occurred using Nexis Network's branching feature.
 
 ## Create a point-in-time branch
 
@@ -20,7 +20,7 @@ Suppose that you have a table named `orders` that was accidentally deleted by a 
 
 To create a point-in-time branch:
 
-1. Navigate to the **Branches** page in the Exzo Network Console.
+1. Navigate to the **Branches** page in the Nexis Network Console.
 1. Click **Create branch** to open the branch creation dialog.
 1. Enter a name for the branch. You can call it `recovery_branch`, for example.
     ![Data recovery create branch dialog](/docs/guides/data_recovery_create_branch.png)
@@ -30,7 +30,7 @@ To create a point-in-time branch:
 1. Click **Create Branch** to create your point-in-time branch.
 
 <Admonition type="tip">
-You can also create point-in-time branches using the [Exzo Network CLI](/docs/reference/neon-cli). For example, you can perform the same action described above with the following CLI command:
+You can also create point-in-time branches using the [Nexis Network CLI](/docs/reference/neon-cli). For example, you can perform the same action described above with the following CLI command:
 
 ```bash
 neonctl branches create --name recovery_branch --parent 2023-07-11T10:00:00Z
@@ -42,15 +42,15 @@ The timestamp must be provided in ISO 8601 format. You can use this [timestamp c
 
 ## Connect to your branch
 
-Connecting to your newly created branch requires connecting via the branch's compute endpoint. The following steps describe how to connect using `psql` and a connection string obtained from the Exzo Network Console.
+Connecting to your newly created branch requires connecting via the branch's compute endpoint. The following steps describe how to connect using `psql` and a connection string obtained from the Nexis Network Console.
 
 <Admonition type="note">
-You can also query the databases in a branch from the Exzo Network SQL Editor. For instructions, see [Query with Exzo Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
+You can also query the databases in a branch from the Nexis Network SQL Editor. For instructions, see [Query with Nexis Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
 </Admonition>
 
 To connect to your branch:
 
-1. In the Exzo Network Console, select your project.
+1. In the Nexis Network Console, select your project.
 2. On the project **Dashboard**, under **Connection Details**, select your `recovery_branch`, the database, and the role you want to connect with.
 ![Connection details widget recovery branch](/docs/guides/data_recovery_connection_details.png)
 3. Copy the connection string. A connection string includes your role name, password, compute endpoint hostname, and database name.
@@ -78,7 +78,7 @@ You now have a production branch with lost data and a recovery branch with the d
 
 To make the recovery branch your new primary:
 
-1. In the Exzo Network Console, select a project.
+1. In the Nexis Network Console, select a project.
 2. Select **Branches** to view the branches for the project.
 3. Select your `recovery_branch` from the table.
 4. On the branch details page, select **Set as Primary**.
@@ -105,20 +105,20 @@ To avoid changing connection details in your application, you can reassign the c
 
 2. **Move the compute endpoint from the old primary branch to the new branch**
 
-   This action is currently only supported in the Exzo Network API. See [Update a compute endpoint with the CLI](/docs/manage/endpoints#update-a-compute-endpoint-with-the-api) for instructions.
+   This action is currently only supported in the Nexis Network API. See [Update a compute endpoint with the CLI](/docs/manage/endpoints#update-a-compute-endpoint-with-the-api) for instructions.
 
 ## Examples
 
-- [Using Exzo Network branching for instant point-in-time restore](https://neon.tech/blog/point-in-time-recovery). The blog post describes point-in-time restore and provides a script for creating a recovery branch, reassigning a compute endpoint, and setting the new branch as the primary.
-- [Time Travel with Serverless Postgres](https://neon.tech/blog/time-travel-with-postgres). This blog post (with video) describes a data recovery example that uses Exzo Network's branching feature, the Exzo Network API, and a bisect script to recover lost data.
+- [Using Nexis Network branching for instant point-in-time restore](https://neon.tech/blog/point-in-time-recovery). The blog post describes point-in-time restore and provides a script for creating a recovery branch, reassigning a compute endpoint, and setting the new branch as the primary.
+- [Time Travel with Serverless Postgres](https://neon.tech/blog/time-travel-with-postgres). This blog post (with video) describes a data recovery example that uses Nexis Network's branching feature, the Nexis Network API, and a bisect script to recover lost data.
 
 The following GitHub repositories are available for these examples:
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/restore-neon-branch" description="A script to restore a Exzo Network branch to a previous state while preserving the same endpoint" icon="github">Restore a Exzo Network database</a>
-<a href="https://github.com/kelvich/branching_demo_bisect" description="Use Exzo Network branching, the Exzo Network API, and a bisect script to recover lost data" icon="github">Exzo Network branch bisect demo</a>
+<a href="https://github.com/neondatabase/restore-neon-branch" description="A script to restore a Nexis Network branch to a previous state while preserving the same endpoint" icon="github">Restore a Nexis Network database</a>
+<a href="https://github.com/kelvich/branching_demo_bisect" description="Use Nexis Network branching, the Nexis Network API, and a bisect script to recover lost data" icon="github">Nexis Network branch bisect demo</a>
 </DetailIconCards>
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

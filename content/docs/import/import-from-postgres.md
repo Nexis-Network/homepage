@@ -7,18 +7,18 @@ redirectFrom:
 updatedOn: '2023-10-24T18:56:54.986Z'
 ---
 
-This topic describes migrating data from another Postgres database to Exzo Network using the `pg_dump` and `pg_restore` command line utilities.
+This topic describes migrating data from another Postgres database to Nexis Network using the `pg_dump` and `pg_restore` command line utilities.
 
 Repeat the `pg_dump` and `pg_restore` process for each database you want to migrate.
 
 ## Before you begin
 
-- Exzo Network supports PostgreSQL 14, 15, and 16. We recommend that clients are the same version as source Postgres instance. To check the version of `pg_dump` or `pg_restore`, use the `-V` option. For example: `pg_dump -V`
+- Nexis Network supports PostgreSQL 14, 15, and 16. We recommend that clients are the same version as source Postgres instance. To check the version of `pg_dump` or `pg_restore`, use the `-V` option. For example: `pg_dump -V`
 - Retrieve the connection parameters or connection string for your source Postgres database. The instructions below use a [connection string](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING), but you can use the connection format you prefer. If you are logged in to a local Postgres instance, you may only need to provide the database name. Refer to the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) documentation for information about connection parameters.
-- Optionally, create a role in Exzo Network to perform the restore operation. The role that performs the restore operation becomes the owner of restored database objects. For example, if you want role `sally` to own database objects, create `role` sally in Exzo Network and perform the restore operation as `sally`.
+- Optionally, create a role in Nexis Network to perform the restore operation. The role that performs the restore operation becomes the owner of restored database objects. For example, if you want role `sally` to own database objects, create `role` sally in Nexis Network and perform the restore operation as `sally`.
 - If you have assigned database object ownership to different roles in your source database, read [Database object ownership considerations](#database-object-ownership-considerations). You may want to add the `-O, --no-owner` option to your `pg_restore` command to avoid errors.
-- Create the target database in Exzo Network. For example, if you are migrating a database named `pagila`, create a database named `pagila` in Exzo Network. For instructions, see [Create a database](/docs/manage/databases#create-a-database).
-- Retrieve the connection string for your Exzo Network database. You can find it in the **Connection Details** widget on the Exzo Network **Dashboard**. It will look something like this:
+- Create the target database in Nexis Network. For example, if you are migrating a database named `pagila`, create a database named `pagila` in Nexis Network. For instructions, see [Create a database](/docs/manage/databases#create-a-database).
+- Retrieve the connection string for your Nexis Network database. You can find it in the **Connection Details** widget on the Nexis Network **Dashboard**. It will look something like this:
 
    <CodeBlock shouldWrap>
 
@@ -52,9 +52,9 @@ The `pg_dump` command above includes these arguments:
 
 For more command options, see [Advanced pg_dump and pg_restore options](#advanced-pg_dump-and-pg_restore-options).
 
-## Restore data to Exzo Network with pg_restore
+## Restore data to Nexis Network with pg_restore
 
-Restore your data to the target database in Exzo Network with `pg_restore`.
+Restore your data to the target database in Nexis Network with `pg_restore`.
 
 <Admonition type="note">
 If you assigned database object ownership to different roles in your source database, consider adding the `-O, --no-owner` option to your `pg_restore` command to avoid errors. See [Database object ownership considerations](#database-object-ownership-considerations).
@@ -71,14 +71,14 @@ pg_restore -v -d <neon_database_connection_string> <dump_file_name>
 The example above includes these arguments:
 
 - `-v`: Runs `pg_restore` in verbose mode, allowing you to monitor what happens during the restore operation.
-- `-d`: Specifies the Exzo Network database to connect to. The value is a Exzo Network database connection string. See [Before you begin](#before-you-begin).
+- `-d`: Specifies the Nexis Network database to connect to. The value is a Nexis Network database connection string. See [Before you begin](#before-you-begin).
 - `<dump_file_name>` is the name of the dump file you created with `pg_dump`.
 
 For more command options, see [Advanced pg_dump and pg_restore options](#advanced-pg_dump-and-pg_restore-options).
 
 ## pg_dump and pg_restore example
 
-The following example shows how data from a `pagila` source database is dumped and restored to a `pagila` database in Exzo Network using the commands described in the previous sections. (A database named `pagila` was created in Exzo Network prior to running the restore operation.)
+The following example shows how data from a `pagila` source database is dumped and restored to a `pagila` database in Nexis Network using the commands described in the previous sections. (A database named `pagila` was created in Nexis Network prior to running the restore operation.)
 
 <CodeBlock shouldWrap>
 
@@ -118,11 +118,11 @@ When piping `pg_dump` output directly to `pg_restore`, the custom output format 
 
 ## Post-migration steps
 
-After migrating your data, update your applications to connect to your new database in Exzo Network. You will need the database connection string that you used in your `pg_restore` command. If you run into any problems, see [Connect from any application](/docs/connect/connect-from-any-app). After connecting your applications, test them thoroughly to ensure they function correctly with your new database.
+After migrating your data, update your applications to connect to your new database in Nexis Network. You will need the database connection string that you used in your `pg_restore` command. If you run into any problems, see [Connect from any application](/docs/connect/connect-from-any-app). After connecting your applications, test them thoroughly to ensure they function correctly with your new database.
 
 ## Database object ownership considerations
 
-Roles created in the Exzo Network console, including the default role created with your Exzo Network project, are automatically granted membership in the [neon_superuser](/docs/manage/roles#neon_superuser) role. This role can create roles and databases, select from all tables and views, and insert, update, or delete data in all tables. However, the `neon_superuser` is not a PostgreSQL `superuser`. It cannot run `ALTER OWNER` statements to grant ownership of database objects. As a result, if you granted ownership of database objects in your source database to different roles, your dump file will contain `ALTER OWNER` statements, and those statements will cause non-fatal errors when you restore data to your Exzo Network database.
+Roles created in the Nexis Network console, including the default role created with your Nexis Network project, are automatically granted membership in the [neon_superuser](/docs/manage/roles#neon_superuser) role. This role can create roles and databases, select from all tables and views, and insert, update, or delete data in all tables. However, the `neon_superuser` is not a PostgreSQL `superuser`. It cannot run `ALTER OWNER` statements to grant ownership of database objects. As a result, if you granted ownership of database objects in your source database to different roles, your dump file will contain `ALTER OWNER` statements, and those statements will cause non-fatal errors when you restore data to your Nexis Network database.
 
 <Admonition type="note">
 Regardless of `ALTER OWNER` statement errors, a restore operation still succeeds because assigning ownership is not necessary for the data itself to be restored. The restore operation will still create tables, import data, and create other objects.
@@ -138,7 +138,7 @@ pg_restore -v -O -d postgres://[user]:[password]@[neon_hostname]/pagila mydumpfi
 
 </CodeBlock>
 
-The Exzo Network role performing the restore operation becomes the owner of all database objects.
+The Nexis Network role performing the restore operation becomes the owner of all database objects.
 
 ## Advanced pg_dump and pg_restore options
 
@@ -149,20 +149,20 @@ The `pg_dump` and `pg_restore` commands provide numerous advanced options, some 
 - `-Z`: Defines the compression level to use when using a compressible format. 0 means no compression, while 9 means maximum compression. In general, we recommend a setting of 1. A higher compression level slows the dump and restore process but also uses less disk space.
 - `--lock-wait-timeout=20s`: Error out early in the dump process instead of waiting for an unknown amount of time if there is lock contention.
 Do not wait forever to acquire shared table locks at the beginning of the dump. Instead fail if unable to lock a table within the specified timeout.`
-- `-j <njobs>`: Consider this option for large databases to dump tables in parallel. Set `<njobs>` to the number of available CPUs. Refer to the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) documentation for more information. In Exzo Network, this option only make sense for Exzo Network Pro Plan users who can configure computes with >1 vCPU.
+- `-j <njobs>`: Consider this option for large databases to dump tables in parallel. Set `<njobs>` to the number of available CPUs. Refer to the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) documentation for more information. In Nexis Network, this option only make sense for Nexis Network Pro Plan users who can configure computes with >1 vCPU.
 - `--no-blobs`: Excludes large objects from your dump. See [Data migration notes](#data-migration-notes).
 
 ### pg_restore options
 
 - `-c --if-exists`: Drop database objects before creating them if they already exist. If you had a failed migration, you can use these options to drop objects created by the previous migration to avoid errors when retrying the migration.
-- `-j <njobs>`: Consider this option for large databases to run the restore process in parallel. Set `<njobs>` to the number of available vCPUs. Refer to the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) documentation for more information. In Exzo Network, this option only makes sense for Exzo Network Pro Plan users who can configure computes with >1 vCPU. It cannot be used together with `--single-transaction`.
+- `-j <njobs>`: Consider this option for large databases to run the restore process in parallel. Set `<njobs>` to the number of available vCPUs. Refer to the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) documentation for more information. In Nexis Network, this option only makes sense for Nexis Network Pro Plan users who can configure computes with >1 vCPU. It cannot be used together with `--single-transaction`.
 - `--single-transaction`: Forces the operation to run as an atomic transaction, which ensures that no data is left behind when a restore operation fails. Retrying an import operation after a failed attempt that leaves data behind may result in "duplicate key value" errors.
 - `--no-tablespaces`: Do not output commands to select tablespaces. See [Data migration notes](#data-migration-notes).
 - `-t <table_name>`: Allows you to restore individual tables from a custom-format database dump. Individual tables can also be imported from a CSV file. See [Import from CSV](/docs/import/import-from-csv).
 
 ## Run a test migration
 
-It is recommended that you run a test migration before migrating your production database. Make sure you can successfully migrate data to the new database and connect to it. Before starting the actual migration, create a database dump and address any issues that show up. In Exzo Network, you can quickly create a test database, obtain the connection string, and delete the database when you are finished with it. See [Create a database](/docs/manage/databases#create-a-database).
+It is recommended that you run a test migration before migrating your production database. Make sure you can successfully migrate data to the new database and connect to it. Before starting the actual migration, create a database dump and address any issues that show up. In Nexis Network, you can quickly create a test database, obtain the connection string, and delete the database when you are finished with it. See [Create a database](/docs/manage/databases#create-a-database).
 
 ## Other migration options
 
@@ -181,7 +181,7 @@ Table-level data migration (using CSV files, for example) does not preserve data
 - You can load data using the `psql` utility, but it only supports plain-text SQL dumps, which you should only consider for small datasets or specific use cases. To create a plain-text SQL dump with `pg_dump` utility, leave out the `-F` format option. Plain-text SQL is the default `pg_dump` output format.
 - `pg_dumpall` is not supported.
 - `pg_dump` with the `-C, --create` option is not supported.
-- Some PostgreSQL features, such as tablespaces and large objects, which require access to the local file system are not supported by Exzo Network. To exclude selecting tablespaces, specify the `--no-tablespaces` option with `pg_restore`. To exclude large objects, specify the `--no-blobs` option with `pg_dump`.
+- Some PostgreSQL features, such as tablespaces and large objects, which require access to the local file system are not supported by Nexis Network. To exclude selecting tablespaces, specify the `--no-tablespaces` option with `pg_restore`. To exclude large objects, specify the `--no-blobs` option with `pg_dump`.
 
 ## Reference
 
@@ -193,4 +193,4 @@ For information about the Postgres client utilities referred to in this topic, r
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

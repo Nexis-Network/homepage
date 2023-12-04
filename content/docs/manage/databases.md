@@ -5,11 +5,11 @@ isDraft: false
 updatedOn: '2023-10-19T23:10:12.845Z'
 ---
 
-A database is a container for SQL objects such as schemas, tables, views, functions, and indexes. In the [Exzo Network object hierarchy](/docs/manage/overview), a database exists within a branch of a project. There is no limit on the number of databases you can create.
+A database is a container for SQL objects such as schemas, tables, views, functions, and indexes. In the [Nexis Network object hierarchy](/docs/manage/overview), a database exists within a branch of a project. There is no limit on the number of databases you can create.
 
-A Exzo Network project's primary branch is created with a ready-to-use database called `neondb`, which is owned by your project's default role (see [Manage roles](/docs/manage/roles) for more information). You can create your own databases in a project's primary branch or in a child branch.
+A Nexis Network project's primary branch is created with a ready-to-use database called `neondb`, which is owned by your project's default role (see [Manage roles](/docs/manage/roles) for more information). You can create your own databases in a project's primary branch or in a child branch.
 
-All databases in Exzo Network are created with a `public` schema. SQL objects are created in the `public` schema, by default. For more information about the `public` schema, refer to [The Public schema](https://www.postgresql.org/docs/current/ddl-schemas.html#DDL-SCHEMAS-PUBLIC), in the _PostgreSQL documentation_.
+All databases in Nexis Network are created with a `public` schema. SQL objects are created in the `public` schema, by default. For more information about the `public` schema, refer to [The Public schema](https://www.postgresql.org/docs/current/ddl-schemas.html#DDL-SCHEMAS-PUBLIC), in the _PostgreSQL documentation_.
 
 <Admonition type="note">
 As of Postgres 15, only a database owner has the `CREATE` privilege on a database's `public` schema. For other users, the `CREATE` privilege must be granted manually via a `GRANT CREATE ON SCHEMA public TO <username>;` statement.
@@ -17,24 +17,24 @@ As of Postgres 15, only a database owner has the `CREATE` privilege on a databas
 
 Databases belong to a branch. If you create a child branch, databases from the parent branch are copied to the child branch. For example, if database `mydb` exists in the parent branch, it will be copied to the child branch. The only time this does not occur is when you create a branch that includes data up to a particular point in time. If a database was created in the parent branch after that point in time, it is not duplicated in the child branch.
 
-Exzo Network supports creating and managing databases from the following interfaces:
+Nexis Network supports creating and managing databases from the following interfaces:
 
-- [Exzo Network console](#manage-databases-in-the-neon-console)
-- [Exzo Network CLI](#manage-databases-with-the-neon-cli)
-- [Exzo Network API](#manage-databases-with-the-neon-api)
+- [Nexis Network console](#manage-databases-in-the-neon-console)
+- [Nexis Network CLI](#manage-databases-with-the-neon-cli)
+- [Nexis Network API](#manage-databases-with-the-neon-api)
 - [SQL](#manage-databases-with-sql)
 
-## Manage databases in the Exzo Network console
+## Manage databases in the Nexis Network console
 
-This section describes how to create, view, and delete databases in the Exzo Network Console.
+This section describes how to create, view, and delete databases in the Nexis Network Console.
 
-The role that creates a database is automatically made the owner of that database. The `neon_superuser` role is also granted all privileges on databases created in the Exzo Network consoles. For information about this role, see [The neon_superuser role](/docs/manage/roles#the-neonsuperuser-role).
+The role that creates a database is automatically made the owner of that database. The `neon_superuser` role is also granted all privileges on databases created in the Nexis Network consoles. For information about this role, see [The neon_superuser role](/docs/manage/roles#the-neonsuperuser-role).
 
 ### Create a database
 
 To create a database:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 1. Select a project.
 1. Select **Databases**.
 1. Select the branch where you want to create the database.
@@ -50,7 +50,7 @@ Some names are not permitted. See [Protected database names](#protected-database
 
 To view databases:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 1. Select a project.
 1. Select **Databases**
 1. Select a branch to view the databases in the branch.
@@ -61,36 +61,36 @@ Deleting a database is a permanent action. All database objects belonging to the
 
 To delete a database:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 1. Select a project.
 1. Select **Databases**.
 1. Select a branch to view the databases in the branch.
 1. For the database you want to delete, click the delete icon.
 1. In the confirmation dialog, click **Delete**.
 
-## Manage databases with the Exzo Network CLI
+## Manage databases with the Nexis Network CLI
 
-The Exzo Network CLI supports creating and deleting databases. For instructions, see [Exzo Network CLI commands — databases](/docs/reference/cli-databases).
+The Nexis Network CLI supports creating and deleting databases. For instructions, see [Nexis Network CLI commands — databases](/docs/reference/cli-databases).
 
-## Manage databases with the Exzo Network API
+## Manage databases with the Nexis Network API
 
-Database actions performed in the Exzo Network Console can also be also performed using the Exzo Network API. The following examples demonstrate how to create, view, update, and delete databases using the Exzo Network API. For other database-related methods, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+Database actions performed in the Nexis Network Console can also be also performed using the Nexis Network API. The following examples demonstrate how to create, view, update, and delete databases using the Nexis Network API. For other database-related methods, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
-In Exzo Network, a database belongs to a branch, which means that when you create a database, it is created in a branch. Database-related requests are therefore performed using branch API methods.
+In Nexis Network, a database belongs to a branch, which means that when you create a database, it is created in a branch. Database-related requests are therefore performed using branch API methods.
 
 <Admonition type="note">
-The API examples that follow may not show all user-configurable request body attributes that are available to you. To view all  attributes for a particular method, refer to method's request body schema in the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+The API examples that follow may not show all user-configurable request body attributes that are available to you. To view all  attributes for a particular method, refer to method's request body schema in the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 </Admonition>
 
 The `jq` option specified in each example is an optional third-party tool that formats the `JSON` response, making it easier to read. For information about this utility, see [jq](https://stedolan.github.io/jq/).
 
 ### Prerequisites
 
-A Exzo Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Exzo Network API request.
+A Nexis Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Nexis Network API request.
 
 ### Create a database with the API
 
-The following Exzo Network API method creates a database. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/createprojectbranchdatabase).
+The following Nexis Network API method creates a database. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/createprojectbranchdatabase).
 
 The role specified by `owner_name` is the owner of that database.
 
@@ -161,7 +161,7 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 ### List databases with the API
 
-The following Exzo Network API method lists databases for the specified branch. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/listprojectbranchdatabases).
+The following Nexis Network API method lists databases for the specified branch. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/listprojectbranchdatabases).
 
 ```text
 GET /projects/{project_id}/branches/{branch_id}/databases
@@ -205,7 +205,7 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 ### Update a database with the API
 
-The following Exzo Network API method updates the specified database. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/updateprojectbranchdatabase).
+The following Nexis Network API method updates the specified database. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/updateprojectbranchdatabase).
 
 ```text
 PATCH /projects/{project_id}/branches/{branch_id}/databases/{database_name}
@@ -269,7 +269,7 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 ### Delete a database with the API
 
-The following Exzo Network API method deletes the specified database. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/deleteprojectbranchdatabase).
+The following Nexis Network API method deletes the specified database. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/deleteprojectbranchdatabase).
 
 ```text
 DELETE /projects/{project_id}/branches/{branch_id}/databases/{database_name}
@@ -328,13 +328,13 @@ curl -X 'DELETE' \
 
 ## Manage databases with SQL
 
-You can create and manage databases in Exzo Network with SQL, as you can with any standalone Postgres installation. To create a database, issue a `CREATE DATABASE` statement from a client such as [psql](/docs/connect/query-with-psql-editor) or from the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
+You can create and manage databases in Nexis Network with SQL, as you can with any standalone Postgres installation. To create a database, issue a `CREATE DATABASE` statement from a client such as [psql](/docs/connect/query-with-psql-editor) or from the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
 
 ```sql
 CREATE DATABASE testdb;
 ```
 
-Most standard [Postgres CREATE DATABASE parameters](https://www.postgresql.org/docs/current/sql-createdatabase.html) are supported with the exception of `TABLESPACE`. This parameter requires access to the local file system, which is not permitted in Exzo Network.
+Most standard [Postgres CREATE DATABASE parameters](https://www.postgresql.org/docs/current/sql-createdatabase.html) are supported with the exception of `TABLESPACE`. This parameter requires access to the local file system, which is not permitted in Nexis Network.
 
 The role that creates a database is the owner of the database.
 
@@ -354,4 +354,4 @@ The following names are protected and cannot be given to a database:
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

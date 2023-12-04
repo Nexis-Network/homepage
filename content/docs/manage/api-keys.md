@@ -7,18 +7,18 @@ redirectFrom:
 updatedOn: '2023-10-19T23:10:12.844Z'
 ---
 
-Most actions performed in the Exzo Network Console can be performed using the [Exzo Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). Using the Exzo Network API requires an API key. This topic describes how to generate, revoke, and use API keys.
+Most actions performed in the Nexis Network Console can be performed using the [Nexis Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). Using the Nexis Network API requires an API key. This topic describes how to generate, revoke, and use API keys.
 
-API keys are global and belong to your Exzo Network account. They can be used with any project that belongs to your Exzo Network account. A Exzo Network account can create unlimited API keys.
+API keys are global and belong to your Nexis Network account. They can be used with any project that belongs to your Nexis Network account. A Nexis Network account can create unlimited API keys.
 
 ## Create an API key
 
-An API key (or token) is a randomly-generated 64-bit key that you must provide when calling Exzo Network API methods. An API key remains valid until it is revoked.
+An API key (or token) is a randomly-generated 64-bit key that you must provide when calling Nexis Network API methods. An API key remains valid until it is revoked.
 
 To generate an API key:
 
-1. Log in to the [Exzo Network Console](https://console.neon.tech).
-2. Click your account in the bottom left corner of the Exzo Network Console, and select **Account**.
+1. Log in to the [Nexis Network Console](https://console.neon.tech).
+2. Click your account in the bottom left corner of the Nexis Network Console, and select **Account**.
 3. Select **Developer Settings** and click **Generate new API Key**.
 4. Enter a name for the API key.
 5. Click **Create** and copy the generated key.
@@ -31,13 +31,13 @@ An API key that is no longer needed can be revoked. This action cannot be revers
 
 To revoke an API key:
 
-1. Click your account in the bottom left corner of the Exzo Network Console and select **Account**.
+1. Click your account in the bottom left corner of the Nexis Network Console and select **Account**.
 2. Select **Developer Settings** to see a list of API keys.
 3. To revoke a key, click **Revoke**. The key is immediately revoked. Any request that uses the key now fails.
 
 ## Make an API call
 
-The following `cURL` example uses the `/projects` endpoint to retrieve projects that belong to your Exzo Network account.
+The following `cURL` example uses the `/projects` endpoint to retrieve projects that belong to your Nexis Network account.
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects' \
@@ -47,7 +47,7 @@ curl 'https://console.neon.tech/api/v2/projects' \
 
 where:
 
-- `"https://console.neon.tech/api/v2/projects"` is the resource URL, which includes the base URL for the Exzo Network API and the `/projects` endpoint.
+- `"https://console.neon.tech/api/v2/projects"` is the resource URL, which includes the base URL for the Nexis Network API and the `/projects` endpoint.
 - The `"Accept: application/json"` in the header specifies the accepted response type.
 - The `Authorization: Bearer $NEON_API_KEY` entry in the header specifies your API key. Replace `$NEON_API_KEY` with an actual 64-bit API key. A request without this header, or containing an invalid or revoked API key, fails and returns a `401 Unauthorized` HTTP status code.
 - [`jq`](https://stedolan.github.io/jq/) is an optional third-party tool that formats the JSON response, making it easier to read.
@@ -78,21 +78,21 @@ where:
 
 </details>
 
-Refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api) for other supported Exzo Network API methods.
+Refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api) for other supported Nexis Network API methods.
 
-## Manage API keys with the Exzo Network API
+## Manage API keys with the Nexis Network API
 
-API key actions performed in the Exzo Network Console can also be performed using the [Exzo Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). The following examples demonstrate how to create, view, and revoke API keys using the Exzo Network API.
+API key actions performed in the Nexis Network Console can also be performed using the [Nexis Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). The following examples demonstrate how to create, view, and revoke API keys using the Nexis Network API.
 
 ### Prerequisites
 
-You can create and manage API keys using the Exzo Network API, but you need an API key to start with. You can obtain an API key from the Exzo Network Console. For instructions, see [Create an API key](#create-an-api-key). In the examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Exzo Network API request.
+You can create and manage API keys using the Nexis Network API, but you need an API key to start with. You can obtain an API key from the Nexis Network Console. For instructions, see [Create an API key](#create-an-api-key). In the examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Nexis Network API request.
 
 The `jq` option specified in each example is an optional third-party tool that formats the JSON response, making it easier to read. For information about this utility, see [jq](https://stedolan.github.io/jq/).
 
 ### Create an API key with the API
 
-The following Exzo Network API method creates an API key. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/createapikey).
+The following Nexis Network API method creates an API key. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/createapikey).
 
 ```text
 POST /api_keys 
@@ -107,7 +107,7 @@ curl https://console.neon.tech/api/v2/api_keys \
   -d '{"key_name": "mynewkey"}' | jq
 ```
 
-The response body includes an `id` for the key and a generated 64-bit `key` value, which can be used to access the Exzo Network API. API keys should stored and managed securely, as they provide access to all objects in your Exzo Network account.
+The response body includes an `id` for the key and a generated 64-bit `key` value, which can be used to access the Nexis Network API. API keys should stored and managed securely, as they provide access to all objects in your Nexis Network account.
 
 <details>
 <summary>Response body</summary>
@@ -123,7 +123,7 @@ The response body includes an `id` for the key and a generated 64-bit `key` valu
 
 ### List API keys with the API
 
-The following Exzo Network API method lists API keys for your Exzo Network account. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/listapikeys).
+The following Nexis Network API method lists API keys for your Nexis Network account. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/listapikeys).
 
 ```text
 GET /api_keys
@@ -170,7 +170,7 @@ curl "https://console.neon.tech/api/v2/api_keys" \
 
 ### Revoke an API key with the API
 
-The following Exzo Network API method revokes the specified API key. The `key_id` is a required parameter. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/revokeapikey).
+The following Nexis Network API method revokes the specified API key. The `key_id` is a required parameter. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/revokeapikey).
 
 ```text
 DELETE /api_keys/{key_id}
@@ -203,4 +203,4 @@ curl -X DELETE \
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

@@ -176,7 +176,7 @@ const ContactForm = ({ formState, setFormState }) => {
             theme="underline-primary-1"
             size="xs"
           >
-            Exzo Network’s Privacy Policy
+            Nexis Network’s Privacy Policy
           </Link>
           .
         </p>

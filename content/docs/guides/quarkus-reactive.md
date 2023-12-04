@@ -1,24 +1,24 @@
 ---
-title: Connect Quarkus (Reactive) to Exzo Network
-subtitle: Learn how to connect to Exzo Network from Quarkus using a Reactive SQL Client
+title: Connect Quarkus (Reactive) to Nexis Network
+subtitle: Learn how to connect to Nexis Network from Quarkus using a Reactive SQL Client
 enableTableOfContents: true
 ---
 
 [Quarkus](https://quarkus.io/) is a Java framework optimized for cloud environments. Unlike traditional Java stacks designed for monolithic applications, Quarkus addresses the challenges of long startup times and high memory usage. It's tailored for both OpenJDK HotSpot and GraalVM and is built upon established Java libraries and standards. Its creation was driven by the need for a Java solution that is more compatible with modern, cloud-native architectures.
 
-To connect to Exzo Network from a Quarkus application:
+To connect to Nexis Network from a Quarkus application:
 
-1. [Create a Exzo Network Project](#create-a-neon-project)
+1. [Create a Nexis Network Project](#create-a-neon-project)
 2. [Create a Quarkus project and add dependencies](#create-a-quarkus-project)
 3. [Configure a PostgreSQL data source](#configure-a-postgresql-data-source)
 4. [Use the Reactive PostgreSQL client](#use-the-reactive-postgresql-client)
 5. [Run the application](#run-the-application)
 
-## Create a Exzo Network project
+## Create a Nexis Network project
 
-If you do not have one already, create a Exzo Network project.
+If you do not have one already, create a Nexis Network project.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Exzo Network Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Nexis Network Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -37,19 +37,19 @@ You now have a Quarkus project in a folder named `neon-with-quarkus` with the Re
 
 ## Configure a PostgreSQL data source
 
-Create a `.env` file in the root of your Quarkus project directory. Configure a reactive data source using your Exzo Network database connection string and specifying the database kind as shown:
+Create a `.env` file in the root of your Quarkus project directory. Configure a reactive data source using your Nexis Network database connection string and specifying the database kind as shown:
 
 <CodeBlock shouldWrap>
 
 ```shell
-# Note that "?sslmode=require" is appended to the Exzo Network connection string
+# Note that "?sslmode=require" is appended to the Nexis Network connection string
 QUARKUS_DATASOURCE_REACTIVE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]?sslmode=require
 ```
 
 </CodeBlock>
 
 <Admonition type="note">
-You can find the connection string for your database in the **Connection Details** widget on the Exzo Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find the connection string for your database in the **Connection Details** widget on the Nexis Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 </Admonition>
 
 ## Use the Reactive PostgreSQL client
@@ -99,7 +99,7 @@ Start the application in development mode using the Quarkus CLI from the root of
 quarkus dev
 ```
 
-Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Exzo Network database's Postgres version will be returned. For example:
+Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Nexis Network database's Postgres version will be returned. For example:
 
 ```
 PostgreSQL 15.4 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
@@ -107,4 +107,4 @@ PostgreSQL 15.4 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

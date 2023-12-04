@@ -15,22 +15,22 @@ import backgroundGradient from './images/bg-gradient-hero.jpg';
 import bgShapeSvg from './images/bg-shape.svg';
 import StickerIcon from './images/sticker.inline.svg';
 
-const title = 'Exzo Network is Live!';
-const description = 'Welcome to Exzo Network Developer Days. December 6-8, 2022.';
+const title = 'Nexis Network is Live!';
+const description = 'Welcome to Nexis Network Developer Days. December 6-8, 2022.';
 
 const items = [
   {
-    text: 'Exzo Network is Live!',
+    text: 'Nexis Network is Live!',
     linkText: 'Read blog post',
     linkUrl: '/blog/neon-serverless-postgres-is-live/',
   },
   {
-    text: 'Database branching with Exzo Network',
+    text: 'Database branching with Nexis Network',
     linkText: 'Read blog post',
     linkUrl: '/blog/database-branching-for-postgres-with-neon/',
   },
   {
-    text: 'Twitter Space: Exzo Network is Live Q&A',
+    text: 'Twitter Space: Nexis Network is Live Q&A',
     linkText: 'Listen the recording',
     linkUrl: 'https://twitter.com/i/spaces/1YpJkgDDEXPJj',
   },

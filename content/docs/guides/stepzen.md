@@ -1,6 +1,6 @@
 ---
-title: Use StepZen with Exzo Network
-subtitle: Learn how to use StepZen to build a GraphQL API for your Exzo Network database
+title: Use StepZen with Nexis Network
+subtitle: Learn how to use StepZen to build a GraphQL API for your Nexis Network database
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2023-10-07T10:43:33.394Z'
@@ -8,19 +8,19 @@ updatedOn: '2023-10-07T10:43:33.394Z'
 
 _This guide was contributed by Roy Derks from StepZen_
 
-GraphQL has been around for years and is becoming increasingly popular among web developers. It is a query language for APIs and a runtime for fulfilling queries with your existing data. GraphQL allows clients to access data flexibly and efficiently. However, building a GraphQL API often requires writing a lot of code and familiarizing yourself with a new framework. This guide shows how you can generate a GraphQL API for your Exzo Network database in minutes using [StepZen](https://stepzen.com/).
+GraphQL has been around for years and is becoming increasingly popular among web developers. It is a query language for APIs and a runtime for fulfilling queries with your existing data. GraphQL allows clients to access data flexibly and efficiently. However, building a GraphQL API often requires writing a lot of code and familiarizing yourself with a new framework. This guide shows how you can generate a GraphQL API for your Nexis Network database in minutes using [StepZen](https://stepzen.com/).
 
-Why use Exzo Network and StepZen together? Exzo Network is serverless Postgres. Exzo Network separates storage and compute to offer modern developer features such as scale-to-zero and database branching. With Exzo Network, you can be up and running with a Postgres database in just a few clicks, and you can easily create and manage your database in the Exzo Network Console and connect to it using [psql](/docs/connect/query-with-psql-editor) or the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). What if you want to let clients consume your data through an API in a way that is both flexible and efficient? That's where StepZen comes in. StepZen is a GraphQL API platform that lets you build a GraphQL API for your Exzo Network database in minutes. Just like Exzo Network, it's serverless and offers a generous free tier.
+Why use Nexis Network and StepZen together? Nexis Network is serverless Postgres. Nexis Network separates storage and compute to offer modern developer features such as scale-to-zero and database branching. With Nexis Network, you can be up and running with a Postgres database in just a few clicks, and you can easily create and manage your database in the Nexis Network Console and connect to it using [psql](/docs/connect/query-with-psql-editor) or the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). What if you want to let clients consume your data through an API in a way that is both flexible and efficient? That's where StepZen comes in. StepZen is a GraphQL API platform that lets you build a GraphQL API for your Nexis Network database in minutes. Just like Nexis Network, it's serverless and offers a generous free tier.
 
-## Set up Exzo Network
+## Set up Nexis Network
 
-Before generating a GraphQL API, you must set up a Exzo Network database, which you can do it in a few steps:
+Before generating a GraphQL API, you must set up a Nexis Network database, which you can do it in a few steps:
 
-1. Sign in to Exzo Network, or [sign up](/docs/get-started-with-neon/signing-up) if you do not yet have an account.
+1. Sign in to Nexis Network, or [sign up](/docs/get-started-with-neon/signing-up) if you do not yet have an account.
 2. [Create a project](/docs/get-started-with-neon/setting-up-a-project).
 3. [Create a database](/docs/manage/databases#create-a-database) or use the ready-to-use `dbname` database.
 
-You can find the connection string for your database in the **Connection Details** widget on the Exzo Network **Dashboard**.
+You can find the connection string for your database in the **Connection Details** widget on the Nexis Network **Dashboard**.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -38,17 +38,17 @@ psql postgres://[user]:[password]@[neon_hostname]/[dbname] < init.sql
 
 </CodeBlock>
 
-The command takes a Exzo Network connection string as the first argument and a file as the second argument.
+The command takes a Nexis Network connection string as the first argument and a file as the second argument.
 
-In the terminal, you can see that the tables are created and populated with the data. You can also view the tables and data from the **Tables** page in the Exzo Network Console.
+In the terminal, you can see that the tables are created and populated with the data. You can also view the tables and data from the **Tables** page in the Nexis Network Console.
 
-![Exzo Network database seeded with data](/docs/guides/stepzen_tables_view.png)
+![Nexis Network database seeded with data](/docs/guides/stepzen_tables_view.png)
 
-Next, you will connect StepZen to the Exzo Network database and use it to generate a GraphQL schema for the database.
+Next, you will connect StepZen to the Nexis Network database and use it to generate a GraphQL schema for the database.
 
-## Connect StepZen to Exzo Network
+## Connect StepZen to Nexis Network
 
-To generate a GraphQL schema for the data in your Exzo Network database, you need to connect StepZen to Exzo Network. This can be done manually or by using the StepZen CLI.
+To generate a GraphQL schema for the data in your Nexis Network database, you need to connect StepZen to Nexis Network. This can be done manually or by using the StepZen CLI.
 
 The StepZen CLI can be installed with `npm` (or Yarn), and it must be installed globally:
 
@@ -93,13 +93,13 @@ Starting... done
 Successfully imported schema postgresql from StepZen
 ```
 
-The CLI has now created a GraphQL schema based on the tables and data in your Exzo Network database. You can find the schema in the `stepzen` folder at the root of your project. The schema is generated in the `postgresql/index.graphql` file.
+The CLI has now created a GraphQL schema based on the tables and data in your Nexis Network database. You can find the schema in the `stepzen` folder at the root of your project. The schema is generated in the `postgresql/index.graphql` file.
 
 <Admonition type="note">
 The **Automatically link types based on foreign key relationships using @materializer** step is essential, as it automatically links the tables based on foreign key relationships, which allows you to query data from the `customer` table and get related data from the `address` table.
 </Admonition>
 
-The `config.yaml` file stores connection details for the Exzo Network database. The StepZen CLI uses this file to connect to the Exzo Network database. But you need to make two changes to the file:
+The `config.yaml` file stores connection details for the Nexis Network database. The StepZen CLI uses this file to connect to the Nexis Network database. But you need to make two changes to the file:
 
 ```bash
 configurationset:
@@ -108,9 +108,9 @@ configurationset:
       uri: YOUR_NEON_DSN?user=YOUR_NEON_USERNAME&password=YOUR_NEON_PASSWORD&options=project=YOUR_NEON_PROJECT_ID&sslmode=require
 ```
 
-As shown above, you need to append `&options=project=YOUR_NEON_PROJECT_ID` to the `uri` connection string. This is needed to establish a secure connection to the Exzo Network database. The `project` option is the ID of the project in Exzo Network. You can find the project ID in the Exzo Network Console under **Settings** or in the URL of your project.
+As shown above, you need to append `&options=project=YOUR_NEON_PROJECT_ID` to the `uri` connection string. This is needed to establish a secure connection to the Nexis Network database. The `project` option is the ID of the project in Nexis Network. You can find the project ID in the Nexis Network Console under **Settings** or in the URL of your project.
 
-The next section explores the GraphQL API to see how the connection between the Exzo Network Postgres database and StepZen works.
+The next section explores the GraphQL API to see how the connection between the Nexis Network Postgres database and StepZen works.
 
 ## Explore the GraphQL API
 
@@ -157,7 +157,7 @@ The GraphQL API will retrieve the `name` and `email` fields from the `customer` 
 }
 ```
 
-In GraphQL, the result has the same shape as the query (or other operation) you used to retrieve it. The GraphQL API will only retrieve the fields from the database that are present in the query. The query sent to the Exzo Network database has the following shape:
+In GraphQL, the result has the same shape as the query (or other operation) you used to retrieve it. The GraphQL API will only retrieve the fields from the database that are present in the query. The query sent to the Nexis Network database has the following shape:
 
 ```sql
 SELECT name, email FROM public.customer
@@ -167,7 +167,7 @@ The following section dives deeper into the GraphQL API, showing how GraphQL API
 
 ## From GraphQL query to SQL
 
-You have explored the GraphQL API, learning how to query data from the Exzo Network database. But how does this work? How is a GraphQL query translated to an SQL query that runs on your Exzo Network database?
+You have explored the GraphQL API, learning how to query data from the Nexis Network database. But how does this work? How is a GraphQL query translated to an SQL query that runs on your Nexis Network database?
 
 In the previous example, StepZen only requests the fields in the query, improving the GraphQL API's performance. Requesting all fields from the database makes no sense if only a few are requested.
 
@@ -245,27 +245,27 @@ type Query {
 }
 ```
 
-This GraphQL query is translated to the following SQL query, which is run on the Exzo Network Postgres database.
+This GraphQL query is translated to the following SQL query, which is run on the Nexis Network Postgres database.
 
 ```sql
 SELECT name, email FROM public.customer WHERE id = $1
 ```
 
-And together with the previous query, it is translated to the following SQL query for the Exzo Network Postgres database:
+And together with the previous query, it is translated to the following SQL query for the Nexis Network Postgres database:
 
 ```sql
 SELECT id, shippingcost, customerid FROM public.order
 SELECT name, email FROM public.customer WHERE id = $1
 ```
 
-StepZen reuses SQL queries or merges queries when possible to retrieve data from the Exzo Network database more efficiently. For example, if you request the `customer` field for multiple orders, StepZen only executes the `getCustomer` query once for every recurring value of `customerid`.
+StepZen reuses SQL queries or merges queries when possible to retrieve data from the Nexis Network database more efficiently. For example, if you request the `customer` field for multiple orders, StepZen only executes the `getCustomer` query once for every recurring value of `customerid`.
 
 <Admonition type="note">
-In addition to having StepZen generate the query that is sent to the Exzo Network database, you can also define a raw query in the GraphQL schema. Defining a raw query is useful when you want to query data from multiple tables or when you want to use a more complex query. You can find an example in the `getOrderUsingCustomerid` query in the `postgresql/index.graphql` file.
+In addition to having StepZen generate the query that is sent to the Nexis Network database, you can also define a raw query in the GraphQL schema. Defining a raw query is useful when you want to query data from multiple tables or when you want to use a more complex query. You can find an example in the `getOrderUsingCustomerid` query in the `postgresql/index.graphql` file.
 </Admonition>
 
 ## Conclusion
 
-In this guide, you have learned how to generate a GraphQL API from a Exzo Network database. You have used StepZen, which offers GraphQL-as-a-Service and a CLI to generate GraphQL APIs from data sources such as databases and REST APIs. Using StepZen, you can quickly generate a GraphQL API from a Exzo Network database and use it to query data from the database. You also looked at how StepZen translates queries to the GraphQL API into SQL queries that run on your Exzo Network database.
+In this guide, you have learned how to generate a GraphQL API from a Nexis Network database. You have used StepZen, which offers GraphQL-as-a-Service and a CLI to generate GraphQL APIs from data sources such as databases and REST APIs. Using StepZen, you can quickly generate a GraphQL API from a Nexis Network database and use it to query data from the database. You also looked at how StepZen translates queries to the GraphQL API into SQL queries that run on your Nexis Network database.
 
 You can find the complete code example [here](https://github.com/stepzen-dev/examples).

@@ -4,11 +4,11 @@ enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.841Z'
 ---
 
-This topic describes how to import data into a Exzo Network database table from a CSV file.
+This topic describes how to import data into a Nexis Network database table from a CSV file.
 
 The instructions require a working installation of [psql](https://www.postgresql.org/download/). The `psql` client is the native command-line client for Postgres. It provides an interactive session for sending commands to Postgres. For more information about `psql`, refer to the [psql reference](https://www.postgresql.org/docs/current/app-psql.html), in the _PostgreSQL Documentation_.
 
-The following example uses the ready-to-use `neondb` database that is created with your Exzo Network project, a table named `customer`, and a data file named `customer.csv`. Data is loaded from the `customer.csv` file into the `customer` table.
+The following example uses the ready-to-use `neondb` database that is created with your Nexis Network project, a table named `customer`, and a data file named `customer.csv`. Data is loaded from the `customer.csv` file into the `customer` table.
 
 1. Connect to the `neondb` database using `psql`. For example:
 
@@ -21,7 +21,7 @@ The following example uses the ready-to-use `neondb` database that is created wi
    </CodeBlock>
 
    <Admonition type="note">
-   For more information about connecting to Exzo Network with `psql`, see [Connect with psql](/docs/connect/query-with-psql-editor).
+   For more information about connecting to Nexis Network with `psql`, see [Connect with psql](/docs/connect/query-with-psql-editor).
    </Admonition>
 
 2. Create the `customer` table.
@@ -37,7 +37,7 @@ The following example uses the ready-to-use `neondb` database that is created wi
    ```
 
    <Admonition type="tip">
-   You can also create tables using the **SQL Editor** in the Exzo Network Console. See [Query with Exzo Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
+   You can also create tables using the **SQL Editor** in the Nexis Network Console. See [Query with Nexis Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
    </Admonition>
 
 3. Prepare a `customer.csv` file with the following data:
@@ -64,4 +64,4 @@ The following example uses the ready-to-use `neondb` database that is created wi
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

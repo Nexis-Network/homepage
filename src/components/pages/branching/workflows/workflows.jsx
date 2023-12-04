@@ -23,7 +23,7 @@ const items = [
   {
     title: 'Integrate',
     description:
-      "Use the Exzo Network API to integrate branching into your development workflows. The Exzo Network API provides full access to Exzo Network's branching capabilities.",
+      "Use the Nexis Network API to integrate branching into your development workflows. The Nexis Network API provides full access to Nexis Network's branching capabilities.",
   },
   {
     title: 'Preview',

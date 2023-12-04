@@ -8,13 +8,13 @@ The following Postgres extension was updated to a newer version:
 
 If you installed this extension previously and want to upgrade to the latest version, please refer to [Update an extension version](/docs/extensions/pg-extensions#update-an-extension-version) for instructions.
 
-For a complete list of Postgres extensions supported by Exzo Network, see [Postgres extensions](/docs/extensions/pg-extensions).
+For a complete list of Postgres extensions supported by Nexis Network, see [Postgres extensions](/docs/extensions/pg-extensions).
 
 ### Fixes & improvements
 
-The following items affect the Exzo Network serverless driver, which is a low-latency Postgres driver for JavaScript and TypeScript that allows you to query data from serverless and edge environments over HTTP or WebSockets in place of TCP:
+The following items affect the Nexis Network serverless driver, which is a low-latency Postgres driver for JavaScript and TypeScript that allows you to query data from serverless and edge environments over HTTP or WebSockets in place of TCP:
 
 - Proxy: Increased the maximum request body size for SQL requests over HTTP from 1 MB to 10 MB.
 - Proxy: Added a 15 second proxy timeout for SQL requests over HTTP for handling of long running queries.
 
-For more information about our serverless driver, see [Exzo Network serverless driver](/docs/serverless/serverless-driver).
+For more information about our serverless driver, see [Nexis Network serverless driver](/docs/serverless/serverless-driver).

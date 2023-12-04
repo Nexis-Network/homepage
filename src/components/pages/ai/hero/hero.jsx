@@ -86,11 +86,12 @@ const Hero = () => {
         className="container relative z-10 flex flex-col items-center text-center"
         size="medium"
       >
-        <h1 className="xs:flat-breaks text-6xl font-medium leading-none tracking-extra-tight xl:text-[56px] lg:text-5xl md:text-4xl">
+        <h1 className="animate-fade-up bg-gradient-to-br from-white to-slate-800 bg-clip-text font-bold tracking-[-0.02em] xs:flat-breaks text-6xl font-medium leading-none tracking-extra-tight xl:text-[56px] text-transparent drop-shadow-sm lg:text-5xl md:text-4xl"
+        style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}>
           Powering next gen
           <br />apps with Blockchain
         </h1>
-        <p className="mt-5 max-w-[550px] text-xl font-light leading-snug tracking-extra-tight xl:max-w-[500px] xl:text-lg lg:mt-4 md:mt-2.5 sm:max-w-[450px]">
+        <p className="mt-5 animate-fade-up text-center opacity-50 text-gray-500 [text-wrap:balance] max-w-[550px] text-slate-500 text-xl font-light leading-snug tracking-extra-tight xl:max-w-[500px] xl:text-lg lg:mt-4 md:mt-2.5 sm:max-w-[450px]">
           Build and scale transformative Web3 applications using both Rust and Solidity
           on the fastest EVM blockchain
         </p>

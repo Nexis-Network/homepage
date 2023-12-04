@@ -1,6 +1,6 @@
 ---
-title: Connect an SQLAlchemy application to Exzo Network
-subtitle: Set up a Exzo Network project in seconds and connect from an SQLAlchemy application
+title: Connect an SQLAlchemy application to Nexis Network
+subtitle: Set up a Nexis Network project in seconds and connect from an SQLAlchemy application
 enableTableOfContents: true
 redirectFrom:
   - /docs/quickstart/sqlalchemy
@@ -8,24 +8,24 @@ redirectFrom:
 updatedOn: '2023-10-19T23:10:12.836Z'
 ---
 
-SQLAlchemy is a Python SQL toolkit and Object Relational Mapper (ORM) that provides application developers with the full power and flexibility of SQL. This guide describes how to create a Exzo Network project and connect to it from SQLAlchemy.
+SQLAlchemy is a Python SQL toolkit and Object Relational Mapper (ORM) that provides application developers with the full power and flexibility of SQL. This guide describes how to create a Nexis Network project and connect to it from SQLAlchemy.
 
 **Prerequisites:**
 
 To complete the steps in this topic, ensure that you have an SQLAlchemy installation with a Postgres driver. The following instructions use `psycopg2`, the default driver for Postgres in SQLAlchemy. For SQLAlchemy installation instructions, refer to the [SQLAlchemy Installation Guide](https://docs.sqlalchemy.org/en/14/intro.html#installation). `psycopg2` installation instructions are provided below.
 
-To connect to Exzo Network from SQLAlchemy:
+To connect to Nexis Network from SQLAlchemy:
 
-1. [Create a Exzo Network project](#create-a-neon-project)
+1. [Create a Nexis Network project](#create-a-neon-project)
 1. [Install psycopg2](#install-psycopg2)
 1. [Create the "hello neon" program](#create-the-hello-neon-program)
-1. [Create an SQLAlchemy engine for your Exzo Network project](#create-an-sqlalchemy-engine-for-your-neon-project)
+1. [Create an SQLAlchemy engine for your Nexis Network project](#create-an-sqlalchemy-engine-for-your-neon-project)
 
-## Create a Exzo Network project
+## Create a Nexis Network project
 
-If you do not have one already, create a Exzo Network project. Save your connection details, including your password. They are required when defining connection settings.
+If you do not have one already, create a Nexis Network project. Save your connection details, including your password. They are required when defining connection settings.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Exzo Network Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Nexis Network Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -65,17 +65,17 @@ with conn.cursor() as cur:
  print(cur.fetchall())
 ```
 
-You can find all of the connection details mentioned above in the **Connection Details** widget on the Exzo Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find all of the connection details mentioned above in the **Connection Details** widget on the Nexis Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 <Admonition type="note">
 This example was tested with Python 3 and psycopg2 version 2.9.3.
 </Admonition>
 
-## Create an SQLAlchemy engine for your Exzo Network project
+## Create an SQLAlchemy engine for your Nexis Network project
 
 SQLAlchemy uses engine abstraction to manage database connections and exposes a `create_engine` function as the primary endpoint for engine initialization.
 
-The following example creates an SQLAlchemy engine that points to your Exzo Network branch:
+The following example creates an SQLAlchemy engine that points to your Nexis Network branch:
 
 ```python
 from sqlalchemy import create_engine
@@ -90,7 +90,7 @@ conn_str = f'postgresql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}?sslmode=requir
 engine = create_engine(conn_str)
 ```
 
-You can find all of the connection details listed above in the **Connection Details** widget on the Exzo Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find all of the connection details listed above in the **Connection Details** widget on the Nexis Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 For additional information about connecting from SQLAlchemy, refer to the following topics in the SQLAlchemy documentation:
 
@@ -99,4 +99,4 @@ For additional information about connecting from SQLAlchemy, refer to the follow
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

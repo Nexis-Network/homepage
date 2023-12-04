@@ -1,24 +1,24 @@
 ---
-title: Branching with the Exzo Network API
-subtitle: Learn how to create and delete branches with the Exzo Network API
+title: Branching with the Nexis Network API
+subtitle: Learn how to create and delete branches with the Nexis Network API
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.826Z'
 ---
-The examples in this guide demonstrate creating, viewing, and deleting branches using the Exzo Network API. For other branch-related API methods, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+The examples in this guide demonstrate creating, viewing, and deleting branches using the Nexis Network API. For other branch-related API methods, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
 <Admonition type="note">
-The API examples that follow may only show some of the user-configurable request body attributes that are available to you. To view all attributes for a particular method, refer to the method's request body schema in the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+The API examples that follow may only show some of the user-configurable request body attributes that are available to you. To view all attributes for a particular method, refer to the method's request body schema in the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 </Admonition>
 
 The `jq` program specified in each example is an optional third-party tool that formats the `JSON` response, making it easier to read. For information about this utility, see [jq](https://stedolan.github.io/jq/).
 
 ### Prerequisites
 
-A Exzo Network API request requires an API key. For information about obtaining an API key, see [Create an API key](../manage/api-keys#create-an-api-key). In the examples below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Exzo Network API request.
+A Nexis Network API request requires an API key. For information about obtaining an API key, see [Create an API key](../manage/api-keys#create-an-api-key). In the examples below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Nexis Network API request.
 
 ### Create a branch with the API
 
-The following Exzo Network API method creates a branch. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/createprojectbranch).
+The following Nexis Network API method creates a branch. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/createprojectbranch).
 
 ```text
 POST /projects/{project_id}/branches
@@ -47,10 +47,10 @@ curl 'https://console.neon.tech/api/v2/projects/<project_id>/branches' \
 }' | jq
 ```
 
-- The `project_id` for a Exzo Network project is found on the **Settings** page in the Exzo Network Console, or you can find it by listing the projects for your Exzo Network account using the Exzo Network API. It is a generated value that looks something like this: `autumn-disk-484331`.
-- The `endpoints` attribute creates a compute endpoint, which is required to connect to the branch. Exzo Network supports `read_write` and `read_only` endpoint types. A branch can be created with or without a compute endpoint. You can specify `read_only` to create a [read replica](/docs/guides/read-replica-guide).
+- The `project_id` for a Nexis Network project is found on the **Settings** page in the Nexis Network Console, or you can find it by listing the projects for your Nexis Network account using the Nexis Network API. It is a generated value that looks something like this: `autumn-disk-484331`.
+- The `endpoints` attribute creates a compute endpoint, which is required to connect to the branch. Nexis Network supports `read_write` and `read_only` endpoint types. A branch can be created with or without a compute endpoint. You can specify `read_only` to create a [read replica](/docs/guides/read-replica-guide).
 - The `branch` attribute specifies the parent branch.
-- The `parent_id` can be obtained by listing the branches for your project. See [List branches](#list-branches-with-the-api). The `parent_id` is the `id` of the branch you are branching from. A branch `id` has a `br-` prefix. You can branch from your Exzo Network project's primary branch or a non-primary branch.
+- The `parent_id` can be obtained by listing the branches for your project. See [List branches](#list-branches-with-the-api). The `parent_id` is the `id` of the branch you are branching from. A branch `id` has a `br-` prefix. You can branch from your Nexis Network project's primary branch or a non-primary branch.
 
 The response includes information about the branch, the branch's compute endpoint, and the `create_branch` and `start_compute` operations that were initiated.
 
@@ -120,7 +120,7 @@ The response includes information about the branch, the branch's compute endpoin
 
 ### List branches with the API
 
-The following Exzo Network API method lists branches for the specified project. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/listprojectbranches).
+The following Nexis Network API method lists branches for the specified project. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/listprojectbranches).
 
 ```text
 GET /projects/{project_id}/branches
@@ -134,7 +134,7 @@ curl 'https://console.neon.tech/api/v2/projects/autumn-disk-484331/branches' \
   -H 'Authorization: Bearer $NEON_API_KEY' | jq
 ```
 
-The `project_id` for a Exzo Network project is found on the **Settings** page in the Exzo Network Console, or you can find it by listing the projects for your Exzo Network account using the Exzo Network API.
+The `project_id` for a Nexis Network project is found on the **Settings** page in the Nexis Network Console, or you can find it by listing the projects for your Nexis Network account using the Nexis Network API.
 
 The response lists the project's primary branch and any child branches. The name of the primary branch in this example is `main`.
 
@@ -170,7 +170,7 @@ Response:
 
 ### Delete a branch with the API
 
-The following Exzo Network API method deletes the specified branch. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/deleteprojectbranch).
+The following Nexis Network API method deletes the specified branch. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/deleteprojectbranch).
 
 ```text
 DELETE /projects/{project_id}/branches/{branch_id}
@@ -185,7 +185,7 @@ curl -X 'DELETE' \
   -H 'Authorization: Bearer $NEON_API_KEY' | jq
 ```
 
-- The `project_id` for a Exzo Network project is found on the **Settings** page in the Exzo Network Console, or you can find it by listing the projects for your Exzo Network account using the Exzo Network API.
+- The `project_id` for a Nexis Network project is found on the **Settings** page in the Nexis Network Console, or you can find it by listing the projects for your Nexis Network account using the Nexis Network API.
 - The `branch_id` can be found by listing the branches for your project. The `<branch_id>` is the `id` of a branch. A branch `id` has a `br-` prefix. See [List branches](#list-branches-with-the-api).
 
 The response shows information about the branch being deleted and the `suspend_compute` and `delete_timeline` operations that were initiated.
@@ -232,4 +232,4 @@ You can verify that a branch is deleted by listing the branches for your project
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

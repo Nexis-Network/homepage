@@ -13,7 +13,7 @@ Added support for the following Postgres extensions:
   - `moddatetime`
   - `refint`
   
-For more information about Postgres extensions supported by Exzo Network, see [Postgres extensions](/docs/extensions/pg-extensions).
+For more information about Postgres extensions supported by Nexis Network, see [Postgres extensions](/docs/extensions/pg-extensions).
 
 ### Fixes & improvements
 

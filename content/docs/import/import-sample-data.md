@@ -1,24 +1,24 @@
 ---
 title: Postgres sample data
-subtitle: 'Download sample data for learning, testing, and exploring Exzo Network'
+subtitle: 'Download sample data for learning, testing, and exploring Nexis Network'
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.843Z'
 ---
 
-This guide describes how to download and install sample data for use with Exzo Network.
+This guide describes how to download and install sample data for use with Nexis Network.
 
 ## Prerequisites
 
 - [wget](https://www.gnu.org/software/wget/) for downloading datasets, unless otherwise instructed. If your system does not support `wget`, you can paste the source file address in your browser's address bar.
-- A `psql` client for connecting to your Exzo Network database and loading data. This client is included with a standalone PostgreSQL installation. See [PostgreSQL Downloads](https://www.postgresql.org/download/).
+- A `psql` client for connecting to your Nexis Network database and loading data. This client is included with a standalone PostgreSQL installation. See [PostgreSQL Downloads](https://www.postgresql.org/download/).
 - A `pg_restore` client if you are loading the [employees](#employees-database) or [postgres_air](#postgres-air-database) database. The `pg_restore` client is included with a standalone PostgreSQL installation. See [PostgreSQL Downloads](https://www.postgresql.org/download/).
-- A Exzo Network database connection string. After creating a database, you can obtain the connection string from the **Connection Details** widget on the Exzo Network **Dashboard**. In the instructions that follow, replace `postgres://[user]:[password]@[neon_hostname]/[dbname]` with your connection string.
-- A Exzo Network [Pro](/docs/introduction/pro-plan) account if you intend to install a dataset larger than 3 GB.
-- Instructions for each dataset require that you create a database. You can do so from a client such as `psql` or from the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
+- A Nexis Network database connection string. After creating a database, you can obtain the connection string from the **Connection Details** widget on the Nexis Network **Dashboard**. In the instructions that follow, replace `postgres://[user]:[password]@[neon_hostname]/[dbname]` with your connection string.
+- A Nexis Network [Pro](/docs/introduction/pro-plan) account if you intend to install a dataset larger than 3 GB.
+- Instructions for each dataset require that you create a database. You can do so from a client such as `psql` or from the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
 
 ## Sample data
 
-Sample datasets are listed in order of the smallest to largest installed size. Please be aware that the Exzo Network Free Tier has a storage limit of 3 GB per branch. Datasets larger than 3 GB cannot be loaded on the Free Tier.
+Sample datasets are listed in order of the smallest to largest installed size. Please be aware that the Nexis Network Free Tier has a storage limit of 3 GB per branch. Datasets larger than 3 GB cannot be loaded on the Free Tier.
 
 | Name                                                | Tables | Records | Source file size      | Installed size |
 |-----------------------------------------------------|--------|------   |-----------------------|----------------|
@@ -449,7 +449,7 @@ A dataset containing details about employees, their departments, salaries, and m
 
 ### Wikipedia vector embeddings
 
-An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. It is intended for use with the `pgvector` Postgres extension, which you must install first to create a table with `vector` type columns. For a Jupyter Notebook that uses this dataset with Exzo Network, refer to the following GitHub repository: [neon-vector-search-openai-notebooks](https://github.com/neondatabase/neon-vector-search-openai-notebooks)
+An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. It is intended for use with the `pgvector` Postgres extension, which you must install first to create a table with `vector` type columns. For a Jupyter Notebook that uses this dataset with Nexis Network, refer to the following GitHub repository: [neon-vector-search-openai-notebooks](https://github.com/neondatabase/neon-vector-search-openai-notebooks)
 
 1. Download the zip file (~700MB):
 
@@ -575,4 +575,4 @@ An airport database containing information about airports, aircraft, bookings, p
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

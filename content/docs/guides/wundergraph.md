@@ -1,6 +1,6 @@
 ---
-title: Use WunderGraph with Exzo Network
-subtitle: Leverage the power of Exzo Network and WunderGraph to build fully serverless apps in
+title: Use WunderGraph with Nexis Network
+subtitle: Leverage the power of Nexis Network and WunderGraph to build fully serverless apps in
   minutes
 enableTableOfContents: true
 isDraft: false
@@ -9,20 +9,20 @@ updatedOn: '2023-10-19T23:10:12.841Z'
 
 _This guide was contributed by the team at WunderGraph_
 
-WunderGraph is an open-source Backend for Frontend (BFF) framework designed to optimize developer workflows through API composition. Developers can use this framework to compose multiple APIs into a single unified interface and generate typesafe API clients that include authentication and file uploads. This guide shows how you can pair WunderGraph with your Exzo Network database to accelerate application development.
+WunderGraph is an open-source Backend for Frontend (BFF) framework designed to optimize developer workflows through API composition. Developers can use this framework to compose multiple APIs into a single unified interface and generate typesafe API clients that include authentication and file uploads. This guide shows how you can pair WunderGraph with your Nexis Network database to accelerate application development.
 
-With WunderGraph, you can easily introspect your data sources and combine them within your virtual graph. WunderGraph treats APIs as dependencies. You can easily turn your Exzo Network database into a GraphQL API or expose it via JSON-RPC or REST. With an easy-to-deploy Postgres database like Exzo Network, you can now have a 100% serverless stack and build your own stateful serverless apps on the edge.
+With WunderGraph, you can easily introspect your data sources and combine them within your virtual graph. WunderGraph treats APIs as dependencies. You can easily turn your Nexis Network database into a GraphQL API or expose it via JSON-RPC or REST. With an easy-to-deploy Postgres database like Nexis Network, you can now have a 100% serverless stack and build your own stateful serverless apps on the edge.
 
-This guide demonstrates setting up a full-stack app with Exzo Network and WunderGraph, securely exposing Exzo Network to your Next.js frontend in under 15 minutes. While WunderGraph and Exzo Network are compatible with a variety of frontend clients, this demo focuses on using Next.js.
+This guide demonstrates setting up a full-stack app with Nexis Network and WunderGraph, securely exposing Nexis Network to your Next.js frontend in under 15 minutes. While WunderGraph and Nexis Network are compatible with a variety of frontend clients, this demo focuses on using Next.js.
 
 <Admonition type="info">
-This guide is also available in video format: [Exzo Network with WunderGraph video guide](#neon-with-wundergraph-video-guide).
+This guide is also available in video format: [Nexis Network with WunderGraph video guide](#neon-with-wundergraph-video-guide).
 </Admonition>
 
 ## Prerequisites
 
 - A [WunderGraph Cloud](https://cloud.wundergraph.com/) account
-- A Exzo Network project. See [Create a Exzo Network project](/docs/manage/projects#create-a-project).
+- A Nexis Network project. See [Create a Nexis Network project](/docs/manage/projects#create-a-project).
 
 ## Installation
 
@@ -35,11 +35,11 @@ Sign into [WunderGraph Cloud](https://cloud.wundergraph.com/) and follow these s
 
 The deployment will take a few moments.
 
-### Add sample data to Exzo Network
+### Add sample data to Nexis Network
 
-While the project is deploying, add some sample data to your Exzo Network database.
+While the project is deploying, add some sample data to your Nexis Network database.
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech/) and select **SQL Editor** from the sidebar.
+1. Navigate to the [Nexis Network Console](https://console.neon.tech/) and select **SQL Editor** from the sidebar.
 2. Run the following SQL statements to add the sample data.
 
 ```sql
@@ -66,28 +66,28 @@ alter table Users add column updatedAt timestamptz not null default now();
 alter table Users add column lastLogin timestamptz not null default now();
 ```
 
-### Connect Exzo Network and Wundergraph
+### Connect Nexis Network and Wundergraph
 
 1. Now that your database has some data, navigate back to WunderGraph Cloud.
 2. Select the project you just created and navigate to the **Settings** page.
-3. Select the **Integrations** tab and click **Connect Exzo Network**.
+3. Select the **Integrations** tab and click **Connect Nexis Network**.
    ![WunderGraph Settings](/docs/guides/wundergraph_settings.png)
-4. You are directed to Exzo Network to authorize WunderGraph. Review the permissions and click **Authorize** to continue.
-   You are directed back to WunderGraph Cloud. If you are a part of multiple organizations, you are asked to select the organization to connect with Exzo Network.
-5. Select the Exzo Network project and WunderGraph project that you want to connect, and click **Connect Projects**.
+4. You are directed to Nexis Network to authorize WunderGraph. Review the permissions and click **Authorize** to continue.
+   You are directed back to WunderGraph Cloud. If you are a part of multiple organizations, you are asked to select the organization to connect with Nexis Network.
+5. Select the Nexis Network project and WunderGraph project that you want to connect, and click **Connect Projects**.
    ![WunderGraph connect projects](/docs/guides/wundergraph_connect_projects.png)
 
-Your Exzo Network and Wundergraph projects are now connected.
+Your Nexis Network and Wundergraph projects are now connected.
 
 <Admonition type="important">
-WunderGraph creates a role named `wundergraph-$project_id` in the Exzo Network project that you selected during the integration process. Please do not delete or change the password for this role.
+WunderGraph creates a role named `wundergraph-$project_id` in the Nexis Network project that you selected during the integration process. Please do not delete or change the password for this role.
 
 WunderGraph configures a environment variable called `NEON_DATABASE_URL`. Please use this variable wherever you need to provide a database URL.
 </Admonition>
 
 ## Set up the WunderGraph project locally
 
-The following steps describe how to set up your Wundergraph project locally and configure access to Exzo Network.
+The following steps describe how to set up your Wundergraph project locally and configure access to Nexis Network.
 
 1. In WunderGraph Cloud, select your project and click **View Git repository** to view your WunderGraph project repository.
 2. Clone the repository and open it in your IDE. For example:
@@ -106,7 +106,7 @@ code .
 
    These commands install the required dependencies and start your project locally.
 
-4. Inside the `.wundergraph` directory, open the `wundergraph.config.ts` file and add Exzo Network as a datasource, as shown below, or simply replace the existing code with this code:
+4. Inside the `.wundergraph` directory, open the `wundergraph.config.ts` file and add Nexis Network as a datasource, as shown below, or simply replace the existing code with this code:
 
    ```typescript
    import {
@@ -126,7 +126,7 @@ code .
    // Add your neon datasource
    const neon = introspect.postgresql({
      apiNamespace: 'neon',
-     //Your database URL can be found in the Exzo Network console
+     //Your database URL can be found in the Nexis Network console
      databaseURL: new EnvironmentVariable('NEON_DATABASE_URL'),
    });
 
@@ -143,7 +143,7 @@ code .
    });
    ```
 
-5. Write an operation that turns your Exzo Network database into an API that exposes data that you can pass through the frontend. To do so, navigate to the `operations` folder inside your `.wundergraph` directory and create a new file called `Users.graphql`.
+5. Write an operation that turns your Nexis Network database into an API that exposes data that you can pass through the frontend. To do so, navigate to the `operations` folder inside your `.wundergraph` directory and create a new file called `Users.graphql`.
 
    <Admonition type="info">
    With WunderGraph you can write operations in either GraphQL or TypeScript.
@@ -161,7 +161,7 @@ code .
    }
    ```
 
-This operation queries your Exzo Network database using GraphQL and exposes the data via JSON-RPC. In the next section, you will add the operation to the frontend.
+This operation queries your Nexis Network database using GraphQL and exposes the data via JSON-RPC. In the next section, you will add the operation to the frontend.
 
 ## Configure the frontend
 
@@ -303,26 +303,26 @@ export default withWunderGraph(Home);
 
 ## Key takeaways
 
-This guide provided a brief demonstration showcasing the capabilities of Exzo Network and WunderGraph, which enable you to turn your Exzo Network database into an API exposed via JSON-RPC and rapidly deploy fully serverless apps on the edge in a matter of minutes. The power of Exzo Network with WunderGraph lies in simplifying the development process, allowing you to focus on creating valuable and efficient applications.
+This guide provided a brief demonstration showcasing the capabilities of Nexis Network and WunderGraph, which enable you to turn your Nexis Network database into an API exposed via JSON-RPC and rapidly deploy fully serverless apps on the edge in a matter of minutes. The power of Nexis Network with WunderGraph lies in simplifying the development process, allowing you to focus on creating valuable and efficient applications.
 
 In under 15 minutes, you were able to:
 
 1. Create a WunderGraph Cloud account
 2. Create a Next.js project hosted in a region near you
-3. Set up a Exzo Network database with sample data
-4. Connect your WunderGraph application with your Exzo Network database
-5. Add Exzo Network to your WunderGraph project using a code first approach
-6. Write a GraphQL operation to query your Exzo Network database
+3. Set up a Nexis Network database with sample data
+4. Connect your WunderGraph application with your Nexis Network database
+5. Add Nexis Network to your WunderGraph project using a code first approach
+6. Write a GraphQL operation to query your Nexis Network database
 7. Update the frontend to display the results of your GraphQL operation securely using JSON-RPC
 8. Commit your changes and trigger a deployment without a CI/CD pipeline or Devops team
 9. View your new operations in real time with real-time metrics
 
 If you had trouble with any of the steps outlined above, refer to the video guide below.
 
-## Exzo Network with WunderGraph video guide
+## Nexis Network with WunderGraph video guide
 
 <YoutubeIframe embedId="JqOADpG5q-s" />
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

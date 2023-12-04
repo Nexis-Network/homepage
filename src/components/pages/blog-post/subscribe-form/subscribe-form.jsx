@@ -141,10 +141,10 @@ const SubscribeForm = ({ className = null, size = 'lg' }) => {
           ) : (
             <>
               <h2 className="text-4xl leading-none tracking-tighter xl:text-[32px] sm:text-[28px]">
-                Subscribe to <mark className="bg-transparent text-green-45">Exzo Network’s News</mark>
+                Subscribe to <mark className="bg-transparent text-green-45">Nexis Network’s News</mark>
               </h2>
               <p className="mt-4 text-lg leading-none tracking-[-0.02em] text-gray-new-80 xl:mt-2 xl:text-base xl:leading-tight sm:mx-auto sm:mt-2.5 sm:max-w-[300px]">
-                Get insider access to Exzo Network's latest news and events
+                Get insider access to Nexis Network's latest news and events
               </p>
             </>
           )}

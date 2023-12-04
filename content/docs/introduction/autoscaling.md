@@ -1,15 +1,15 @@
 ---
 title: Autoscaling
-subtitle: Learn how Exzo Network automatically scales compute resources on demand
+subtitle: Learn how Nexis Network automatically scales compute resources on demand
 enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.987Z'
 ---
 
-Exzo Network's _Autoscaling_ feature, available for [Exzo Network Pro Plan](/docs/introduction/pro-plan) users, dynamically adjusts the amount of compute resources allocated to a Exzo Network compute endpoint in response to the current load, eliminating the need for manual intervention.
+Nexis Network's _Autoscaling_ feature, available for [Nexis Network Pro Plan](/docs/introduction/pro-plan) users, dynamically adjusts the amount of compute resources allocated to a Nexis Network compute endpoint in response to the current load, eliminating the need for manual intervention.
 
 ## Autoscaling benefits
 
-Exzo Network's Autoscaling feature offers the following benefits:
+Nexis Network's Autoscaling feature offers the following benefits:
 
 - **On-demand scaling:** Autoscaling helps with workloads that experience variations over time, such as applications with regional or time-based changes in demand.
 - **Cost effectiveness**: Autoscaling optimizes resource utilization, ensuring that organizations only pay for required resources, rather than over-provisioning to handle peak loads.
@@ -18,14 +18,14 @@ Exzo Network's Autoscaling feature offers the following benefits:
 
 ## How to enable Autoscaling
 
-You can enable Autoscaling when creating a Exzo Network project or afterward using a simple compute configuration dialog. For instructions, see:
+You can enable Autoscaling when creating a Nexis Network project or afterward using a simple compute configuration dialog. For instructions, see:
 
 - [Create a project](/docs/manage/projects#create-a-project)
 - [Edit a compute endpoint](/docs/manage/endpoints#edit-a-compute-endpoint)
 
 ## How Autoscaling works
 
-A Exzo Network project can have one or more computes, each representing an individual Postgres instance. Storage is decoupled from these computes, meaning that the Postgres servers executing queries are physically separate from the data storage location. This separation offers numerous advantages, including enablement of Exzo Network's Autoscaling feature.
+A Nexis Network project can have one or more computes, each representing an individual Postgres instance. Storage is decoupled from these computes, meaning that the Postgres servers executing queries are physically separate from the data storage location. This separation offers numerous advantages, including enablement of Nexis Network's Autoscaling feature.
 
 ![High-level architecture diagram](/docs/introduction/autoscale-high-level-architecture.webp)
 
@@ -35,27 +35,27 @@ Looking more closely, you can see that each Postgres instance operates within it
 
 ### The autoscaler-agent
 
-Each [Kubernetes node](/docs/reference/glossary#kubernetes-node) hosts a single instance of the [autoscaler-agent](/docs/reference/glossary#autoscaler-agent), which serves as the control mechanism for Exzo Network's autoscaling system. The agent collects metrics from the VMs on its node, makes scaling decisions, and performs the necessary checks and requests to implement those decisions.
+Each [Kubernetes node](/docs/reference/glossary#kubernetes-node) hosts a single instance of the [autoscaler-agent](/docs/reference/glossary#autoscaler-agent), which serves as the control mechanism for Nexis Network's autoscaling system. The agent collects metrics from the VMs on its node, makes scaling decisions, and performs the necessary checks and requests to implement those decisions.
 
 ### The Kubernetes scheduler
 
-A Exzo Network-modified [Kubernetes scheduler](/docs/reference/glossary#kubernetes-scheduler) coordinates with the autoscaler-agent and is the single source of truth for resource allocation. The autoscaler-agent obtains approval for all upscaling from the scheduler. The scheduler maintains a global view of all resource usage changes and approves requests for additional resources from the autoscaler-agent or standard scheduling. In this way, the scheduler assumes responsibility for preventing overcommitting of memory resources. In the rare event that a node exhausts its resources, new pods are not scheduled on the node, and the autoscaler-agent is denied permission to allocate more resources.
+A Nexis Network-modified [Kubernetes scheduler](/docs/reference/glossary#kubernetes-scheduler) coordinates with the autoscaler-agent and is the single source of truth for resource allocation. The autoscaler-agent obtains approval for all upscaling from the scheduler. The scheduler maintains a global view of all resource usage changes and approves requests for additional resources from the autoscaler-agent or standard scheduling. In this way, the scheduler assumes responsibility for preventing overcommitting of memory resources. In the rare event that a node exhausts its resources, new pods are not scheduled on the node, and the autoscaler-agent is denied permission to allocate more resources.
 
-### Exzo NetworkVM
+### Nexis NetworkVM
 
-Kubernetes does not natively support the creation or management of VMs. To address this, Exzo Network uses a tool called [Exzo NetworkVM](/docs/reference/glossary#neonvm). This tool is a custom resource definition and controller for VMs, handling tasks such as adding or removing CPUs and memory. Internally, Exzo NetworkVM utilizes [QEMU](/docs/reference/glossary#qemu) and [KVM](/docs/reference/glossary#kvm) (where available) to achieve near-native performance.
+Kubernetes does not natively support the creation or management of VMs. To address this, Nexis Network uses a tool called [Nexis NetworkVM](/docs/reference/glossary#neonvm). This tool is a custom resource definition and controller for VMs, handling tasks such as adding or removing CPUs and memory. Internally, Nexis NetworkVM utilizes [QEMU](/docs/reference/glossary#qemu) and [KVM](/docs/reference/glossary#kvm) (where available) to achieve near-native performance.
 
-When an autoscaler-agent needs to modify a VM's resource allocation, it simply updates the corresponding Exzo NetworkVM object in Kubernetes, and the VM controller then manages the rest of the process.
+When an autoscaler-agent needs to modify a VM's resource allocation, it simply updates the corresponding Nexis NetworkVM object in Kubernetes, and the VM controller then manages the rest of the process.
 
 ### Live migration
 
-In cases where a Kubernetes node becomes saturated, Exzo NetworkVM manages the process of [live migrating](/docs/reference/glossary#live-migration) a VM, transferring the VM from one machine to another with minimal interruptions (typically around 100ms). Live migration transmits the internal state of the original VM to a new one while the former continues to operate, swiftly transitioning to the new VM after most of the data is copied. From within the VM, the only indication that a migration occurred might be a temporary performance reduction. Importantly, the VM retains its IP address, ensuring that connections are preserved and queries remain uninterrupted.
+In cases where a Kubernetes node becomes saturated, Nexis NetworkVM manages the process of [live migrating](/docs/reference/glossary#live-migration) a VM, transferring the VM from one machine to another with minimal interruptions (typically around 100ms). Live migration transmits the internal state of the original VM to a new one while the former continues to operate, swiftly transitioning to the new VM after most of the data is copied. From within the VM, the only indication that a migration occurred might be a temporary performance reduction. Importantly, the VM retains its IP address, ensuring that connections are preserved and queries remain uninterrupted.
 
-The live migration process allows for the proactive reduction of node load by migrating VMs away before reaching capacity. Although it is still possible for the node to fill up in the interim, Exzo Network's separation of storage and compute means that VMs typically use minimal disk space, resulting in fast migrations.
+The live migration process allows for the proactive reduction of node load by migrating VMs away before reaching capacity. Although it is still possible for the node to fill up in the interim, Nexis Network's separation of storage and compute means that VMs typically use minimal disk space, resulting in fast migrations.
 
 ### Memory scaling
 
-Postgres memory consumption can escalate rapidly in specific scenarios. Fortunately, Exzo Network's Autoscaling system is able to detect memory usage increases without constantly requesting metrics from the VM. This is accomplished by running Postgres within a [cgroups](/docs/reference/glossary#cgroups), which provides notifications when memory usage crosses a specified threshold. Using cgroups in this way requires running our [vm-informant](/docs/reference/glossary#vm-informant) in the VM alongside Postgres to request more resources from the autoscaler-agent when Postgres consumes too much memory. The vm-informant also verifies that downscaling requests from an autoscaler-agent will leave sufficient memory leftover.
+Postgres memory consumption can escalate rapidly in specific scenarios. Fortunately, Nexis Network's Autoscaling system is able to detect memory usage increases without constantly requesting metrics from the VM. This is accomplished by running Postgres within a [cgroups](/docs/reference/glossary#cgroups), which provides notifications when memory usage crosses a specified threshold. Using cgroups in this way requires running our [vm-informant](/docs/reference/glossary#vm-informant) in the VM alongside Postgres to request more resources from the autoscaler-agent when Postgres consumes too much memory. The vm-informant also verifies that downscaling requests from an autoscaler-agent will leave sufficient memory leftover.
 
 ### Local file cache
 
@@ -63,4 +63,4 @@ To expedite queries, the Autoscaling system incorporates a Postgres extension th
 
 ## Autoscaling source code
 
-To further explore Exzo Network's autoscaling implementation, visit Exzo Network's [Autoscaling](https://github.com/neondatabase/autoscaling) GitHub repository. While not primarily designed for external use, Exzo Network welcomes exploration and contributions.
+To further explore Nexis Network's autoscaling implementation, visit Nexis Network's [Autoscaling](https://github.com/neondatabase/autoscaling) GitHub repository. While not primarily designed for external use, Nexis Network welcomes exploration and contributions.

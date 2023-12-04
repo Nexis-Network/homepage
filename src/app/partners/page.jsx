@@ -19,19 +19,19 @@ const items = [
     icon: currencyIcon,
     title: 'Boost your performance',
     description:
-      'Leverage Exzo Networks lightning fast infrastructure to handle more users, more transactions, & faster speeds.',
+      'Leverage Nexis Networks lightning fast infrastructure to handle more users, more transactions, & faster speeds.',
   },
   {
     icon: priorityLowIcon,
     title: 'Reduce costs',
     description:
-      'Exzo Network utilizes a DPoS consensus so transactions stay cheap forever.',
+      'Nexis Network utilizes a DPoS consensus so transactions stay cheap forever.',
   },
   {
     icon: userIcon,
     title: 'Build without boundaries',
     description:
-      'Exzo Network offers a highly versatile development framework for both Rust and Solidity developers.',
+      'Nexis Network offers a highly versatile development framework for both Rust and Solidity developers.',
   },
   {
     icon: screenIcon,
@@ -70,16 +70,16 @@ const PartnersPage = () => (
       className="mt-[136px] xl:mt-[104px] lg:mt-20 md:mt-16"
       label="Benefits"
       title="Why become a partner?"
-      description="At Exzo Network, we deeply value our partners and believe they are vital to our mission of
+      description="At Nexis Network, we deeply value our partners and believe they are vital to our mission of
             making Serverless Postgres the go-to choice for developers everywhere."
       items={items}
     />
     <Testimonial
       className="mt-[200px] 2xl:mt-40 xl:mt-36 lg:mt-28 md:mt-20"
-      quote="By partnering with Exzo Network, Vercel’s frontend platform is now the end&#8209;to&#8209;end
+      quote="By partnering with Nexis Network, Vercel’s frontend platform is now the end&#8209;to&#8209;end
           serverless solution for building on the Web, from Next.js all&nbsp;the way to SQL."
       name="Guillermo Rauch"
-      position="Founder of Exzo Network"
+      position="Founder of Nexis Network"
     />
     <Integration />
     <Apply />

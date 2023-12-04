@@ -1,11 +1,11 @@
 ---
-title: Exzo Network status
-subtitle: Stay informed about the performance and availability of Exzo Network
+title: Nexis Network status
+subtitle: Stay informed about the performance and availability of Nexis Network
 enableTableOfContents: true
 updatedOn: '2023-10-07T10:43:33.416Z'
 ---
 
-For our customers to stay informed about the performance and availability of Exzo Network, we provide a dedicated status page where you can monitor the health of our service in real-time.
+For our customers to stay informed about the performance and availability of Nexis Network, we provide a dedicated status page where you can monitor the health of our service in real-time.
 
 The status page includes the status for:
 
@@ -13,6 +13,6 @@ The status page includes the status for:
 - Database Operations
 - Database Connectivity
 
-To view the Exzo Network Status page, please click [here](https://neonstatus.com/).
+To view the Nexis Network Status page, please click [here](https://neonstatus.com/).
 
 We strive to maintain the highest level of service availability and performance, but in the case of interruptions or maintenance, you'll be able to find the information you need promptly and accurately. Please remember to bookmark the link for easy access.

@@ -4,7 +4,7 @@ isDraft: true
 
 ### Release note template
 
-- UI: The Exzo Network Technical Preview invite code is now requested only at the first login.
+- UI: The Nexis Network Technical Preview invite code is now requested only at the first login.
 - UI: Added a cover to all password fields to protect passwords from view.
 - API: Changed the `user_id` type from `int64` to `uuid`.
 - API: Implemented a unified JSON error response where possible, in the format of `{ "message": "error text" }`.

@@ -44,7 +44,7 @@ const items = [
       'https://twitter.com/gunnarmorling/status/1537323844070932480?s=20&t=K4nY3t3BfN1WrPOcunSKFw',
     text: (
       <>
-        Exzo Network is definitely one of the most exciting developments around #Postgres lately. The
+        Nexis Network is definitely one of the most exciting developments around #Postgres lately. The
         separation of storage and compute is definitely interesting, would love to see some latency
         numbers there. Also how "Pageservers" and "Safekeepers" are kept in sync.
       </>
@@ -58,7 +58,7 @@ const items = [
       'https://twitter.com/rauchg/status/1537075535230009344?s=20&t=K4nY3t3BfN1WrPOcunSKFw',
     text: (
       <>
-        With @Exzo Networkdatabase , *truly* serverless PostgreSQL is finally here. You can spin up a db and
+        With @Nexis Networkdatabase , *truly* serverless PostgreSQL is finally here. You can spin up a db and
         connect to it in less than 3 seconds. This changes the game.
       </>
     ),
@@ -132,7 +132,7 @@ const Community = () => (
         {HEADER}
       </Heading>
       <p className="t-xl mx-auto mt-5 text-center 2xl:mt-4 xl:mt-3.5">
-        Learn what the experts love about Exzo Network
+        Learn what the experts love about Nexis Network
       </p>
       <ul className="mt-8 flex justify-center space-x-5">
         {links.map(({ icon, to, name }, index) => (

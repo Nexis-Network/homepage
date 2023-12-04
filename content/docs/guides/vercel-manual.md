@@ -1,25 +1,25 @@
 ---
-title: Connect Vercel and Exzo Network manually
-subtitle: Learn how to connect a Vercel project to a Exzo Network database manually
+title: Connect Vercel and Nexis Network manually
+subtitle: Learn how to connect a Vercel project to a Nexis Network database manually
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.839Z'
 ---
 
-This guide describes how to manually connect a Vercel project to a Exzo Network database.
+This guide describes how to manually connect a Vercel project to a Nexis Network database.
 
 <Admonition type="note">
-For other Vercel integration options, refer to the [Exzo Network and Vercel integration overview](/docs/guides/vercel-overview).
+For other Vercel integration options, refer to the [Nexis Network and Vercel integration overview](/docs/guides/vercel-overview).
 </Admonition>
 
 ## Prerequisites
 
-- A Exzo Network project. If you do not have one, see [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
+- A Nexis Network project. If you do not have one, see [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
 - A [Vercel account](https://vercel.com).
 - A project deployed to Vercel. If you do not have one, see [Creating a project](https://vercel.com/docs/concepts/projects/overview#creating-a-project), in the _Vercel documentation_.
 
-## Gather your Exzo Network connection details
+## Gather your Nexis Network connection details
 
-You can these details from the **Connection Details** widget on the **Exzo Network Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
+You can these details from the **Connection Details** widget on the **Nexis Network Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -37,7 +37,7 @@ postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
 
 ## Configure project environment variables in Vercel
 
-The environment variables required to connect your application to Exzo Network depend on your application. Some applications use a `DATABASE_URL` environment variable with a database connection string:
+The environment variables required to connect your application to Nexis Network depend on your application. Some applications use a `DATABASE_URL` environment variable with a database connection string:
 
 ```text
 DATABASE_URL="postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname"
@@ -54,7 +54,7 @@ PGPORT=5432
 ```
 
 <Admonition type="note">
-Exzo Network uses the default Postgres port, `5432`.
+Nexis Network uses the default Postgres port, `5432`.
 </Admonition>
 
 To configure the environment variables required by your application:
@@ -78,4 +78,4 @@ You must redeploy your application in Vercel for the environment variable settin
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

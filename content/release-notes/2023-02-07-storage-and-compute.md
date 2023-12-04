@@ -1,6 +1,6 @@
 ### Postgres extension support
 
-Added support for the Postgres `postgis-sfcgal` extension. For more information about Postgres extensions supported by Exzo Network, see [Postgres extensions](/docs/extensions/pg-extensions).
+Added support for the Postgres `postgis-sfcgal` extension. For more information about Postgres extensions supported by Nexis Network, see [Postgres extensions](/docs/extensions/pg-extensions).
 
 ### Fixes & improvements
 

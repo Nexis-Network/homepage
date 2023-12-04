@@ -1,22 +1,22 @@
 ---
-title: Exzo Network CLI commands — databases
-subtitle: Use the Exzo Network CLI to manage Exzo Network directly from the terminal
+title: Nexis Network CLI commands — databases
+subtitle: Use the Nexis Network CLI to manage Nexis Network directly from the terminal
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.851Z'
 ---
 
 ## Before you begin
 
-- Before running the `databases` command, ensure that you have [installed the Exzo Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
-- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Exzo Network CLI command automatically launches the Exzo Network CLI browser authentication process. Alternatively, you can specify a Exzo Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
+- Before running the `databases` command, ensure that you have [installed the Nexis Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
+- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Nexis Network CLI command automatically launches the Nexis Network CLI browser authentication process. Alternatively, you can specify a Nexis Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
 
-For information about databases in Exzo Network, see [Manage databases](/docs/manage/databases).
+For information about databases in Nexis Network, see [Manage databases](/docs/manage/databases).
 
 ## The `databases` command
 
 ### Usage
 
-The `databases` command allows you to list, create, and delete databases in a Exzo Network project.
+The `databases` command allows you to list, create, and delete databases in a Nexis Network project.
 
 | Subcommand  | Description      |
 |---------|------------------|
@@ -36,11 +36,11 @@ neonctl databases list [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports these options:
 
 | Option        | Description | Type   | Required  |
 | ------------- | ----------- | ------ | :------: |
-| --project-id  | Project ID  | string | Only if your Exzo Network account has more than one project |
+| --project-id  | Project ID  | string | Only if your Nexis Network account has more than one project |
 | --branch   | Branch ID or name   | string |  |
 
 If a branch ID or name is not provided, the command lists databases for the primary branch of the project.
@@ -72,11 +72,11 @@ neonctl databases create [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
 
 | Option               | Description                          | Type   | Required  |
 | -------------------- | ------------------------------------ | ------ | :------: |
-| --project-id         | Project ID                           | string | Only if your Exzo Network account has more than one project |
+| --project-id         | Project ID                           | string | Only if your Nexis Network account has more than one project |
 | --branch             | Branch ID or name                    | string | |
 | --name               | The name of the database             | string | &check; |
 | --owner-name| The name of the role that owns the database | string |  |
@@ -114,11 +114,11 @@ neonctl databases delete <database> [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `delete` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `delete` subcommand supports these options:
 
 | Option           | Description  | Type   | Required  |
 | ---------------- | ------------ | ------ | :------: |
-| --project-id     | Project ID   | string | Only if your Exzo Network account has more than one project |
+| --project-id     | Project ID   | string | Only if your Nexis Network account has more than one project |
 | --branch         | Branch ID or name    | string | |
 
 If a branch ID or name is not provided, it is assumed the database resides in the primary branch of the project.
@@ -140,4 +140,4 @@ neonctl databases delete mydb
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

@@ -5,9 +5,9 @@ enableTableOfContents: true
 updatedOn: '2023-10-19T12:56:03.258Z'
 ---
 
-With Exzo Network's read replica feature, you can instantly create a dedicated read-only compute instance for running data-intensive analytics or reporting queries. This allows you to avoid disruption or performance degradation on your production database.
+With Nexis Network's read replica feature, you can instantly create a dedicated read-only compute instance for running data-intensive analytics or reporting queries. This allows you to avoid disruption or performance degradation on your production database.
 
-A read replica reads data from the same source as your read-write compute instance. There's no data replication, so creating a read replica is a near-instant process. For more information about Exzo Network's read replica architecture, see [Read replicas](/docs/introduction/read-replicas).
+A read replica reads data from the same source as your read-write compute instance. There's no data replication, so creating a read replica is a near-instant process. For more information about Nexis Network's read replica architecture, see [Read replicas](/docs/introduction/read-replicas).
 
 Suppose you have a `sales` table in your production database. The table and data might look something like this:
 
@@ -34,9 +34,9 @@ This guide walks you through creating a read replica, connecting to it, running 
 
 ## Create a read replica
 
-Creating a read replica involves adding a read-only compute endpoint to a branch. You can add a read-only compute endpoint to any branch in your Exzo Network project by following these steps:
+Creating a read replica involves adding a read-only compute endpoint to a branch. You can add a read-only compute endpoint to any branch in your Nexis Network project by following these steps:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 2. Select the branch where your database resides.
 3. Click **Add compute**.
 4. On the **Create Compute Endpoint** dialog, select **Read-only** as the **Compute type**.
@@ -48,7 +48,7 @@ Creating a read replica involves adding a read-only compute endpoint to a branch
 
 Your read-only compute is provisioned and appears in the **Computes** section of the **Branches** page. This is your read replica. The following section describes how to connect to your read replica.
 
-Alternatively, you can create read replicas using the [Exzo Network API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Exzo Network CLI](/docs/reference/cli-branches#create).
+Alternatively, you can create read replicas using the [Nexis Network API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Nexis Network CLI](/docs/reference/cli-branches#create).
 
 <CodeTabs labels={["API", "CLI"]}>
 
@@ -76,9 +76,9 @@ neonctl branches add-compute mybranch --type read_only
 
 ## Connect to the read replica
 
-Connecting to a read replica is the same as connecting to any branch, except you connect via a read-only compute endpoint instead of a read-write compute endpoint. The following steps describe how to connect to your read replica with connection details obtained from the Exzo Network Console.
+Connecting to a read replica is the same as connecting to any branch, except you connect via a read-only compute endpoint instead of a read-write compute endpoint. The following steps describe how to connect to your read replica with connection details obtained from the Nexis Network Console.
 
-1. On the Exzo Network **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
+1. On the Nexis Network **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
 1. Under **Compute**, select the **RO-replica** compute endpoint.
 1. Select a **Database** and the **Role** you want to connect with.
 1. Copy the connection string. This is the information you need to connect to the read replica from you client or application.
@@ -133,7 +133,7 @@ When you are finished running analytics queries, you can delete the read replica
 
 To delete a read replica:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch.
 1. Under **Computes**, find the read-only compute endpoint you want to delete. Read replicas have a `RO replica` type.
 1. Click the compute endpoint menu on the right side of the table, and select **Delete**.

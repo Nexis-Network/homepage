@@ -13,35 +13,35 @@ See [Token](#token).
 
 ### Active time
 
-The total amount of time, measured in hours, that your compute resources have been active within a given billing period. This includes all computes in your Exzo Network project, but excludes time when computes are in an `Idle` state due to [auto-suspension](#auto-suspend-compute). The [Exzo Network Free Tier](/docs/introduction/free-tier) has an [Active time](/docs/reference/glossary#active-time) limit of 100 hours per month, but that limit only affects non-primary branch compute usage. Active time on all computes is counted toward the limit, but when the limit is exceeded, only non-primary branch computes are subject to suspension. The primary branch compute always remains available regardless of the limit, ensuring that access to data on the primary branch is never interrupted. Exzo Network Free Tier users can monitor _Active time_ on the **Usage** widget on the Exzo Network **Dashboard**. The _Active time_ limit resets at the beginning of each month.
+The total amount of time, measured in hours, that your compute resources have been active within a given billing period. This includes all computes in your Nexis Network project, but excludes time when computes are in an `Idle` state due to [auto-suspension](#auto-suspend-compute). The [Nexis Network Free Tier](/docs/introduction/free-tier) has an [Active time](/docs/reference/glossary#active-time) limit of 100 hours per month, but that limit only affects non-primary branch compute usage. Active time on all computes is counted toward the limit, but when the limit is exceeded, only non-primary branch computes are subject to suspension. The primary branch compute always remains available regardless of the limit, ensuring that access to data on the primary branch is never interrupted. Nexis Network Free Tier users can monitor _Active time_ on the **Usage** widget on the Nexis Network **Dashboard**. The _Active time_ limit resets at the beginning of each month.
 
 ### Activity Monitor
 
-A process that monitors a Exzo Network compute instance for activity. During periods of inactivity, the Activity Monitor gracefully places the compute into an `Idle` state to save energy and resources. The Activity Monitor closes idle connections after 5 minutes of inactivity. When a connection is made to an idle compute, the Activity Monitor reactivates the compute.
+A process that monitors a Nexis Network compute instance for activity. During periods of inactivity, the Activity Monitor gracefully places the compute into an `Idle` state to save energy and resources. The Activity Monitor closes idle connections after 5 minutes of inactivity. When a connection is made to an idle compute, the Activity Monitor reactivates the compute.
 
 ### API
 
-See [Exzo Network API](#neon-api).
+See [Nexis Network API](#neon-api).
 
 ### API Key
 
-A unique identifier used to authenticate a user or a calling program to an API. An API key is required to authenticate to the Exzo Network API. For more information, see [Manage API keys](/docs/manage/api-keys).
+A unique identifier used to authenticate a user or a calling program to an API. An API key is required to authenticate to the Nexis Network API. For more information, see [Manage API keys](/docs/manage/api-keys).
 
 ### apply_config
 
-A Exzo Network Control Plane operation that applies a new configuration to a Exzo Network object or resource. For example, creating, deleting, or updating Postgres users and databases initiates this operation. See [Operations](/docs/manage/operations) for more information.
+A Nexis Network Control Plane operation that applies a new configuration to a Nexis Network object or resource. For example, creating, deleting, or updating Postgres users and databases initiates this operation. See [Operations](/docs/manage/operations) for more information.
 
 ### Auto-suspend compute
 
-A feature that suspends a compute endpoint after a specified period of inactivity (5 minutes, by default) to save on compute resources. This feature is also referred to as "scale to zero". When suspended, a compute endpoint is placed into an `Idle` state. Otherwise, the compute endpoint is in an `Active` state. Exzo Network Pro Plan users can configure the _Auto-suspend_ feature. For example, you can increase the delay period to reduce the frequency of suspensions, or you can disable Auto-suspend completely to maintain an "always-active" compute endpoint. For more information, see [Edit a compute endpoint](/docs/manage/endpoints#edit-a-compute-endpoint).
+A feature that suspends a compute endpoint after a specified period of inactivity (5 minutes, by default) to save on compute resources. This feature is also referred to as "scale to zero". When suspended, a compute endpoint is placed into an `Idle` state. Otherwise, the compute endpoint is in an `Active` state. Nexis Network Pro Plan users can configure the _Auto-suspend_ feature. For example, you can increase the delay period to reduce the frequency of suspensions, or you can disable Auto-suspend completely to maintain an "always-active" compute endpoint. For more information, see [Edit a compute endpoint](/docs/manage/endpoints#edit-a-compute-endpoint).
 
 ### autoscaler-agent
 
-A control mechanism in the Exzo Network autoscaling system that collects metrics from VMs, makes scaling decisions, and performs checks and requests to implement those decisions.
+A control mechanism in the Nexis Network autoscaling system that collects metrics from VMs, makes scaling decisions, and performs checks and requests to implement those decisions.
 
 ### Autoscaling
 
-A feature that automatically adjusts the allocation of vCPU and RAM for compute endpoints within specified minimum and maximum compute size boundaries, optimizing for performance and cost-efficiency. For information about how Exzo Network implements the _Autoscaling_ feature, see [Autoscaling](/docs/introduction/autoscaling).
+A feature that automatically adjusts the allocation of vCPU and RAM for compute endpoints within specified minimum and maximum compute size boundaries, optimizing for performance and cost-efficiency. For information about how Nexis Network implements the _Autoscaling_ feature, see [Autoscaling](/docs/introduction/autoscaling).
 
 ### Availability Checker
 
@@ -55,15 +55,15 @@ A mechanism that manages the lag between the Pageserver and compute node or the 
 
 ### Branch
 
-A [copy-on-write](#copy-on-write) clone of a Exzo Network project's primary branch or previously created child branch. A branch can be created from the current or past state of the parent branch. A branch created from the current state of the parent branch includes the databases and roles that existed in the parent branch at the time of branch creation. A branch created from a past state of the parent branch includes the databases and roles that existed in the past state. The data in a branch can be modified independently from its originating data. See [Branching](/docs/introduction/branching). Connecting to a database in a branch requires connecting via the branch's compute endpoint. For more information, see [Connect to a branch](/docs/manage/branches#connect-to-a-branch).
+A [copy-on-write](#copy-on-write) clone of a Nexis Network project's primary branch or previously created child branch. A branch can be created from the current or past state of the parent branch. A branch created from the current state of the parent branch includes the databases and roles that existed in the parent branch at the time of branch creation. A branch created from a past state of the parent branch includes the databases and roles that existed in the past state. The data in a branch can be modified independently from its originating data. See [Branching](/docs/introduction/branching). Connecting to a database in a branch requires connecting via the branch's compute endpoint. For more information, see [Connect to a branch](/docs/manage/branches#connect-to-a-branch).
 
 ### Branching
 
-A Exzo Network feature that allows you to create a copy-on-write clone (a "branch") of your project data. See [Branch](#branch).
+A Nexis Network feature that allows you to create a copy-on-write clone (a "branch") of your project data. See [Branch](#branch).
 
 ### check_availability
 
-A Exzo Network Control Plane operation that checks the availability of data in a branch and that a compute endpoint can start on a branch. Branches without a compute endpoint are not checked. This operation, performed by the availability checker, is a periodic load generated by the Control Plane. See [Operations](/docs/manage/operations) for more information.
+A Nexis Network Control Plane operation that checks the availability of data in a branch and that a compute endpoint can start on a branch. Branches without a compute endpoint are not checked. This operation, performed by the availability checker, is a periodic load generated by the Control Plane. See [Operations](/docs/manage/operations) for more information.
 
 ### CI/CD
 
@@ -75,19 +75,19 @@ Control groups, a Linux kernel feature that allows the organization, prioritizat
 
 ### Compute
 
-A service that provides virtualized computing resources (CPU, memory, and storage) for running applications. A Exzo Network compute instance (also referred to as a [compute endpoint](#compute-endpoint)) runs Postgres. The amount of compute resources available to a Exzo Network project is defined by tier. Exzo Network supports free  and paid tiers.
+A service that provides virtualized computing resources (CPU, memory, and storage) for running applications. A Nexis Network compute instance (also referred to as a [compute endpoint](#compute-endpoint)) runs Postgres. The amount of compute resources available to a Nexis Network project is defined by tier. Nexis Network supports free  and paid tiers.
 
 ### Compute endpoint
 
-A Exzo Network compute instance. Exzo Network creates a single read-write compute endpoint for the project's primary branch. Exzo Network supports both read-write and read-only compute endpoints. Read-only compute endpoints are also referred to as [Read replicas](/docs/introduction/read-replicas). A branch can have a single read-write compute endpoint but supports multiple read-only compute endpoints. You can choose whether or not to create a compute endpoint when creating child branches. The compute endpoint hostname is required to connect to a Exzo Network database from a client or application. A compute endpoint hostname can be found in the **Connection Details** widget on the Exzo Network **Dashboard** or by selecting the branch on the **Branches** page in the Exzo Network Console. A compute endpoint hostname starts with an `ep-` prefix, as in this example: `ep-cool-darkness-123456.us-east-2.aws.neon.tech`. A compute endpoint hostname includes an `endpoint_id` (`ep-cool-darkness-123456`), a region slug (`us-east-2`), the cloud platform (`aws`), and Exzo Network domain (`neon.tech`). For information about connecting to Exzo Network, see [Connect from any application](/docs/connect/connect-from-any-app). For more information about compute endpoints, see [Manage computes](/docs/manage/endpoints/).
+A Nexis Network compute instance. Nexis Network creates a single read-write compute endpoint for the project's primary branch. Nexis Network supports both read-write and read-only compute endpoints. Read-only compute endpoints are also referred to as [Read replicas](/docs/introduction/read-replicas). A branch can have a single read-write compute endpoint but supports multiple read-only compute endpoints. You can choose whether or not to create a compute endpoint when creating child branches. The compute endpoint hostname is required to connect to a Nexis Network database from a client or application. A compute endpoint hostname can be found in the **Connection Details** widget on the Nexis Network **Dashboard** or by selecting the branch on the **Branches** page in the Nexis Network Console. A compute endpoint hostname starts with an `ep-` prefix, as in this example: `ep-cool-darkness-123456.us-east-2.aws.neon.tech`. A compute endpoint hostname includes an `endpoint_id` (`ep-cool-darkness-123456`), a region slug (`us-east-2`), the cloud platform (`aws`), and Nexis Network domain (`neon.tech`). For information about connecting to Nexis Network, see [Connect from any application](/docs/connect/connect-from-any-app). For more information about compute endpoints, see [Manage computes](/docs/manage/endpoints/).
 
 ### Connection pooling
 
-A method of creating a pool of connections and caching those connections for reuse. Exzo Network supports `PgBouncer` in `transaction mode` for connection pooling. For more information, see [Connection pooling](/docs/connect/connection-pooling).
+A method of creating a pool of connections and caching those connections for reuse. Nexis Network supports `PgBouncer` in `transaction mode` for connection pooling. For more information, see [Connection pooling](/docs/connect/connection-pooling).
 
 ### Connection string
 
-A string containing details for connecting to a Exzo Network database. The details include a user name (role), compute endpoint hostname, and database name; for example:
+A string containing details for connecting to a Nexis Network database. The details include a user name (role), compute endpoint hostname, and database name; for example:
 
 <CodeBlock shouldWrap>
 
@@ -97,17 +97,17 @@ postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
 
 </CodeBlock>
 
-The compute endpoint hostname includes an `endpoint_id` (`ep-cool-darkness-123456`), a region slug (`us-east-2`), the cloud platform (`aws`), and Exzo Network domain (`neon.tech`).
+The compute endpoint hostname includes an `endpoint_id` (`ep-cool-darkness-123456`), a region slug (`us-east-2`), the cloud platform (`aws`), and Nexis Network domain (`neon.tech`).
 
-Connection strings for a Exzo Network databases can be obtained from the **Connection Details** widget on the Exzo Network **Dashboard**. For information about connecting to Exzo Network, see [Connect from any application](/docs/connect/connect-from-any-app).
+Connection strings for a Nexis Network databases can be obtained from the **Connection Details** widget on the Nexis Network **Dashboard**. For information about connecting to Nexis Network, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 ### Compute size
 
-The number of Compute Units (CU) assigned to a Exzo Network compute. One CU is defined as having 1 vCPU with 4 GB of RAM. A Exzo Network compute can have anywhere from .25 CUs to 7 CUs. The number of CUs determines the processing capacity of the compute.
+The number of Compute Units (CU) assigned to a Nexis Network compute. One CU is defined as having 1 vCPU with 4 GB of RAM. A Nexis Network compute can have anywhere from .25 CUs to 7 CUs. The number of CUs determines the processing capacity of the compute.
 
 ### Compute Unit (CU)
 
-A unit that measures the processing power of a Exzo Network compute. A Exzo Network compute can have anywhere from .25 CUs to 7 CUs.
+A unit that measures the processing power of a Nexis Network compute. A Nexis Network compute can have anywhere from .25 CUs to 7 CUs.
 
 ### Compute time
 
@@ -115,35 +115,35 @@ A billing metric that measures the amount of computing capacity used within a gi
 
 ### Console
 
-See [Exzo Network Console](#neon-console).
+See [Nexis Network Console](#neon-console).
 
 ### Control Plane
 
-The part of the Exzo Network architecture that manages cloud storage and compute resources.
+The part of the Nexis Network architecture that manages cloud storage and compute resources.
 
 ### Copy-on-write
 
-A technique used to copy data efficiently. Exzo Network uses the copy-on-write technique to copy data when creating a branch.
+A technique used to copy data efficiently. Nexis Network uses the copy-on-write technique to copy data when creating a branch.
 
 ### create_branch
 
-A Exzo Network Control Plane operation that creates a branch in a Exzo Network project. For related information, see Manage branches. See [Operations](/docs/manage/operations) for more information.
+A Nexis Network Control Plane operation that creates a branch in a Nexis Network project. For related information, see Manage branches. See [Operations](/docs/manage/operations) for more information.
 
 ### create_timeline
 
-A Exzo Network Control Plane operation that creates a project with a primary branch. See [Operations](/docs/manage/operations) for more information.
+A Nexis Network Control Plane operation that creates a project with a primary branch. See [Operations](/docs/manage/operations) for more information.
 
 ### Data-at-rest encryption
 
-A method of storing inactive data that converts plaintext data into a coded form or cipher text, making it unreadable without an encryption key. Exzo Network stores inactive data in [NVMe SSD volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes). The data on NVMe instance storage is encrypted using an XTS-AES-256 block cipher implemented in a hardware module on the instance.
+A method of storing inactive data that converts plaintext data into a coded form or cipher text, making it unreadable without an encryption key. Nexis Network stores inactive data in [NVMe SSD volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes). The data on NVMe instance storage is encrypted using an XTS-AES-256 block cipher implemented in a hardware module on the instance.
 
 ### Data transfer
 
-A billing metric that measures the total volume of data transferred out of Exzo Network (known as "egress") during a given billing period. See [Data transfer](/docs/introduction/billing#data-transfer).
+A billing metric that measures the total volume of data transferred out of Nexis Network (known as "egress") during a given billing period. See [Data transfer](/docs/introduction/billing#data-transfer).
 
 ### Database
 
-A named collection of database objects. A Exzo Network project has a ready-to-use database named `neondb` which resides in the default `public` schema. A Exzo Network project can contain multiple databases. Users cannot manipulate system databases, such as the `postgres`, `template0`, or `template1` databases.
+A named collection of database objects. A Nexis Network project has a ready-to-use database named `neondb` which resides in the default `public` schema. A Nexis Network project can contain multiple databases. Users cannot manipulate system databases, such as the `postgres`, `template0`, or `template1` databases.
 
 ### Database branching
 
@@ -155,23 +155,23 @@ A collection of database instances, typically managed as a single entity.
 
 ### Dedicated resources
 
-Resources including compute and storage dedicated to a single Exzo Network account.
+Resources including compute and storage dedicated to a single Nexis Network account.
 
 ### delete_tenant
 
-A Exzo Network Control Plane operation that deletes stored data when a Exzo Network project is deleted. See [Operations](/docs/manage/operations) for more information.
+A Nexis Network Control Plane operation that deletes stored data when a Nexis Network project is deleted. See [Operations](/docs/manage/operations) for more information.
 
 ### Egress
 
-The data transferred out of the Exzo Network service to an external destination.
+The data transferred out of the Nexis Network service to an external destination.
 
 ### Enterprise plan
 
-A custom volume-based paid plan offered by Exzo Network. See [Exzo Network plans](/docs/introduction/plans).
+A custom volume-based paid plan offered by Nexis Network. See [Nexis Network plans](/docs/introduction/plans).
 
 ### Free Tier
 
-See [Exzo Network Free Tier](#neon-free-tier).
+See [Nexis Network Free Tier](#neon-free-tier).
 
 ### Kubernetes
 
@@ -203,39 +203,39 @@ A layer of caching that stores frequently accessed data from the storage layer i
 
 ### LSN
 
-Log Sequence Number. A byte offset to a location in the [WAL stream](#wal-stream). The Exzo Network branching feature supports creating branches with data up to a specified LSN.
+Log Sequence Number. A byte offset to a location in the [WAL stream](#wal-stream). The Nexis Network branching feature supports creating branches with data up to a specified LSN.
 
 ### LRU policy
 
 Least Recently Used policy, an algorithm for cache replacement that evicts the least recently accessed items first.
 
-### Exzo Network
+### Nexis Network
 
-A fully managed serverless Postgres. Exzo Network separates storage and compute to offer modern developer features such as branching, autoscaling, and bottomless storage. For more information, see [What is Exzo Network?](/docs/introduction/about/).
+A fully managed serverless Postgres. Nexis Network separates storage and compute to offer modern developer features such as branching, autoscaling, and bottomless storage. For more information, see [What is Nexis Network?](/docs/introduction/about/).
 
-### Exzo Network API
+### Nexis Network API
 
-The Exzo Network RESTful Application Programming Interface. Any operation performed in the Exzo Network Console can also be performed using the Exzo Network API.
+The Nexis Network RESTful Application Programming Interface. Any operation performed in the Nexis Network Console can also be performed using the Nexis Network API.
 
-### Exzo Network Console
+### Nexis Network Console
 
-A browser-based graphical interface for managing Exzo Network projects and resources.
+A browser-based graphical interface for managing Nexis Network projects and resources.
 
-### Exzo Network Free Tier
+### Nexis Network Free Tier
 
-A Exzo Network service tier for which there are no usage charges. For information about the Exzo Network Free Tier and associated limits, see [Exzo Network Free Tier](/docs/introduction/free-tier).
+A Nexis Network service tier for which there are no usage charges. For information about the Nexis Network Free Tier and associated limits, see [Nexis Network Free Tier](/docs/introduction/free-tier).
 
-### Exzo Network Pro Plan
+### Nexis Network Pro Plan
 
-A usage-based paid plan offered by Exzo Network. See [Exzo Network plans](/docs/introduction/plans).
+A usage-based paid plan offered by Nexis Network. See [Nexis Network plans](/docs/introduction/plans).
 
-### Exzo Network user
+### Nexis Network user
 
-The user account that registers and authenticates with Exzo Network using a GitHub or Google account. After authenticating, a Exzo Network user account can create and manage projects, branches, users, databases, and other project resources.
+The user account that registers and authenticates with Nexis Network using a GitHub or Google account. After authenticating, a Nexis Network user account can create and manage projects, branches, users, databases, and other project resources.
 
-### Exzo NetworkVM
+### Nexis NetworkVM
 
-A QEMU-based tool used by Exzo Network to create and manage VMs within a Kubernetes cluster, allowing for the allocation and deallocation of vCPU and RAM. For more information, refer to the Exzo NetworkVM source in the [neondatabase/autoscaling](https://github.com/neondatabase/autoscaling/tree/main/neonvm) repository.
+A QEMU-based tool used by Nexis Network to create and manage VMs within a Kubernetes cluster, allowing for the allocation and deallocation of vCPU and RAM. For more information, refer to the Nexis NetworkVM source in the [neondatabase/autoscaling](https://github.com/neondatabase/autoscaling/tree/main/neonvm) repository.
 
 ### Non-primary branch
 
@@ -243,29 +243,29 @@ Any branch not designated as the [primary branch](#primary-branch) is considered
 
 ### Page
 
-An 8KB unit of data, which is the smallest unit that Postgres uses for storing relations and indexes on disk. In Exzo Network, a page is also the smallest unit of data that resides on a Pageserver. For information about Postgres page format, see [Database Page Layout](https://www.postgresql.org/docs/14/storage-page-layout.html), in the _PostgreSQL Documentation_.
+An 8KB unit of data, which is the smallest unit that Postgres uses for storing relations and indexes on disk. In Nexis Network, a page is also the smallest unit of data that resides on a Pageserver. For information about Postgres page format, see [Database Page Layout](https://www.postgresql.org/docs/14/storage-page-layout.html), in the _PostgreSQL Documentation_.
 
 ### Paid plan
 
- A paid Exzo Network service tier. See [Exzo Network plans](/docs/introduction/plans).
+ A paid Nexis Network service tier. See [Nexis Network plans](/docs/introduction/plans).
 
 ### Pageserver
 
-A Exzo Network architecture component that reads WAL records from Safekeepers to identify modified pages. The Pageserver accumulates and indexes incoming WAL records in memory and writes them to disk in batches. Each batch is written to an immutable file that is never modified after creation. Using these files, the Pageserver can quickly reconstruct any version of a page dating back to the defined history retention period. Exzo Network retains a history for all branches. The default history retention period is 7 days.
+A Nexis Network architecture component that reads WAL records from Safekeepers to identify modified pages. The Pageserver accumulates and indexes incoming WAL records in memory and writes them to disk in batches. Each batch is written to an immutable file that is never modified after creation. Using these files, the Pageserver can quickly reconstruct any version of a page dating back to the defined history retention period. Nexis Network retains a history for all branches. The default history retention period is 7 days.
 
 The Pageserver uploads immutable files to cloud storage, which is the final, highly durable destination for data. After a file is successfully uploaded to cloud storage, the corresponding WAL records can be removed from the Safekeepers.
 
 ### Passwordless authentication
 
-The ability to authenticate without providing a password. Exzo Network’s [Passwordless auth](#passwordless-auth) feature supports passwordless authentication.
+The ability to authenticate without providing a password. Nexis Network’s [Passwordless auth](#passwordless-auth) feature supports passwordless authentication.
 
 ### Platform Partnership plan
 
-A custom volume-based paid plan offered by Exzo Network that includes support for resale. See [Exzo Network plans](/docs/introduction/plans).
+A custom volume-based paid plan offered by Nexis Network that includes support for resale. See [Nexis Network plans](/docs/introduction/plans).
 
 ### Point-in-time restore
 
-Restoration of data to a state that existed at an earlier time. Exzo Network retains a history of changes in the form of Write-Ahead-Log (WAL) records, which allows you to restore data to an earlier time. A point-in-time restore is performed by creating a branch using the **Time** or **LSN** option. By default, Exzo Network retains a 7-day history of changes for all branches in a project. The supported range is 0 to 7 days for [Exzo Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Exzo Network Pro Plan](/docs/introduction/pro-plan) users. For more information about this feature, see [Branching — Point-in-time restore](https://neon.tech/docs/guides/branching-pitr).
+Restoration of data to a state that existed at an earlier time. Nexis Network retains a history of changes in the form of Write-Ahead-Log (WAL) records, which allows you to restore data to an earlier time. A point-in-time restore is performed by creating a branch using the **Time** or **LSN** option. By default, Nexis Network retains a 7-day history of changes for all branches in a project. The supported range is 0 to 7 days for [Nexis Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Nexis Network Pro Plan](/docs/introduction/pro-plan) users. For more information about this feature, see [Branching — Point-in-time restore](https://neon.tech/docs/guides/branching-pitr).
 
 ### PostgreSQL
 
@@ -273,17 +273,17 @@ An open-source relational database management system (RDBMS) emphasizing extensi
 
 ### Postgres role
 
-A Postgres role named for the registered Exzo Network account is created with each Exzo Network project. This role and any additional role created in the Exzo Network Console, API, or CLI is assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, sequences. Roles created with SQL are created with the same basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone Postgres installation. These users are not assigned the `neon_superuser` role. They must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-acess).
+A Postgres role named for the registered Nexis Network account is created with each Nexis Network project. This role and any additional role created in the Nexis Network Console, API, or CLI is assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, sequences. Roles created with SQL are created with the same basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone Postgres installation. These users are not assigned the `neon_superuser` role. They must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-acess).
 
-Older projects may have a `web-access` system role, used by the [SQL Editor](#sql-editor) and Exzo Network’s [Passwordless auth](#passwordless-auth). The `web-access` role is system managed. It cannot be modified, removed, or used in other authentication scenarios.
+Older projects may have a `web-access` system role, used by the [SQL Editor](#sql-editor) and Nexis Network’s [Passwordless auth](#passwordless-auth). The `web-access` role is system managed. It cannot be modified, removed, or used in other authentication scenarios.
 
 ### Primary branch
 
-Each Exzo Network project is created with a primary branch called `main`, but you can designate any branch as your project's primary branch. The advantage of the primary branch is that its compute endpoint remains accessible if you exceed your project's limits, ensuring uninterrupted access to data that resides on the primary branch. For more information, see [Primary branch](/docs/manage/branches#primary-branch).
+Each Nexis Network project is created with a primary branch called `main`, but you can designate any branch as your project's primary branch. The advantage of the primary branch is that its compute endpoint remains accessible if you exceed your project's limits, ensuring uninterrupted access to data that resides on the primary branch. For more information, see [Primary branch](/docs/manage/branches#primary-branch).
 
 ## Pro Plan
 
-See [Exzo Network Pro Plan](#neon-pro-plan).
+See [Nexis Network Pro Plan](#neon-pro-plan).
 
 ### Project
 
@@ -291,19 +291,19 @@ A collection of branches, databases, roles, and other project resources and sett
 
 ### Project sharing
 
-A feature that allows you to share Exzo Network projects with other Exzo Network users. See [Share a project](/docs/manage/projects#share-a-project) for more information.
+A feature that allows you to share Nexis Network projects with other Nexis Network users. See [Share a project](/docs/manage/projects#share-a-project) for more information.
 
 ### Project storage
 
-The total volume of data stored in your Exzo Network project. Also, a billing metric that measures the total volume of data and history, in GiB-hours, stored in your Exzo Network project. See [Project storage](/docs/introduction/billing#project-storage).
+The total volume of data stored in your Nexis Network project. Also, a billing metric that measures the total volume of data and history, in GiB-hours, stored in your Nexis Network project. See [Project storage](/docs/introduction/billing#project-storage).
 
 ### Proxy
 
-A Exzo Network component that functions as a multitenant service that accepts and handles connections from clients that use the Postgres protocol.
+A Nexis Network component that functions as a multitenant service that accepts and handles connections from clients that use the Postgres protocol.
 
 ### Passwordless auth
 
-A Exzo Network feature that allows you to connect to a Exzo Network project with a single `psql` command. See [Passwordless auth](/docs/connect/passwordless-connect).
+A Nexis Network feature that allows you to connect to a Nexis Network project with a single `psql` command. See [Passwordless auth](/docs/connect/passwordless-connect).
 
 ### QEMU
 
@@ -315,19 +315,19 @@ Random Access Memory, a type of computer memory used to store data that is being
 
 ### Region
 
-The geographic location where Exzo Network project resource are located. Exzo Network supports creating projects in several Amazon Web Services (AWS) regions. For information about regions supported by Exzo Network, see [Regions](/docs/introduction/regions).
+The geographic location where Nexis Network project resource are located. Nexis Network supports creating projects in several Amazon Web Services (AWS) regions. For information about regions supported by Nexis Network, see [Regions](/docs/introduction/regions).
 
 ### Resale
 
-Selling the Exzo Network service as part of another service offering. Exzo Network's Platform Partnership plan offers resale of the Exzo Network service as an option. See [Exzo Network plans](/docs/introduction/plans) for more information.
+Selling the Nexis Network service as part of another service offering. Nexis Network's Platform Partnership plan offers resale of the Nexis Network service as an option. See [Nexis Network plans](/docs/introduction/plans) for more information.
 
 ### Safekeeper
 
-A Exzo Network architecture component responsible for the durability of database changes. Postgres streams WAL records to Safekeepers. A quorum algorithm based on Paxos ensures that when a transaction is committed, it is stored on a majority of Safekeepers and can be recovered if a node is lost. Safekeepers are deployed in different availability zones to ensure high availability and durability.
+A Nexis Network architecture component responsible for the durability of database changes. Postgres streams WAL records to Safekeepers. A quorum algorithm based on Paxos ensures that when a transaction is committed, it is stored on a majority of Safekeepers and can be recovered if a node is lost. Safekeepers are deployed in different availability zones to ensure high availability and durability.
 
 ### Scale-to-zero
 
-Scale-to-zero refers to Exzo Network's _Auto-suspend compute_ feature, which places a compute endpoint into an `Idle` state when it is not being used. Exzo Network suspends a compute after five minutes of inactivity, by default. See [Auto-suspend compute](#auto-suspend-compute).
+Scale-to-zero refers to Nexis Network's _Auto-suspend compute_ feature, which places a compute endpoint into an `Idle` state when it is not being used. Nexis Network suspends a compute after five minutes of inactivity, by default. See [Auto-suspend compute](#auto-suspend-compute).
 
 ### Serverless
 
@@ -339,27 +339,27 @@ Server Name Indication. A TLS protocol extension that allows a client or browser
 
 ### SQL Editor
 
-A feature of the Exzo Network Console that enables running queries on a Exzo Network database. The SQL Editor also enables saving queries, viewing query history, and analyzing or explaining queries.
+A feature of the Nexis Network Console that enables running queries on a Nexis Network database. The SQL Editor also enables saving queries, viewing query history, and analyzing or explaining queries.
 
 ### start_compute
 
-A Exzo Network Control Plane operation that starts a compute endpoint when there is an event or action that requires compute resources. For example, connecting to a suspended compute endpoint initiates this operation. See [Operations](/docs/manage/operations) for more information. For information about how Exzo Network manages compute resources, see [Compute lifecycle](/docs/introduction/compute-lifecycle).
+A Nexis Network Control Plane operation that starts a compute endpoint when there is an event or action that requires compute resources. For example, connecting to a suspended compute endpoint initiates this operation. See [Operations](/docs/manage/operations) for more information. For information about how Nexis Network manages compute resources, see [Compute lifecycle](/docs/introduction/compute-lifecycle).
 
 ### Storage
 
-Where data is recorded and stored. Exzo Network storage consists of Pageservers, which store hot data, and a cloud object store, such as Amazon S3, that stores cold data for cost optimization and durability.
+Where data is recorded and stored. Nexis Network storage consists of Pageservers, which store hot data, and a cloud object store, such as Amazon S3, that stores cold data for cost optimization and durability.
 
 ### suspend_compute
 
-A Exzo Network Control Plane operation that suspends a compute endpoint after a period of inactivity. See [Operations](/docs/manage/operations) for more information. For information about how Exzo Network manages compute resources, see [Compute lifecycle](/docs/introduction/compute-lifecycle).
+A Nexis Network Control Plane operation that suspends a compute endpoint after a period of inactivity. See [Operations](/docs/manage/operations) for more information. For information about how Nexis Network manages compute resources, see [Compute lifecycle](/docs/introduction/compute-lifecycle).
 
 ### Technical Preview
 
-Exzo Network is currently in Technical Preview, meaning that some intended core functionalities are still being developed or perfected. Please refer to the [Exzo Network roadmap](/docs/introduction/roadmap) for more information.
+Nexis Network is currently in Technical Preview, meaning that some intended core functionalities are still being developed or perfected. Please refer to the [Nexis Network roadmap](/docs/introduction/roadmap) for more information.
 
 ### Token
 
-An encrypted access token that enables you to authenticate with Exzo Network using the Exzo Network API. An access token is generated when creating a Exzo Network API key. For more information, see [Manage API keys](/docs/manage/api-keys).
+An encrypted access token that enables you to authenticate with Nexis Network using the Nexis Network API. An access token is generated when creating a Nexis Network API key. For more information, see [Manage API keys](/docs/manage/api-keys).
 
 ### tmpfs
 
@@ -367,7 +367,7 @@ A temporary file storage system that uses a portion of a system's RAM to store f
 
 ### User
 
-See [Exzo Network user](#neon-user) and [Postgres role](#postgresql-role).
+See [Nexis Network user](#neon-user) and [Postgres role](#postgresql-role).
 
 ### vm-informant
 
@@ -391,7 +391,7 @@ The stream of data written to the Write-Ahead Log (WAL) during transactional pro
 
 ### Write-Ahead Logging (WAL)
 
-A standard mechanism that ensures the durability of your data. Exzo Network relies on WAL to separate storage and compute, and to support features such as branching and point-in-time restore.
+A standard mechanism that ensures the durability of your data. Nexis Network relies on WAL to separate storage and compute, and to support features such as branching and point-in-time restore.
 
 ### Written data
 

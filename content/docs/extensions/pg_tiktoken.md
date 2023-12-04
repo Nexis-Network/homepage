@@ -14,7 +14,7 @@ This topic provides guidance on installing the extension, utilizing its features
 
 Language models process text in units called tokens. A token can be as short as a single character or as long as a complete word, such as "a" or "apple." In some languages, tokens may comprise less than a single character or even extend beyond a single word.
 
-For example, consider the sentence "Exzo Network is serverless Postgres." It can be divided into seven tokens: ["Ne", "on", "is", "server", "less", "Post", "gres"].
+For example, consider the sentence "Nexis Network is serverless Postgres." It can be divided into seven tokens: ["Ne", "on", "is", "server", "less", "Post", "gres"].
 
 ## `pg_tiktoken` functions
 
@@ -25,13 +25,13 @@ The `pg_tiktoken` offers two functions:
 
 ## Install the `pg_tiktoken` extension
 
-You can install the `pg_tiktoken` extension by running the following `CREATE EXTENSION` statement in the Exzo Network **SQL Editor** or from a client such as `psql` that is connected to Exzo Network.
+You can install the `pg_tiktoken` extension by running the following `CREATE EXTENSION` statement in the Nexis Network **SQL Editor** or from a client such as `psql` that is connected to Nexis Network.
 
 ```sql
 CREATE EXTENSION pg_tiktoken
 ```
 
-For information about using the Exzo Network **SQL Editor**, see [Query with Exzo Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Exzo Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
+For information about using the Nexis Network **SQL Editor**, see [Query with Nexis Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Nexis Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
 
 ## Use the `tiktoken_encode` function
 
@@ -176,4 +176,4 @@ As you explore the capabilities of the `pg_tiktoken extension`, we encourage you
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

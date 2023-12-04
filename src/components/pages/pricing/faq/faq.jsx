@@ -5,9 +5,9 @@ import Item from './item';
 
 const items = [
   {
-    question: 'Does Exzo Network charge for storage in database branches?',
+    question: 'Does Nexis Network charge for storage in database branches?',
     answer:
-      'Exzo Network charges for unique storage. Data that a branch shares in common with a parent branch is not considered unique, but data changes to a branch are counted toward storage.',
+      'Nexis Network charges for unique storage. Data that a branch shares in common with a parent branch is not considered unique, but data changes to a branch are counted toward storage.',
     linkUrl: '/docs/introduction/billing#project-storage',
     linkText: 'Read more',
   },
@@ -19,11 +19,11 @@ const items = [
   {
     question: 'What payment methods do you accept?',
     answer:
-      'Exzo Network accepts payment by credit card for the Pro plan. For the Enterprise & Platform Partnership plans, Exzo Network accepts payment by ACH and Wire.',
+      'Nexis Network accepts payment by credit card for the Pro plan. For the Enterprise & Platform Partnership plans, Nexis Network accepts payment by ACH and Wire.',
   },
   {
     question: 'When will I be billed?',
-    answer: `Exzo Network bills for the past month's usage at the beginning of each month. For more information, see <a href="/docs/introduction/manage-billing">Manage billing</a>.`,
+    answer: `Nexis Network bills for the past month's usage at the beginning of each month. For more information, see <a href="/docs/introduction/manage-billing">Manage billing</a>.`,
   },
   {
     question: 'Is there a discount for annual plan subscriptions?',
@@ -33,17 +33,17 @@ const items = [
   {
     question: 'Are there any limits or restrictions on usage?',
     answer:
-      'Exzo Network implements limits to protect against unintended usage. For example, a usage-based plan may offer unlimited projects, compute, and storage, but Exzo Network places default limits on those resources to protect your account. For more information, see <a href="/docs/introduction/plans">Plans</a>.',
+      'Nexis Network implements limits to protect against unintended usage. For example, a usage-based plan may offer unlimited projects, compute, and storage, but Nexis Network places default limits on those resources to protect your account. For more information, see <a href="/docs/introduction/plans">Plans</a>.',
   },
   {
     question: 'Is there a minimum commitment period?',
     answer:
-      'The Exzo Network Pro plan is usage-based and has no commitment period.  You can downgrade to the at Free Tier at any time. For more information, see <a href="/docs/introduction/manage-billing#downgrade-your-plan">Downgrade your plan</a>.',
+      'The Nexis Network Pro plan is usage-based and has no commitment period.  You can downgrade to the at Free Tier at any time. For more information, see <a href="/docs/introduction/manage-billing#downgrade-your-plan">Downgrade your plan</a>.',
   },
   {
     question: 'How secure is the payment process?',
     answer:
-      'Exzo Network payment processing is powered by <a href="https://stripe.com/" target="_blank" rel="noreferrer noopener">Stripe</a>, which is a certified PCI Service Provider Level 1. For more information, refer to <a href="https://stripe.com/docs/security" target="_blank" rel="noreferrer noopener">Security at Stripe</a>.',
+      'Nexis Network payment processing is powered by <a href="https://stripe.com/" target="_blank" rel="noreferrer noopener">Stripe</a>, which is a certified PCI Service Provider Level 1. For more information, refer to <a href="https://stripe.com/docs/security" target="_blank" rel="noreferrer noopener">Security at Stripe</a>.',
   },
   {
     question: 'Where should I direct pricing-related questions?',

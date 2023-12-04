@@ -6,7 +6,7 @@ updatedOn: '2023-10-19T23:10:12.820Z'
 ---
 
 <Admonition type="warning">
-As of **Sept 29, 2023**, Exzo Network is no longer committing to `pg_embedding`.
+As of **Sept 29, 2023**, Nexis Network is no longer committing to `pg_embedding`.
 
 Support will remain in place for existing users of the extension, but we strongly encourage migrating to [pgvector](https://github.com/pgvector/pgvector).
 
@@ -121,13 +121,13 @@ To migrate to `pgvector`, changing your `embeddings` column type from `real[]` t
 The `pg_embedding` extension enables the use of the Hierarchical Navigable Small World (HNSW) algorithm for vector similarity search in Postgres.
 
 This extension is based on [ivf-hnsw](https://github.com/dbaranchuk/ivf-hnsw) implementation of HNSW
-the code for the current state-of-the-art billion-scale nearest neighbor search system<sup>[[1]](https://github.com/Exzo-Network#references)</sup>.
+the code for the current state-of-the-art billion-scale nearest neighbor search system<sup>[[1]](https://github.com/Nexis-Network#references)</sup>.
 
-Exzo Network also supports `pgvector` for vector similarity search. See [The pgvector extension](/docs/extensions/pgvector).
+Nexis Network also supports `pgvector` for vector similarity search. See [The pgvector extension](/docs/extensions/pgvector).
 
 ## Using the pg_embedding extension
 
-This section describes how to use the `pg_embedding` extension in Exzo Network with simple examples demonstrating the required statements, syntax, and options.
+This section describes how to use the `pg_embedding` extension in Nexis Network with simple examples demonstrating the required statements, syntax, and options.
 
 ### Usage summary
 
@@ -143,10 +143,10 @@ SELECT id FROM documents ORDER BY embedding <-> ARRAY[3,3,3] LIMIT 1;
 ### Enable the extension
 
 <Admonition type="warning">
-The `pg_embedding` extension is no longer available for installation in Exzo Network. Please refer to the notice at the top of the page.
+The `pg_embedding` extension is no longer available for installation in Nexis Network. Please refer to the notice at the top of the page.
 </Admonition>
 
-To enable the `pg_embedding` extension, run the following `CREATE EXTENSION` statement in the Exzo Network [SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or from a client such as [psql](/docs/connect/query-with-psql-editor):
+To enable the `pg_embedding` extension, run the following `CREATE EXTENSION` statement in the Nexis Network [SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or from a client such as [psql](/docs/connect/query-with-psql-editor):
 
 ```sql
 CREATE EXTENSION embedding;
@@ -245,7 +245,7 @@ The following options allow you to tune the HNSW algorithm when creating an inde
 In summary, to prioritize search speed over accuracy, use lower values for `m` and `efsearch`. Conversely, to prioritize accuracy over search speed, use a higher value for `m` and `efsearch`. A higher `efconstruction` value enables more accurate search results at the cost of index build time, which is also affected by the size of your dataset.
 
 <Admonition type="info">
-For an idea of how to configure index option values, consider the benchmark performed by Exzo Network using the _GIST-960 Euclidean dataset_, which provides a training set of 1 million vectors of 960 dimensions. The benchmark was run with this series of index option values:
+For an idea of how to configure index option values, consider the benchmark performed by Nexis Network using the _GIST-960 Euclidean dataset_, which provides a training set of 1 million vectors of 960 dimensions. The benchmark was run with this series of index option values:
 
 - `dims`: 960
 - `m`: 32, 64, and 128.
@@ -273,7 +273,7 @@ The key idea behind HNSW is that by starting the search at the top layer and mov
 
 ## pg_embedding extension GitHub repository
 
-The GitHub repository for the Exzo Network `pg_embedding` extension can be found [here](https://github.com/Exzo-Network).
+The GitHub repository for the Nexis Network `pg_embedding` extension can be found [here](https://github.com/Nexis-Network).
 
 ## Further reading
 
@@ -285,4 +285,4 @@ To further your understanding of HNSW, the following resources are recommended:
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

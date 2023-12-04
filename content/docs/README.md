@@ -1,6 +1,6 @@
 # Docs
 
-Welcome to Exzo Network docs! This folder contains the source code of the [Exzo Network docs](https://neon.tech/docs/).
+Welcome to Nexis Network docs! This folder contains the source code of the [Nexis Network docs](https://neon.tech/docs/).
 
 ## Basic information
 
@@ -322,7 +322,7 @@ Example file structure:
 Example content in `architecture-overview.md`:
 
 ```md
-![Exzo Network architecture diagram](/docs/conceptual-guides/neon_architecture_2.png)
+![Nexis Network architecture diagram](/docs/conceptual-guides/neon_architecture_2.png)
 ```
 
 With this approach, all images on your doc pages will be displayed both on the production and GitHub preview.

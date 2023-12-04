@@ -1,28 +1,28 @@
 ---
-title: Use Exzo Network read replicas with Prisma
-subtitle: Learn how to scale Prisma applications with Exzo Network read replicas
+title: Use Nexis Network read replicas with Prisma
+subtitle: Learn how to scale Prisma applications with Nexis Network read replicas
 enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.985Z'
 ---
 
-A Exzo Network read replica is an independent read-only compute instance that performs read operations on the same data as your read-write compute, which means adding a read replica to a Exzo Network project requires no additional storage.
+A Nexis Network read replica is an independent read-only compute instance that performs read operations on the same data as your read-write compute, which means adding a read replica to a Nexis Network project requires no additional storage.
 
 A key benefit of read replicas is that you can distribute read requests to one or more read replica compute instances, enabling you to easily scale your applications and achieve higher throughput for both read-write and read-only workloads.
 
-For more information about Exzo Network's read replica feature, see [Read replicas](/docs/introduction/read-replicas).
+For more information about Nexis Network's read replica feature, see [Read replicas](/docs/introduction/read-replicas).
 
-In this guide, we'll show you how you can leverage Exzo Network read replicas to efficiently scale Prisma applications using Prisma Client's read replica extension: [@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas).
+In this guide, we'll show you how you can leverage Nexis Network read replicas to efficiently scale Prisma applications using Prisma Client's read replica extension: [@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas).
 
 ## Prerequisites
 
-- An application that uses Prisma with a Exzo Network database.
-- A [Exzo Network Pro Plan](/docs/introduction/pro-plan) account. Read replicas are a Exzo Network Pro Plan feature.
+- An application that uses Prisma with a Nexis Network database.
+- A [Nexis Network Pro Plan](/docs/introduction/pro-plan) account. Read replicas are a Nexis Network Pro Plan feature.
 
 ## Create a read replica
 
-You can create one or more read replicas for any branch in your Exzo Network project. Creating a read replica involves adding a read-only compute endpoint to the Exzo Network branch. You can add a read-only compute endpoint by following these steps:
+You can create one or more read replicas for any branch in your Nexis Network project. Creating a read replica involves adding a read-only compute endpoint to the Nexis Network branch. You can add a read-only compute endpoint by following these steps:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 2. Select the branch where your database resides.
 3. Click **Add compute**.
 4. On the **Create Compute Endpoint** dialog, select **Read-only** as the **Compute type**.
@@ -34,7 +34,7 @@ You can create one or more read replicas for any branch in your Exzo Network pro
 
    Your read-only compute is provisioned and appears in the **Computes** section of the **Branches** page.
 
-Alternatively, you can create read replicas using the [Exzo Network API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Exzo Network CLI](/docs/reference/cli-branches#create).
+Alternatively, you can create read replicas using the [Nexis Network API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Nexis Network CLI](/docs/reference/cli-branches#create).
 
 <CodeTabs labels={["API", "CLI"]}>
 
@@ -62,9 +62,9 @@ neonctl branches add-compute mybranch --type read_only
 
 ## Retrieve the connection string for your read replica
 
-Connecting to a read replica is the same as connecting to any branch in a Exzo Network project, except you connect via a read-only compute endpoint instead of a read-write compute endpoint. The following steps describe how to retrieve the connection string (the URL) for a read replica from the Exzo Network Console.
+Connecting to a read replica is the same as connecting to any branch in a Nexis Network project, except you connect via a read-only compute endpoint instead of a read-write compute endpoint. The following steps describe how to retrieve the connection string (the URL) for a read replica from the Nexis Network Console.
 
-1. On the Exzo Network **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
+1. On the Nexis Network **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
 1. Under **Compute**, select your **Read-only** compute endpoint.
 1. Select the connection string and copy it. This is the information you need to connect to the read replica from your Prisma Client. The connection string appears similar to the following:
 
@@ -91,7 +91,7 @@ Notice that the `endpoint_id` (`ep-damp-cell-123456`) for the read replica compu
 
 ## Configure Prisma Client to use a read replica
 
-[@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas) adds support to Prisma Client for read replicas. The following steps show you how to install the extension and configure it to use a Exzo Network read replica.
+[@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas) adds support to Prisma Client for read replicas. The following steps show you how to install the extension and configure it to use a Nexis Network read replica.
 
 1. Install the extension in your Prisma project:
 
@@ -114,7 +114,7 @@ Notice that the `endpoint_id` (`ep-damp-cell-123456`) for the read replica compu
     ```
 
     <Admonition type="note">
-    You can also pass an array of read replica connection strings if you want to use multiple read replicas. Exzo Network supports adding multiple read replicas to a database branch.
+    You can also pass an array of read replica connection strings if you want to use multiple read replicas. Nexis Network supports adding multiple read replicas to a database branch.
 
     ```javascript
     // lib/prisma.ts

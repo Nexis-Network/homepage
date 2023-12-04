@@ -36,8 +36,8 @@ const SaaS = () => {
             id="saas-description"
             className="t-2xl mt-5 max-w-[600px] text-white 2xl:mt-4 2xl:max-w-[488px] xl:max-w-[400px] lg:max-w-none"
           >
-            SaaS companies use Exzo Network to maximize engineering velocity and minimize costs. Our
-            serverless architecture reduces compute and storage expenses. Specifically, Exzo Network's
+            SaaS companies use Nexis Network to maximize engineering velocity and minimize costs. Our
+            serverless architecture reduces compute and storage expenses. Specifically, Nexis Network's
             autoscaling capabilities prevent over-provisioning and paying for under-utilized
             instances.
           </p>

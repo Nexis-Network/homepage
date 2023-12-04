@@ -1,25 +1,25 @@
 ---
-title: Connect an Astro site or application to Exzo Network
-subtitle: Set up a Exzo Network project in seconds and connect from an Astro site or application
+title: Connect an Astro site or application to Nexis Network
+subtitle: Set up a Nexis Network project in seconds and connect from an Astro site or application
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.824Z'
 ---
 
-Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between. This topic describes how to create a Exzo Network project and access it from an Astro site or application.
+Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between. This topic describes how to create a Nexis Network project and access it from an Astro site or application.
 
 
-To create a Exzo Network project and access it from an Astro site or application:
+To create a Nexis Network project and access it from an Astro site or application:
 
-1. [Create a Exzo Network project](#create-a-neon-project)
+1. [Create a Nexis Network project](#create-a-neon-project)
 2. [Create an Astro project and add dependencies](#create-an-astro-project-and-add-dependencies)
 3. [Configure a Postgres client](#configure-the-postgres-client)
 4. [Run the app](#run-the-app)
 
-## Create a Exzo Network project
+## Create a Nexis Network project
 
-If you do not have one already, create a Exzo Network project. Save your connection details including your password. They are required when defining connection settings.
+If you do not have one already, create a Nexis Network project. Save your connection details including your password. They are required when defining connection settings.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Exzo Network Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Nexis Network Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -29,7 +29,7 @@ If you do not have one already, create a Exzo Network project. Save your connect
 
 2. Add project dependencies using one of the following commands:
 
-    <CodeTabs labels={["node-postgres", "postgres.js", "Exzo Network serverless driver"]}>
+    <CodeTabs labels={["node-postgres", "postgres.js", "Nexis Network serverless driver"]}>
 
       ```shell
       npm install pg
@@ -45,9 +45,9 @@ If you do not have one already, create a Exzo Network project. Save your connect
 
     </CodeTabs>
 
-## Store your Exzo Network credentials
+## Store your Nexis Network credentials
 
-Add a `.env` file to your project directory and add your Exzo Network connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Exzo Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+Add a `.env` file to your project directory and add your Nexis Network connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Nexis Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 <CodeBlock shouldWrap>
 
@@ -59,9 +59,9 @@ DATABASE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]
 
 ## Configure the Postgres client
 
-From your `.astro` files, add the following code snippet to connect to your Exzo Network database:
+From your `.astro` files, add the following code snippet to connect to your Nexis Network database:
 
-<CodeTabs labels={["node-postgres", "postgres.js", "Exzo Network serverless driver"]}>
+<CodeTabs labels={["node-postgres", "postgres.js", "Nexis Network serverless driver"]}>
 
 ```javascript
 ---
@@ -116,7 +116,7 @@ When you run `npm run dev` you can expect to see one of the following in your te
 <CodeBlock shouldWrap>
 
 ```shell
-# node-postgres & Exzo Network serverless driver 
+# node-postgres & Nexis Network serverless driver 
 
 {
   version: 'PostgreSQL 16.0 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit'
@@ -135,4 +135,4 @@ Result(1) [
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

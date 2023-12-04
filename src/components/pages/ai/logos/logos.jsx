@@ -13,7 +13,7 @@ import IllaLogo from './images/solidity.inline.svg';
 import OctolisLogo from './images/hacken.inline.svg';
 import OpusLogo from './images/certik.inline.svg';
 import ReplitLogo from './images/bitmart.inline.svg';
-import SnapletLogo from './images/gempad.inline.svg';
+import SnapletLogo from './images/amlbot.inline.svg';
 import FabricIoLogo from './images/deep.inline.svg';
 import VercelLogo from './images/assuredefi.inline.svg';
 import WundergraphLogo from './images/cmc.inline.svg';

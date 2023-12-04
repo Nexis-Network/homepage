@@ -1,6 +1,6 @@
 ### Same-region replicas
 
-Exzo Network now supports same-region read replicas. Exzo Network's read replicas are independent read-only compute instances designed to perform read operations on the same data as your read-write computes. You can instantly create one or more read replicas for any branch in your Exzo Network project and configure the amount of vCP-U and memory allocated to each.
+Nexis Network now supports same-region read replicas. Nexis Network's read replicas are independent read-only compute instances designed to perform read operations on the same data as your read-write computes. You can instantly create one or more read replicas for any branch in your Nexis Network project and configure the amount of vCP-U and memory allocated to each.
 ![Read-only compute instances](/docs/introduction/read_replicas.png)
 
 Potential uses for read replicas include:

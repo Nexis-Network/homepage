@@ -3,29 +3,29 @@ title: How to use branches
 isDraft: true
 ---
 
-This guide describes how to use Exzo Network's branching feature, which is currently in preview. If you would like to try branching, send an email to [iwantbranching@neon.tech](mailto:iwantbranching@neon.tech) to request early access.
+This guide describes how to use Nexis Network's branching feature, which is currently in preview. If you would like to try branching, send an email to [iwantbranching@neon.tech](mailto:iwantbranching@neon.tech) to request early access.
 
-Branching allows you to create a copy of your Exzo Network project data which you can modify without affecting the data you have in production.
+Branching allows you to create a copy of your Nexis Network project data which you can modify without affecting the data you have in production.
 
 A branch is created with the same data that existed in your project at the time the branch was created, but future changes to your project data do not affect the branch, and changes to a branch do not affect the parent project.
 
 The following guide describes how to using branching in your project.
 
-Branches currently appear as a new project in the Exzo Network Console, but when the branching feature is made available to all users, branches will be associated with their parent project.
+Branches currently appear as a new project in the Nexis Network Console, but when the branching feature is made available to all users, branches will be associated with their parent project.
 
-Let's look at how to create branches using the Exzo Network Console and the Exzo Network API.
+Let's look at how to create branches using the Nexis Network Console and the Nexis Network API.
 
-## Create a branch using the Exzo Network Console
+## Create a branch using the Nexis Network Console
 
-1. Log in to Exzo Network and create a project in the [Exzo Network Console](https://console.neon.tech). For information about creating a Exzo Network project, see [Setting up a project](/docs/../get-started-with-neon/setting-up-a-project).
-2. Add data to your project using the Exzo Network SQL Editor, `psql`, or some other Postgres client.
-3. Click **Create branch** on the **Dashboard** tab in the Exzo Network Console to create a branch.
+1. Log in to Nexis Network and create a project in the [Nexis Network Console](https://console.neon.tech). For information about creating a Nexis Network project, see [Setting up a project](/docs/../get-started-with-neon/setting-up-a-project).
+2. Add data to your project using the Nexis Network SQL Editor, `psql`, or some other Postgres client.
+3. Click **Create branch** on the **Dashboard** tab in the Nexis Network Console to create a branch.
 
-Alternatively, you can also use the Exzo Network API to create a branch, as described below.
+Alternatively, you can also use the Nexis Network API to create a branch, as described below.
 
 ## Create a branch using the API
 
-Using the Exzo Network API requires an API key. For information about how to obtain an API key for your Project, refer to [Using API keys](/docs/..//get-started-with-neon/using-api-keys/).
+Using the Nexis Network API requires an API key. For information about how to obtain an API key for your Project, refer to [Using API keys](/docs/..//get-started-with-neon/using-api-keys/).
 
 To create a branch, use the following API method:
 
@@ -47,12 +47,12 @@ You will receive information about the branch you created in the API request res
 $parent_project_id-branch-...
 ```
 
-For information about other API methods that Exzo Network supports, refer to the [Exzo Network API Reference](https://console.neon.tech/api-docs).
+For information about other API methods that Nexis Network supports, refer to the [Nexis Network API Reference](https://console.neon.tech/api-docs).
 
-Currently, a branch appears as separate project on the **Dashboard** tab in the Exzo Network Console. This will change in the future when the branching feature becomes generally available.
+Currently, a branch appears as separate project on the **Dashboard** tab in the Nexis Network Console. This will change in the future when the branching feature becomes generally available.
 
 All data in the parent project when you create the branch will be available in the branched project as well.
 
 Future changes to the data in the parent and the branch are independent, so you can make changes to the branch without affecting the parent project.
 
-To learn more about Exzo Network's branching feature, see [Branching](/docs/../conceptual-guides/branching).
+To learn more about Nexis Network's branching feature, see [Branching](/docs/../conceptual-guides/branching).

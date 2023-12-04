@@ -1,20 +1,20 @@
 ---
-title: Exzo Network CLI commands — operations
-subtitle: Use the Exzo Network CLI to manage Exzo Network directly from the terminal
+title: Nexis Network CLI commands — operations
+subtitle: Use the Nexis Network CLI to manage Nexis Network directly from the terminal
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.852Z'
 ---
 
 ## Before you begin
 
-- Before running the `operations` command, ensure that you have [installed the Exzo Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
-- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Exzo Network CLI command automatically launches the Exzo Network CLI browser authentication process. Alternatively, you can specify a Exzo Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
+- Before running the `operations` command, ensure that you have [installed the Nexis Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
+- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Nexis Network CLI command automatically launches the Nexis Network CLI browser authentication process. Alternatively, you can specify a Nexis Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
 
-For information about operations in Exzo Network, see [Operations](/docs/manage/operations).
+For information about operations in Nexis Network, see [Operations](/docs/manage/operations).
 
 ## The `operations` command
 
-The `operations` command allows you to list operations for a Exzo Network project.
+The `operations` command allows you to list operations for a Nexis Network project.
 
 ### Usage
 
@@ -38,11 +38,11 @@ neonctl operations list [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports this option:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports this option:
 
 | Option       | Description | Type   | Required  |
 | ------------ | ----------- | ------ | :------: |
-| --project-id | Project ID  | string |  Only if your Exzo Network account has more than one project |
+| --project-id | Project ID  | string |  Only if your Nexis Network account has more than one project |
 
 #### Example
 
@@ -61,4 +61,4 @@ neonctl operations list
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

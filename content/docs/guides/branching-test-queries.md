@@ -1,13 +1,13 @@
 ---
 title: Branching — Testing queries
-subtitle: Create a Exzo Network branch to test queries before running them in production
+subtitle: Create a Nexis Network branch to test queries before running them in production
 enableTableOfContents: true
 redirectFrom:
   - /docs/tutorial/test-queries
 updatedOn: '2023-10-07T10:43:33.374Z'
 ---
 
-Complex queries that modify data or alter schemas have the potential to be destructive. It is advisable to test these types of queries before running them in production. On other database systems, testing potentially destructive queries can be time and resource intensive. For example, testing may involve setting up a separate database instance and replicating data. With Exzo Network, you can instantly create a database branch with a full copy-on-write clone of your production data in just a few clicks. When you finish testing, you can remove the branch just as easily.
+Complex queries that modify data or alter schemas have the potential to be destructive. It is advisable to test these types of queries before running them in production. On other database systems, testing potentially destructive queries can be time and resource intensive. For example, testing may involve setting up a separate database instance and replicating data. With Nexis Network, you can instantly create a database branch with a full copy-on-write clone of your production data in just a few clicks. When you finish testing, you can remove the branch just as easily.
 
 This guide walks you through creating a branch of your production data, testing a potentially destructive query, and deleting the branch when you are finished.
 
@@ -15,7 +15,7 @@ This guide walks you through creating a branch of your production data, testing 
 3. [Test your query](#test-your-query)
 4. [Delete the test branch](#delete-the-test-branch)
 
-For the purpose of this guide, let's assume you have a database in Exzo Network with the following table and data:
+For the purpose of this guide, let's assume you have a database in Nexis Network with the following table and data:
 
 ```sql
 CREATE TABLE Post (
@@ -39,7 +39,7 @@ VALUES
 
 ## Create a test branch
 
-1. In the Exzo Network Console, select your project.
+1. In the Nexis Network Console, select your project.
 2. Select **Branches**.
 3. Click **New Branch** to open the branch creation dialog.
 4. Enter a name for the branch. This guide uses the name `my_test_branch`.
@@ -48,7 +48,7 @@ VALUES
 7. Leave **Create compute endpoint** selected. This creates the branch with its own dedicated compute instance.
 8. Click **Create Branch** to create your branch.
 
-You can also create a test branch using the [Exzo Network CLI](/docs/reference/cli-branches#create) or [Exzo Network API](/docs/manage/branches#create-a-branch-with-the-api).
+You can also create a test branch using the [Nexis Network CLI](/docs/reference/cli-branches#create) or [Nexis Network API](/docs/manage/branches#create-a-branch-with-the-api).
 
 <CodeTabs labels={["CLI", "API"]}>
 
@@ -94,13 +94,13 @@ Before the `DELETE` query, there were 5 records. If the query ran correctly, thi
 
 When you finish testing your query, you can delete the test branch:
 
-1. In the Exzo Network Console, select a project.
+1. In the Nexis Network Console, select a project.
 2. Select **Branches**.
 3. Select the test branch from the table.
 4. On the branch page, click the **More** drop-down menu and select **Delete**.
 4. On the confirmation dialog, click **Delete**.
 
-You can also delete a branch using the [Exzo Network CLI](/docs/reference/cli-branches#delete) or [Exzo Network API](/docs/manage/branches#delete-a-branch-with-the-api).
+You can also delete a branch using the [Nexis Network CLI](/docs/reference/cli-branches#delete) or [Nexis Network API](/docs/manage/branches#delete-a-branch-with-the-api).
 
 <CodeTabs labels={["CLI", "API"]}>
 

@@ -30,13 +30,13 @@ const Scalability = () => {
             activates on an incoming connection and scales to zero when not in use.
           </p>
           <p className="t-xl mt-5 2xl:mt-4 xl:mt-3">
-            Compute is fully client-compatible with Postgres because a Exzo Network compute is Postgres.
+            Compute is fully client-compatible with Postgres because a Nexis Network compute is Postgres.
           </p>
           <p className="t-xl mt-5 2xl:mt-4 xl:mt-3">
-            Exzo Network dynamically adjusts the allocation of compute resources based on workload.
+            Nexis Network dynamically adjusts the allocation of compute resources based on workload.
           </p>
           {/* <Link className="mt-6 2xl:mt-5 xl:mt-4" to="/" size="md" theme="black-secondary-3">
-            Explore Exzo Network&apos;s architecture
+            Explore Nexis Network&apos;s architecture
           </Link> */}
         </div>
         <div

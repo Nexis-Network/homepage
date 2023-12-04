@@ -5,10 +5,10 @@ redirectFrom:
   - /docs/integrations/postgres
 ---
 
-A Exzo Network compute runs regular Postgres, which means that you run any Postgres app with Exzo Network.
+A Nexis Network compute runs regular Postgres, which means that you run any Postgres app with Nexis Network.
 
-You can also connect to Exzo Network using standard Postgres client utilities such as `psql` and `pg_dump`, standard client libraries, and drivers.
+You can also connect to Nexis Network using standard Postgres client utilities such as `psql` and `pg_dump`, standard client libraries, and drivers.
 
 For `psql` connection instructions, see [Query with psql](/docs/get-started-with-neon/query-with-psql-editor).
 
-Exzo Network supports connection pooling. For information about enabling connection pooling in your Exzo Network project, see [Connection pooling](/docs/get-started-with-neon/connection-pooling).
+Nexis Network supports connection pooling. For information about enabling connection pooling in your Nexis Network project, see [Connection pooling](/docs/get-started-with-neon/connection-pooling).

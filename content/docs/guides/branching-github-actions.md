@@ -5,14 +5,14 @@ enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.825Z'
 ---
 
-Exzo Network provides the following GitHub Actions for working with Exzo Network branches, which you can add to your CI workflows:
+Nexis Network provides the following GitHub Actions for working with Nexis Network branches, which you can add to your CI workflows:
 
 - [Create branch action](#create-branch-action)
 - [Delete branch action](#delete-branch-action)
 
 ## Create branch action
 
-This GitHub Action creates a new branch in your Exzo Network project.
+This GitHub Action creates a new branch in your Nexis Network project.
 
 <Admonition type="info">
 The source code for this action is available on [GitHub](https://github.com/neondatabase/create-branch-action).
@@ -20,8 +20,8 @@ The source code for this action is available on [GitHub](https://github.com/neon
 
 ### Prerequisites
 
-- Using the action requires a Exzo Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- Add your Exzo Network API key to your GitHub Secrets:
+- Using the action requires a Nexis Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- Add your Nexis Network API key to your GitHub Secrets:
     1. In your GitHub repository, go to **Settings** and locate **Secrets** at the bottom of the left sidebar.
     2. Click **Actions** > **New Repository Secret**.
     3. Name the secret `NEON_API_KEY` and paste your API key in the **Secret** field
@@ -29,13 +29,13 @@ The source code for this action is available on [GitHub](https://github.com/neon
 
 ### Example
 
-The following example creates a branch from the `main` branch in your Exzo Network project 
+The following example creates a branch from the `main` branch in your Nexis Network project 
 
 ```yaml
-name: Create Exzo Network Branch with GitHub Actions Demo
-run-name: Create a Exzo Network Branch 🚀
+name: Create Nexis Network Branch with GitHub Actions Demo
+run-name: Create a Nexis Network Branch 🚀
 jobs:
-  Create-Exzo Network-Branch:
+  Create-Nexis Network-Branch:
     uses: neondatabase/create-branch-action@v4
     with:
       project_id: rapid-haze-373089
@@ -49,10 +49,10 @@ jobs:
 
 ### Input variables
 
-- `project_id`: The ID of your Exzo Network project. You can find this value in the Exzo Network Console, on the **Settings** page.
-- `parent_branch_id`: The ID of the parent branch, typically the `main` branch of your project. You can find this value in the Exzo Network Console. Select **Branches** from the sidebar, and then select the branch. A branch ID has a `br-` prefix.
+- `project_id`: The ID of your Nexis Network project. You can find this value in the Nexis Network Console, on the **Settings** page.
+- `parent_branch_id`: The ID of the parent branch, typically the `main` branch of your project. You can find this value in the Nexis Network Console. Select **Branches** from the sidebar, and then select the branch. A branch ID has a `br-` prefix.
 - `branch_name`: This is an optional parameter. If unspecified, the branch name will default to the same value as the `branch_id` of the newly created branch, which is a generated value that starts with a `br-` prefix.
-- `api_key`: An API key created in your Exzo Network account. For instructions, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- `api_key`: An API key created in your Nexis Network account. For instructions, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
 
 ### Outputs
 
@@ -71,7 +71,7 @@ outputs:
 
 ## Delete branch action
 
-This GitHub Action deletes a branch from your Exzo Network project.
+This GitHub Action deletes a branch from your Nexis Network project.
 
 <Admonition type="info">
 The source code for this action is available on [GitHub](https://github.com/neondatabase/delete-branch-action).
@@ -79,8 +79,8 @@ The source code for this action is available on [GitHub](https://github.com/neon
 
 ### Prerequisites
 
-- Using the action requires a Exzo Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- Add your Exzo Network API key to your GitHub Secrets:
+- Using the action requires a Nexis Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- Add your Nexis Network API key to your GitHub Secrets:
     1. In your GitHub repository, go to **Settings** and locate **Secrets** at the bottom of the left sidebar.
     2. Click **Actions** > **New Repository Secret**.
     3. Name the secret `NEON_API_KEY` and paste your API key in the **Secret** field
@@ -88,11 +88,11 @@ The source code for this action is available on [GitHub](https://github.com/neon
 
 ### Example
 
-The following example deletes a branch with the `br-long-forest-224191` branch ID from a Exzo Network project with the project ID `rapid-haze-373089` when a pull request is merged.
+The following example deletes a branch with the `br-long-forest-224191` branch ID from a Nexis Network project with the project ID `rapid-haze-373089` when a pull request is merged.
 
 ```yaml
-name: Delete Exzo Network Branch with GitHub Actions Demo
-run-name: Delete a Exzo Network Branch 🚀
+name: Delete Nexis Network Branch with GitHub Actions Demo
+run-name: Delete a Nexis Network Branch 🚀
 on: [push]
 jobs:
   delete-neon-branch:
@@ -105,9 +105,9 @@ jobs:
 
 ### Input variables
 
-- `project_id`: The ID of your Exzo Network project. You can find this value in the Exzo Network Console, on the **Settings** page.
+- `project_id`: The ID of your Nexis Network project. You can find this value in the Nexis Network Console, on the **Settings** page.
 - `branch:` The ID or name of the branch you want to delete. Select **Branches** from the sidebar, and then select the branch. A branch ID has a `br-` prefix.
-- `api_key`: An API key created in your Exzo Network account. For instructions, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- `api_key`: An API key created in your Nexis Network account. For instructions, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
 
 ### Outputs
 
@@ -115,13 +115,13 @@ This Action has no outputs.
 
 ## Example applications
 
-The following example applications use GitHub Actions to create and delete branches in Exzo Network.
+The following example applications use GitHub Actions to create and delete branches in Nexis Network.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/neon_twitter" description="A micro-blogging application that uses GitHub Actions to create and delete a branch with each pull request" icon="github">Exzo Network Twitter app</a>
+<a href="https://github.com/neondatabase/neon_twitter" description="A micro-blogging application that uses GitHub Actions to create and delete a branch with each pull request" icon="github">Nexis Network Twitter app</a>
 <a href="https://github.com/neondatabase/preview-branches-with-vercel" description="An application demonstrating using GitHub Actions with preview deployments in Vercel" icon="github">Preview branches app</a>
 </DetailIconCards>
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

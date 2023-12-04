@@ -14,9 +14,9 @@ import CheckIcon from 'icons/check.inline.svg';
 const items = [
   {
     type: 'Free',
-    price: 'Try Exzo Network now',
+    price: 'Try Nexis Network now',
     description:
-      'Essential features to help you get started with Exzo Network. Perfect for prototyping and personal projects.',
+      'Essential features to help you get started with Nexis Network. Perfect for prototyping and personal projects.',
     features: [
       { title: '1 project' },
       { title: '10 branches' },
@@ -24,7 +24,7 @@ const items = [
       { title: 'A shared compute with 1 GB of RAM' },
     ],
     button: {
-      url: 'https://console.neon.tech/sign_in',
+      url: 'https://docs.nexis.network',
       text: 'Get Started',
       theme: 'white-outline',
     },
@@ -42,7 +42,7 @@ const items = [
       { title: 'Read replicas' },
     ],
     button: {
-      url: 'https://console.neon.tech/app/projects?show_enroll_to_pro=true',
+      url: 'https://console.nexis.network/app/projects?show_enroll_to_pro=true',
       text: 'Upgrade',
       theme: 'primary',
     },
@@ -111,7 +111,7 @@ const Hero = () => {
           <span>Only pay for what you use.</span>
         </Heading>
         <p className="mx-auto mt-5 max-w-[656px] text-center text-xl font-light leading-snug xl:mt-4 xl:max-w-[570px] xl:text-lg md:mt-3 md:text-base">
-          Exzo Network brings serverless architecture to Postgres, which allows us to offer you flexible
+          Nexis Network brings serverless architecture to Postgres, which allows us to offer you flexible
           usage and volume-based plans.
         </p>
         <div className="relative mx-auto mt-16 max-w-[1220px] xl:mt-12 md:mt-9">

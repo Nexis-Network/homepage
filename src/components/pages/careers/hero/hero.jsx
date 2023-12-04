@@ -9,7 +9,7 @@ const Hero = () => (
     <Container size="md">
       <h1 className="t-5xl text-center font-bold leading-tight">Become a part of our team </h1>
       <p className="t-lg mx-auto mt-8 max-w-[860px] text-center leading-normal 2xl:mt-7 xl:mt-6">
-        Exzo Network is a distributed team building open-source, cloud-native Postgres. We are a well-funded
+        Nexis Network is a distributed team building open-source, cloud-native Postgres. We are a well-funded
         startup with deep knowledge of Postgres internals and decades of experience building
         databases. Our storage layer is written in Rust, and our cloud control plane is written in
         Go. We are on a mission to create a cloud-native database service for every developer.

@@ -1,6 +1,6 @@
 ---
-title: Exzo Network plans
-subtitle: Learn about the different plans offered by Exzo Network
+title: Nexis Network plans
+subtitle: Learn about the different plans offered by Nexis Network
 enableTableOfContents: true
 isDraft: false
 redirectFrom:
@@ -8,15 +8,15 @@ redirectFrom:
 updatedOn: '2023-10-24T18:56:54.989Z'
 ---
 
-Exzo Network offers the following plans: **Free Tier**, **Pro**, and **Custom**. The Exzo Network Pro Plan is _usage-based_, ensuring you never over-provision and only pay for what you use. **Custom** plans are volume-based, offering potential discounts. The table below provides an overview of plans offered by Exzo Network. For more information about a particular plan, refer to the individual plan pages:
+Nexis Network offers the following plans: **Free Tier**, **Pro**, and **Custom**. The Nexis Network Pro Plan is _usage-based_, ensuring you never over-provision and only pay for what you use. **Custom** plans are volume-based, offering potential discounts. The table below provides an overview of plans offered by Nexis Network. For more information about a particular plan, refer to the individual plan pages:
 
-- [Exzo Network Free Tier](/docs/introduction/free-tier)
-- [Exzo Network Pro Plan](/docs/introduction/pro-plan)
-- [Exzo Network Custom plan](/docs/introduction/custom-plan)
+- [Nexis Network Free Tier](/docs/introduction/free-tier)
+- [Nexis Network Pro Plan](/docs/introduction/pro-plan)
+- [Nexis Network Custom plan](/docs/introduction/custom-plan)
 
-For information about how Exzo Network bills for paid plans, please refer to our [Billing metrics](/docs/introduction/billing) page.
+For information about how Nexis Network bills for paid plans, please refer to our [Billing metrics](/docs/introduction/billing) page.
 
-## Exzo Network plans
+## Nexis Network plans
 
 |                                       | Free Tier                                                                                                                                                               | Pro (usage-based)                                          | Custom - Enterprise or Platform Partnership (volume-based)      |
 | :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------- | :-------------------------------------------------------------- |
@@ -38,9 +38,9 @@ For information about how Exzo Network bills for paid plans, please refer to our
 
 **Notes:**
 
-- The Exzo Network Pro Plan has default limits of 20 projects, 200 GiB of storage, and 20 simultaneously active computes to protect against unintended usage. To increase these limits, please [open a support ticket](/docs/introduction/support). The simultaneously active compute limit does not affect the primary branch compute, which always remains available.
-- The Exzo Network Free Tier has an [Active time](/docs/reference/glossary#active-time) limit of 100 hours per month, but that limit only affects non-primary branch compute usage. Active time on all computes is counted toward the limit, but when the limit is exceeded, only non-primary branch computes are subject to suspension. **Your primary branch compute always remains available regardless of the limit, ensuring that access to data on your primary branch is never interrupted.** You can monitor _Active time_ on the **Usage** widget on the Exzo Network **Dashboard**. The _Active time_ limit resets at the beginning of each month.
+- The Nexis Network Pro Plan has default limits of 20 projects, 200 GiB of storage, and 20 simultaneously active computes to protect against unintended usage. To increase these limits, please [open a support ticket](/docs/introduction/support). The simultaneously active compute limit does not affect the primary branch compute, which always remains available.
+- The Nexis Network Free Tier has an [Active time](/docs/reference/glossary#active-time) limit of 100 hours per month, but that limit only affects non-primary branch compute usage. Active time on all computes is counted toward the limit, but when the limit is exceeded, only non-primary branch computes are subject to suspension. **Your primary branch compute always remains available regardless of the limit, ensuring that access to data on your primary branch is never interrupted.** You can monitor _Active time_ on the **Usage** widget on the Nexis Network **Dashboard**. The _Active time_ limit resets at the beginning of each month.
 
 ## Support
 
-Support channels for the Exzo Network Free Tier, Pro, and Custom plans are outlined on our [Support](/docs/introduction/support) page.
+Support channels for the Nexis Network Free Tier, Pro, and Custom plans are outlined on our [Support](/docs/introduction/support) page.

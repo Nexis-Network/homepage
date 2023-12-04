@@ -1,14 +1,14 @@
 ---
-title: Configuring Auto-suspend for Exzo Network computes
-subtitle: Learn how to configure Exzo Network's Auto-suspend feature to control when your
+title: Configuring Auto-suspend for Nexis Network computes
+subtitle: Learn how to configure Nexis Network's Auto-suspend feature to control when your
   compute scales to zero
 enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.982Z'
 ---
 
-Exzo Network's [Auto-suspend](/docs/introduction/auto-suspend) feature controls when a Exzo Network compute instance transitions to an `Idle` state (scales to zero) due to inactivity. This guide demonstrates how to configure the _Auto-suspend_ setting in your Exzo Network project.
+Nexis Network's [Auto-suspend](/docs/introduction/auto-suspend) feature controls when a Nexis Network compute instance transitions to an `Idle` state (scales to zero) due to inactivity. This guide demonstrates how to configure the _Auto-suspend_ setting in your Nexis Network project.
 
-[Exzo Network Pro Plan](/docs/introduction/pro-plan) users can configure the _Auto-suspend_ setting for a new project, for an existing project, or for an individual compute endpoint. Configuring the _Auto-suspend_ setting for a new or existing project sets the project's default Auto-suspend setting, which is used from that point forward when creating new compute endpoints.
+[Nexis Network Pro Plan](/docs/introduction/pro-plan) users can configure the _Auto-suspend_ setting for a new project, for an existing project, or for an individual compute endpoint. Configuring the _Auto-suspend_ setting for a new or existing project sets the project's default Auto-suspend setting, which is used from that point forward when creating new compute endpoints.
 
 ### Configure the Auto-suspend setting for a new project
 
@@ -16,7 +16,7 @@ Configuring the _Auto-suspend_ setting for a new project sets the project's defa
 
 To configure the _Auto-suspend_ default setting when you first create your project:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 1. If you are creating your very first project, click **Create a project**. Otherwise, click **New Project**.
 1. Specify a name, a Postgres version, and a region.
 1. Under **Compute size**, select **Suspend compute after a period of inactivity** and specify your delay period (5 minutes or a custom period). The maximum setting is 7 days. Deselecting **Suspend compute after a period of inactivity** means the compute is always active.
@@ -34,8 +34,8 @@ Configuring the _Auto-suspend_ setting for an existing project sets the project'
 
 To configure the Auto-suspend default for an existing project:
 
-1. Select a project in the Exzo Network console.
-1. On the Exzo Network **Dashboard**, select **Settings**.
+1. Select a project in the Nexis Network console.
+1. On the Nexis Network **Dashboard**, select **Settings**.
 1. Select **Compute** and click **Change**.
 1. Select **Suspend compute after a period of inactivity** and specify your delay period (5 minutes or a custom period). The maximum setting is 7 days. Deselecting **Suspend compute after a period of inactivity** means the compute is always active.
 
@@ -49,7 +49,7 @@ To configure the Auto-suspend default for an existing project:
 
 To configure the _Auto-suspend_ setting for an individual compute endpoint:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch.
 1. Click the menu in the **Computes** table, and select **Edit**.
 ![Edit compute endpoint menu](/docs/guides/autoscaling_edit.png)
@@ -63,16 +63,16 @@ To configure the _Auto-suspend_ setting for an individual compute endpoint:
 
 ## Monitor auto-suspension
 
-You can monitor auto-suspension on the **Branches** page in the Exzo Network Console. A compute reports either an **Active** or **Idle** status.
+You can monitor auto-suspension on the **Branches** page in the Nexis Network Console. A compute reports either an **Active** or **Idle** status.
 
 ![Compute endpoint status](/docs/connect/compute_endpoint_state.png)
 
-You can also view compute state transitions in the **Branches** widget on the Exzo Network **Dashboard**.
+You can also view compute state transitions in the **Branches** widget on the Nexis Network **Dashboard**.
 
-User actions that activate an idle compute include [connecting from a client such as psql](/docs/connect/query-with-psql-editor), running a query on your database from the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), or accessing the compute via the [Exzo Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+User actions that activate an idle compute include [connecting from a client such as psql](/docs/connect/query-with-psql-editor), running a query on your database from the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), or accessing the compute via the [Nexis Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
 <Admonition type="info">
-The Exzo Network API includes [Start endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) and [Suspend endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) APIs for the specific purpose of activating and suspending a compute.
+The Nexis Network API includes [Start endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) and [Suspend endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) APIs for the specific purpose of activating and suspending a compute.
 </Admonition>
 
 You can try any of these methods and watch the status of your compute as it transitions from an **Idle** to an **Active** state.

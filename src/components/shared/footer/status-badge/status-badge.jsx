@@ -22,7 +22,7 @@ const statusData = {
 };
 
 const fetchStatus = async () => {
-  const res = await fetch('http://status.exzo.network/');
+  const res = await fetch('http://status.nexis.network/');
   const data = await res.json();
 
   if (data.ongoing_incidents.length > 0) {

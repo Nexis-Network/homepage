@@ -14,7 +14,7 @@ const Integration = () => (
           Choose the integration that fits your requirements
         </h2>
         <p className="xl:text-bases mt-3 text-center text-lg font-light leading-snug xl:text-base">
-          Exzo Network provides two methods for seamless integration with your product.
+          Nexis Network provides two methods for seamless integration with your product.
         </p>
         <Oauth />
         <Api />

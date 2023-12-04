@@ -1,11 +1,11 @@
 - title: Introduction
   slug: introduction
   items:
-    - title: What is Exzo Network?
+    - title: What is Nexis Network?
       slug: introduction/about
-    - title: Exzo Network roadmap
+    - title: Nexis Network roadmap
       slug: introduction/roadmap
-    - title: Exzo Network architecture
+    - title: Nexis Network architecture
       items: 
         - title: Overview
           slug: introduction/architecture-overview
@@ -51,7 +51,7 @@
       slug: get-started-with-neon/signing-up
     - title: Create your first project
       slug: get-started-with-neon/setting-up-a-project
-    - title: Query with Exzo Network's SQL Editor
+    - title: Query with Nexis Network's SQL Editor
       slug: get-started-with-neon/query-with-neon-sql-editor
 - title: Connect
   slug: connect/connect-intro
@@ -107,7 +107,7 @@
 - title: Guides
   slug: guides/guides-intro
   items:
-    - title: Exzo Network features
+    - title: Nexis Network features
       items: 
         - title: Autoscaling
           slug: guides/autoscaling-guide
@@ -126,9 +126,9 @@
               slug: guides/branching-neon-api
             - title: Branching with GitHub Actions
               slug: guides/branching-github-actions
-            - title: Refresh a branch with the Exzo Network API
+            - title: Refresh a branch with the Nexis Network API
               slug: guides/branch-refresh
-            - title: Promote a branch with the Exzo Network API
+            - title: Promote a branch with the Nexis Network API
               slug: guides/branch-promote
         - title: Project sharing
           slug: guides/project-sharing-guide
@@ -158,7 +158,7 @@
           slug: guides/elixir-ecto
         - title: Go
           slug: guides/go
-          ariaLabel: Connect a Go application to Exzo Network
+          ariaLabel: Connect a Go application to Nexis Network
         - title: Java
           items:
             - title: Quarkus (Reactive)
@@ -175,7 +175,7 @@
               items:
                 - title: Connect from Prisma
                   slug: guides/prisma
-                - title: Use Prisma Migrate With Exzo Network
+                - title: Use Prisma Migrate With Nexis Network
                   slug: guides/prisma-migrate
         - title: PHP
           items:
@@ -207,7 +207,7 @@
           slug: guides/wundergraph
     - title: Serverless
       items:
-        - title: Exzo Network serverless driver
+        - title: Nexis Network serverless driver
           slug: serverless/serverless-driver
         - title: AWS Lambda
           slug: guides/aws-lambda
@@ -225,7 +225,7 @@
               slug: guides/vercel-overview
             - title: Vercel Postgres
               slug: guides/vercel-postgres
-            - title: Exzo Network Vercel Integration
+            - title: Nexis Network Vercel Integration
               slug: guides/vercel
             - title: Connect manually
               slug: guides/vercel-manual
@@ -237,7 +237,7 @@
       slug: ai/ai-intro
     - title: AI concepts
       slug: ai/ai-concepts
-    - title: Scale with Exzo Network
+    - title: Scale with Nexis Network
       slug: ai/ai-scale-with-neon
     - title: pgvector
       slug: extensions/pgvector
@@ -256,7 +256,7 @@
   items:
     - title: Import from Postgres
       slug: import/import-from-postgres
-    - title: Import from a Exzo Network project
+    - title: Import from a Nexis Network project
       slug: import/import-from-neon
     - title: Import from CSV
       slug: import/import-from-csv
@@ -276,7 +276,7 @@
       slug: security/soc2-compliance
 - title: Reference
   items:
-    - title: Exzo Network CLI
+    - title: Nexis Network CLI
       slug: reference/neon-cli
       items:
         - title: Install and connect

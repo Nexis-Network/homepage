@@ -34,8 +34,8 @@ const Oauth = () => (
         OAuth
       </h3>
       <p className="mt-2.5 max-w-[590px] text-lg font-light leading-snug xl:text-base lg:mx-auto lg:max-w-[584px] lg:text-center md:mt-2">
-        The Exzo Network API allows you to manage Exzo Network programmatically. With the Exzo Network API, you can create
-        and manage all objects in your&nbsp;Exzo Network account.
+        The Nexis Network API allows you to manage Nexis Network programmatically. With the Nexis Network API, you can create
+        and manage all objects in your&nbsp;Nexis Network account.
       </p>
       <CardItemsList
         className="mt-8 max-w-[550px] gap-x-6 lg:col-span-full lg:max-w-none"

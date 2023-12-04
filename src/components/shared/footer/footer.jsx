@@ -9,6 +9,7 @@ import StatusBadge from 'components/shared/footer/status-badge';
 import ThemeSelect from 'components/shared/footer/theme-select';
 import Link from 'components/shared/link';
 import Logo from 'components/shared/logo';
+import DiscordIcon from 'icons/subscribe-discord.inline.svg';
 import MENUS from 'constants/menus.js';
 
 const Footer = ({ isDocPage = false, withTopBorder = false, theme = 'white' }) => {
@@ -31,7 +32,7 @@ const Footer = ({ isDocPage = false, withTopBorder = false, theme = 'white' }) =
           <div className="mb-7 flex flex-col xl:mb-5 md:mb-0 md:w-full md:flex-row md:items-start md:justify-between">
             <div className="flex flex-col">
               <Link className="block" to="/">
-                <span className="sr-only">Exzo Network</span>
+                <span className="sr-only">Nexis Network</span>
                 <Logo className="w-auto sm:h-6" isThemeBlack={isDarkTheme} />
               </Link>
               <StatusBadge isDocPage={isDocPage} inView={inView} />
@@ -45,7 +46,7 @@ const Footer = ({ isDocPage = false, withTopBorder = false, theme = 'white' }) =
             )}
           >
             <p>Made from around the World</p>
-            <p>Exzo Network 2023 Ⓒ All rights reserved</p>
+            <p>Nexis Network 2023 Ⓒ All rights reserved</p>
           </div>
         </div>
         <div className="flex space-x-[123px] xl:space-x-8 md:hidden">

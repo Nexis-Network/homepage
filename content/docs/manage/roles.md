@@ -7,47 +7,47 @@ redirectFrom:
 updatedOn: '2023-10-26T14:07:36.345Z'
 ---
 
-In Exzo Network, roles are Postgres roles. Each Exzo Network project is created with a default Postgres role that takes its name from your Exzo Network account (the Google, GitHub, or partner account that you registered with). This role owns the ready-to-use database (`neondb`) that is created in your Exzo Network project's primary branch.
+In Nexis Network, roles are Postgres roles. Each Nexis Network project is created with a default Postgres role that takes its name from your Nexis Network account (the Google, GitHub, or partner account that you registered with). This role owns the ready-to-use database (`neondb`) that is created in your Nexis Network project's primary branch.
 
-Your default Postgres role and roles created in the Exzo Network console, API, and CLI are granted membership in the [neon_superuser](#the-neon_superuser-role) role. Roles created with SQL from clients like [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) are only granted the basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone Postgres installation. These users must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-access).
+Your default Postgres role and roles created in the Nexis Network console, API, and CLI are granted membership in the [neon_superuser](#the-neon_superuser-role) role. Roles created with SQL from clients like [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) are only granted the basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone Postgres installation. These users must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-access).
 
 <Admonition type="note">
-Exzo Network is a managed Postgres service, so you cannot access the host operating system, and you can't connect using the Postgres `superuser` account like you can in a standalone Postgres installation.
+Nexis Network is a managed Postgres service, so you cannot access the host operating system, and you can't connect using the Postgres `superuser` account like you can in a standalone Postgres installation.
 </Admonition>
 
 You can create roles in a project's primary branch or child branches. There is no limit to the number of roles you can create.
 
-In Exzo Network, roles belong to a branch, which could be your main branch or a child branch. When you create a child branch, roles in the parent branch are duplicated in the child branch. For example, if role `alex` exists in the parent branch, role `alex` is copied to the child branch when the child branch is created. The only time this does not occur is when you create a branch that only includes data up to a particular point in time. If the role was created in the parent branch after that point in time, it is not duplicated in the child branch.
+In Nexis Network, roles belong to a branch, which could be your main branch or a child branch. When you create a child branch, roles in the parent branch are duplicated in the child branch. For example, if role `alex` exists in the parent branch, role `alex` is copied to the child branch when the child branch is created. The only time this does not occur is when you create a branch that only includes data up to a particular point in time. If the role was created in the parent branch after that point in time, it is not duplicated in the child branch.
 
-Exzo Network supports creating and managing roles from the following interfaces:
+Nexis Network supports creating and managing roles from the following interfaces:
 
-- [Exzo Network console](#manage-roles-in-the-neon-console)
-- [Exzo Network CLI](#manage-roles-with-the-neon-cli)
-- [Exzo Network API](#manage-roles-with-the-neon-api)
+- [Nexis Network console](#manage-roles-in-the-neon-console)
+- [Nexis Network CLI](#manage-roles-with-the-neon-cli)
+- [Nexis Network API](#manage-roles-with-the-neon-api)
 - [SQL](#manage-roles-with-sql)
 
 ## The neon_superuser role
 
-Roles created in the Exzo Network console, CLI, or API, including the default role created with a Exzo Network project, are granted membership in the `neon_superuser` role. Users cannot login as `neon_superuser`, but they inherit the privileges assigned to this role. The privileges and predefined role memberships granted to `neon_superuser` include:
+Roles created in the Nexis Network console, CLI, or API, including the default role created with a Nexis Network project, are granted membership in the `neon_superuser` role. Users cannot login as `neon_superuser`, but they inherit the privileges assigned to this role. The privileges and predefined role memberships granted to `neon_superuser` include:
 
 - `CREATEDB`: Provides the ability to create databases.
 - `CREATEROLE`: Provides the ability to create new roles (which also means it can alter and drop roles).
 - `BYPASSRLS`: Provides the ability to bypass row-level security (RLS) policies. This attribute is only included in `neon_superuser` roles in projects created after the [August 15, 2023 release](/docs/release-notes/2023-08-15-storage-and-compute).
-- `NOLOGIN`: The role cannot be used to log in to the Postgres server. Exzo Network is a managed Postgres service, so you cannot access the host operating system directly.
+- `NOLOGIN`: The role cannot be used to log in to the Postgres server. Nexis Network is a managed Postgres service, so you cannot access the host operating system directly.
 - `pg_read_all_data`: A predefined role in Postgres that provides the ability to read all data (tables, views, sequences), as if having `SELECT` rights on those objects, and `USAGE` rights on all schemas.
 - `pg_write_all_data`: A predefined role in Postgres that provides the ability to write all data (tables, views, sequences), as if having `INSERT`, `UPDATE`, and `DELETE` rights on those objects, and `USAGE` rights on all schemas.
 
 You can think of roles with `neon_superuser` privileges as administrator roles. If you require roles with limited privileges, such as a read-only role, you can create those roles from an SQL client. For more information, see [Manage database access](/docs/manage/database-acess).
 
-## Manage roles in the Exzo Network console
+## Manage roles in the Nexis Network console
 
-This section describes how to create, view, and delete roles in the Exzo Network Console. All roles created in the Exzo Network console are granted membership in the [neon_superuser](#the-neon_superuser-role) role.
+This section describes how to create, view, and delete roles in the Nexis Network Console. All roles created in the Nexis Network console are granted membership in the [neon_superuser](#the-neon_superuser-role) role.
 
 ### Create a role
 
 To create a role:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Roles**.
 4. Select the branch where you want to create the role.
@@ -65,7 +65,7 @@ Deleting a role is a permanent action that cannot be undone, and you cannot dele
 
 To delete a role:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Roles**.
 4. Select a branch to view roles in the branch.
@@ -76,38 +76,38 @@ To delete a role:
 
 To reset a role's password:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Roles**.
 4. Select a branch to view roles in the branch.
 5. Select **Reset password**.
 6. On the confirmation dialog, click **Sure, reset**. A reset password dialog is displayed with your new password.
 
-## Manage roles with the Exzo Network CLI
+## Manage roles with the Nexis Network CLI
 
-The Exzo Network CLI supports creating and deleting roles. For instructions, see [Exzo Network CLI commands — roles](/docs/reference/cli-roles). Roles created with the Exzo Network CLI are granted membership in the [neon_superuser](#the-neon_superuser-role) role.
+The Nexis Network CLI supports creating and deleting roles. For instructions, see [Nexis Network CLI commands — roles](/docs/reference/cli-roles). Roles created with the Nexis Network CLI are granted membership in the [neon_superuser](#the-neon_superuser-role) role.
 
-## Manage roles with the Exzo Network API
+## Manage roles with the Nexis Network API
 
-Role actions performed in the Exzo Network Console can also be performed using Exzo Network API role methods. The following examples demonstrate how to create, view, reset passwords for, and delete roles using the Exzo Network API. For other role-related methods, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+Role actions performed in the Nexis Network Console can also be performed using Nexis Network API role methods. The following examples demonstrate how to create, view, reset passwords for, and delete roles using the Nexis Network API. For other role-related methods, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
-Roles created with the Exzo Network API are granted membership in the [neon_superuser](#the-neon_superuser-role) role.
+Roles created with the Nexis Network API are granted membership in the [neon_superuser](#the-neon_superuser-role) role.
 
-In Exzo Network, roles belong to branches, which means that when you create a role, it is created in a branch. Role-related requests are therefore performed using branch API methods.
+In Nexis Network, roles belong to branches, which means that when you create a role, it is created in a branch. Role-related requests are therefore performed using branch API methods.
 
 <Admonition type="note">
-The API examples that follow may not show all user-configurable request body attributes that are available to you. To view all  attributes for a particular method, refer to method's request body schema in the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+The API examples that follow may not show all user-configurable request body attributes that are available to you. To view all  attributes for a particular method, refer to method's request body schema in the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 </Admonition>
 
 The `jq` option specified in each example is an optional third-party tool that formats the `JSON` response, making it easier to read. For information about this utility, see [jq](https://stedolan.github.io/jq/).
 
 ### Prerequisites
 
-A Exzo Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Exzo Network API request.
+A Nexis Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Nexis Network API request.
 
 ### Create a role with the API
 
-The following Exzo Network API method creates a role. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/createprojectbranchrole).
+The following Nexis Network API method creates a role. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/createprojectbranchrole).
 
 ```text
 POST /projects/{project_id}/branches/{branch_id}/roles
@@ -175,7 +175,7 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 ### List roles with the API
 
-The following Exzo Network API method lists roles for the specified branch. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/listprojectbranchroles).
+The following Nexis Network API method lists roles for the specified branch. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/listprojectbranchroles).
 
 ```text
 GET /projects/{project_id}/branches/{branch_id}/roles
@@ -217,7 +217,7 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 ### Reset a password with the API
 
-The following Exzo Network API method resets the password for the specified role. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/resetprojectbranchrolepassword).
+The following Nexis Network API method resets the password for the specified role. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/resetprojectbranchrolepassword).
 
 ```text
 POST /projects/{project_id}/branches/{branch_id}/roles/{role_name}/reset_password
@@ -276,7 +276,7 @@ curl -X 'POST' \
 
 ### Delete a role with the API
 
-The following Exzo Network API method deletes the specified role. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/deleteprojectbranchrole).
+The following Nexis Network API method deletes the specified role. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/deleteprojectbranchrole).
 
 ```text
 DELETE /projects/{project_id}/branches/{branch_id}/roles/{role_name}
@@ -334,15 +334,15 @@ curl -X 'DELETE' \
 
 ## Manage roles with SQL
 
-Roles created with SQL have the same basic `public` schema privileges as newly created roles in a standalone Postgres installation. These roles are not granted membership in the [neon_superuser](#the-neon_superuser-role) role like roles created with the Exzo Network Console, CLI, or API. You must grant these roles the privileges you want them to have.
+Roles created with SQL have the same basic `public` schema privileges as newly created roles in a standalone Postgres installation. These roles are not granted membership in the [neon_superuser](#the-neon_superuser-role) role like roles created with the Nexis Network Console, CLI, or API. You must grant these roles the privileges you want them to have.
 
-To create a role with SQL, issue a `CREATE ROLE` statement from a client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
+To create a role with SQL, issue a `CREATE ROLE` statement from a client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
 
 ```sql
 CREATE ROLE <name> WITH LOGIN PASSWORD 'password';
 ```
 
-- `WITH LOGIN` means that the role will have a login privilege, required for the role to log in to your Exzo Network Postgres instance. If the role is used only for privilege management, the `WITH LOGIN` privilege is unnecessary.
+- `WITH LOGIN` means that the role will have a login privilege, required for the role to log in to your Nexis Network Postgres instance. If the role is used only for privilege management, the `WITH LOGIN` privilege is unnecessary.
 - A password is required and must have a minimum entropy of 60 bits.
 
     <Admonition type="info">  
@@ -381,4 +381,4 @@ The following names are protected and cannot be given to a role:
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

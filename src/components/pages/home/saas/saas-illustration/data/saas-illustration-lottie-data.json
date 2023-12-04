@@ -31,7 +31,7 @@
           "ddd": 0,
           "ind": 2,
           "ty": 4,
-          "nm": "Exzo Network’s bills",
+          "nm": "Nexis Network’s bills",
           "sr": 1,
           "ks": {
             "o": { "a": 0, "k": 100, "ix": 11 },
@@ -51,7 +51,7 @@
           "ddd": 0,
           "ind": 5,
           "ty": 5,
-          "nm": "Exzo Network’s bills 2",
+          "nm": "Nexis Network’s bills 2",
           "sr": 1,
           "ks": {
             "o": {
@@ -80,7 +80,7 @@
                   "s": {
                     "s": 18,
                     "f": "IBMPlexMono-Regular",
-                    "t": "Exzo Network’s bills",
+                    "t": "Nexis Network’s bills",
                     "j": 0,
                     "tr": 0,
                     "lh": 21.6,

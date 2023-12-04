@@ -1,8 +1,8 @@
 ### Fixes & improvements
 
-- Proxy: Exzo Network uses compute endpoint domain names to route incoming client connections. For example, to connect to the compute endpoint `ep-mute-recipe-239816`, we ask that you connect to `ep-mute-recipe-239816.us-east-2.aws.neon.tech`. However, the Postgres wire protocol does not transfer the server domain name, so Exzo Network relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Unfortunately, not all Postgres clients support SNI. When these clients attempt to connect, they receive an error indicating that the "endpoint ID is not specified".
+- Proxy: Nexis Network uses compute endpoint domain names to route incoming client connections. For example, to connect to the compute endpoint `ep-mute-recipe-239816`, we ask that you connect to `ep-mute-recipe-239816.us-east-2.aws.neon.tech`. However, the Postgres wire protocol does not transfer the server domain name, so Nexis Network relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Unfortunately, not all Postgres clients support SNI. When these clients attempt to connect, they receive an error indicating that the "endpoint ID is not specified".
 
-  As a workaround, Exzo Network provides a special connection option that allows clients to specify the compute endpoint they are connecting to. The connection option was previously named `project`. This option name is now deprecated but remains supported for backward compatibility. The new name for the connection option is `endpoint`, which is used as shown in the following example:
+  As a workaround, Nexis Network provides a special connection option that allows clients to specify the compute endpoint they are connecting to. The connection option was previously named `project`. This option name is now deprecated but remains supported for backward compatibility. The new name for the connection option is `endpoint`, which is used as shown in the following example:
 
    <CodeBlock shouldWrap>
 

@@ -98,10 +98,10 @@ const Hero = () => {
       <div className="relative min-w-[768px] bg-black p-8 text-white 2xl:min-w-0 lg:order-last lg:max-w-none lg:py-7 md:px-4">
         <div className="m-auto max-w-[520px]">
           <Link className="inline-block align-top lg:hidden" to="/">
-            <img src={logoWhite} alt="Exzo Network" width={128} height={36} />
+            <img src={logoWhite} alt="Nexis Network" width={128} height={36} />
           </Link>
           <h2 className="mt-28 text-[28px]  font-bold 2xl:mt-12 lg:mt-0 lg:max-w-[450px] md:text-[26px]">
-            Exzo Network Technical Preview
+            Nexis Network Technical Preview
           </h2>
           <p className="mt-5 border-t border-t-[#2E3338] pt-5 font-semibold">Free Tier includes:</p>
           <ul className="mt-5 space-y-4">
@@ -125,7 +125,7 @@ const Hero = () => {
       <div className="flex grow items-center justify-center">
         <div className="max-w-[470px] lg:pb-10 lg:pt-3.5 md:w-full md:max-w-none md:px-4">
           <Link className="lg:alight-top hidden lg:inline-block" to="/">
-            <img src={logoBlack} alt="Exzo Network" />
+            <img src={logoBlack} alt="Nexis Network" />
           </Link>
           <h1 className="text-[28px] font-bold lg:mt-10 lg:text-center md:text-[26px]">
             Get serverless, fault-tolerant, branchable Postgres

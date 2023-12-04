@@ -7,7 +7,7 @@ import { RELEASE_NOTES_BASE_PATH } from 'constants/docs';
 import RSSLogo from './images/rss.inline.svg';
 
 const TITLE = 'Release notes';
-const DESCRIPTION = 'The latest product updates from Exzo Network';
+const DESCRIPTION = 'The latest product updates from Nexis Network';
 
 const Hero = ({ className = null, withContainer = false }) => {
   const Tag = withContainer ? Container : 'div';

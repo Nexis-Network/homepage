@@ -11,10 +11,10 @@ Added support for several Postgres extensions. Newly supported extensions includ
 - `address_standardizer`
 - `address_standardizer_data_us`
   
-For more information about Postgres extensions supported by Exzo Network, see [Postgres extensions](/docs/extensions/pg-extensions).
+For more information about Postgres extensions supported by Nexis Network, see [Postgres extensions](/docs/extensions/pg-extensions).
 
 ### Fixes & improvements
 
-- Compute: Updated the list of Postgres client libraries and runtimes that Exzo Network tests for connection support. The `pg8000` Python Postgres driver, version 1.29.3 and higher, now supports connecting to Exzo Network.
+- Compute: Updated the list of Postgres client libraries and runtimes that Nexis Network tests for connection support. The `pg8000` Python Postgres driver, version 1.29.3 and higher, now supports connecting to Nexis Network.
 - Compute: Added statistics to `EXPLAIN` that show prefetch hits and misses for sequential scans.
-- Proxy: Updated the error message that is reported when attempting to connect from a client or driver that does not support Server Name Indication (SNI). For more information about the SNI requirement, see [Connection errors](/docs/connect/connection-errors). Previously, the error message indicated that the "Project ID" is not specified. The error message now states that the "Endpoint ID" is not specified. Connecting to Exzo Network with a Project ID remains supported for backward compatibility, but connecting with an Endpoint ID is now the recommended connection method. For general information about connecting to Exzo Network, see [Connect from any application](/docs/connect/connect-from-any-app/).
+- Proxy: Updated the error message that is reported when attempting to connect from a client or driver that does not support Server Name Indication (SNI). For more information about the SNI requirement, see [Connection errors](/docs/connect/connection-errors). Previously, the error message indicated that the "Project ID" is not specified. The error message now states that the "Endpoint ID" is not specified. Connecting to Nexis Network with a Project ID remains supported for backward compatibility, but connecting with an Endpoint ID is now the recommended connection method. For general information about connecting to Nexis Network, see [Connect from any application](/docs/connect/connect-from-any-app/).

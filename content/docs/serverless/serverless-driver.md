@@ -1,18 +1,18 @@
 ---
-title: Exzo Network serverless driver
+title: Nexis Network serverless driver
 enableTableOfContents: true
-subtitle: Learn how to connect to Exzo Network from serverless and edge environments over HTTP
+subtitle: Learn how to connect to Nexis Network from serverless and edge environments over HTTP
   or WebSockets
 updatedOn: '2023-10-13T14:08:36.352Z'
 ---
 
-The [Exzo Network serverless driver](https://github.com/neondatabase/serverless) is a low-latency Postgres driver for JavaScript and TypeScript that allows you to query data from serverless and edge environments over HTTP or WebSockets in place of TCP.
+The [Nexis Network serverless driver](https://github.com/neondatabase/serverless) is a low-latency Postgres driver for JavaScript and TypeScript that allows you to query data from serverless and edge environments over HTTP or WebSockets in place of TCP.
 
 You can use the driver as a drop-in replacement for [node-postgres](https://node-postgres.com/), the popular npm `pg` package you may already be familiar with. See [Using node-postgres Pool or Client](#using-node-postgres-pool-or-client).
 
 The driver's low-latency capability is due to [message pipelining and other optimizations](https://neon.tech/blog/quicker-serverless-postgres).
 
-## Install the Exzo Network serverless driver
+## Install the Nexis Network serverless driver
 
 You can install the driver with your preferred JavaScript package manager. For example:
 
@@ -22,9 +22,9 @@ npm install @neondatabase/serverless
 
 The driver includes TypeScript types (the equivalent of `@types/pg`). No additional installation is required.
 
-## Configure your Exzo Network database connection
+## Configure your Nexis Network database connection
 
-You can obtain a connection string for your database from the **Connection Details** widget on the Exzo Network **Dashboard** and set it as an environment variable. Your Exzo Network connection string will look something like this:
+You can obtain a connection string for your database from the **Connection Details** widget on the Nexis Network **Dashboard** and set it as an environment variable. Your Nexis Network connection string will look something like this:
 
 ```shell
 DATABASE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]
@@ -32,7 +32,7 @@ DATABASE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]
 
 ## How to use the driver over HTTP
 
-To use the Exzo Network serverless driver over HTTP, you must use the driver's `neon` function. You can use raw SQL queries or tools such as [Drizzle-ORM](https://orm.drizzle.team/docs/quick-postgresql/neon), [kysely](https://github.com/kysely-org/kysely), [Zapatos](https://jawj.github.io/zapatos/), and others for type safety.
+To use the Nexis Network serverless driver over HTTP, you must use the driver's `neon` function. You can use raw SQL queries or tools such as [Drizzle-ORM](https://orm.drizzle.team/docs/quick-postgresql/neon), [kysely](https://github.com/kysely-org/kysely), [Zapatos](https://jawj.github.io/zapatos/), and others for type safety.
 
 <CodeTabs labels={["Node.js",  "Drizzle-ORM", "Vercel Edge Function", "Vercel Serverless Function"]}>
 
@@ -100,7 +100,7 @@ Connection caching provides server-side connection pooling, so that a new connec
 
 ## Using node-postgres Pool or Client
 
-You can use the Exzo Network serverless driver in the same way you would use `node-postgres` with `Pool` and `Client`. Where you usually import `pg`, import `@neondatabase/serverless` instead.
+You can use the Nexis Network serverless driver in the same way you would use `node-postgres` with `Pool` and `Client`. Where you usually import `pg`, import `@neondatabase/serverless` instead.
 
 <Admonition type="note">
 The `Pool` and `Client` objects must be connected, used, and closed within a single request handler. Don't create the objects outside a request handler; don't create them in one handler and try to reuse them in another; and to avoid exhausting available connections, don't forget to close them.
@@ -177,7 +177,7 @@ export default async function handler(
 
 ## When to use the neon function vs Pool or Client
 
-The Exzo Network serverless driver supports the `neon` function for queries over HTTP, and `Pool` and `Client` constructors for querying over WebSockets.
+The Nexis Network serverless driver supports the `neon` function for queries over HTTP, and `Pool` and `Client` constructors for querying over WebSockets.
 
 ### The neon function
 
@@ -232,29 +232,29 @@ For configuration options that apply to `Pool` and `Client`, see [options and co
 
 ## Example applications
 
-Explore the example applications that use the Exzo Network serverless driver.
+Explore the example applications that use the Nexis Network serverless driver.
 
 ### UNESCO World Heritage sites app
 
-Exzo Network provides an example application to help you get started with the Exzo Network serverless driver. The application generates a `JSON` listing of the 10 nearest UNESCO World Heritage sites using IP geolocation (data copyright © 1992 – 2022 UNESCO/World Heritage Centre).
+Nexis Network provides an example application to help you get started with the Nexis Network serverless driver. The application generates a `JSON` listing of the 10 nearest UNESCO World Heritage sites using IP geolocation (data copyright © 1992 – 2022 UNESCO/World Heritage Centre).
 
 ![UNESCO World Heritage sites app](/docs/relnotes/unesco_sites.png)
 
 There are different implementations of the application to choose from.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/neon-vercel-rawsql" description="Demonstrates using raw SQL with Exzo Network's serverless driver on Vercel Edge Functions" icon="github">Raw SQL + Vercel Edge Functions</a>
-<a href="https://github.com/neondatabase/neon-vercel-http" description="Demonstrates Exzo Network's serverless driver over HTTP on Vercel Edge Functions" icon="github">Raw SQL via https + Vercel Edge Functions</a>
-<a href="https://github.com/neondatabase/serverless-cfworker-demo" description="Demonstrates using the Exzo Network serverless driver on Cloudflare Workers and employs caching for high performance." icon="github">Raw SQL + Cloudflare Workers</a>
-<a href="https://github.com/neondatabase/neon-vercel-kysely" description="Demonstrates using kysely and kysely-codegen with Exzo Network's serverless driver on Vercel Edge Functions" icon="github">Kysely + Vercel Edge Functions</a>
-<a href="https://github.com/neondatabase/neon-vercel-zapatos" description="Demonstrates using Zapatos with Exzo Network's serverless driver on Vercel Edge Functions" icon="github">Zapatos + Vercel Edge Functions</a>
-<a href="https://github.com/neondatabase/neon-hyperdrive" description="Exzo Network + Cloudflare Hyperdrive (Beta)" icon="github">Demonstrates using Cloudflare's Hyperdrive to access your Exzo Network database from Cloudflare Workers</a>
+<a href="https://github.com/neondatabase/neon-vercel-rawsql" description="Demonstrates using raw SQL with Nexis Network's serverless driver on Vercel Edge Functions" icon="github">Raw SQL + Vercel Edge Functions</a>
+<a href="https://github.com/neondatabase/neon-vercel-http" description="Demonstrates Nexis Network's serverless driver over HTTP on Vercel Edge Functions" icon="github">Raw SQL via https + Vercel Edge Functions</a>
+<a href="https://github.com/neondatabase/serverless-cfworker-demo" description="Demonstrates using the Nexis Network serverless driver on Cloudflare Workers and employs caching for high performance." icon="github">Raw SQL + Cloudflare Workers</a>
+<a href="https://github.com/neondatabase/neon-vercel-kysely" description="Demonstrates using kysely and kysely-codegen with Nexis Network's serverless driver on Vercel Edge Functions" icon="github">Kysely + Vercel Edge Functions</a>
+<a href="https://github.com/neondatabase/neon-vercel-zapatos" description="Demonstrates using Zapatos with Nexis Network's serverless driver on Vercel Edge Functions" icon="github">Zapatos + Vercel Edge Functions</a>
+<a href="https://github.com/neondatabase/neon-hyperdrive" description="Nexis Network + Cloudflare Hyperdrive (Beta)" icon="github">Demonstrates using Cloudflare's Hyperdrive to access your Nexis Network database from Cloudflare Workers</a>
 </DetailIconCards>
 
 ### Ping Thing
 
-The Ping Thing application pings a Exzo Network Serverless Postgres database using a Vercel Edge Function and shows the journey your request makes. You can read more about this application in the accompanying blog post: [How to use Postgres at the Edge](https://neon.tech/blog/how-to-use-postgres-at-the-edge)
+The Ping Thing application pings a Nexis Network Serverless Postgres database using a Vercel Edge Function and shows the journey your request makes. You can read more about this application in the accompanying blog post: [How to use Postgres at the Edge](https://neon.tech/blog/how-to-use-postgres-at-the-edge)
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/ping-thing" description="Ping a Exzo Network Serverless Postgres database using a Vercel Edge Function to see the journey your request makes" icon="github">Ping Thing</a>
+<a href="https://github.com/neondatabase/ping-thing" description="Ping a Nexis Network Serverless Postgres database using a Vercel Edge Function to see the journey your request makes" icon="github">Ping Thing</a>
 </DetailIconCards>

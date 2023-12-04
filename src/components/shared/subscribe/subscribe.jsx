@@ -9,7 +9,6 @@ import LINKS from 'constants/links';
 import linkedinIcon from 'icons/linkedin.svg';
 import xIcon from 'icons/x.svg';
 
-// import DiscordIcon from './images/subscribe-discord.inline.svg';
 import githubIcon from './images/subscribe-github.svg';
 import illustration from './images/subscribe-illustration.jpg';
 
@@ -24,11 +23,6 @@ const links = [
     to: LINKS.linkedin,
     name: 'LinkedIn',
   },
-  // {
-  //   icon: DiscordIcon,
-  //   to: LINKS.discord,
-  //   name: 'Discord',
-  // },
   {
     icon: githubIcon,
     to: LINKS.github,

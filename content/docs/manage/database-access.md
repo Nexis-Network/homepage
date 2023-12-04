@@ -1,19 +1,19 @@
 ---
 title: Manage database access
-subtitle: Learn how to manage user access to databases in your Exzo Network project
+subtitle: Learn how to manage user access to databases in your Nexis Network project
 enableTableOfContents: true
 redirectFrom:
   - /docs/guides/manage-database-access
 updatedOn: '2023-09-15T13:00:43Z'
 ---
 
-Each Exzo Network project is created with a default Postgres role that takes its name from your Exzo Network account (the account you registered with). For example, if a user named "Alex" signs up for Exzo Network, the project is created with a default role named `alex`.
+Each Nexis Network project is created with a default Postgres role that takes its name from your Nexis Network account (the account you registered with). For example, if a user named "Alex" signs up for Nexis Network, the project is created with a default role named `alex`.
 
-The default Postgres role is automatically assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, and sequences. Any user created with the Exzo Network console, Exzo Network API, or Exzo Network CLI is also assigned the `neon_superuser` role.
+The default Postgres role is automatically assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, and sequences. Any user created with the Nexis Network console, Nexis Network API, or Nexis Network CLI is also assigned the `neon_superuser` role.
 
 It is good practice to reserve `neon_superuser` roles for database administration tasks like creating roles and databases. For other users, we recommend creating roles with specific sets of permissions based on application and access requirements. Then, assign the appropriate roles to your users. The roles you create should adhere to a _least privilege_ model, granting only the permissions required to accomplish their tasks.
 
-But how do you create roles with limited access? The following sections describe how to create read-only and read-write roles and assign those roles to users. We'll also look at how to create a "developer" role and grant that role full access to a database on a development branch in a Exzo Network project.
+But how do you create roles with limited access? The following sections describe how to create read-only and read-write roles and assign those roles to users. We'll also look at how to create a "developer" role and grant that role full access to a database on a development branch in a Nexis Network project.
 
 ## A word about users, groups, and roles in Postgres
 
@@ -21,7 +21,7 @@ In Postgres, users, groups, and roles are the same thing. From the PostgreSQL [D
 
 _PostgreSQL manages database access permissions using the concept of roles. A role can be thought of as either a database user, or a group of database users, depending on how the role is set up._
 
-Exzo Network recommends granting privileges to roles, and then assigning those roles to your database users.
+Nexis Network recommends granting privileges to roles, and then assigning those roles to your database users.
 
 ## Creating roles with limited access
 
@@ -29,7 +29,7 @@ You can create roles with limited access via SQL. Roles created with SQL are cre
 
 The recommended approach to creating roles with limited access is as follows:
 
-1. Use your  default Exzo Network role or another role with `neon_superuser` privileges to create roles for each application or use case via SQL. For example, create `readonly` and `readwrite` roles.
+1. Use your  default Nexis Network role or another role with `neon_superuser` privileges to create roles for each application or use case via SQL. For example, create `readonly` and `readwrite` roles.
 2. Grant privileges to those roles to allow access to database objects. For example, grant the `SELECT` privilege to a `readonly` role, or grant `SELECT`, `INSERT`, `UPDATE`, and `DELETE` privileges to a `readwrite` role.
 3. Create your database users. For example, create users named `readonly_user1` and `readwrite_user1`.
 4. Assign the `readonly` or `readwrite` role to those users to grant them the privileges associated with those roles. For example, assign the `readonly` role to `readonly_user1`, and the `readwrite` role to `readwrite_user1`.
@@ -48,7 +48,7 @@ In Postgres, access must be granted at the database, schema, and object level. F
 
 To create a read-only role:
 
-1. Connect to your database from an SQL client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). If you need help connecting, see [Connect from any client](/docs/connect/connect-from-any-app).
+1. Connect to your database from an SQL client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). If you need help connecting, see [Connect from any client](/docs/connect/connect-from-any-app).
 
 2. Create a `readonly` role using the following statement. A password is required.
 
@@ -124,7 +124,7 @@ This section describes how to create a read-write role with access to a specific
 
 To create a read-write role:
 
-1. Connect to your database from an SQL client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). If you need help connecting, see [Connect from any client](/docs/connect/connect-from-any-app).
+1. Connect to your database from an SQL client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). If you need help connecting, see [Connect from any client](/docs/connect/connect-from-any-app).
 
 2. Create a `readwrite` role using the following statement. A password is required.
 
@@ -204,13 +204,13 @@ GRANT readwrite TO readwrite_user1;
 
 This section describes how to create a "development branch" and grant developers full access to a database on the development branch. To accomplish this, we create a developer role on the "parent" branch, create a development branch, and then assign users to the developer role on the development branch.
 
-As you work through the steps in this scenario, remember that when you create a branch in Exzo Network, you are creating a clone of the parent branch, which includes the roles and databases on the parent branch.
+As you work through the steps in this scenario, remember that when you create a branch in Nexis Network, you are creating a clone of the parent branch, which includes the roles and databases on the parent branch.
 
 To get started:
 
-1. Connect to the database **on the parent branch** from an SQL client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). If you need help connecting, see [Connect from any client](/docs/connect/connect-from-any-app).
+1. Connect to the database **on the parent branch** from an SQL client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). If you need help connecting, see [Connect from any client](/docs/connect/connect-from-any-app).
 
-2. Use your default Exzo Network role or another role with `neon_superuser` privileges to create a developer role **on the parent branch**. For example, create a role named `dev_users`.
+2. Use your default Nexis Network role or another role with `neon_superuser` privileges to create a developer role **on the parent branch**. For example, create a role named `dev_users`.
 
     ```sql
     CREATE ROLE dev_users PASSWORD '<password>';

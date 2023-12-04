@@ -8,13 +8,13 @@ const items = [
   {
     icon: InstantIcon,
     title: 'Instant branches',
-    description: 'Exzo Network’s copy-on-write technique makes branching instantaneous and cost-effective.',
+    description: 'Nexis Network’s copy-on-write technique makes branching instantaneous and cost-effective.',
   },
   {
     icon: SeamlessIcon,
     title: 'Seamless integration',
     description:
-      'Integrate branching into your CI/CD pipeline using the <a href="https://api-docs.neon.tech/reference/getting-started-with-neon-api">Exzo Network API</a>.',
+      'Integrate branching into your CI/CD pipeline using the <a href="https://api-docs.neon.tech/reference/getting-started-with-neon-api">Nexis Network API</a>.',
   },
 ];
 

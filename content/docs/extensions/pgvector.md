@@ -5,17 +5,17 @@ enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.822Z'
 ---
 
-The `pgvector` extension enables you to store vector embeddings and perform vector similarity search in Postgres. It is particularly useful for applications involving natural language processing, such as those built on top of OpenAI's GPT models. This topic describes how to enable the `pgvector` extension in Exzo Network and how to create, store, and query vectors.
+The `pgvector` extension enables you to store vector embeddings and perform vector similarity search in Postgres. It is particularly useful for applications involving natural language processing, such as those built on top of OpenAI's GPT models. This topic describes how to enable the `pgvector` extension in Nexis Network and how to create, store, and query vectors.
 
 ## Enable the pgvector extension
 
-You can enable the `pgvector` extension by running the following `CREATE EXTENSION` statement in the Exzo Network **SQL Editor** or from a client such as `psql` that is connected to Exzo Network.
+You can enable the `pgvector` extension by running the following `CREATE EXTENSION` statement in the Nexis Network **SQL Editor** or from a client such as `psql` that is connected to Nexis Network.
 
 ```sql
 CREATE EXTENSION vector;
 ```
 
-For information about using the Exzo Network SQL Editor, see [Query with Exzo Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Exzo Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
+For information about using the Nexis Network SQL Editor, see [Query with Nexis Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Nexis Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
 
 ## Create a table to store vectors
 
@@ -101,4 +101,4 @@ Always consider your compute instance's memory resources when adjusting this par
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

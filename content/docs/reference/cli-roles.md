@@ -1,20 +1,20 @@
 ---
-title: Exzo Network CLI commands — roles
-subtitle: Use the Exzo Network CLI to manage Exzo Network directly from the terminal
+title: Nexis Network CLI commands — roles
+subtitle: Use the Nexis Network CLI to manage Nexis Network directly from the terminal
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.858Z'
 ---
 
 ## Before you begin
 
-- Before running the `roles` command, ensure that you have [installed the Exzo Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
-- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Exzo Network CLI command automatically launches the Exzo Network CLI browser authentication process. Alternatively, you can specify a Exzo Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
+- Before running the `roles` command, ensure that you have [installed the Nexis Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
+- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Nexis Network CLI command automatically launches the Nexis Network CLI browser authentication process. Alternatively, you can specify a Nexis Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
 
-For information about roles in Exzo Network, see [Manage roles](/docs/manage/roles).
+For information about roles in Nexis Network, see [Manage roles](/docs/manage/roles).
 
 ## The `roles` command
 
-The `roles` command allows you to list, create, and delete roles in a Exzo Network project.
+The `roles` command allows you to list, create, and delete roles in a Nexis Network project.
 
 ### Usage
 
@@ -40,11 +40,11 @@ neonctl roles list [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports these options:
 
 | Option        | Description | Type   | Required  |
 | ------------- | ----------- | ------ | :------: |
-| --project-id  | Project ID  | string | Only if your Exzo Network account has more than one project |
+| --project-id  | Project ID  | string | Only if your Nexis Network account has more than one project |
 | --branch   | Branch ID   | string | |
 
 If a branch ID or name is not provided, the command lists roles for the primary branch of the project.
@@ -86,11 +86,11 @@ neonctl roles create [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
 
 | Option               | Description                          | Type   | Required  |
 | -------------------- | ------------------------------------ | ------ | :------: |
-| --project-id         | Project ID                           | string | Only if your Exzo Network account has more than one project |
+| --project-id         | Project ID                           | string | Only if your Nexis Network account has more than one project |
 | --branch          | Branch ID                            | string | |
 | --name      | The role name. Cannot exceed 63 bytes in length.  | string | &check; |
 
@@ -123,11 +123,11 @@ neonctl roles delete <role> [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `delete` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `delete` subcommand supports these options:
 
 | Option               | Description                          | Type   | Required  |
 | -------------------- | ------------------------------------ | ------ | :------: |
-| --project-id         | Project ID                           | string | Only if your Exzo Network account has more than one project |
+| --project-id         | Project ID                           | string | Only if your Nexis Network account has more than one project |
 | --branch          | Branch ID                            | string | |
 
 If a branch ID or name is not provided, the command assumes the role resides in the primary branch of the project.
@@ -149,4 +149,4 @@ neonctl roles delete sally
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

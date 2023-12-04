@@ -1,18 +1,18 @@
 ---
-title: Connect Exzo Network to PolyScale
-subtitle: Connect Exzo Network to PolyScale to distribute and cache your data globally
+title: Connect Nexis Network to PolyScale
+subtitle: Connect Nexis Network to PolyScale to distribute and cache your data globally
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2023-10-19T23:10:12.832Z'
 ---
 
-[PolyScale](https://docs.polyscale.ai/) is a serverless database cache service. With PolyScale, you can distribute and cache your data globally, allowing you to scale your database without altering transactional semantics. No coding or infrastructure changes are required. You can connect Exzo Network to PolyScale in minutes, providing your database-backed applications with speedy access to your Exzo Network data from anywhere in the world.
+[PolyScale](https://docs.polyscale.ai/) is a serverless database cache service. With PolyScale, you can distribute and cache your data globally, allowing you to scale your database without altering transactional semantics. No coding or infrastructure changes are required. You can connect Nexis Network to PolyScale in minutes, providing your database-backed applications with speedy access to your Nexis Network data from anywhere in the world.
 
-Follow the steps below to connect your Exzo Network database to PolyScale.
+Follow the steps below to connect your Nexis Network database to PolyScale.
 
-## Retrieve your Exzo Network connection details
+## Retrieve your Nexis Network connection details
 
-In the **Connection Details** widget on the Exzo Network **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
+In the **Connection Details** widget on the Nexis Network **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -36,9 +36,9 @@ To create the database cache:
 2. If you have just signed up for PolyScale, select **Create new cache** from the **Welcome to PolyScale** dialog.
 ![Connection details widget](/docs/guides/welcome_to_polyscale.png)
 If you already have a PolyScale account, click the **New Cache** button in the upper right corner of the PolyScale dashboard.
-3. Enter a name for the cache, select `PostgreSQL` as the type, enter the Exzo Network hostname you copied earlier, and enter the database port number. Exzo Network uses the default Postgres port, `5432`. Leave the default values for the other settings. The **Caching** setting enables the database query cache, so this setting should remain enabled.
+3. Enter a name for the cache, select `PostgreSQL` as the type, enter the Nexis Network hostname you copied earlier, and enter the database port number. Nexis Network uses the default Postgres port, `5432`. Leave the default values for the other settings. The **Caching** setting enables the database query cache, so this setting should remain enabled.
 ![Create a PolyScale cache](/docs/guides/polyscale_create_cache.png)
-4. Click **Create**. PolyScale creates a cache for your Exzo Network database and provides a new **Connection URI** to use in your application in place of the Exzo Network connection string. Simply replace `[USERNAME]`, `[PASSWORD]`, and `[DATABASE]` with the values from your Exzo Network connection string.
+4. Click **Create**. PolyScale creates a cache for your Nexis Network database and provides a new **Connection URI** to use in your application in place of the Nexis Network connection string. Simply replace `[USERNAME]`, `[PASSWORD]`, and `[DATABASE]` with the values from your Nexis Network connection string.
 ![Create a PolyScale cache](/docs/guides/polyscale_success.png)
 
 After queries from your application start passing through PolyScale, you can monitor traffic and caching behavior on the **Observability** tab in PolyScale. For more information, see [Observability](https://docs.polyscale.ai/database-observability/), in the _PolyScale documentation_.
@@ -51,4 +51,4 @@ For more information about using PolyScale and how it works, refer to the [PolyS
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

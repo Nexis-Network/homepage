@@ -9,7 +9,7 @@ import Link from 'components/shared/link';
 
 import GradientLabel from '../gradient-label';
 
-import illustration from './images/cta-elephant.jpg';
+import illustration from './images/cta-elephant.png';
 
 const CTAWithElephant = ({
   className = '',

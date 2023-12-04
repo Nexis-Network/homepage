@@ -1,13 +1,13 @@
 ---
-title: Exzo Network CLI
-subtitle: Use the Exzo Network CLI to manage Exzo Network directly from the terminal
+title: Nexis Network CLI
+subtitle: Use the Nexis Network CLI to manage Nexis Network directly from the terminal
 enableTableOfContents: true
 updatedOn: '2023-10-07T10:43:33.425Z'
 ---
 
-The Exzo Network CLI is a command-line interface that lets you manage Exzo Network directly from the terminal. This documentation references all commands and options available in the Exzo Network CLI.
+The Nexis Network CLI is a command-line interface that lets you manage Nexis Network directly from the terminal. This documentation references all commands and options available in the Nexis Network CLI.
 
-For installation instructions, see [Exzo Network CLI — Install and connect](/docs/reference/cli-install).
+For installation instructions, see [Nexis Network CLI — Install and connect](/docs/reference/cli-install).
 
 ## Synopsis
 
@@ -54,16 +54,16 @@ Global options:
 
 ## Global options
 
-Global options are supported with any Exzo Network CLI command.
+Global options are supported with any Nexis Network CLI command.
 
 | Option      | Description                         | Type   | Default                           |
 | :---------  | :---------------------------------- | :----- | :-------------------------------- |
-| [-o, --output](#output)| Set the Exzo Network CLI output format (`json`, `yaml`, or `table`)                 | string | table                           |
-| [--config-dir](#config-dir)| Path to the Exzo Network CLI configuration directory            | string | `/home/<user>/.config/neonctl`   |
-| [--api-key](#api-key)   | Exzo Network API key                             | string | `NEON_API_KEY` environment variable                                |
+| [-o, --output](#output)| Set the Nexis Network CLI output format (`json`, `yaml`, or `table`)                 | string | table                           |
+| [--config-dir](#config-dir)| Path to the Nexis Network CLI configuration directory            | string | `/home/<user>/.config/neonctl`   |
+| [--api-key](#api-key)   | Nexis Network API key                             | string | `NEON_API_KEY` environment variable                                |
 | [--analytics](#analytics) | Manage analytics                    | boolean| true                              |
-| [-v, --version](#version)   | Show the Exzo Network CLI version number                 | boolean| -                                 |
-| [-h, --help](#help)      | Show the Exzo Network CLI help                           | boolean| -                                 |
+| [-v, --version](#version)   | Show the Nexis Network CLI version number                 | boolean| -                                 |
+| [-h, --help](#help)      | Show the Nexis Network CLI help                           | boolean| -                                 |
 
 - <a id="output"></a>`-o, --output`
 
@@ -83,7 +83,7 @@ Global options are supported with any Exzo Network CLI command.
 
 - <a id="api-key"></a>`--api-key`
 
-  Specifies your Exzo Network API key. You can authenticate using a Exzo Network API key when running a Exzo Network CLI command instead of using `neonctl auth`. For information about obtaining an Exzo Network API key, see [Create an API key](https://neon.tech/docs/manage/api-keys#create-an-api-key).
+  Specifies your Nexis Network API key. You can authenticate using a Nexis Network API key when running a Nexis Network CLI command instead of using `neonctl auth`. For information about obtaining an Nexis Network API key, see [Create an API key](https://neon.tech/docs/manage/api-keys#create-an-api-key).
 
   ```bash
   neonctl <command> --api-key <neon_api_key>
@@ -96,21 +96,21 @@ Global options are supported with any Exzo Network CLI command.
   ```
   
   <Admonition type="info">
-  The authentication flow for the Exzo Network CLI follows this order:
+  The authentication flow for the Nexis Network CLI follows this order:
 
   - If the `--api-key` option is provided, it is used for authentication.
   - If the `--api-key` option is not provided, the `NEON_API_KEY` environment variable setting is used.
   - If there is no `--api-key` option or `NEON_API_KEY` environment variable setting, the CLI looks for the `credentials.json` file created by the `neonctl auth` command.
-  - If the credentials file is not found, the Exzo Network CLI initiates the `neonctl auth` web authentication process.
+  - If the credentials file is not found, the Nexis Network CLI initiates the `neonctl auth` web authentication process.
   </Admonition>
   
 - <a id="analytics"></a>`--analytics`
 
-  Analytics are enabled by default to gather information about the CLI commands and options that are used by our customers. This data collection assists in offering support, and allows for a better understanding of typical usage patterns so that we can improve user experience. Exzo Network does not collect user-defined data, such as project IDs or command payloads. To opt-out of analytics data collection, specify `--no-analytics` or `--analytics false`.
+  Analytics are enabled by default to gather information about the CLI commands and options that are used by our customers. This data collection assists in offering support, and allows for a better understanding of typical usage patterns so that we can improve user experience. Nexis Network does not collect user-defined data, such as project IDs or command payloads. To opt-out of analytics data collection, specify `--no-analytics` or `--analytics false`.
 
 - <a id="version"></a>`-v, --version`
 
-  Shows the Exzo Network CLI version number.
+  Shows the Nexis Network CLI version number.
 
   ```bash
   $ neonctl --version
@@ -131,4 +131,4 @@ Global options are supported with any Exzo Network CLI command.
 
 ## GitHub
 
-The GitHub repository for the Exzo Network CLI is found [here](https://github.com/neondatabase/neonctl).
+The GitHub repository for the Nexis Network CLI is found [here](https://github.com/neondatabase/neonctl).

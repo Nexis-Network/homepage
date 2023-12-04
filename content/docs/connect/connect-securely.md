@@ -1,6 +1,6 @@
 ---
-title: Connect to Exzo Network securely
-subtitle: Learn how to connect to Exzo Network securely when using a connection string
+title: Connect to Nexis Network securely
+subtitle: Learn how to connect to Nexis Network securely when using a connection string
 enableTableOfContents: true
 isDraft: false
 redirectFrom:
@@ -8,13 +8,13 @@ redirectFrom:
 updatedOn: '2023-10-19T23:10:12.815Z'
 ---
 
-Exzo Network requires that all connections use SSL/TLS encryption to ensure that data sent over the Internet cannot be viewed or manipulated by third parties. Exzo Network rejects connections that do not use SSL/TLS, behaving in the same way as standalone Postgres with only `hostssl` records in a `pg_hba.conf` configuration file.
+Nexis Network requires that all connections use SSL/TLS encryption to ensure that data sent over the Internet cannot be viewed or manipulated by third parties. Nexis Network rejects connections that do not use SSL/TLS, behaving in the same way as standalone Postgres with only `hostssl` records in a `pg_hba.conf` configuration file.
 
 However, there are different levels of protection when using SSL/TLS encryption, which you can configure by appending an `sslmode` parameter to your connection string.
 
 ## Connection modes
 
-When connecting to Exzo Network or any Postgres database, the `sslmode` parameter setting determines the security of the connection. You can append the `sslmode` parameter to your Exzo Network connection string as shown:
+When connecting to Nexis Network or any Postgres database, the `sslmode` parameter setting determines the security of the connection. You can append the `sslmode` parameter to your Nexis Network connection string as shown:
 
 <CodeBlock shouldWrap>
 
@@ -24,7 +24,7 @@ postgres://[user]:[password]@[neon_hostname]/[dbname]?sslmode=verify-full
 
 </CodeBlock>
 
-Exzo Network supports the following `sslmode` settings, in order of least to most secure.
+Nexis Network supports the following `sslmode` settings, in order of least to most secure.
 
 | sslmode | Description |
 | --- | --- |
@@ -32,7 +32,7 @@ Exzo Network supports the following `sslmode` settings, in order of least to mos
 | verify-ca | Encryption is required and the server's SSL/TLS certificate is verified. In addition, the client verifies that the server's certificate has been signed by a trusted certificate authority (CA). |
 | verify-full | Encryption is required and the server's SSL/TLS certificate is fully verified, including hostname verification, expiration checks, and revocation checks. In addition, the client verifies that the server's certificate has been signed by a trusted certificate authority (CA). |
 
-The choice of which mode to use depends on the specific security requirements of the application and the level of risk that you are willing to tolerate. Exzo Network recommends that you always use `verify-full` mode, which ensures the highest level of security and protects against a wide range of attacks including man-in-the-middle attacks. The following sections describe how to configure connections using `verify-full` mode.
+The choice of which mode to use depends on the specific security requirements of the application and the level of risk that you are willing to tolerate. Nexis Network recommends that you always use `verify-full` mode, which ensures the highest level of security and protects against a wide range of attacks including man-in-the-middle attacks. The following sections describe how to configure connections using `verify-full` mode.
 
 The required configuration for your connection depends on the client you are using.
 
@@ -68,7 +68,7 @@ However, if your client application uses a non-standard Postgres client, SSL/TLS
 
 ### Location of system root certificates
 
-Exzo Network uses public root certificates issued by [Let’s Encrypt](https://letsencrypt.org/). These certificates are usually available in a root store on your operating system. A root store is a collection of pre-downloaded root certificates from various Certificate Authorities (CAs). These are highly trusted CAs, and their certificates are typically shipped with operating systems and some applications.
+Nexis Network uses public root certificates issued by [Let’s Encrypt](https://letsencrypt.org/). These certificates are usually available in a root store on your operating system. A root store is a collection of pre-downloaded root certificates from various Certificate Authorities (CAs). These are highly trusted CAs, and their certificates are typically shipped with operating systems and some applications.
 
 The location of the root store varies by operating system or distribution. Here are some locations where you might find the required root certificates on popular operating systems:
 
@@ -118,4 +118,4 @@ The system root certificate locations listed above may differ depending on the v
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

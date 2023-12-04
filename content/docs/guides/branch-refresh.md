@@ -1,13 +1,13 @@
 ---
 title: Refresh a branch
-subtitle: Learn how to refresh a Exzo Network branch using the Exzo Network API
+subtitle: Learn how to refresh a Nexis Network branch using the Nexis Network API
 enableTableOfContents: true
 updatedOn: '2023-10-07T10:43:33.373Z'
 ---
 
-When you create a branch in Exzo Network, you create a copy-on-write clone that reflects the current state of the parent branch, but what do you do if your branch becomes stale? For example, changes are made to the data or schema on the parent branch that you would like reflected in your development branch, or your branch has aged out of the point-in-time restore window (the history shared with the parent branch) and is now taking up storage space. Ideally, you want to refresh your branch but keep the same compute endpoint, whose connection details may already be configured in your application or toolchain.
+When you create a branch in Nexis Network, you create a copy-on-write clone that reflects the current state of the parent branch, but what do you do if your branch becomes stale? For example, changes are made to the data or schema on the parent branch that you would like reflected in your development branch, or your branch has aged out of the point-in-time restore window (the history shared with the parent branch) and is now taking up storage space. Ideally, you want to refresh your branch but keep the same compute endpoint, whose connection details may already be configured in your application or toolchain.
 
-There isn't a single command that refreshes a branch, but you can do so using a combination of Exzo Network API calls. The procedure described below refreshes a branch by performing the following steps:
+There isn't a single command that refreshes a branch, but you can do so using a combination of Nexis Network API calls. The procedure described below refreshes a branch by performing the following steps:
 
 1. [Creating a new up-to-date branch without a compute endpoint](#create-a-new-up-to-date-branch-without-a-compute-endpoint)
 2. [Moving the compute endpoint from your current branch to the new branch](#move-the-compute-endpoint-from-your-current-branch-to-the-new-branch)
@@ -22,14 +22,14 @@ The branch refresh procedure does not preserve data or schema changes on your cu
 
 The following information is required to perform the procedure:
 
-- A Exzo Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- The `project_id` for your Exzo Network project. You can obtain a `project_id` using the [List projects](https://api-docs.neon.tech/reference/listprojects) method, or you can find it on your project's **Settings** page in the Exzo Network Console.
-- The `branch_id` of the current branch. You can obtain a `branch_id` using the [List branches](https://api-docs.neon.tech/reference/listprojectbranches) method, or you can find it on your project's **Branches** page in the Exzo Network Console. A `branch_id` has a `br-` prefix.
-- The `endpoint_id` of the compute endpoint associated with the current branch. You can obtain an `endpoint_id` using the [List endpoints](https://api-docs.neon.tech/reference/listprojectendpoints) method, or you can find it on the **Branches** page in the Exzo Network Console. An `endpoint_id` has an `ep-` prefix.
+- A Nexis Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- The `project_id` for your Nexis Network project. You can obtain a `project_id` using the [List projects](https://api-docs.neon.tech/reference/listprojects) method, or you can find it on your project's **Settings** page in the Nexis Network Console.
+- The `branch_id` of the current branch. You can obtain a `branch_id` using the [List branches](https://api-docs.neon.tech/reference/listprojectbranches) method, or you can find it on your project's **Branches** page in the Nexis Network Console. A `branch_id` has a `br-` prefix.
+- The `endpoint_id` of the compute endpoint associated with the current branch. You can obtain an `endpoint_id` using the [List endpoints](https://api-docs.neon.tech/reference/listprojectendpoints) method, or you can find it on the **Branches** page in the Nexis Network Console. An `endpoint_id` has an `ep-` prefix.
 
 ## Create a new up-to-date branch without a compute endpoint
 
-The [Create branch](https://api-docs.neon.tech/reference/createprojectbranch) request shown below creates a branch without a compute endpoint. The only required parameter is your Exzo Network `project_id`. The `project_id` value used in the example below is `dark-cell-12604300`. You must also set the `$NEON_API_KEY` variable or replace `$NEON_API_KEY` with an actual API key.
+The [Create branch](https://api-docs.neon.tech/reference/createprojectbranch) request shown below creates a branch without a compute endpoint. The only required parameter is your Nexis Network `project_id`. The `project_id` value used in the example below is `dark-cell-12604300`. You must also set the `$NEON_API_KEY` variable or replace `$NEON_API_KEY` with an actual API key.
 
 ```curl
 curl --request POST \

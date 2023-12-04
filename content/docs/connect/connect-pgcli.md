@@ -1,6 +1,6 @@
 ---
 title: Connect with pgcli
-subtitle: Learn how to connect to Exzo Network using the interactive pgcli client
+subtitle: Learn how to connect to Nexis Network using the interactive pgcli client
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2023-10-19T23:10:12.812Z'
@@ -20,9 +20,9 @@ To view `pgcli` usage information, run the following command:
 pgcli --help
 ```
 
-## Connect to Exzo Network
+## Connect to Nexis Network
 
-The easiest way to connect to Exzo Network using the `pgcli` client is with a connection string, which you can obtain from the **Connection Details** widget on the **Exzo Network Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
+The easiest way to connect to Nexis Network using the `pgcli` client is with a connection string, which you can obtain from the **Connection Details** widget on the **Nexis Network Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -85,4 +85,4 @@ For more information about `pgcli` features and capabilities, refer to the [pgcl
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

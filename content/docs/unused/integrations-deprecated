@@ -5,7 +5,7 @@ redirectFrom:
   - /docs/cloud/integrations-deprecated
 ---
 
-Exzo Network supports the standard Postgres wire protocol. You can use all the normal client utilities like ‘psql’ and ‘pg_dump’, and standard client libraries and drivers to connect.
+Nexis Network supports the standard Postgres wire protocol. You can use all the normal client utilities like ‘psql’ and ‘pg_dump’, and standard client libraries and drivers to connect.
 
 There are two ways to authenticate:
 
@@ -18,11 +18,11 @@ Github single-sign-on makes it very easy to connect interactively. However, as i
 
 ### Using from Hasura
 
-Hasura is a cloud-based GraphQL provider for existing databases. This guide will cover zero-coding integration between Exzo Network cloud service and Hasura Cloud. By the end of this guide, you will have a working HTTP API endpoint that uses GraphQL to query a serverless database and responds with a set of rows.
+Hasura is a cloud-based GraphQL provider for existing databases. This guide will cover zero-coding integration between Nexis Network cloud service and Hasura Cloud. By the end of this guide, you will have a working HTTP API endpoint that uses GraphQL to query a serverless database and responds with a set of rows.
 
-First, set up a Exzo Network project:
+First, set up a Nexis Network project:
 
-1. Go to the Exzo Network console <https://console.neon.tech/app/projects>.
+1. Go to the Nexis Network console <https://console.neon.tech/app/projects>.
 2. Create a new Project or choose any existing one.
 3. Open the Project page and click the 'Generate token' button.
 4. Copy DATABASE_URL. We will need it later.
@@ -34,7 +34,7 @@ Second, add this Project as a data source in the Hasura Cloud project:
 3. Go to the DATA section, and in the 'Connect Existing Database' tab, paste DATABASE_URL into the corresponding form field. Give it some name and click connect.
 
 That is mostly it! Hasura Cloud will connect and automatically
-discover the public schema. Exzo Network will spin up a new compute node for
+discover the public schema. Nexis Network will spin up a new compute node for
 your database when a new connection arrives, and suspend it when it
 becomes idle.
 
@@ -71,11 +71,11 @@ Prisma is an open-source type-safe ORM for the javascript ecosystem. It consists
 - Prisma Migrate: Migration tool to easily evolve your database schema from prototyping to production
 - Prisma Studio: GUI to view and edit data in your database
 
-This document discusses the concepts behind using Prisma with Exzo Network for development and production setups.
+This document discusses the concepts behind using Prisma with Nexis Network for development and production setups.
 
-#### Connecting to Exzo Network from Prisma
+#### Connecting to Nexis Network from Prisma
 
-To connect a Prisma-based app to Exzo Network you need to specify a `postgresql` datasource and connection string.
+To connect a Prisma-based app to Nexis Network you need to specify a `postgresql` datasource and connection string.
 
 First, add the following to the `prisma/schema.prisma`:
 
@@ -86,7 +86,7 @@ datasource db {
 }
 ```
 
-Then, go to the Project dashboard in Exzo Network and generate a connection string in the `Connection Details` widget. You can add this connection string in `.env`:
+Then, go to the Project dashboard in Nexis Network and generate a connection string in the `Connection Details` widget. You can add this connection string in `.env`:
 
 <CodeBlock shouldWrap>
 
@@ -96,9 +96,9 @@ DATABASE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]
 
 </CodeBlock>
 
-#### Using Exzo Network for development with Prisma
+#### Using Nexis Network for development with Prisma
 
-Prisma uses a so-called shadow database to detect schema drift. Therefore, you need to have a second database to perform `prisma migrate dev` command. One way to deal with it is to create a separate Project in Exzo Network and specify it via `shadowDatabaseUrl` in `prisma/schema.prisma`.
+Prisma uses a so-called shadow database to detect schema drift. Therefore, you need to have a second database to perform `prisma migrate dev` command. One way to deal with it is to create a separate Project in Nexis Network and specify it via `shadowDatabaseUrl` in `prisma/schema.prisma`.
 
 For example, you can configure Prisma in the following way:
 
@@ -121,9 +121,9 @@ SHADOW_DATABASE_URL="<connection string to the project2>"
 
 ### Using from Django
 
-Django is one of the most popular Python backend frameworks. Django has built-in support for Postgres, so you only need to fill in the correct connection details. To use Exzo Network with Django, you have create a Project on Exzo Network and fill in the project connection settings in your settings.py in the same way as for a standalone Postgres server.
+Django is one of the most popular Python backend frameworks. Django has built-in support for Postgres, so you only need to fill in the correct connection details. To use Nexis Network with Django, you have create a Project on Nexis Network and fill in the project connection settings in your settings.py in the same way as for a standalone Postgres server.
 
-See the following example of specifying connection properties for Exzo Network:
+See the following example of specifying connection properties for Nexis Network:
 
 ```django
 DATABASES = {
@@ -140,7 +140,7 @@ DATABASES = {
 
 Note:
 
-Currently, it is not possible to run Django tests against Exzo Network because Django test runner needs to create a new database for tests which is currently not supported in Exzo Network.
+Currently, it is not possible to run Django tests against Nexis Network because Django test runner needs to create a new database for tests which is currently not supported in Nexis Network.
 
 References:
 
@@ -148,13 +148,13 @@ References:
 
 ### Using from SQLAlchemy
 
-SQLAlchemy is among the most popular ORMs in the Python universe. To use SQLAlchemy with a Postgres database hosted on Exzo Network, you only need to fill in the correct connection details.
+SQLAlchemy is among the most popular ORMs in the Python universe. To use SQLAlchemy with a Postgres database hosted on Nexis Network, you only need to fill in the correct connection details.
 
 Prerequisites:
 
-Here we assume that you have already created a project on Exzo Network, and have SQLAlchemy installed with a Postgres driver (this example assumes psycopg2 - the default one for Postgres in SQLAlchemy). For installation details see corresponding pages for [SQLAlchemy](https://docs.sqlalchemy.org/en/14/intro.html#installation) and [psycopg2](https://www.psycopg.org/docs/install.html).
+Here we assume that you have already created a project on Nexis Network, and have SQLAlchemy installed with a Postgres driver (this example assumes psycopg2 - the default one for Postgres in SQLAlchemy). For installation details see corresponding pages for [SQLAlchemy](https://docs.sqlalchemy.org/en/14/intro.html#installation) and [psycopg2](https://www.psycopg.org/docs/install.html).
 
-SQLALchemy uses Engine abstraction to manage database connections and exposes a `create_engine` function as the primary endpoint for engine initialization. See the following example on how to create an SQLAlchemy engine pointing to the Exzo Network Project.
+SQLALchemy uses Engine abstraction to manage database connections and exposes a `create_engine` function as the primary endpoint for engine initialization. See the following example on how to create an SQLAlchemy engine pointing to the Nexis Network Project.
 
 ```python
 from sqlalchemy import create_engine
@@ -178,7 +178,7 @@ Psycopg2 is the most popular python library for running raw postgres queries. If
 
 To get started writing postgres queries against neon via psycopg2:
 
-1. Register on Exzo Network cloud service and create a project
+1. Register on Nexis Network cloud service and create a project
 2. Navigate to your Project on console.neon.tech and find the Postgres Username and access token in the “Connection Details” section.
 3. Install psycopg2. You might also need psycopg2-binary depending on your system. You can run “pip install psycopg2 psycopg2-binary” or use a dependency manager like poetry to do the same.
 4. Run the “hello neon” program:
@@ -208,14 +208,14 @@ with conn.cursor() as cur:
  print(cur.fetchall())
 ```
 
-5. Build great things with Exzo Network! Any postgres tutorial will be able to guide you on the syntax.
+5. Build great things with Nexis Network! Any postgres tutorial will be able to guide you on the syntax.
 
 Note: This example was tested with python 3 and psycopg2 version 2.9.3
 
 ### Using from Node.js
 
 1. Add a postgres client to your project. In this example we use [postgres.js](https://www.npmjs.com/package/postgres).
-2. Store your Exzo Network credentials somewhere, for example in the `.env` file.
+2. Store your Nexis Network credentials somewhere, for example in the `.env` file.
 
 ```shell
     NEON_HOST=...
@@ -244,9 +244,9 @@ const result = await sql.uafe(req.body);
 ### Using from Next.js + vercel
 
 1. [Create a next.js project](https://nextjs.org/learn/basics/create-nextjs-app/setup) if you don’t have one.
-2. Create a Exzo Network project for your app. You can configure your db schema from Exzo Network Console or using tools like Prisma.
+2. Create a Nexis Network project for your app. You can configure your db schema from Nexis Network Console or using tools like Prisma.
 3. Add postgres client to your app. In this example we use [postgres.js](https://www.npmjs.com/package/postgres).
-4. Put your Exzo Network credentials to the `.env` file:
+4. Put your Nexis Network credentials to the `.env` file:
 
 ```shell
 NEON_HOST=...
@@ -258,7 +258,7 @@ NEON_PORT=...
 
 You can use either a connection string or connection options separately.
 
-5. Connect to the database with postgres client and your Exzo Network credentials from your api handlers or server functions:
+5. Connect to the database with postgres client and your Nexis Network credentials from your api handlers or server functions:
 
 ```javascript pages/api/hello_worlds.js
 import postgres from 'postgres';
@@ -274,7 +274,7 @@ const sql = postgres({
 const result = await sql.uafe(req.body);
 ```
 
-Do not ever expose your Exzo Network credentials to the browser.
+Do not ever expose your Nexis Network credentials to the browser.
 
 You can also use Prisma to manage your database, check our how-to [here](#using-with-prisma).
 
@@ -301,7 +301,7 @@ Make sure that you are using `<user>%40neon` as username. This is url encoded va
 
 #### Connect with JDBC
 
-The JDBC API is a Java API for relational databases. Postgres has a well-supported open-source JDBC driver, which can be used to access Exzo Network. All popular Java frameworks use JDBC internally, so the only thing you need to do is use a correct connection URL.
+The JDBC API is a Java API for relational databases. Postgres has a well-supported open-source JDBC driver, which can be used to access Nexis Network. All popular Java frameworks use JDBC internally, so the only thing you need to do is use a correct connection URL.
 
 To get a JDBC connection URL, replace placeholders with your credentials in the following template:
 
@@ -323,7 +323,7 @@ spring.datasource.url=jdbc:postgresql://<project>.cloud.neon.tech/neondb?user=<u
 
 ### Using from Go
 
-Exzo Network is fully compatible with sql/db package and common Postgres drivers ie. lib/pq, pgx etc.
+Nexis Network is fully compatible with sql/db package and common Postgres drivers ie. lib/pq, pgx etc.
 
 ```go
 package main

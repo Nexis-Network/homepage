@@ -1,20 +1,20 @@
 ---
-title: Exzo Network CLI commands — projects
-subtitle: Use the Exzo Network CLI to manage Exzo Network directly from the terminal
+title: Nexis Network CLI commands — projects
+subtitle: Use the Nexis Network CLI to manage Nexis Network directly from the terminal
 enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.993Z'
 ---
 
 ## Before you begin
 
-- Before running the `projects` command, ensure that you have [installed the Exzo Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
-- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Exzo Network CLI command automatically launches the Exzo Network CLI browser authentication process. Alternatively, you can specify a Exzo Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
+- Before running the `projects` command, ensure that you have [installed the Nexis Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
+- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Nexis Network CLI command automatically launches the Nexis Network CLI browser authentication process. Alternatively, you can specify a Nexis Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
 
-For information about projects in Exzo Network, see [Projects](/docs/manage/projects).
+For information about projects in Nexis Network, see [Projects](/docs/manage/projects).
 
 ## The `projects` command
 
-The `projects` command allows you to list, create, update, delete, and retrieve information about Exzo Network projects.
+The `projects` command allows you to list, create, update, delete, and retrieve information about Nexis Network projects.
 
 ### Usage
 
@@ -32,7 +32,7 @@ neonctl projects <subcommand> [options]
 
 ### list
 
-This subcommand allows you to list projects that belong to your Exzo Network account.
+This subcommand allows you to list projects that belong to your Nexis Network account.
 
 #### Usage
 
@@ -61,9 +61,9 @@ neonctl projects list
 
 ### create
 
-This subcommand allows you to create a Exzo Network project.
+This subcommand allows you to create a Nexis Network project.
 
-The [Exzo Network Free Tier](../introduction/free-tier) supports creating a single project. The [Exzo Network Pro Plan](../introduction/pro-plan) allows creating multiple projects.
+The [Nexis Network Free Tier](../introduction/free-tier) supports creating a single project. The [Nexis Network Pro Plan](../introduction/pro-plan) allows creating multiple projects.
 
 #### Usage
 
@@ -73,7 +73,7 @@ neonctl projects create [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
 
 | Option                                | Description                                                                                               | Type    | Required                               |
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------- | :-----------------------------------: |
@@ -100,7 +100,7 @@ In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#gl
     ```
 
     <Admonition type="tip">
-    The Exzo Network CLI provides a `neonctl connection-string` command you can use to extract a connection uri programmatically. See [Exzo Network CLI commands — connection-string](https://neon.tech/docs/reference/cli-connection-string).
+    The Nexis Network CLI provides a `neonctl connection-string` command you can use to extract a connection uri programmatically. See [Nexis Network CLI commands — connection-string](https://neon.tech/docs/reference/cli-connection-string).
     </Admonition>
 
 - Create a project with the `--output` format of the command set to `json`. This output format returns all of the project response data, whereas the default `table` output format (shown in the preceding example) is limited in the information it can display.
@@ -155,7 +155,7 @@ In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#gl
 
 ### update
 
-This subcommand allows you to update a Exzo Network project.
+This subcommand allows you to update a Nexis Network project.
 
 #### Usage
 
@@ -163,11 +163,11 @@ This subcommand allows you to update a Exzo Network project.
 neonctl projects update <id> [options]
 ```
 
-The `id` is the project ID, which you can obtain by listing your projects or from the **Settings** page in the Exzo Network console.
+The `id` is the project ID, which you can obtain by listing your projects or from the **Settings** page in the Nexis Network console.
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `update` subcommand supports this option:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `update` subcommand supports this option:
 
 | Option                                | Description                                                                                               | Type    | Required                               |
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------- | :-----------------------------------: |
@@ -186,13 +186,13 @@ neonctl projects update muddy-wood-859533 --name dev_project_1
 
 ### delete
 
-This subcommand allows you to delete a Exzo Network project.
+This subcommand allows you to delete a Nexis Network project.
 
 ```bash
 neonctl projects delete <id> [options]
 ```
 
-The `id` is the project ID, which you can obtain by listing your projects or from the **Settings** page in the Exzo Network console.
+The `id` is the project ID, which you can obtain by listing your projects or from the **Settings** page in the Nexis Network console.
 
 #### Options
 
@@ -213,7 +213,7 @@ Information about the deleted project is displayed. You can verify that the proj
 
 ### get
 
-This subcommand allows you to retrieve details about a Exzo Network project.
+This subcommand allows you to retrieve details about a Nexis Network project.
 
 #### Usage
 
@@ -221,7 +221,7 @@ This subcommand allows you to retrieve details about a Exzo Network project.
 neonctl projects get <id> [options]
 ```
 
-The `id` is the project ID, which you can obtain by listing your projects or from the **Settings** page in the Exzo Network console.
+The `id` is the project ID, which you can obtain by listing your projects or from the **Settings** page in the Nexis Network console.
 
 #### Options
 
@@ -240,4 +240,4 @@ neonctl projects get muddy-wood-859533
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

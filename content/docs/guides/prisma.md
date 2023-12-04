@@ -1,6 +1,6 @@
 ---
-title: Connect from Prisma to Exzo Network
-subtitle: Learn how to connect to Exzo Network from Prisma
+title: Connect from Prisma to Nexis Network
+subtitle: Learn how to connect to Nexis Network from Prisma
 enableTableOfContents: true
 redirectFrom:
   - /docs/quickstart/prisma
@@ -9,20 +9,20 @@ redirectFrom:
 updatedOn: '2023-10-19T23:10:12.833Z'
 ---
 
-Prisma is an open-source, next-generation ORM that enables you to manage and interact with your database. This guide explains how to connect Prisma to Exzo Network, establish connections when using Prisma Client in serverless functions, and resolve [connection timeout](#connection-timeouts) issues.
+Prisma is an open-source, next-generation ORM that enables you to manage and interact with your database. This guide explains how to connect Prisma to Nexis Network, establish connections when using Prisma Client in serverless functions, and resolve [connection timeout](#connection-timeouts) issues.
 
-To configure Prisma Migrate with Exzo Network, see [Use Prisma Migrate with Exzo Network](/docs/guides/prisma-migrate).
+To configure Prisma Migrate with Nexis Network, see [Use Prisma Migrate with Nexis Network](/docs/guides/prisma-migrate).
 
 ## Prerequisites
 
-- A Exzo Network project. See [Create a project](/docs/manage/projects#create-a-project).
+- A Nexis Network project. See [Create a project](/docs/manage/projects#create-a-project).
 - A Prisma project. See [Set up Prisma](https://www.prisma.io/docs/getting-started/setup-prisma), in the _Prisma documentation_.
 
-## Connect to Exzo Network from Prisma
+## Connect to Nexis Network from Prisma
 
-To establish a basic connection from Prisma to Exzo Network, perform the following steps:
+To establish a basic connection from Prisma to Nexis Network, perform the following steps:
 
-1. Retrieve your Exzo Network connection string. In the **Connection Details** widget on the Exzo Network **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
+1. Retrieve your Nexis Network connection string. In the **Connection Details** widget on the Nexis Network **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
   ![Connection details widget](/docs/connect/connection_details.png)
   The connection string includes the user name, password, hostname, and database name.
 
@@ -35,7 +35,7 @@ To establish a basic connection from Prisma to Exzo Network, perform the followi
    }
    ```
 
-3. Add a `DATABASE_URL` variable to your `.env` file and set it to the Exzo Network connection string that you copied in the previous step,  and add `?sslmode=require` to the end of the connection string.
+3. Add a `DATABASE_URL` variable to your `.env` file and set it to the Nexis Network connection string that you copied in the previous step,  and add `?sslmode=require` to the end of the connection string.
 
    Your setting will appear similar to the following:
 
@@ -53,7 +53,7 @@ If you are using Prisma Client from a serverless function, see [Connect from ser
 
 ## Connect from serverless functions
 
-Serverless functions typically require a large number of database connections. When connecting from Prisma Client to Exzo Network from a serverless function, use a pooled Exzo Network connection string together with a `pgbouncer=true` flag, as shown:
+Serverless functions typically require a large number of database connections. When connecting from Prisma Client to Nexis Network from a serverless function, use a pooled Nexis Network connection string together with a `pgbouncer=true` flag, as shown:
 
 <CodeBlock shouldWrap>
 
@@ -63,13 +63,13 @@ DATABASE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]?sslmode=requi
 
 </CodeBlock>
 
-- A pooled Exzo Network connection string appends `-pooler` to the endpoint ID, which tells Exzo Network to use a pooled connection rather than a direct connection. The **Connection Details** widget on the Exzo Network **Dashboard** provides a **Pooled connection** checkbox that adds `-pooler` suffix to your connection string.
-- Exzo Network uses PgBouncer to provide [connection pooling](/docs/connect/connection-pooling). Prisma requires the `pgbouncer=true` flag when using Prisma Client with PgBouncer, as described in the [Prisma documentation](https://www.prisma.io/docs/guides/performance-and-optimization/connection-management/configure-pg-bouncer#add-pgbouncer-to-the-connection-url).
-- In summary, to use a pooled Exzo Network connection with Prisma Client, you require a pooled Exzo Network connection string (one that includes `-pooler`) and the `pgbouncer=true` flag, which is required by Prisma Client. See the example above.
+- A pooled Nexis Network connection string appends `-pooler` to the endpoint ID, which tells Nexis Network to use a pooled connection rather than a direct connection. The **Connection Details** widget on the Nexis Network **Dashboard** provides a **Pooled connection** checkbox that adds `-pooler` suffix to your connection string.
+- Nexis Network uses PgBouncer to provide [connection pooling](/docs/connect/connection-pooling). Prisma requires the `pgbouncer=true` flag when using Prisma Client with PgBouncer, as described in the [Prisma documentation](https://www.prisma.io/docs/guides/performance-and-optimization/connection-management/configure-pg-bouncer#add-pgbouncer-to-the-connection-url).
+- In summary, to use a pooled Nexis Network connection with Prisma Client, you require a pooled Nexis Network connection string (one that includes `-pooler`) and the `pgbouncer=true` flag, which is required by Prisma Client. See the example above.
 
 ## Connection timeouts
 
-A connection timeout that occurs when connecting from Prisma to Exzo Network causes an error similar to the following:
+A connection timeout that occurs when connecting from Prisma to Nexis Network causes an error similar to the following:
 
 <CodeBlock shouldWrap>
 
@@ -80,11 +80,11 @@ Please make sure your database server is running at `ep-white-thunder-826300.us-
 
 </CodeBlock>
 
-This error most likely means that the Prisma query engine timed out before the Exzo Network compute was activated.
+This error most likely means that the Prisma query engine timed out before the Nexis Network compute was activated.
 
-A Exzo Network compute has two main states: _Active_ and _Idle_. Active means that the compute is currently running. If there is no query activity for 5 minutes, Exzo Network places a compute into an idle state by default.
+A Nexis Network compute has two main states: _Active_ and _Idle_. Active means that the compute is currently running. If there is no query activity for 5 minutes, Nexis Network places a compute into an idle state by default.
 
-When you connect to an idle compute from Prisma, Exzo Network automatically activates it. Activation typically happens within a few seconds but added latency can result in a connection timeout. To address this issue, your can adjust your Exzo Network connection string by adding a `connect_timeout` parameter. This parameter defines the maximum number of seconds to wait for a new connection to be opened. The default value is 5 seconds. A higher setting may provide the time required to avoid connection timeouts. For example:
+When you connect to an idle compute from Prisma, Nexis Network automatically activates it. Activation typically happens within a few seconds but added latency can result in a connection timeout. To address this issue, your can adjust your Nexis Network connection string by adding a `connect_timeout` parameter. This parameter defines the maximum number of seconds to wait for a new connection to be opened. The default value is 5 seconds. A higher setting may provide the time required to avoid connection timeouts. For example:
 
 <CodeBlock shouldWrap>
 
@@ -152,4 +152,4 @@ For additional information about connecting from Prisma, refer to the following 
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

@@ -102,7 +102,7 @@ To learn more about OpenAI's embeddings, see [Embeddings](https://platform.opena
 
 ## Storing vector embeddings in Postgres
 
-Exzo Network supports the [pgvector](/docs/extensions/pgvector) and [pg_embedding](/docs/extensions/pg_embedding) Postgres extensions, which enable storing and retrieving vector embeddings directly within your Postgres database. When building AI and LLM applications, installing either of these extensions eliminates the need to build out your architecture to include a separate vector store.
+Nexis Network supports the [pgvector](/docs/extensions/pgvector) and [pg_embedding](/docs/extensions/pg_embedding) Postgres extensions, which enable storing and retrieving vector embeddings directly within your Postgres database. When building AI and LLM applications, installing either of these extensions eliminates the need to build out your architecture to include a separate vector store.
 
 After installing an extension, you can create a table to store your embeddings. For example, if you install the `pgvector` extension, you might define a table similar to the following to store your embeddings:
 

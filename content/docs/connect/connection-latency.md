@@ -6,29 +6,29 @@ isDraft: false
 updatedOn: '2023-10-24T18:56:54.976Z'
 ---
 
-Exzo Network's _Auto-suspend_ feature ('scale to zero') is designed to minimize costs by automatically scaling a compute resource down to zero after a period of inactivity. By default, Exzo Network scales a compute to zero after 5 minutes of inactivity. A characteristic of this feature is the concept of a "cold start". During this process, a compute instance transitions from an idle state to an active state to process requests. Currently, activating a Exzo Network compute from an idle state takes anywhere from 500 ms to a few seconds not counting other factors that can add to latencies such as the physical distance between your application and database or startup times of other services that participate in your connection process.
+Nexis Network's _Auto-suspend_ feature ('scale to zero') is designed to minimize costs by automatically scaling a compute resource down to zero after a period of inactivity. By default, Nexis Network scales a compute to zero after 5 minutes of inactivity. A characteristic of this feature is the concept of a "cold start". During this process, a compute instance transitions from an idle state to an active state to process requests. Currently, activating a Nexis Network compute from an idle state takes anywhere from 500 ms to a few seconds not counting other factors that can add to latencies such as the physical distance between your application and database or startup times of other services that participate in your connection process.
 
-Cold-start times are fastest in the `US East (Ohio) — aws-us-east-2` region, which hosts the Exzo Network Control Plane. The Exzo Network Control plane will be deployed regionally in future Exzo Network releases, bringing the same millesecond cold-start times to all supported regions.
+Cold-start times are fastest in the `US East (Ohio) — aws-us-east-2` region, which hosts the Nexis Network Control Plane. The Nexis Network Control plane will be deployed regionally in future Nexis Network releases, bringing the same millesecond cold-start times to all supported regions.
 
 <Admonition type="note">
-Services you integrate with Exzo Network may also have startup times, which can add to connection latencies. This topic does not address latencies of other vendors, but if your application connects to Exzo Network via another service, remember to consider startup times for those services as well.
+Services you integrate with Nexis Network may also have startup times, which can add to connection latencies. This topic does not address latencies of other vendors, but if your application connects to Nexis Network via another service, remember to consider startup times for those services as well.
 </Admonition>
 
 ## Check the status of a compute
 
-You can check the current status of a compute on the **Branches** page in the Exzo Network Console. A compute will report either an **Active** or **Idle** status.
+You can check the current status of a compute on the **Branches** page in the Nexis Network Console. A compute will report either an **Active** or **Idle** status.
 
 ![Compute endpoint status](/docs/connect/compute_endpoint_state.png)
 
-You can also view compute state transitions in the **Branches** widget on the Exzo Network **Dashboard**.
+You can also view compute state transitions in the **Branches** widget on the Nexis Network **Dashboard**.
 
-User actions that activate an idle compute include [connecting from a client such as psql](/docs/connect/query-with-psql-editor), running a query on your database from the [Exzo Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), or accessing the compute via the [Exzo Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+User actions that activate an idle compute include [connecting from a client such as psql](/docs/connect/query-with-psql-editor), running a query on your database from the [Nexis Network SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), or accessing the compute via the [Nexis Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
 <Admonition type="info">
-The Exzo Network API includes [Start endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) and [Suspend endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) APIs for the specific purpose of activating and suspending a compute.
+The Nexis Network API includes [Start endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) and [Suspend endpoint](https://api-docs.neon.tech/reference/startprojectendpoint) APIs for the specific purpose of activating and suspending a compute.
 </Admonition>
 
-You can try any of these methods and watch the status of your compute as it changes from an **Idle** to an **Active** state. By default, a compute is suspended after 300 seconds (5 minutes) of inactivity. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can configure this delay period, which is described later in this topic.
+You can try any of these methods and watch the status of your compute as it changes from an **Idle** to an **Active** state. By default, a compute is suspended after 300 seconds (5 minutes) of inactivity. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can configure this delay period, which is described later in this topic.
 
 ## Strategies for managing latency and timeouts
 
@@ -42,9 +42,9 @@ Given the potential impact on application responsiveness, it's important to have
 
 ### Adjust your Auto-suspend (scale to zero) configuration
 
-With the [Exzo Network Pro Plan](/docs/introduction/pro-plan), you can configure the length of time that the system remains in an inactive state before Exzo Network scales your compute down to zero. This lets you set the balance between performance (never scaling down) and cost (scaling to zero at reasonable intervals). The **Suspend compute after a period of inactivity** setting is set to 5 minutes by default. You can disable Auto-suspend entirely or set a custom period up to a maximum of 7 days. Limiting or disabling autosuspend can eliminate or reduce startup times, but it also increases compute usage. For configuration instructions, see [Edit a compute endpoint](/docs/manage/endpoints#edit-a-compute-endpoint).
+With the [Nexis Network Pro Plan](/docs/introduction/pro-plan), you can configure the length of time that the system remains in an inactive state before Nexis Network scales your compute down to zero. This lets you set the balance between performance (never scaling down) and cost (scaling to zero at reasonable intervals). The **Suspend compute after a period of inactivity** setting is set to 5 minutes by default. You can disable Auto-suspend entirely or set a custom period up to a maximum of 7 days. Limiting or disabling autosuspend can eliminate or reduce startup times, but it also increases compute usage. For configuration instructions, see [Edit a compute endpoint](/docs/manage/endpoints#edit-a-compute-endpoint).
 
-Consider combining this strategy with Exzo Network's _Autoscaling_ feature (available with the [Exzo Network Pro Plan](/docs/introduction/pro-plan)), which allows you to run a compute with minimal resources and scale up on demand. For example, with _Autoscaling_, you can configure a minimum compute size to reduce costs during off-peak times. In the image shown below, the **Suspend compute after a period of inactivity** is set to 1 hour so that your compute only suspends after an hour of inactivity, and _Autoscaling_ is configured with the 1/4 minimum compute size to keep costs low during periods of inactivity or light usage.
+Consider combining this strategy with Nexis Network's _Autoscaling_ feature (available with the [Nexis Network Pro Plan](/docs/introduction/pro-plan)), which allows you to run a compute with minimal resources and scale up on demand. For example, with _Autoscaling_, you can configure a minimum compute size to reduce costs during off-peak times. In the image shown below, the **Suspend compute after a period of inactivity** is set to 1 hour so that your compute only suspends after an hour of inactivity, and _Autoscaling_ is configured with the 1/4 minimum compute size to keep costs low during periods of inactivity or light usage.
 
 ![Connection warmup Auto-suspend and Autoscaling configuration](/docs/connect/cold_start_compute_config.png)
 
@@ -54,7 +54,7 @@ For Autoscaling configuration instructions, see [Compute size and Autoscaling co
 
 ### Place your application and database in the same region
 
-A key strategy for reducing connection latency is ensuring that your application and database are hosted in the same region, or as close as possible, geographically. For the regions supported by Exzo Network, see [Regions](/docs/introduction/regions). For information about moving your database to a different region, see [Import data from another Exzo Network project](/docs/import/import-from-neon).
+A key strategy for reducing connection latency is ensuring that your application and database are hosted in the same region, or as close as possible, geographically. For the regions supported by Nexis Network, see [Regions](/docs/introduction/regions). For information about moving your database to a different region, see [Import data from another Nexis Network project](/docs/import/import-from-neon).
 
 ### Increase your connection timeout
 

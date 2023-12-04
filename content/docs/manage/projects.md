@@ -2,13 +2,13 @@
 title: Manage projects
 enableTableOfContents: true
 isDraft: false
-subtitle: Learn how to manage Exzo Network projects from the Exzo Network Console or the Exzo Network API.
+subtitle: Learn how to manage Nexis Network projects from the Nexis Network Console or the Nexis Network API.
 redirectFrom:
   - /docs/get-started-with-neon/projects
 updatedOn: '2023-10-24T18:56:54.992Z'
 ---
 
-With Exzo Network, everything starts with the project. It is the top-level object in the [Exzo Network object hierarchy](/docs/manage/overview). A project can hold as many databases, and with the Exzo Network Pro Plan, as many branches of those databases, as your application or workflow needs. However, [tier limits](/docs/introduction/plans) define how many projects you can create. The Exzo Network Free Tier limits you to one project per Exzo Network account.
+With Nexis Network, everything starts with the project. It is the top-level object in the [Nexis Network object hierarchy](/docs/manage/overview). A project can hold as many databases, and with the Nexis Network Pro Plan, as many branches of those databases, as your application or workflow needs. However, [tier limits](/docs/introduction/plans) define how many projects you can create. The Nexis Network Free Tier limits you to one project per Nexis Network account.
 
 Learn more about projects and how to manage them in these sections:
 
@@ -20,12 +20,12 @@ Learn more about projects and how to manage them in these sections:
 
 ## Default resources
 
-When you add a new project, Exzo Network creates the following resources by default:
+When you add a new project, Nexis Network creates the following resources by default:
 
 - A primary branch called `main`. You can create child branches from the primary branch or from any previously created branch. For more information, see [Manage branches](/docs/manage/branches).
 - A single read-write compute endpoint. This is the compute instance associated with the branch. For more information, see [Manage computes](/docs/manage/endpoints).
 - A ready-to-use database, called `neondb`, which lives in the project's primary branch.
-- A default Postgres role that takes its name from your Exzo Network account (the Google, GitHub, or partner account that you registered with).
+- A default Postgres role that takes its name from your Nexis Network account (the Google, GitHub, or partner account that you registered with).
 
 ## About the Settings page
 
@@ -37,7 +37,7 @@ You can tab between these sections:
 
 - **General** &#8212; Change the name of your project or copy the project ID.
 - **Compute** &#8212; Set the auto-suspend and sizing defaults for any new compute instances you create when branching.
-- **Storage** &#8212; Choose how long Exzo Network maintains a history of changes for all branches.
+- **Storage** &#8212; Choose how long Nexis Network maintains a history of changes for all branches.
 - **Sharing** &#8212; Let other users access your project's databases.
 - **Delete** &#8212; Use with care! This action deletes your entire project and all its objects, and is irreversible.
 
@@ -53,17 +53,17 @@ Here are some basic actions you can take to add or manage projects:
 
 ### Create a project
 
-Exzo Network Free Tier users can create a single project. Support for multiple projects is available to [Exzo Network Pro Plan](/docs/introduction/pro-plan) users.
+Nexis Network Free Tier users can create a single project. Support for multiple projects is available to [Nexis Network Pro Plan](/docs/introduction/pro-plan) users.
 
-To create a Exzo Network project:
+To create a Nexis Network project:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 
 2. If you are creating your very first project, click **Create a project**. Otherwise, click **New Project**.
 
-3. Specify valeus for **Name**, **Postgres version**, and **Region**. Project names are limited to 64 characters. If you are a [Exzo Network Pro Plan](/docs/introduction/pro-plan) user, you can specify **Compute size** settings when creating a project. The settings you specify become the default settings for compute endpoints that you add to your project when creating [branches](/docs/manage/branches#create-a-branch) or [read replicas](/docs/guides/read-replica-guide).
+3. Specify valeus for **Name**, **Postgres version**, and **Region**. Project names are limited to 64 characters. If you are a [Nexis Network Pro Plan](/docs/introduction/pro-plan) user, you can specify **Compute size** settings when creating a project. The settings you specify become the default settings for compute endpoints that you add to your project when creating [branches](/docs/manage/branches#create-a-branch) or [read replicas](/docs/guides/read-replica-guide).
 
-    - Exzo Network supports fixed size computes and _Autoscaling_. For more information, see [Compute size and Autoscaling configuration](/docs/manage/endpoints#compute-size-and-autoscaling-configuration).
+    - Nexis Network supports fixed size computes and _Autoscaling_. For more information, see [Compute size and Autoscaling configuration](/docs/manage/endpoints#compute-size-and-autoscaling-configuration).
     - The **Suspend compute after a period of inactivity** setting defines the period of inactivity after which a compute endpoint is automatically suspended. For more information, see [Auto-suspend configuration](/docs/manage/endpoints#auto-suspend-configuration).
   
 4. Click **Create Project**.
@@ -74,17 +74,17 @@ After creating a project, you are presented with a dialog that provides your con
 
 To view your projects:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
-1. Select **Home** or the Exzo Network logo at the top left of the Console.
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
+1. Select **Home** or the Nexis Network logo at the top left of the Console.
 1. The **Projects** page lists your projects, including any projects that have been shared with you.
 
 ### Change the name or copy the ID of your project
 
 You are permitted to change the name of your project at any point. The project ID is permanent.
 
-To edit a Exzo Network project:
+To edit a Nexis Network project:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 2. Select the project that you want to edit.
 3. Select **Settings**.
 4. Select **General**.
@@ -96,7 +96,7 @@ Deleting a project is a permanent action, which also deletes any compute endpoin
 
 To delete a project:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 2. Select the project that you want to delete.
 3. Select **Settings**.
 4. Select **Delete**.
@@ -105,43 +105,43 @@ To delete a project:
 
 ### Share a project
 
-Project sharing is a Exzo Network Pro Plan feature that allows you to share your project with other Exzo Network accounts.
+Project sharing is a Nexis Network Pro Plan feature that allows you to share your project with other Nexis Network accounts.
 
 To share a project:
 
-1. In the Exzo Network Console, select a project.
+1. In the Nexis Network Console, select a project.
 1. Select **Settings**.
 1. Select **Sharing**.
 1. Under **Grant access to your project**, enter the email address of the account you want to share access with.
 1. Click **Grant access**.
 
-The email you specify is added to the list of **People who have access to the project**. The Exzo Network account associated with that email address is granted full access to the project with the exception privileges required to delete the project. When that user logs in to Exzo Network, the shared project is listed on their **Projects** page, under **Shared with me**.
+The email you specify is added to the list of **People who have access to the project**. The Nexis Network account associated with that email address is granted full access to the project with the exception privileges required to delete the project. When that user logs in to Nexis Network, the shared project is listed on their **Projects** page, under **Shared with me**.
 
-The costs associated with a shared project are charged to the Exzo Network account that owns the project. For example, if you were to share your project with another Exzo Network user account, any usage incurred by that user within your project is billed to your Exzo Network account, not theirs.
+The costs associated with a shared project are charged to the Nexis Network account that owns the project. For example, if you were to share your project with another Nexis Network user account, any usage incurred by that user within your project is billed to your Nexis Network account, not theirs.
 
 For additional information, refer to our [Project sharing guide](/docs/guides/project-sharing-guide).
 
 ## Advanced settings
 
-From the **Settings** page, you can also set defaults or apply bulk changes across your Exzo Network objects:
+From the **Settings** page, you can also set defaults or apply bulk changes across your Nexis Network objects:
 
-- [Reset default compute size](#reset-the-default-compute-size) (Exzo Network Pro Plan only)
+- [Reset default compute size](#reset-the-default-compute-size) (Nexis Network Pro Plan only)
 - [Configure history retention range](#configure-history-retention)
 
 ### Reset the default compute size
 
-_Compute size_ is the number of Compute Units (CUs) assigned to a Exzo Network compute endpoint. The number of CUs determines the processing capacity of the compute endpoint. One CU is equal to 1 vCPU with 4 GB of RAM. Currently, a Exzo Network compute endpoint can have anywhere from .25 CUs to 7 CUs. Larger compute sizes will be supported in a future release.
+_Compute size_ is the number of Compute Units (CUs) assigned to a Nexis Network compute endpoint. The number of CUs determines the processing capacity of the compute endpoint. One CU is equal to 1 vCPU with 4 GB of RAM. Currently, a Nexis Network compute endpoint can have anywhere from .25 CUs to 7 CUs. Larger compute sizes will be supported in a future release.
 
-For [Exzo Network Free Tier](/docs/introduction/free-tier) users, Exzo Network sets your compute size to a static shared 1 vCPU, with 1 GB of RAM for each branch (max 10 branches).
+For [Nexis Network Free Tier](/docs/introduction/free-tier) users, Nexis Network sets your compute size to a static shared 1 vCPU, with 1 GB of RAM for each branch (max 10 branches).
 
-[Exzo Network Pro Plan](/docs/introduction/pro-plan) users have the flexibility to choose a compute size for each branch's compute endpoint individually. By default, new branches inherit the compute endpoint size from your first branch (i.e., `main`). However, there may be times when you want to reset this default. For example, if you want to create a series of read-only replicas, where each replica typically requires less compute per branch.
+[Nexis Network Pro Plan](/docs/introduction/pro-plan) users have the flexibility to choose a compute size for each branch's compute endpoint individually. By default, new branches inherit the compute endpoint size from your first branch (i.e., `main`). However, there may be times when you want to reset this default. For example, if you want to create a series of read-only replicas, where each replica typically requires less compute per branch.
 
 To reset the default compute size, go to **Settings** > **Compute**.
 
 You can choose from two options:
 
 - **Fixed Size:** Select a fixed compute size ranging from .25 CUs to 7 CUs. A fixed-size compute does not scale to meet workload demand.
-- **Autoscaling:** This option allows you to specify a minimum and maximum compute size. Exzo Network scales the compute size up and down within the selected compute size boundaries in response to the current load. Currently, _Autoscaling_ supports a range of 1/4 (.25) CU to 7 CUs. The 1/4 CU and 1/2 CU settings are _shared compute_. For information about how Exzo Network implements the _Autoscaling_ feature, see [Autoscaling](/docs/introduction/autoscaling).
+- **Autoscaling:** This option allows you to specify a minimum and maximum compute size. Nexis Network scales the compute size up and down within the selected compute size boundaries in response to the current load. Currently, _Autoscaling_ supports a range of 1/4 (.25) CU to 7 CUs. The 1/4 CU and 1/2 CU settings are _shared compute_. For information about how Nexis Network implements the _Autoscaling_ feature, see [Autoscaling](/docs/introduction/autoscaling).
 
 _Example: default minimum and maximum autoscale settings_
 
@@ -149,34 +149,34 @@ _Example: default minimum and maximum autoscale settings_
 
 ### Configure history retention
 
-By default, Exzo Network retains a 7-day history of changes for all branches in a Exzo Network project, which allows you to create a branch that restores data to any point within the defined retention period. The supported range is 0 to 7 days for [Exzo Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Exzo Network Pro Plan](/docs/introduction/pro-plan) users. Please be aware that increasing the history retention period affects all branches in your project and increases [project storage](/docs/introduction/billing#project-storage).
+By default, Nexis Network retains a 7-day history of changes for all branches in a Nexis Network project, which allows you to create a branch that restores data to any point within the defined retention period. The supported range is 0 to 7 days for [Nexis Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Nexis Network Pro Plan](/docs/introduction/pro-plan) users. Please be aware that increasing the history retention period affects all branches in your project and increases [project storage](/docs/introduction/billing#project-storage).
 
 To configure the history retention period for a project:
 
-1. Select a project in the Exzo Network console.
-2. On the Exzo Network **Dashboard**, select **Settings**.
+1. Select a project in the Nexis Network console.
+2. On the Nexis Network **Dashboard**, select **Settings**.
 3. Select **Storage**.
     ![History retention configuration](/docs/relnotes/history_retention.png)
 4. Use the slider to select the history retention period.
 5. Click **Save**.
 
-## Manage projects with the Exzo Network API
+## Manage projects with the Nexis Network API
 
-Project actions performed in the Exzo Network Console can also be performed using the Exzo Network API. The following examples demonstrate how to create, view, and delete projects using the Exzo Network API. For other project-related API methods, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+Project actions performed in the Nexis Network Console can also be performed using the Nexis Network API. The following examples demonstrate how to create, view, and delete projects using the Nexis Network API. For other project-related API methods, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
 <Admonition type="note">
-The API examples that follow may not show all of the user-configurable request body attributes that are available to you. To view all attributes for a particular method, refer to method's request body schema in the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+The API examples that follow may not show all of the user-configurable request body attributes that are available to you. To view all attributes for a particular method, refer to method's request body schema in the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 </Admonition>
 
 The `jq` option specified in each example is an optional third-party tool that formats the `JSON` response, making it easier to read. For information about this utility, see [jq](https://stedolan.github.io/jq/).
 
 ### Prerequisites
 
-A Exzo Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Exzo Network API request.
+A Nexis Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Nexis Network API request.
 
 ### Create a project with the API
 
-The following Exzo Network API method creates a project. The [Exzo Network Free Tier](/docs/introduction/free-tier) permits one project per account. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/createproject).
+The following Nexis Network API method creates a project. The [Nexis Network Free Tier](/docs/introduction/free-tier) permits one project per account. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/createproject).
 
 ```text
 POST /projects
@@ -312,7 +312,7 @@ The response includes information about the roles, the ready-to-use database (`n
 
 ### List projects with the API
 
-The following Exzo Network API method lists projects for your Exzo Network account. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/listprojects).
+The following Nexis Network API method lists projects for your Nexis Network account. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/listprojects).
 
 ```text
 GET /projects
@@ -354,7 +354,7 @@ curl 'https://console.neon.tech/api/v2/projects' \
 
 ### Update a project with the API
 
-The following Exzo Network API method updates the specified project. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/updateproject).
+The following Nexis Network API method updates the specified project. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/updateproject).
 
 ```text
 PATCH /projects/{project_id}
@@ -401,7 +401,7 @@ curl 'https://console.neon.tech/api/v2/projects/ep-cool-darkness-123456' \
 
 ### Delete a project with the API
 
-The following Exzo Network API method deletes the specified project. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/deleteproject).
+The following Nexis Network API method deletes the specified project. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/deleteproject).
 
 ```text
 DELETE /projects/{project_id}
@@ -442,4 +442,4 @@ curl -X 'DELETE' \
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

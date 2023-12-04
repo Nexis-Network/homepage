@@ -1,27 +1,27 @@
 ---
-title: Connect to Exzo Network
-subtitle: Everything you need to know about connecting to Exzo Network
+title: Connect to Nexis Network
+subtitle: Everything you need to know about connecting to Nexis Network
 enableTableOfContents: true
 updatedOn: '2023-10-13T14:08:36.341Z'
 ---
 
-Find detailed information and instructions about connecting to Exzo Network from different clients and applications, troubleshooting connection issues, connection pooling, and more.
+Find detailed information and instructions about connecting to Nexis Network from different clients and applications, troubleshooting connection issues, connection pooling, and more.
 
-For integrating Exzo Network with different frameworks, languages, and platforms, refer to our [Guides](/docs/guides/guides-intro) documentation.
+For integrating Nexis Network with different frameworks, languages, and platforms, refer to our [Guides](/docs/guides/guides-intro) documentation.
 
 ## Connect from clients and applications
 
-Learn how to establish a connection to Exzo Network from any application.
+Learn how to establish a connection to Nexis Network from any application.
 
 <DetailIconCards>
 
-<a href="/docs/connect/connect-from-any-app" description="Learn about connection strings and how to connect to Exzo Network from any application" icon="audio-jack">Connect from any app</a>
+<a href="/docs/connect/connect-from-any-app" description="Learn about connection strings and how to connect to Nexis Network from any application" icon="audio-jack">Connect from any app</a>
 
-<a href="/docs/connect/connect-postgres-gui" description="Learn how to connect to a Exzo Network database from a GUI application" icon="audio-jack">Connect a GUI application</a>
+<a href="/docs/connect/connect-postgres-gui" description="Learn how to connect to a Nexis Network database from a GUI application" icon="audio-jack">Connect a GUI application</a>
 
 <a href="/docs/connect/query-with-psql-editor" description="Connect with psql, the native command-line client for Postgres" icon="audio-jack">Connect with psql</a>
 
-<a href="/docs/connect/passwordless-connect" description="Connect without a password using Exzo Network's psql passwordless auth feature" icon="audio-jack">Passwordless auth</a>
+<a href="/docs/connect/passwordless-connect" description="Connect without a password using Nexis Network's psql passwordless auth feature" icon="audio-jack">Passwordless auth</a>
 
 </DetailIconCards>
 
@@ -39,11 +39,11 @@ Troubleshoot and resolve common connection issues.
 
 ## Secure connections
 
-Ensure the integrity and security of your connections to Exzo Network.
+Ensure the integrity and security of your connections to Nexis Network.
 
 <DetailIconCards>
 
-<a href="/connect/connect-securely" description="Learn how to connect to Exzo Network securely using SSL/TLS encrypted connections" icon="audio-jack">Connect to Exzo Network securely</a>
+<a href="/connect/connect-securely" description="Learn how to connect to Nexis Network securely using SSL/TLS encrypted connections" icon="audio-jack">Connect to Nexis Network securely</a>
 
 <a href="https://neon.tech/blog/avoid-mitm-attacks-with-psql-postgres-16" description="Learn how the psql client in Postgres 16 makes it simple to connect securely" icon="audio-jack">Avoid MME attacks in Postgres 16</a>
 
@@ -55,8 +55,8 @@ Optimize your connections by enabling connection pooling.
 
 <DetailIconCards>
 
-<a href="/docs/connect/connection-pooling" description="Learn how to enable connection pooling to support up to 10,000 concurrent connections" icon="audio-jack">Connection pooling in Exzo Network</a>
+<a href="/docs/connect/connection-pooling" description="Learn how to enable connection pooling to support up to 10,000 concurrent connections" icon="audio-jack">Connection pooling in Nexis Network</a>
 
-<a href="/docs/guides/prisma#connect-from-serverless-functions" description="Learn about connecting from Prisma to Exzo Network from serverless functions" icon="audio-jack">Connection pooling with Prisma</a>
+<a href="/docs/guides/prisma#connect-from-serverless-functions" description="Learn about connecting from Prisma to Nexis Network from serverless functions" icon="audio-jack">Connection pooling with Prisma</a>
 
 </DetailIconCards>

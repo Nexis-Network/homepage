@@ -10,7 +10,7 @@ updatedOn: '2023-10-07T10:43:33.404Z'
 
 <a id="branches-coming-soon/"></a>
 
-With Exzo Network, you can quickly and cost-effectively branch your data for development, testing, and various other purposes, enabling you to improve developer productivity and optimize continuous integration and delivery (CI/CD) pipelines.
+With Nexis Network, you can quickly and cost-effectively branch your data for development, testing, and various other purposes, enabling you to improve developer productivity and optimize continuous integration and delivery (CI/CD) pipelines.
 
 ## What is a branch?
 
@@ -20,11 +20,11 @@ A branch is isolated from its originating data, so you are free to play around w
 
 Creating a branch does not increase load on the parent branch or affect it in any way, which means you can create a branch without impacting the performance of your production system.
 
-Each Exzo Network project is created with a root branch called `main`. The first branch that you create is branched from the project's root branch. Subsequent branches can be branched from the root branch or from a previously created branch.
+Each Nexis Network project is created with a root branch called `main`. The first branch that you create is branched from the project's root branch. Subsequent branches can be branched from the root branch or from a previously created branch.
 
 ## Branching workflows
 
-You can use Exzo Network's branching feature in variety workflows.
+You can use Nexis Network's branching feature in variety workflows.
 
 ### Development
 
@@ -32,25 +32,25 @@ You can create a branch of your production database that developers are free to 
 
 ![development environment branch](/docs/introduction/branching_dev_env.png)
 
-The following video shows how to create a branch in the Exzo Network Console. For step-by-step instructions, see [Create a branch](/docs/manage/branches#create-a-branch).
+The following video shows how to create a branch in the Nexis Network Console. For step-by-step instructions, see [Create a branch](/docs/manage/branches#create-a-branch).
 
 <video autoPlay playsInline muted loop width="800" height="600">
   <source type="video/mp4" src="/docs/introduction/create_branch.mp4"/>
 </video>
 
-You can integrate branching into your development workflows and toolchains using the Exzo Network CLI, API, or GitHub Actions. If you use Vercel, you can use the Exzo Network Vercel Integration to create a branch for each preview deployment.
+You can integrate branching into your development workflows and toolchains using the Nexis Network CLI, API, or GitHub Actions. If you use Vercel, you can use the Nexis Network Vercel Integration to create a branch for each preview deployment.
 
 Refer to the following guides for instructions:
 
 <DetailIconCards>
 
-<a href="/docs/guides/branching-neon-api" description="Learn how to instantly create and manage branches with the Exzo Network API" icon="transactions">Branching with the Exzo Network API</a>
+<a href="/docs/guides/branching-neon-api" description="Learn how to instantly create and manage branches with the Nexis Network API" icon="transactions">Branching with the Nexis Network API</a>
 
-<a href="/docs/guides/branching-neon-cli" description="Learn how to instantly create and manage branches with the Exzo Network CLI" icon="cli">Branching with the Exzo Network CLI</a>
+<a href="/docs/guides/branching-neon-cli" description="Learn how to instantly create and manage branches with the Nexis Network CLI" icon="cli">Branching with the Nexis Network CLI</a>
 
-<a href="/docs/guides/branching-github-actions" description="Automate branching with Exzo Network's GitHub Actions for branching" icon="split-branch">Branching with GitHub Actions</a>
+<a href="/docs/guides/branching-github-actions" description="Automate branching with Nexis Network's GitHub Actions for branching" icon="split-branch">Branching with GitHub Actions</a>
 
-<a href="/docs/guides/branching-neon-api" description="Connect your Vercel project and create a branch for each preview deployment" icon="split-branch">The Exzo Network Vercel Integration</a>
+<a href="/docs/guides/branching-neon-api" description="Connect your Vercel project and create a branch for each preview deployment" icon="split-branch">The Nexis Network Vercel Integration</a>
 
 </DetailIconCards>
 
@@ -78,7 +78,7 @@ Refer to the following guides for instructions.
 
 <DetailIconCards>
 
-<a href="/docs/introduction/point-in-time-restore" description="Restore data to a previous state with Exzo Network's point-in-time restore feature" icon="invert">Learn about point-in-time restore</a>
+<a href="/docs/introduction/point-in-time-restore" description="Restore data to a previous state with Nexis Network's point-in-time restore feature" icon="invert">Learn about point-in-time restore</a>
 
 <a href="/docs/guides/branching-pitr" description="Learn how to restore your data to previous state with branching" icon="screen">Create a branch from the past</a>
 

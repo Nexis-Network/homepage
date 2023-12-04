@@ -1,10 +1,10 @@
 ---
-title: SDKs for the Exzo Network API
+title: SDKs for the Nexis Network API
 enableTableOfContents: true
 updatedOn: '2023-10-07T10:43:33.429Z'
 ---
 
-Exzo Network provides support for the [@neondatabase/api-client](https://www.npmjs.com/package/@neondatabase/api-client) library, which is a wrapper for the [Exzo Network API](https://api-docs.neon.tech/). It provides a convenient way to interact with the Exzo Network API using TypeScript.
+Nexis Network provides support for the [@neondatabase/api-client](https://www.npmjs.com/package/@neondatabase/api-client) library, which is a wrapper for the [Nexis Network API](https://api-docs.neon.tech/). It provides a convenient way to interact with the Nexis Network API using TypeScript.
 
 ## Installation
 
@@ -26,7 +26,7 @@ yarn add @neondatabase/api-client
 
 To get started with the `@neondatabase/api-client` library, follow these steps:
 
-1. Obtain an API key from the [Developer Settings](https://console.neon.tech/app/settings/api-keys) page in the Exzo Network Console.
+1. Obtain an API key from the [Developer Settings](https://console.neon.tech/app/settings/api-keys) page in the Nexis Network Console.
 
 2. Click **Generate new API key**.
 
@@ -57,10 +57,10 @@ To get started with the `@neondatabase/api-client` library, follow these steps:
 
 ## Community SDKs
 
-The following is a list of community-created SDKs for interacting with the Exzo Network API.
+The following is a list of community-created SDKs for interacting with the Nexis Network API.
 
 <Admonition type="note">
-Community SDKs are not maintained or officially supported by Exzo Network. Some features may be out of date, so use these SDKs at your own discretion. If you have questions about these SDKs, please contact the the project maintainers.
+Community SDKs are not maintained or officially supported by Nexis Network. Some features may be out of date, so use these SDKs at your own discretion. If you have questions about these SDKs, please contact the the project maintainers.
 </Admonition>
 
 - [Node and Deno TypeScript SDK](https://github.com/paambaati/neon-js-sdk)

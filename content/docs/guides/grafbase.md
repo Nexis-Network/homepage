@@ -1,7 +1,7 @@
 ---
-title: Use Grafbase Edge Resolvers with Exzo Network
+title: Use Grafbase Edge Resolvers with Nexis Network
 subtitle: Learn how to build and deploy serverless GraphQL backends with Grafbase and
-  Exzo Network
+  Nexis Network
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2023-10-07T10:43:33.377Z'
@@ -11,14 +11,14 @@ _This guide was contributed by Josep Vidal from Grafbase_
 
 Grafbase allows you to combine your data sources into a centralized GraphQL endpoint and deploy a serverless GraphQL backend.
 
-This guide describes how to create a GraphQL API using Grafbase and use Grafbase [Edge Resolvers](https://grafbase.com/docs/edge-gateway/resolvers) with the [Exzo Network serverless driver](/docs/serverless/serverless-driver) to interact with your Exzo Network database at the edge.
+This guide describes how to create a GraphQL API using Grafbase and use Grafbase [Edge Resolvers](https://grafbase.com/docs/edge-gateway/resolvers) with the [Nexis Network serverless driver](/docs/serverless/serverless-driver) to interact with your Nexis Network database at the edge.
 
-The example project in this guide simulates a marketplace of products, where the product price is dynamically calculated based on data retrieved from your Exzo Network database.
+The example project in this guide simulates a marketplace of products, where the product price is dynamically calculated based on data retrieved from your Nexis Network database.
 
 ## Prerequisites
 
 - The [Grafbase CLI](https://grafbase.com/cli)
-- A Exzo Network project. See [Create a Exzo Network project](/docs/manage/projects#create-a-project).
+- A Nexis Network project. See [Create a Nexis Network project](/docs/manage/projects#create-a-project).
 
 ## Create a backend with Grafbase
 
@@ -42,10 +42,10 @@ The example project in this guide simulates a marketplace of products, where the
     }
     ```
 
-## Create the schema in Exzo Network
+## Create the schema in Nexis Network
 
-1. Navigate to the Exzo Network Console and select your project.
-2. Open the Exzo Network **SQL Editor** and run the following `CREATE TABLE` statement:
+1. Navigate to the Nexis Network Console and select your project.
+2. Open the Nexis Network **SQL Editor** and run the following `CREATE TABLE` statement:
 
     ```sql
     CREATE TABLE product_visits(id SERIAL PRIMARY KEY, product_id TEXT NOT NULL);
@@ -74,9 +74,9 @@ touch price.js
 
 You will add code to these files in a later step.
 
-## Install the Exzo Network serverless driver
+## Install the Nexis Network serverless driver
 
-Inside the `grafbase` directory in your project, run the following commands to install the Exzo Network serverless driver:
+Inside the `grafbase` directory in your project, run the following commands to install the Nexis Network serverless driver:
 
   ```bash
   cd ..
@@ -84,11 +84,11 @@ Inside the `grafbase` directory in your project, run the following commands to i
   npm install @neondatabase/serverless
   ```
 
-## Retrieve your Exzo Network connection string
+## Retrieve your Nexis Network connection string
 
-A database connection string is required to forward queries to your Exzo Network database. To retrieve the connection string for your database:
+A database connection string is required to forward queries to your Nexis Network database. To retrieve the connection string for your database:
 
-1. Navigate to the Exzo Network **Dashboard**.
+1. Navigate to the Nexis Network **Dashboard**.
 2. Copy the connection string for your database from the **Connection Details** widget. The connection string should appear similar to the following:
 
     <CodeBlock shouldWrap>
@@ -153,7 +153,7 @@ A database connection string is required to forward queries to your Exzo Network
 
 ## Test the resolvers
 
-To test the resolvers with Exzo Network, perform the following steps:
+To test the resolvers with Nexis Network, perform the following steps:
 
 1. Start the Grafbase CLI:
 
@@ -174,7 +174,7 @@ To test the resolvers with Exzo Network, perform the following steps:
     }
     ```
 
-3. Use the product `id` to execute the following mutation, which adds a row to the database table in Exzo Network:
+3. Use the product `id` to execute the following mutation, which adds a row to the database table in Nexis Network:
 
     ```graphql
     mutation {

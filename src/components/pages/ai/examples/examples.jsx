@@ -13,7 +13,7 @@ import CardListModified from 'components/shared/card-list-modified';
 const exampleApps = [
   {
     icon: chatbotIcon,
-    title: 'Exzo Wallet Extension',
+    title: 'Nexis Wallet Extension',
     description:
       'Give LLM-based chatbots long-term memory and provide relevant context from your data.',
     url: 'https://chrome.google.com/webstore/detail/exzo-wallet/jiieejiponjbbnldnklcbamkembhhpka',
@@ -23,7 +23,7 @@ const exampleApps = [
     title: 'Block Explorer',
     description:
       'Build next-level search experiences for your users where you understand the true meaning of their queries.',
-    url: 'https://evm.exzoscan.io',
+    url: 'https://evm.nexscan.io',
   },
   {
     icon: imageSearchIcon,
@@ -47,7 +47,7 @@ const exampleApps2 = [
     title: 'Anonymous User',
     description:
       'lorem ipsum Build next-level search experiences for your users where you understand the true meaning of their queries.',
-    url: 'https://evm.exzoscan.io',
+    url: 'https://evm.nexscan.io',
   },
   {
     icon: imageSearchIcon,
@@ -69,7 +69,7 @@ const Examples = () => (
           tag="h2"
         >
           Start building
-          <br />Web3 apps on Exzo Network
+          <br />Web3 apps on Nexis Network
         </Heading>
         <p className="mt-3 text-center text-lg font-light leading-snug xl:text-base md:max-w-xs">
           Check out some of our ecosystem dApps
@@ -90,7 +90,7 @@ const Examples = () => (
           className="flat-breaks md:flat-none mt-3 text-center text-[52px] font-medium leading-none tracking-extra-tight xl:mt-4 xl:text-[44px] lg:text-4xl md:mt-3 md:max-w-xs md:text-[32px]"
           tag="h2"
         >
-          What makes EXZO different
+          What makes Nexis different
         </Heading>
         <p className="mt-3 text-center text-lg font-light leading-snug xl:text-base md:max-w-xs">
           These are some of the features which we makes us best

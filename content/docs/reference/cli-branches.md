@@ -1,18 +1,18 @@
 ---
-title: Exzo Network CLI commands — branches
-subtitle: Use the Exzo Network CLI to manage Exzo Network directly from the terminal
+title: Nexis Network CLI commands — branches
+subtitle: Use the Nexis Network CLI to manage Nexis Network directly from the terminal
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.850Z'
 ---
 
 ## Before you begin
 
-- Before running the `branches` command, ensure that you have [installed the Exzo Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
-- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Exzo Network CLI command automatically launches the Exzo Network CLI browser authentication process. Alternatively, you can specify a Exzo Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
+- Before running the `branches` command, ensure that you have [installed the Nexis Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
+- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Nexis Network CLI command automatically launches the Nexis Network CLI browser authentication process. Alternatively, you can specify a Nexis Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
 
 ## The `branches` command
 
-The `branches` command allows you to list, create, rename, delete, and retrieve information about branches in your Exzo Network project. It also permits setting a branch as the primary branch and adding a compute endpoint to a branch. You can create a [read replica](/docs/introduction/read-replicas) by adding a read-only compute endpoint.
+The `branches` command allows you to list, create, rename, delete, and retrieve information about branches in your Nexis Network project. It also permits setting a branch as the primary branch and adding a compute endpoint to a branch. You can create a [read replica](/docs/introduction/read-replicas) by adding a read-only compute endpoint.
 
 ### Usage
 
@@ -32,7 +32,7 @@ neonctl branches <subcommand> [options]
 
 ### list
 
-This subcommand allows you to list branches in a Exzo Network project.
+This subcommand allows you to list branches in a Nexis Network project.
 
 #### Usage
 
@@ -42,11 +42,11 @@ neonctl branches list [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports this option:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `list` subcommand supports this option:
 
 | Option       | Description   | Type   | Required  |
 | ------------ | ------------- | ------ | :------: |
-| `--project-id` | Project ID    | string | Only if your Exzo Network account has more than one project |
+| `--project-id` | Project ID    | string | Only if your Nexis Network account has more than one project |
 
 #### Examples
 
@@ -106,7 +106,7 @@ In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#gl
 
 ### create
 
-This subcommand allows you to create a branch in a Exzo Network project.
+This subcommand allows you to create a branch in a Nexis Network project.
 
 #### Usage
 
@@ -116,11 +116,11 @@ neonctl branches create [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `create` subcommand supports these options:
 
 | Option    | Description                                                    | Type    |   Required  |
 | :-------- | :------------------------------------------------------------- | :------ | :---------: |
-| `--project-id` | Project ID    | string | Only if your Exzo Network account has more than one project |
+| `--project-id` | Project ID    | string | Only if your Nexis Network account has more than one project |
 | `--name`    | The branch name                                                | string  |             |
 | `--parent`  | Parent branch name, id, timestamp, or LSN. Defaults to the primary branch | string  |             |
 | `--compute`| Create a branch with or without a compute. By default, the branch is created with a read-write endpoint. The default value is `true`. To create a branch without a compute, use `--no-compute` | boolean |    |
@@ -152,7 +152,7 @@ In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#gl
     ```
 
     <Admonition type="tip">
-    The Exzo Network CLI provides a `neonctl connection-string` command you can use to extract a connection uri programmatically. See [Exzo Network CLI commands — connection-string](https://neon.tech/docs/reference/cli-connection-string).
+    The Nexis Network CLI provides a `neonctl connection-string` command you can use to extract a connection uri programmatically. See [Nexis Network CLI commands — connection-string](https://neon.tech/docs/reference/cli-connection-string).
     </Admonition>
 
 - Create a branch with the `--output` format of the command set to `json`. This output format returns all of the branch response data, whereas the default `table` output format (shown in the preceding example) is limited in the information it can display.
@@ -246,7 +246,7 @@ The timestamp must be provided in ISO 8601 format. You can use this [timestamp c
 
 ### rename
 
-This subcommand allows you to update a branch in a Exzo Network project.
+This subcommand allows you to update a branch in a Nexis Network project.
 
 #### Usage
 
@@ -258,11 +258,11 @@ neonctl branches rename <id|name> <new-name> [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `rename` subcommand supports this option:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `rename` subcommand supports this option:
 
 | Option        | Description | Type   | Required  |
 | ------------- | ----------- | ------ | :-----: |
-| --project-id  | Project ID  | string | Only if your Exzo Network account has more than one project |
+| --project-id  | Project ID  | string | Only if your Nexis Network account has more than one project |
 
 #### Example
 
@@ -277,7 +277,7 @@ neonctl branches rename mybranch teambranch
 
 ### set-primary
 
-This subcommand allows you to set a branch as the primary branch in your Exzo Network project.
+This subcommand allows you to set a branch as the primary branch in your Nexis Network project.
 
 #### Usage
 
@@ -289,11 +289,11 @@ neonctl branches set-primary <id|name> [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `set-primary` subcommand supports this option:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `set-primary` subcommand supports this option:
 
 | Option        | Description | Type   | Required  |
 | ------------- | ----------- | ------ | :-----: |
-| --project-id  | Project ID  | string | Only if your Exzo Network account has more than one project |
+| --project-id  | Project ID  | string | Only if your Nexis Network account has more than one project |
 
 #### Example
 
@@ -308,7 +308,7 @@ neonctl branches set-primary mybranch
 
 ### add-compute
 
-This subcommand allows you to add a compute endpoint to an existing branch in your Exzo Network project.
+This subcommand allows you to add a compute endpoint to an existing branch in your Nexis Network project.
 
 #### Usage
 
@@ -320,11 +320,11 @@ neonctl branches add-compute <id|name>
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `add-compute` subcommand supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `add-compute` subcommand supports these options:
 
 | Option        | Description | Type   | Required  |
 | ------------- | ----------- | ------ | :-----: |
-| `--project-id`  | Project ID  | string | Only if your Exzo Network account has more than one project |
+| `--project-id`  | Project ID  | string | Only if your Nexis Network account has more than one project |
 | `--type`| Type of compute to add. Choices are `read_only` (the default) or `read_write`. A branch with a read-only compute endpoint is also referred to as a [read replica](/docs/introduction/read-replicas). A branch can have a single read-write and multiple read-only compute endpoints.                                     | string |             |
 
 #### Example
@@ -340,7 +340,7 @@ neonctl branches add-compute mybranch --type read_only
 
 ### delete
 
-This subcommand allows you to delete a branch in a Exzo Network project.
+This subcommand allows you to delete a branch in a Nexis Network project.
 
 #### Usage
 
@@ -352,11 +352,11 @@ neonctl branches delete <id|name> [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `delete` subcommand supports this option:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `delete` subcommand supports this option:
 
 | Option        | Description | Type   | Required  |
 | ------------- | ----------- | ------ | :------: |
-| --project-id  | Project ID  | string | Only if your Exzo Network account has more than one project |
+| --project-id  | Project ID  | string | Only if your Nexis Network account has more than one project |
 
 #### Example
 
@@ -381,13 +381,13 @@ neonctl branches get <id|name> [options]
 
 #### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `get` subcommand supports this option:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `get` subcommand supports this option:
 
 #### Options
 
 | Option        | Description | Type   | Required |
 | ------------- | ----------- | ------ | :------: |
-| --project-id  | Project ID  | string | Only if your Exzo Network account has more than one project |
+| --project-id  | Project ID  | string | Only if your Nexis Network account has more than one project |
 
 #### Examples
 
@@ -423,4 +423,4 @@ neonctl branches get main --output json
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

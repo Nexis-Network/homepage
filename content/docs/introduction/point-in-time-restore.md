@@ -5,16 +5,16 @@ enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.989Z'
 ---
 
-Exzo Network retains a history of changes for all branches, enabling point-in-time restore. This feature allows you to restore data to any point within the retention period. You can use the point-in-time restore feature as a database [backup](/docs/manage/backups) strategy, to view the past state of your database, or to recover lost data.
+Nexis Network retains a history of changes for all branches, enabling point-in-time restore. This feature allows you to restore data to any point within the retention period. You can use the point-in-time restore feature as a database [backup](/docs/manage/backups) strategy, to view the past state of your database, or to recover lost data.
 
 ## History retention
 
-The history retention period is 7 days, by default, but is configurable. The supported range is 0 to 7 days for [Exzo Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Exzo Network Pro Plan](/docs/introduction/pro-plan) users.
+The history retention period is 7 days, by default, but is configurable. The supported range is 0 to 7 days for [Nexis Network Free Tier](/docs/introduction/free-tier) users, and 0 to 30 days for [Nexis Network Pro Plan](/docs/introduction/pro-plan) users.
 
-You can configure the **History retention** setting in the Exzo Network Console, under **Settings** > **Storage**. For further instructions, see [Configure history retention](/docs/manage/projects#configure-history-retention).
+You can configure the **History retention** setting in the Nexis Network Console, under **Settings** > **Storage**. For further instructions, see [Configure history retention](/docs/manage/projects#configure-history-retention).
 ![History retention configuration](/docs/relnotes/history_retention.png)
 
-Increasing the history retention period affects all branches in your Exzo Network project and increases [project storage](/docs/introduction/billing#project-storage). You can scale **History retention** down to zero if reducing storage cost is more important than the ability to restore your data to a past state.
+Increasing the history retention period affects all branches in your Nexis Network project and increases [project storage](/docs/introduction/billing#project-storage). You can scale **History retention** down to zero if reducing storage cost is more important than the ability to restore your data to a past state.
 
 History is retained in the form of Write-Ahead-Log (WAL) records. As WAL records age out of the retention period, they are evicted from storage and no longer count toward project storage.
 

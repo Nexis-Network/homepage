@@ -28,10 +28,10 @@ const HeroWithForm = () => (
           December 6-8 | 9:00 - 10:00 PT
         </time>
         <h1 className="mt-5 text-center text-[72px] font-bold leading-dense 2xl:text-6xl xl:text-5xl lg:text-4xl">
-          Exzo Network Developer Days
+          Nexis Network Developer Days
         </h1>
         <p className="mt-5 max-w-[640px] text-center text-xl leading-normal md:text-lg">
-          Join us virtually to learn about Exzo Network and how to build better with Serverless Postgres.
+          Join us virtually to learn about Nexis Network and how to build better with Serverless Postgres.
         </p>
         <p className="mt-5 max-w-[640px] text-center text-xl leading-normal md:text-lg">
           Register for event updates.

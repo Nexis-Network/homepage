@@ -4,10 +4,10 @@ PRODID:Stripo.email
 BEGIN:VEVENT
 UID:651fac3b8e83b
 DTSTAMP:20231006T064203Z
-SUMMARY:Exzo Network Developer Days #3
-DESCRIPTION:Join us online on November 2nd for the third edition of Exzo Network De
+SUMMARY:Nexis Network Developer Days #3
+DESCRIPTION:Join us online on November 2nd for the third edition of Nexis Network De
  veloper Days 🎉\n\nYou'll hear presentations about Postgres\, scalabilit
- y\, AI\, and using Exzo Network with modern developer tools.
+ y\, AI\, and using Nexis Network with modern developer tools.
 LOCATION:https://neon.tech/developer-days
 CLASS:PUBLIC
 DTSTART:20231102T180000Z

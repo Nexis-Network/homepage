@@ -91,7 +91,7 @@ const Features = () => {
       animationRef: highAvailabilityAnimationRef,
       title: 'Reliable',
       description:
-        'Exzo Network provides high availability without a maintenance burden or the need for expert advice.',
+        'Nexis Network provides high availability without a maintenance burden or the need for expert advice.',
     },
     {
       animationVisibilityRef: autoBackupAnimationVisibilityRef,
@@ -114,7 +114,7 @@ const Features = () => {
     //   animationRef: edgeDeploymentAnimationRef,
     //   title: 'Edge Deployment',
     //   description:
-    //     'Have a database close to your users. Exzo Network is a perfect for serverless functions.',
+    //     'Have a database close to your users. Nexis Network is a perfect for serverless functions.',
     //   tag: {
     //     className: 'text-secondary-2 border-secondary-2',
     //     text: 'Coming Soon',
@@ -130,7 +130,7 @@ const Features = () => {
           <Link to={LINKS.github} theme="underline-primary-1">
             GitHub repository
           </Link>{' '}
-          where we publicly develop Exzo Network under the Apache 2.0 license.
+          where we publicly develop Nexis Network under the Apache 2.0 license.
         </>
       ),
     },
@@ -157,7 +157,7 @@ const Features = () => {
           />
         </Heading>
         <p className="t-3xl mx-auto mt-5 max-w-[940px] text-center text-white 2xl:mt-4 2xl:max-w-[800px] xl:mt-3.5 xl:max-w-[610px] lg:max-w-[580px]">
-          Exzo Network provides true cloud native features that are essential for modern application
+          Nexis Network provides true cloud native features that are essential for modern application
           development.
         </p>
         <ul className="grid-gap-x mt-[92px] grid grid-cols-12 gap-y-[92px] 2xl:mt-[76px] 2xl:gap-y-[76px] xl:mt-16 xl:gap-y-16 md:grid-cols-1">

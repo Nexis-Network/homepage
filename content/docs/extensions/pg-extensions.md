@@ -6,7 +6,7 @@ redirectFrom:
 updatedOn: '2023-10-19T23:10:12.819Z'
 ---
 
-Exzo Network supports the Postgres extensions shown in the following table. The supported version of the extension sometimes differs by Postgres version.
+Nexis Network supports the Postgres extensions shown in the following table. The supported version of the extension sometimes differs by Postgres version.
 
 <a id="default-extensions/"></a>
 
@@ -63,7 +63,7 @@ Exzo Network supports the Postgres extensions shown in the following table. The 
 | [postgis](https://postgis.net/)                  | 3.3.3                                   | 3.3.3     | 3.3.3                                |                                                                                                                    |
 | [postgis_raster](https://postgis.net/docs/RT_reference.html)           | 3.3.3             | 3.3.3  | 3.3.3              |                                                                                                                    |
 | [postgis_sfcgal](https://oslandia.gitlab.io/SFCGAL/)           | 3.3.3                    | 3.3.3  | 3.3.3                    |                                                                                                                    |
-| [postgis_tiger_geocoder](https://postgis.net/docs/Extras.html#Tiger_Geocoder)   | 3.3.3    | 3.3.3 | 3.3.3    | Cannot be installed using the Exzo Network SQL Editor. Use your `psql` user credentials to install this extension.         |
+| [postgis_tiger_geocoder](https://postgis.net/docs/Extras.html#Tiger_Geocoder)   | 3.3.3    | 3.3.3 | 3.3.3    | Cannot be installed using the Nexis Network SQL Editor. Use your `psql` user credentials to install this extension.         |
 | [postgis_topology](https://www.postgis.net/docs/Topology.html)          | 3.3.3            | 3.3.3   | 3.3.3            |                                                                                                                    |
 | [prefix](https://github.com/dimitri/prefix)                   | 1.2.0                     | 1.2.0   | 1.2.0                      |                                                                                                                    |
 | [rdkit](https://github.com/rdkit/rdkit)                    | 4.3.0                           | 4.3.0  | 4.3.0  |                                                                                                                   |
@@ -89,11 +89,11 @@ Unless otherwise noted, supported extensions can be installed using [CREATE EXTE
 CREATE EXTENSION <extension_name>
 ```
 
-You can install extensions from the Exzo Network SQL Editor or from a client such as `psql` that permits running SQL queries. For information about using the Exzo Network SQL Editor, see [Query with Exzo Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Exzo Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
+You can install extensions from the Nexis Network SQL Editor or from a client such as `psql` that permits running SQL queries. For information about using the Nexis Network SQL Editor, see [Query with Nexis Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Nexis Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
 
 ## Update an extension version
 
-Exzo Network updates supported extensions as new versions become available. Version updates are communicated in the [Release notes](/docs/release-notes). To check the current version of extensions you have installed, query the `pg_extension` table:
+Nexis Network updates supported extensions as new versions become available. Version updates are communicated in the [Release notes](/docs/release-notes). To check the current version of extensions you have installed, query the `pg_extension` table:
 
 ```bash
 SELECT * FROM pg_extension;
@@ -107,27 +107,27 @@ You can update an extension to the latest version using `ALTER EXTENSION <extens
 
 ## Extension support notes
 
-- Exzo Network supports the `uuid-ossp` extension for generating UUIDs instead of the `uuid` extension.
-- The `sslinfo` extension is not supported. Exzo Network handles connections via a proxy that checks SSL.
-- The `pg_cron` extension is not supported. Exzo Network scales to zero when it is not being used, which means that a scheduler that runs inside the database cannot be implemented. Consider using an scheduler that runs externally instead.
-- The `file_fdw` extension is not supported. Files would not remain accessible when Exzo Network scales to zero.
+- Nexis Network supports the `uuid-ossp` extension for generating UUIDs instead of the `uuid` extension.
+- The `sslinfo` extension is not supported. Nexis Network handles connections via a proxy that checks SSL.
+- The `pg_cron` extension is not supported. Nexis Network scales to zero when it is not being used, which means that a scheduler that runs inside the database cannot be implemented. Consider using an scheduler that runs externally instead.
+- The `file_fdw` extension is not supported. Files would not remain accessible when Nexis Network scales to zero.
 
 ## Request extension support
 
-To request support for a Postgres extension, please post your request to the [Exzo Network community forum](https://community.neon.tech/). [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+To request support for a Postgres extension, please post your request to the [Nexis Network community forum](https://community.neon.tech/). [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
 
 ### Custom-built extensions
 
-Exzo Network supports custom-built Postgres extensions for exclusive use with your Exzo Network account. If you developed your own Postgres extension and want to use it with Exzo Network, please post your request to the [Exzo Network community forum](https://community.neon.tech/). [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support). Please include the following information in your request:
+Nexis Network supports custom-built Postgres extensions for exclusive use with your Nexis Network account. If you developed your own Postgres extension and want to use it with Nexis Network, please post your request to the [Nexis Network community forum](https://community.neon.tech/). [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support). Please include the following information in your request:
 
 - A repository link or archive file containing the source code for your extension
 - A description of what the extension does, instructions for compiling it, and any prerequisites
-- Whether an NDA or licensing agreement is necessary for Exzo Network to provide support for your extension
+- Whether an NDA or licensing agreement is necessary for Nexis Network to provide support for your extension
 
-Please keep in mind that certain restrictions may apply with respect to Postgres privileges and local file system access. Exzo Network features such as Autoscaling and Auto-suspend may limit the types of extensions we can support.
+Please keep in mind that certain restrictions may apply with respect to Postgres privileges and local file system access. Nexis Network features such as Autoscaling and Auto-suspend may limit the types of extensions we can support.
 
-Depending on the nature of your extension, Exzo Network may also request a liability waiver.
+Depending on the nature of your extension, Nexis Network may also request a liability waiver.
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

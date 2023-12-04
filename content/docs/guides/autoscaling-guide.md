@@ -1,14 +1,14 @@
 ---
-title: Enable Autoscaling in Exzo Network
-subtitle: Learn how to enable Exzo Network's Autoscaling feature to automatically scale compute
+title: Enable Autoscaling in Nexis Network
+subtitle: Learn how to enable Nexis Network's Autoscaling feature to automatically scale compute
   resources on demand
 enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.982Z'
 ---
 
-Exzo Network's Autoscaling feature dynamically adjusts the amount of compute resources allocated to a Exzo Network compute endpoint in response to the current workload, eliminating the need for manual intervention. This guide demonstrates how to enable _Autoscaling_ in your Exzo Network project.
+Nexis Network's Autoscaling feature dynamically adjusts the amount of compute resources allocated to a Nexis Network compute endpoint in response to the current workload, eliminating the need for manual intervention. This guide demonstrates how to enable _Autoscaling_ in your Nexis Network project.
 
-_Autoscaling_ is a [Exzo Network Pro Plan](/docs/introduction/pro-plan) feature. Exzo Network Pro Plan users can enable Autoscaling for a new project, for an existing project, or for an individual compute endpoint. _Autoscaling_ is supported with both read-write and read-only compute endpoints. Read-only compute endpoints enable Exzo Network's [Read replica](/docs/introduction/read-replicas) feature.
+_Autoscaling_ is a [Nexis Network Pro Plan](/docs/introduction/pro-plan) feature. Nexis Network Pro Plan users can enable Autoscaling for a new project, for an existing project, or for an individual compute endpoint. _Autoscaling_ is supported with both read-write and read-only compute endpoints. Read-only compute endpoints enable Nexis Network's [Read replica](/docs/introduction/read-replicas) feature.
 
 ## Enable Autoscaling for a new project
 
@@ -16,7 +16,7 @@ Enabling Autoscaling when you create a project allows you to set _Autoscaling_ d
 
 To enable Autoscaling when you first create your project:
 
-1. Navigate to the [Exzo Network Console](https://console.neon.tech).
+1. Navigate to the [Nexis Network Console](https://console.neon.tech).
 2. If you are creating your very first project, click **Create a project**. Otherwise, click **New Project**.
 3. Specify a name, a Postgres version, and a region.
 4. Under **Compute size**, select the **Autoscaling** option.
@@ -35,8 +35,8 @@ Configuring the _Autoscaling_ setting for an existing project sets the project's
 
 To configure Autoscaling default settings for an existing project:
 
-1. Select a project in the Exzo Network console.
-1. On the Exzo Network **Dashboard**, select **Settings**.
+1. Select a project in the Nexis Network console.
+1. On the Nexis Network **Dashboard**, select **Settings**.
 1. Select **Compute** and click **Change**.
 1. Under **Compute size**, select the **Autoscaling** option.
 1. Using the slider, specify a minimum and maximum compute size.
@@ -50,11 +50,11 @@ To configure Autoscaling default settings for an existing project:
 
 ## Enable Autoscaling for a compute endpoint
 
-[Exzo Network Pro Plan](/docs/introduction/pro-plan) users can edit an individual compute endpoint to alter the compute endpoint configuration, which includes _Autoscaling_.
+[Nexis Network Pro Plan](/docs/introduction/pro-plan) users can edit an individual compute endpoint to alter the compute endpoint configuration, which includes _Autoscaling_.
 
 To edit a compute endpoint:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch.
 1. Click on the compute endpoint you want to edit.
 ![Edit compute endpoint menu](/docs/guides/autoscaling_edit.png)
@@ -62,7 +62,7 @@ To edit a compute endpoint:
 1. Using the slider, specify a minimum and maximum compute size.
     ![Autoscaling edit settings](/docs/guides/autoscaling_edit_settings.png)
 
-    Exzo Network scales the compute size up and down within the specified range to meet workload demand. _Autoscaling_ currently supports a range of 1/4 (.25) to 7 vCPUs. One vCPU has 4 GB of RAM, 2 vCPUs have 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of vCPUs.
+    Nexis Network scales the compute size up and down within the specified range to meet workload demand. _Autoscaling_ currently supports a range of 1/4 (.25) to 7 vCPUs. One vCPU has 4 GB of RAM, 2 vCPUs have 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of vCPUs.
 
     <Admonition type="note">
     You can configure the Auto-suspend setting for your compute endpoint at the same time. The **Suspend compute after a period of inactivity** setting defines the period of inactivity after which a compute endpoint is automatically suspended. This feature is also referred to as "scale-to-zero".

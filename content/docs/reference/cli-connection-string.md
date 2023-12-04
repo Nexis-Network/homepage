@@ -1,20 +1,20 @@
 ---
-title: Exzo Network CLI commands — connection-string
-subtitle: Use the Exzo Network CLI to manage Exzo Network directly from the terminal
+title: Nexis Network CLI commands — connection-string
+subtitle: Use the Nexis Network CLI to manage Nexis Network directly from the terminal
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.850Z'
 ---
 
 ## Before you begin
 
-- Before running the `connection-string` command, ensure that you have [installed the Exzo Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
-- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Exzo Network CLI command automatically launches the Exzo Network CLI browser authentication process. Alternatively, you can specify a Exzo Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
+- Before running the `connection-string` command, ensure that you have [installed the Nexis Network CLI](/docs/reference/neon-cli#install-the-neon-cli).
+- If you have not authenticated with the [neonctl auth](/docs/reference/cli-auth) command, running a Nexis Network CLI command automatically launches the Nexis Network CLI browser authentication process. Alternatively, you can specify a Nexis Network API key using the `--api-key` option when running a command. See [Connect](/docs/reference/neon-cli#connect).
 
-For information about connecting to Exzo Network, see [Connect from any application](/docs/connect/connect-from-any-app).
+For information about connecting to Nexis Network, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 ## The `connection string` command
 
-This command constructs a Postgres connection string for connecting to a database in your Exzo Network project. You can construct a connection string for any database in any branch. The connection string includes the password for the specified role.
+This command constructs a Postgres connection string for connecting to a database in your Nexis Network project. You can construct a connection string for any database in any branch. The connection string includes the password for the specified role.
 
 ### Usage
 
@@ -26,11 +26,11 @@ neonctl connection-string [branch] [options]
 
 ### Options
 
-In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#global-options), the `connect-string` command supports these options:
+In addition to the Nexis Network CLI [global options](/docs/reference/neon-cli#global-options), the `connect-string` command supports these options:
 
 | Option        | Description  | Type   | Required  |
 | ------------- | ------------ | ------ | :------: |
-| --project-id  | Project ID   | string |  Only if your Exzo Network account has more than one project |
+| --project-id  | Project ID   | string |  Only if your Nexis Network account has more than one project |
 | --role-name   | Role name    | string | Only if your branch has more than one role |
 | --database-name| Database name| string | Only if your branch has more than one database |
 | --pooled | Construct a pooled connection. The default is `false`. |boolean||
@@ -44,7 +44,7 @@ In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#gl
 
     ```bash
     neonctl connection-string mybranch
-    postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
+    postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.nexis.network/dbname
     ```
 
     </CodeBlock>
@@ -55,7 +55,7 @@ In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#gl
 
     ```bash
     neonctl connection-string --pooled
-    postgres://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/dbname
+    postgres://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.nexis.network/dbname
     ```
 
     </CodeBlock>
@@ -66,11 +66,11 @@ In addition to the Exzo Network CLI [global options](/docs/reference/neon-cli#gl
 
     ```bash
     neonctl connection-string --prisma
-   postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?connect_timeout=30
+   postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.nexis.network/dbname?connect_timeout=30
     ```
 
     </CodeBlock>
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.nexis.network/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

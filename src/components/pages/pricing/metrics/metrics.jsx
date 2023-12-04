@@ -58,7 +58,7 @@ const items = [
     image: '/images/pages/pricing/metrics-4-mobile.jpg',
     name: 'Data transfer',
     priceFrom: 'From $0.09 /GiB',
-    details: 'Data transfer is the volume of data transferred out of Exzo Network.',
+    details: 'Data transfer is the volume of data transferred out of Nexis Network.',
     prices: [
       {
         name: 'US East (N. Virginia)',
@@ -96,7 +96,7 @@ const items = [
     image: '/images/pages/pricing/metrics-2-mobile.jpg',
     name: 'Project storage',
     priceFrom: 'From $0.000164 /GiB-hour',
-    details: 'Project storage is the volume of data and history in your Exzo Network project.',
+    details: 'Project storage is the volume of data and history in your Nexis Network project.',
     prices: [
       {
         name: 'US East (N. Virginia)',
@@ -134,7 +134,7 @@ const items = [
     image: '/images/pages/pricing/metrics-3-mobile.jpg',
     name: 'Written data',
     priceFrom: 'From $0.096 /GiB',
-    details: 'Written data is the volume of data written from Exzo Network compute to storage.',
+    details: 'Written data is the volume of data written from Nexis Network compute to storage.',
     prices: [
       {
         name: 'US East (N. Virginia)',
@@ -239,7 +239,7 @@ const Metrics = () => {
       <div className="relative flex flex-col">
         <Container className="flex flex-col items-center" size="medium">
           <Heading className="text-center" badge="Metrics" tag="h2" size="2sm">
-            Exzo Network charges on <span className="text-pricing-primary-1">4 metrics</span>
+            Nexis Network charges on <span className="text-pricing-primary-1">4 metrics</span>
           </Heading>
           <p className="mt-4 text-lg font-light leading-snug xl:text-base lg:mt-2 lg:text-center">
             Refer to our{' '}

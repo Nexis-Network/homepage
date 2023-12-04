@@ -9,13 +9,13 @@ const items = [
   {
     icon: fileIcon,
     title: 'Docs',
-    description: 'Learn more about Exzo Network API',
+    description: 'Learn more about Nexis Network API',
     url: '/docs/reference/api-reference',
   },
   {
     icon: transactionsIcon,
     title: 'API reference',
-    description: 'Check Exzo Network API examples',
+    description: 'Check Nexis Network API examples',
     url: 'https://api-docs.neon.tech/reference/getting-started-with-neon-api',
   },
 
@@ -34,7 +34,7 @@ const Api = () => (
         API
       </h3>
       <p className="mt-2.5 max-w-[550px] text-lg font-light leading-snug xl:text-base lg:mx-auto lg:text-center md:mt-2">
-        Manage Projects, branches, databases, and more. Easily integrate Exzo Network in your Product and
+        Manage Projects, branches, databases, and more. Easily integrate Nexis Network in your Product and
         offer it to your users.
       </p>
       <CardItemsList

@@ -1,26 +1,26 @@
 ---
-title: Connect a Python application to Exzo Network using Psycopg
-subtitle: Set up a Exzo Network project in seconds and connect from a Python application using
+title: Connect a Python application to Nexis Network using Psycopg
+subtitle: Set up a Nexis Network project in seconds and connect from a Python application using
   Psycopg
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.833Z'
 ---
 
-This guide describes how to create a Exzo Network project and connect to it from a simple Python application using [Psycopg (psycopg2)](https://pypi.org/project/psycopg2/), a popular Postgres database adapter for the Python programming language. The application connects to Exzo Network and retrieves the current time and Postgres version.
+This guide describes how to create a Nexis Network project and connect to it from a simple Python application using [Psycopg (psycopg2)](https://pypi.org/project/psycopg2/), a popular Postgres database adapter for the Python programming language. The application connects to Nexis Network and retrieves the current time and Postgres version.
 
 To connect:
 
-1. [Create a Exzo Network Project](#create-a-neon-project)
+1. [Create a Nexis Network Project](#create-a-neon-project)
 2. [Create a Python project](#create-a-python-project)
-3. [Store your Exzo Network credentials](#store-your-neon-credentials)
+3. [Store your Nexis Network credentials](#store-your-neon-credentials)
 4. [Configure your Python script](#configure-your-python-script)
 5. [Test your connection](#test-your-connection)
 
-## Create a Exzo Network project
+## Create a Nexis Network project
 
-If you do not have one already, create a Exzo Network project.
+If you do not have one already, create a Nexis Network project.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Exzo Network Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Nexis Network Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -53,11 +53,11 @@ The project is created with a ready-to-use `neondb` database, which you will con
     pip install psycopg2-binary python-dotenv
     ```
 
-## Store your Exzo Network credentials
+## Store your Nexis Network credentials
 
-Add a `.env` file to your project's root directory and add your Exzo Network connection string to it. 
+Add a `.env` file to your project's root directory and add your Nexis Network connection string to it. 
 
-You can find all of the connection details listed above in the **Connection Details** widget on the Exzo Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find all of the connection details listed above in the **Connection Details** widget on the Nexis Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 Your connection string will look something like this:
 
@@ -71,7 +71,7 @@ DATABASE_URL=postgres://[user]:[password]@[neon_hostname]/[dbname]?sslmode=requi
 
 ## Configure your python script
 
-Add a `neon-connect.py` file to your project's root directory and add the following code. The script connects to your Exzo Network database and retrieves the current time and Postgres version.
+Add a `neon-connect.py` file to your project's root directory and add the following code. The script connects to your Nexis Network database and retrieves the current time and Postgres version.
 
 ```python
 import os
@@ -127,4 +127,4 @@ PostgreSQL version: PostgreSQL 15.2 on x86_64-pc-linux-gnu, compiled by gcc (Deb
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

@@ -21,10 +21,10 @@ const TopBar = () => {
       onClick={() => sendGtagEvent('click_announcement_banner')}
     >
       <span className="mr-4 truncate border-r border-black border-opacity-20 py-1 pr-4 text-sm font-semibold">
-        Exzo Network's admin wallet has been compromised. We are working to resolve this issue.
+        Start building on Nexis Network today and win your share of $130,000 in prizes!
       </span>
       <span className="inline-flex items-center text-sm font-bold sm:hidden">
-        <span>Stay up-to-date</span>
+        <span>Get testnet NZT</span>
         <ArrowRightIcon className="ml-1" />
       </span>
       <ArrowRightIcon className="ml-2 hidden sm:flex" />

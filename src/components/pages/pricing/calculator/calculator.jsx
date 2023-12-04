@@ -309,7 +309,7 @@ const Calculator = () => {
                 Data transfer and Written data
                 <Tooltip
                   id="data"
-                  content="Written data is the volume of data written from compute to storage. Data transfer is the volume of data transferred out of Exzo Network."
+                  content="Written data is the volume of data written from compute to storage. Data transfer is the volume of data transferred out of Nexis Network."
                 />
               </h3>
               <LazyMotion features={domAnimation}>

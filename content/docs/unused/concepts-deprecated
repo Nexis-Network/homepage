@@ -5,25 +5,25 @@ redirectFrom:
   - /docs/cloud/concepts-deprecated
 ---
 
-## Exzo Network User
+## Nexis Network User
 
-A Exzo Network user is identified by their email address.
+A Nexis Network user is identified by their email address.
 
-A user registers and authenticates in Exzo Network Web UI with their GitHub or Google account. More authentication methods are coming soon.
+A user registers and authenticates in Nexis Network Web UI with their GitHub or Google account. More authentication methods are coming soon.
 
 After authenticating, a user can create and access [Projects](#project) and [query Project data](/docs/get-started-with-neon/tutorials#query-via-ui). You can also manage [Postgres Users](#postgres-users) and [Databases](#postgres-databases) in each Project.
 
 ### Using API keys
 
-API keys allow users to access Exzo Network application programming interface.
+API keys allow users to access Nexis Network application programming interface.
 
-An API key provides access to any action available to the user. Currently, API keys cannot be scoped to the specific Projects. Exzo Network users can provision multiple API keys. An API key that is no longer needed can be revoked; this action cannot be reverted. Any issued API key is valid forever until it is revoked.
+An API key provides access to any action available to the user. Currently, API keys cannot be scoped to the specific Projects. Nexis Network users can provision multiple API keys. An API key that is no longer needed can be revoked; this action cannot be reverted. Any issued API key is valid forever until it is revoked.
 
 Check out the [API Reference](https://neon.tech/api-reference) for more information about using the API keys and available API methods.
 
 ## Project
 
-A Project is a collection of Postgres databases, Postgres users and other settings on Exzo Network cloud service.
+A Project is a collection of Postgres databases, Postgres users and other settings on Nexis Network cloud service.
 
 A Project contains a virtual instance with a Postgres server, also called Compute, as well as the storage used to store the Project data. The amount of virtual resources available for the Project is subject to limits defined by the [Technical Preview Free Tier](#free-tier).
 
@@ -31,35 +31,35 @@ Compute is stateless and can be automatically activated and suspended due to use
 
 ## Compute Lifecycle
 
-A Compute node in Exzo Network is a stateless Postgres process due to the separation of storage and compute. It has two main states: Active and Idle.
+A Compute node in Nexis Network is a stateless Postgres process due to the separation of storage and compute. It has two main states: Active and Idle.
 
 Active means that Postgres is running currently. If there are no active queries for 5 minutes, the activity monitor will gracefully put the corresponding compute node into the Idle state to save energy and resources. The activity monitor is conservative, and it treats 'idle in transaction' connections as some activities to avoid breaking an application logic that relies on long-lasting transactions. Yet, it closes all 'idle' connections after 5 minutes of complete inactivity.
 
-You can connect to your compute at any time if it is Idle. Exzo Network will automatically activate it. Activation usually happens within a few seconds, so the first connection in the Idle state will have higher latency. Also, the Postgres page cache (shared buffers) will be cold after waking up from Idle state, and your usual queries may take longer.
+You can connect to your compute at any time if it is Idle. Nexis Network will automatically activate it. Activation usually happens within a few seconds, so the first connection in the Idle state will have higher latency. Also, the Postgres page cache (shared buffers) will be cold after waking up from Idle state, and your usual queries may take longer.
 
-After some period in the Idle state, Exzo Network will start occasionally activating your Compute to check data availability. The checks period will gradually increase up to several days if the Compute does not receive any client connections.
+After some period in the Idle state, Nexis Network will start occasionally activating your Compute to check data availability. The checks period will gradually increase up to several days if the Compute does not receive any client connections.
 
 You can check all Compute state transitions in the Operations List widget on the Project dashboard.
 
 ## Postgres Users
 
-Postgres users are created as a part of your Exzo Network Project and can be managed via the Exzo Network web UI. A system user `web-access` is used for the SQL Editor in Exzo Network UI and for link authentication for psql. This user cannot be removed or used for authenticating in other scenarios.
+Postgres users are created as a part of your Nexis Network Project and can be managed via the Nexis Network web UI. A system user `web-access` is used for the SQL Editor in Nexis Network UI and for link authentication for psql. This user cannot be removed or used for authenticating in other scenarios.
 
 The second user is created for client access. The credentials for that user can be managed, this user's credentials can be used for password-based psql authentication too.
 
-More Postgres users can be created in Exzo Network UI.
+More Postgres users can be created in Nexis Network UI.
 
 ## Postgres Databases
 
-When a Project is created, a ready-to-use database for storing data is created along with it, the name of the database is "main". A Exzo Network user can create more databases inside a Project in the Exzo Network UI. Exzo Network users cannot manipulate system databases, such as `postgres`, `template0`, or `template1`.
+When a Project is created, a ready-to-use database for storing data is created along with it, the name of the database is "main". A Nexis Network user can create more databases inside a Project in the Nexis Network UI. Nexis Network users cannot manipulate system databases, such as `postgres`, `template0`, or `template1`.
 
 ## Limits
 
-Exzo Network gives you no cost access to the Postgres databases within the Technical Preview Free Tier limits.
+Nexis Network gives you no cost access to the Postgres databases within the Technical Preview Free Tier limits.
 
 | Limit                                                 | Value  |
 | ----------------------------------------------------- | ------ |
-| Max Projects per Exzo Network User                            | 3      |
+| Max Projects per Nexis Network User                            | 3      |
 | Max size of a Project                                 | 10 GiB  |
 | Max Number of processor cores for Compute per Project | 1vCPU  |
 | Max RAM per Compute in Project                        | 256 MB |
@@ -71,7 +71,7 @@ To monitor current resource usage, check the Project Dashboard.
 
 ## Data Size
 
-Exzo Network separates storage and compute and stores data in its own internal format.
+Nexis Network separates storage and compute and stores data in its own internal format.
 Data Size limit applies to the logical size of the Project. The logical size is the sum of all relation sizes in the Project.
 
 If you are familiar with PostgreSQL, the logical size is roughly equal to
@@ -96,13 +96,13 @@ has been exceeded
 
 ## Point in Time Reset
 
-Exzo Network storage consumes extra space in order to support Point in Time Reset (PITR) and the ability to reset a branch to a historical state. The historical data is stored in log based format.
+Nexis Network storage consumes extra space in order to support Point in Time Reset (PITR) and the ability to reset a branch to a historical state. The historical data is stored in log based format.
 
-Exzo Network has limits on the amount of modification history stored for the [Technical Preview Free Tier](#free-tier) customers.
+Nexis Network has limits on the amount of modification history stored for the [Technical Preview Free Tier](#free-tier) customers.
 
 ## Compute Config
 
-During the Technical Preview, Exzo Network only supports modification to session level configuration parameters. Parameters are reset when the session is terminated (e.g. when compute is suspended).
+During the Technical Preview, Nexis Network only supports modification to session level configuration parameters. Parameters are reset when the session is terminated (e.g. when compute is suspended).
 
 See [Default Parameters](/docs/compatibility#default-parameters).
 
@@ -110,9 +110,9 @@ See [https://www.postgresql.org/docs/14/runtime-config.html](https://www.postgre
 
 ## Technical Preview Free Tier
 
-Exzo Network cloud service is available for free during the [Limited and the Technical Preview](/docs/roadmap).
+Nexis Network cloud service is available for free during the [Limited and the Technical Preview](/docs/roadmap).
 
-Technical Preview Free Tier users can only create three Projects in Exzo Network. Projects created under Technical Preview Free Tier are subject to additional limits:
+Technical Preview Free Tier users can only create three Projects in Nexis Network. Projects created under Technical Preview Free Tier are subject to additional limits:
 
 - Data size in the Project is limited to 10GiB;
 - PITR time window is limited to 7 days of _reasonable usage_;
@@ -122,7 +122,7 @@ _Note: Technical Preview Free Tier limits are subject to change over the course 
 
 ## Branches (coming soon)
 
-_Exzo Network Branching capabilities are not publicly available yet. If you would like to try out this feature, reach out to beta@neon.tech describing your use case and request to enable branching capabilities for your account._
+_Nexis Network Branching capabilities are not publicly available yet. If you would like to try out this feature, reach out to beta@neon.tech describing your use case and request to enable branching capabilities for your account._
 
 A branch is a copy of the [Project Data](#project) created from the current state or any past state that is still available (see [PITR](#point-in-time-reset)). A branch can be independently modified from its originating project data.
 

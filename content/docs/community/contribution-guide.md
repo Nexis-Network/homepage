@@ -1,17 +1,17 @@
 ---
 title: Documentation Contribution Guide
-subtitle: Learn how to contribute to the Exzo Network documentation
+subtitle: Learn how to contribute to the Nexis Network documentation
 enableTableOfContents: true
 updatedOn: '2023-10-24T13:30:10.819Z'
 ---
 
-This page provides guidelines for contributing to the Exzo Network documentation. Our goal is to create an environment where our community has the information and knowledge required to confidently participate in improving the Exzo Network documentation.
+This page provides guidelines for contributing to the Nexis Network documentation. Our goal is to create an environment where our community has the information and knowledge required to confidently participate in improving the Nexis Network documentation.
 
 ## Why should you contribute?
 
 Open-source projects are always evolving. Contributing to documentation is a great way for beginners to get started in open source and for experienced developers to explain complex topics while sharing their knowledge with the community.
 
-By contributing to the Exzo Network docs, you're helping us create a stronger learning resource for all developers. Whether you've found a typo, a section that's hard to understand, or you've noticed that a certain topic is missing, your contribution is always welcome and appreciated.
+By contributing to the Nexis Network docs, you're helping us create a stronger learning resource for all developers. Whether you've found a typo, a section that's hard to understand, or you've noticed that a certain topic is missing, your contribution is always welcome and appreciated.
 
 ## How to contribute
 
@@ -20,7 +20,7 @@ The content for the documentation is located in the [neondatabase/website](https
 1. Edit files directly on GitHub.
 2. Fork the [neondatabase/website](https://github.com/neondatabase/website) repository, create a branch for your changes, and submit a pull request.
 
-If you prefer the first option, which is great for edits and small updates, there is an **Edit this page** link at the bottom of each Exzo Network documentation page.
+If you prefer the first option, which is great for edits and small updates, there is an **Edit this page** link at the bottom of each Nexis Network documentation page.
 
 ![GitHub edit this page link](/docs/community/edit_this_page.png)
 
@@ -30,25 +30,25 @@ If you would rather fork the [neondatabase/website](https://github.com/neondatab
 
 ## Markdown
 
-Exzo Network uses Markdown as the documentation source format. Markdown is a lightweight markup language that lets you add formatting elements to plaintext text documents. It's designed to be easy to read and easy to write.
+Nexis Network uses Markdown as the documentation source format. Markdown is a lightweight markup language that lets you add formatting elements to plaintext text documents. It's designed to be easy to read and easy to write.
 
-If you're new to Markdown, GitHub provides an excellent guide to get you started. The [GitHub Markdown Documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) covers most of the basic writing and formatting syntax you'll need to contribute to the Exzo Network docs.
+If you're new to Markdown, GitHub provides an excellent guide to get you started. The [GitHub Markdown Documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) covers most of the basic writing and formatting syntax you'll need to contribute to the Nexis Network docs.
 
 ## Preview changes in VSCode
 
-At Exzo Network, we use VSCode for writing documentation. VSCode includes a built-in markdown previewer that you can use to view your changes locally.
+At Nexis Network, we use VSCode for writing documentation. VSCode includes a built-in markdown previewer that you can use to view your changes locally.
 
 To use this feature, open the command palette (⌘ + ⇧ + V on Mac or Ctrl + Shift + V on Windows). This opens a preview window for viewing your changes in formatted Markdown.
 
 ## Contribution review process
 
-After you submit a contribution, the Exzo Network documentation team reviews your changes, provides feedback, and merges the pull request when it's ready.
+After you submit a contribution, the Nexis Network documentation team reviews your changes, provides feedback, and merges the pull request when it's ready.
 
-Please reach out on the [Exzo Network Community forum](https://community.neon.tech/) if you have any questions or need further assistance.
+Please reach out on the [Nexis Network Community forum](https://community.nexis.network/) if you have any questions or need further assistance.
 
 ## Documentation file structure
 
-The Exzo Network documentation file structure reflects the navigation you see on the website. However, the order of the directories under `/content/docs/` is alphabetical.
+The Nexis Network documentation file structure reflects the navigation you see on the website. However, the order of the directories under `/content/docs/` is alphabetical.
 
 ```text
 ├── content
@@ -109,12 +109,12 @@ To add new page, add a new item to the `items` array with the `title` and `slug`
       slug: page-5
 ```
 
-- The `title` in the sidebar may differ from `title` in the Markdown file. For example, your sidebar title might be a shorter version of the title in your Markdown file. This lets you write longer, more informative page titles while keeping the sidebar titles short, readable, and easy to scan. These titles should remain logically related. For example, in our docs we reduce the page title "Use Grafbase Edge Resolvers with Exzo Network" to just "Grafbase" in the sidebar.
+- The `title` in the sidebar may differ from `title` in the Markdown file. For example, your sidebar title might be a shorter version of the title in your Markdown file. This lets you write longer, more informative page titles while keeping the sidebar titles short, readable, and easy to scan. These titles should remain logically related. For example, in our docs we reduce the page title "Use Grafbase Edge Resolvers with Nexis Network" to just "Grafbase" in the sidebar.
 - `slug` should always exactly match the page's slug (the last part of the URL after the final backslash "/", in our case the name of the Markdown file).
 
 ## Markdown frontmatter
 
-Each Exzo Network documentation Markdown file includes a frontmatter section at the beginning of the file containing file metadata. The frontmatter section is distinguished by three dashes, as shown here:
+Each Nexis Network documentation Markdown file includes a frontmatter section at the beginning of the file containing file metadata. The frontmatter section is distinguished by three dashes, as shown here:
 
 ```yaml
 ---
@@ -141,8 +141,8 @@ Example:
 
 ```yaml
 ---
-title: Connect a Next.js application to Exzo Network
-subtitle: Set up a Exzo Network project and connect from a Next.js application
+title: Connect a Next.js application to Nexis Network
+subtitle: Set up a Nexis Network project and connect from a Next.js application
 enableTableOfContents: true
 redirectFrom:
   - /docs/content/<old_directory_name>
@@ -174,8 +174,8 @@ To add a subsection heading, equivalent to an `h3`, add another `#` character:
 
 ```md
 External link markup: [Example.com website](https://www.example.com/)
-Exzo Network documentation page link: [Connection from any application](/docs/connect/connect-from-any-app)
-Exzo Network documentation same page link: [Code blocks](#code-blocks)
+Nexis Network documentation page link: [Connection from any application](/docs/connect/connect-from-any-app)
+Nexis Network documentation same page link: [Code blocks](#code-blocks)
 Italics markup: _italic_
 Bold markup: **strong**
 monospace: `backtick`
@@ -230,11 +230,11 @@ To display code tabs, enclose all pieces of code within `<CodeTabs></CodeTabs>` 
 </CodeTabs>
 ````
 
-To view this example in the Exzo Network documentation, see [Create a Next.js project and add dependencies](https://neon.tech/docs/guides/nextjs#create-a-nextjs-project-and-add-dependencies).
+To view this example in the Nexis Network documentation, see [Create a Next.js project and add dependencies](https://nexis.network/docs/guides/nextjs#create-a-nextjs-project-and-add-dependencies).
 
 ## Admonitions
 
-The Exzo Network documentation supports the following admonitions:
+The Nexis Network documentation supports the following admonitions:
 
 - Note
 - Important
@@ -266,13 +266,13 @@ This is a very important note.
 
 ## Diagrams and screen captures
 
-Exzo Network uses Figma to create diagrams.
+Nexis Network uses Figma to create diagrams.
 
 If you're interested in updating or adding a diagram, please open a GitHub issue with your suggestions. Please include a draft, if possible. You can use a tool like [tldraw](https://www.tldraw.com/) to create a draft.
 
 If possible, please take screen captures on a high resolution monitor (UHD/4K). Screen captures should be unaltered (no borders or special effects).
 
-Diagrams and images are stored in the `/public/docs` directory in the Exzo Network website repository. The directory location of the diagram or image under `public` mirrors the location of the file that includes the diagram or image, as shown below:
+Diagrams and images are stored in the `/public/docs` directory in the Nexis Network website repository. The directory location of the diagram or image under `public` mirrors the location of the file that includes the diagram or image, as shown below:
 
 Example file structure:
 
@@ -292,12 +292,12 @@ Example file structure:
 To add an image to your Markdown file, add an entry that looks like this:
 
 ```md
-![Exzo Network architecture diagram](/docs/introduction/neon_architecture.png)
+![Nexis Network architecture diagram](/docs/introduction/neon_architecture.png)
 ```
 
 ## Style Guide
 
-This section outlines the stylistic elements that we do our best to follow in the Exzo Network documentation.
+This section outlines the stylistic elements that we do our best to follow in the Nexis Network documentation.
 
 ### Voice and language
 
@@ -370,7 +370,7 @@ Generally, feature names should be lowercase.
 
 Capitalize names of:
 
-- Exzo Network tiers and plans. For example, Exzo Network Free Tier, Exzo Network Pro Plan.
+- Nexis Network tiers and plans. For example, Nexis Network Free Tier, Nexis Network Pro Plan.
 - Third-party organizations, software, and products. Kubernetes, Git, and Vercel.
 - Methods or methodologies. Continuous Integration, Continuous Deployment, etc.
 
@@ -394,7 +394,7 @@ postgres://[user]:[password]@[neon_hostname]/[dbname]
 If you need to provide a connection string with realistic values, use one of the user names mentioned above, `AbC123dEf` for the password, and `dbname` for the database name:
 
 ```text
-postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
+postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.nexis.network/dbname
 ```
 
 ### Commands, parameters, values, filenames
@@ -411,4 +411,4 @@ Commands, parameters, values, filenames, error messages, connection strings, and
 
 ## Questions?
 
-If you have questions or run into any issues, please reach out to us on the [Exzo Network Community forum](https://community.neon.tech/).
+If you have questions or run into any issues, please reach out to us on the [Nexis Network Community forum](https://community.nexis.network/).

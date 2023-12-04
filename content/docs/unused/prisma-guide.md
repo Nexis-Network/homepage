@@ -1,6 +1,6 @@
 ---
-title: Use Prisma with Exzo Network
-subtitle: Follow this step-by-step guide to learn how to use Prisma with Exzo Network
+title: Use Prisma with Nexis Network
+subtitle: Follow this step-by-step guide to learn how to use Prisma with Nexis Network
 enableTableOfContents: true
 isDraft: false
 redirectFrom:
@@ -18,11 +18,11 @@ Prisma is an open source next-generation ORM that consists of the following part
 - Prisma Migrate: A schema migration system
 - Prisma Studio: A GUI for viewing and editing data in your database
 
-This guide steps you through how to connect from Prisma to Exzo Network, how to use Prisma Migrate to create and evolve a schema, how to add data using the Exzo Network SQL Editor or Prisma Studio, how to send queries using Prisma Client, and finally, how to introspect an existing database using the Prisma CLI.
+This guide steps you through how to connect from Prisma to Nexis Network, how to use Prisma Migrate to create and evolve a schema, how to add data using the Nexis Network SQL Editor or Prisma Studio, how to send queries using Prisma Client, and finally, how to introspect an existing database using the Prisma CLI.
 
-## Create a Exzo Network project and copy the connection string
+## Create a Nexis Network project and copy the connection string
 
-1. In the Exzo Network Console, click **Create a project** to open the **Project Creation** dialog.
+1. In the Nexis Network Console, click **Create a project** to open the **Project Creation** dialog.
 1. Specify your project settings and click **Create Project**.
 
 The project is created and you are presented with a dialog that provides connection details. Copy the connection string, which looks similar to the following:
@@ -30,22 +30,22 @@ The project is created and you are presented with a dialog that provides connect
 <CodeBlock shouldWrap>
 
 ```text
-postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/neondb
+postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.nexis.network/neondb
 ```
 
 </CodeBlock>
 
 <Admonition type="info">
-A Exzo Network project is created with a default Postgres role named for your account, and a ready-to-use database named `neondb`. This guide uses the `neondb` database as the primary database.
+A Nexis Network project is created with a default Postgres role named for your account, and a ready-to-use database named `neondb`. This guide uses the `neondb` database as the primary database.
 </Admonition>
 
 ## Create a shadow database for Prisma Migrate
 
 Prisma Migrate requires a "shadow" database to detect schema drift and generate new migrations. For more information about the purpose of the shadow database, refer to [About the shadow database](https://www.prisma.io/docs/concepts/components/prisma-migrate/shadow-database), in the _Prisma documentation_.
 
-For cloud-hosted databases like Exzo Network, you must create the shadow database manually. To create the shadow database:
+For cloud-hosted databases like Nexis Network, you must create the shadow database manually. To create the shadow database:
 
-1. In the Exzo Network Console, select **Databases**.
+1. In the Nexis Network Console, select **Databases**.
 1. Click **New Database**.
 1. Select the branch where you want to create the database, enter a database name, and select a database owner. For simplicity, name the shadow database `shadow`, and select the same branch where the `neondb` database resides.
 
@@ -54,7 +54,7 @@ The connection string for this database should be the same as the connection str
 <CodeBlock shouldWrap>
 
 ```text
-postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/shadow
+postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.nexis.network/shadow
 ```
 
 </CodeBlock>
@@ -97,12 +97,12 @@ To complete these steps, you require Node.js v14.17.0 or higher. For more inform
    npx prisma init --datasource-provider postgresql
    ```
 
-## Connect your Prisma project to Exzo Network
+## Connect your Prisma project to Nexis Network
 
 In this step, you will update your project's `.env` file with the connection strings for your `neondb` and `shadow` databases.
 
 1. Open the `.env` file located in your `prisma` directory.
-2. Update the value of the `DATABASE_URL` variable to the connection string you copied when you created your Exzo Network project.
+2. Update the value of the `DATABASE_URL` variable to the connection string you copied when you created your Nexis Network project.
 3. Add a `SHADOW_DATABASE_URL` variable and set the value to the connection string for the shadow database you created previously.
 
 When you are finished, your `.env` file should have entries similar to the following:
@@ -110,14 +110,14 @@ When you are finished, your `.env` file should have entries similar to the follo
 <CodeBlock shouldWrap>
 
 ```text
-DATABASE_URL=postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/neondb?connect_timeout=10
-SHADOW_DATABASE_URL=postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/shadow?connect_timeout=10
+DATABASE_URL=postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.nexis.network/neondb?connect_timeout=10
+SHADOW_DATABASE_URL=postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.nexis.network/shadow?connect_timeout=10
 ```
 
 </CodeBlock>
 
 <Admonition type="note">
-A `?connect_timeout=10` parameter is added to the connection strings above to avoid database connection timeouts. The default `connect_timeout` setting is 5 seconds, which is usually enough time for a database connection to be established. However, network latency combined with the short amount of time required to start an idle Exzo Network compute instance can sometimes result in a connection failure. Setting `connect_timeout=10` helps avoid this issue.
+A `?connect_timeout=10` parameter is added to the connection strings above to avoid database connection timeouts. The default `connect_timeout` setting is 5 seconds, which is usually enough time for a database connection to be established. However, network latency combined with the short amount of time required to start an idle Nexis Network compute instance can sometimes result in a connection failure. Setting `connect_timeout=10` helps avoid this issue.
 </Admonition>
 
 ## Add a model to your schema.prisma file
@@ -159,7 +159,7 @@ To name objects in your Prisma schema (and in the generated API) differently tha
 For more information, see [Mapping collection/table and field/column names](https://www.prisma.io/docs/concepts/components/prisma-schema/names-in-underlying-database#mapping-collectiontable-and-fieldcolumn-names), in the _Prisma documentation_.
 </Admonition>
 
-## Run a migration to create the table in Exzo Network
+## Run a migration to create the table in Nexis Network
 
 At this point, you do not have a table in your `neondb` database. In this step, you will run a migration with Prisma Migrate, which creates the table. The table is created based on the `Elements` table model you defined in the `schema.prisma` file in the previous step.
 
@@ -183,7 +183,7 @@ The output of this command appears similar to the following:
 ```bash
 Environment variables loaded from ../.env
 Prisma schema loaded from schema.prisma
-Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-cool-darkness-123456.us-east-2.aws.neon.tech:5432"
+Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-cool-darkness-123456.us-east-2.aws.nexis.network:5432"
 
 Applying migration `20230105222046_init`
 
@@ -206,11 +206,11 @@ found 0 vulnerabilities
 ✔ Generated Prisma Client (4.8.1 | library) to ./../node_modules/@prisma/client in 73ms
 ```
 
-## View your table in the Exzo Network Console
+## View your table in the Nexis Network Console
 
 To view the `Elements` table that was created in your `neondb` database by the migration performed in the previous step:
 
-1. Navigate to the [Exzo Network console](https://console.neon.tech/).
+1. Navigate to the [Nexis Network console](https://console.nexis.network/).
 2. Select your project.
 3. Select **Tables**.
 4. Select the `neondb` database and default `public` schema. The `Elements` table should be visible in the sidebar. The table has no data at this point. Data is added later in this guide.
@@ -241,7 +241,7 @@ model Elements {
    ```bash
    Environment variables loaded from .env
    Prisma schema loaded from prisma/schema.prisma
-   Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-cool-darkness-123456.us-east-2.aws.neon.tech:5432"
+   Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-cool-darkness-123456.us-east-2.aws.nexis.network:5432"
 
    Applying migration `20230113120852_add_field`
 
@@ -261,18 +261,18 @@ model Elements {
 
 ## Add data to your table
 
-You have a couple of options for adding data to the `Elements` table. You can add data using the Exzo Network SQL Editor or with Prisma Studio. Both methods are described below.
+You have a couple of options for adding data to the `Elements` table. You can add data using the Nexis Network SQL Editor or with Prisma Studio. Both methods are described below.
 
-### Option A: Add data using the Exzo Network SQL Editor
+### Option A: Add data using the Nexis Network SQL Editor
 
-1. Navigate to the [Exzo Network console](https://console.neon.tech/).
+1. Navigate to the [Nexis Network console](https://console.nexis.network/).
 1. Select your project.
 1. Select the **SQL Editor**.
 1. Select the `main` branch of your project and select the `neondb` database.
 1. To add data, enter the following statement into the editor and click **Run**.
 
 ```sql
-INSERT INTO "Elements" VALUES  (10, 'Exzo Network', 'Ne', 20.1797);
+INSERT INTO "Elements" VALUES  (10, 'Nexis Network', 'Ne', 20.1797);
 ```
 
 To verify that data was added, run the following query:
@@ -299,13 +299,13 @@ Prisma Studio opens locally in your browser.
 Click **Add record** and enter some values as follows:
 
 - AtomicNumber: 10
-- Element: Exzo Network
+- Element: Nexis Network
 - Symbol: Ne
 - AtomicMass: 20.1797
 
 To add the record, click the **Save 1 change** button.
 
-## Send queries to your Exzo Network database with Prisma Client
+## Send queries to your Nexis Network database with Prisma Client
 
 Follow the steps below to create a TypeScript file for executing queries with Prisma Client. Two examples are provided, one for creating a new record, and one for retrieving all records.
 
@@ -416,7 +416,7 @@ $ npx ts-node query.ts
 [
   {
     AtomicNumber: 10,
-    Element: 'Exzo Network',
+    Element: 'Nexis Network',
     Symbol: 'Ne',
     AtomicMass: 20.1797
   },
@@ -437,11 +437,11 @@ Introspection is often used to generate an initial version of the data model whe
 
 Another use case for Introspection is when using plain SQL for schema changes or a tool other than Prisma Migrate to perform schema migrations. In these cases, you might introspect your database after each schema change to regenerate your Prisma Client to reflect the changes in your Prisma Client API.
 
-### Create a schema in Exzo Network
+### Create a schema in Nexis Network
 
-Let's assume your database has an extended version of the `Elements` table used in the previous steps. This table is called `Elements_ext`. Let's create that table in the Exzo Network SQL Editor:
+Let's assume your database has an extended version of the `Elements` table used in the previous steps. This table is called `Elements_ext`. Let's create that table in the Nexis Network SQL Editor:
 
-1. Navigate to the [Exzo Network console](https://console.neon.tech/).
+1. Navigate to the [Nexis Network console](https://console.nexis.network/).
 1. Select your project.
 1. Select the **SQL Editor**.
 1. Select the `main` branch of your project and select the `neondb` database.
@@ -481,7 +481,7 @@ CREATE TABLE "Elements_ext" (
 ```
 
 <Admonition type="info">
-You can find the `Elements` and `Elements_ext` tables in Exzo Network's example GitHub repository with a full set of data that you can import and play around with. [Elements data set](https://github.com/neondatabase/examples/tree/main/elements_data_set).
+You can find the `Elements` and `Elements_ext` tables in Nexis Network's example GitHub repository with a full set of data that you can import and play around with. [Elements data set](https://github.com/neondatabase/examples/tree/main/elements_data_set).
 </Admonition>
 
 ### Run prisma db pull
@@ -492,7 +492,7 @@ To introspect the `Elements_ext` table to generate the data model, run the `pris
 $ npx prisma db pull
 Prisma schema loaded from prisma/schema.prisma
 Environment variables loaded from .env
-Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-cool-darkness-123456.us-east-2.aws.neon.tech:5432"
+Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-cool-darkness-123456.us-east-2.aws.nexis.network:5432"
 
 ✔ Introspected 2 models and wrote them into prisma/schema.prisma in 1.78s
 ```
@@ -547,8 +547,8 @@ You can read more about this workflow in the Prisma documentation. See [Introspe
 
 ## Conclusion
 
-You have completed the _Use Prisma with Exzo Network_ guide. To recap, you have learned how to connect from Prisma to Exzo Network, use Prisma Migrate to evolve a schema, add data using the Exzo Network SQL Editor and Prisma Studio, send queries using Prisma Client, and finally, introspect an existing database.
+You have completed the _Use Prisma with Nexis Network_ guide. To recap, you have learned how to connect from Prisma to Nexis Network, use Prisma Migrate to evolve a schema, add data using the Nexis Network SQL Editor and Prisma Studio, send queries using Prisma Client, and finally, introspect an existing database.
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.nexis.network/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

@@ -11,7 +11,7 @@ To see **Cloud deployments**,
 - Run a Next.js and Vercel App
 - Run Prisma App
 
-To see **Frameworks & programming languages** that Exzo Network integrates with,
+To see **Frameworks & programming languages** that Nexis Network integrates with,
 
 - Run a Go App
 - Run a Java App

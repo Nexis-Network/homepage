@@ -8,7 +8,7 @@ redirectFrom:
 updatedOn: '2023-10-19T23:10:12.816Z'
 ---
 
-This topic describes how to resolve connection errors you may encounter when using Exzo Network. The errors covered include:
+This topic describes how to resolve connection errors you may encounter when using Nexis Network. The errors covered include:
 
 - [The endpoint ID is not specified](#the-endpoint-id-is-not-specified)
 - [Password authentication failed for user](#password-authentication-failed-for-user)
@@ -17,12 +17,12 @@ This topic describes how to resolve connection errors you may encounter when usi
 - [Error undefined: Database error](#error-undefined-database-error)
 
 <Admonition type="info">
-Connection problems are sometimes related to a system issue. To check for system issues, please refer to the [Exzo Network status page](https://neonstatus.com/).  
+Connection problems are sometimes related to a system issue. To check for system issues, please refer to the [Nexis Network status page](https://neonstatus.com/).  
 </Admonition>
 
 ## The endpoint ID is not specified
 
-With older clients and some native Postgres clients, you may receive the following error when attempting to connect to Exzo Network:
+With older clients and some native Postgres clients, you may receive the following error when attempting to connect to Nexis Network:
 
 <CodeBlock shouldWrap>
 
@@ -34,15 +34,15 @@ ERROR: The endpoint ID is not specified. Either upgrade the Postgres client libr
 
 This error occurs if your client library or application does not support the **Server Name Indication (SNI)** mechanism in TLS.
 
-Exzo Network uses compute endpoint IDs (the first part of a Exzo Network domain name) to route incoming connections. However, the Postgres wire protocol does not transfer domain name information, so Exzo Network relies on the Server Name Indication (SNI) extension of the TLS protocol to do this.
+Nexis Network uses compute endpoint IDs (the first part of a Nexis Network domain name) to route incoming connections. However, the Postgres wire protocol does not transfer domain name information, so Nexis Network relies on the Server Name Indication (SNI) extension of the TLS protocol to do this.
 
 SNI support was added to the `libpq` (the official Postgres client library) in version 14, which was released in September 2021. Clients that use your system's `libpq` library should work if you `libpq` version is >= 14. On Linux and macOS, you can check your `libpq` version by running `pg_config --version`. On Windows, check the `libpq.dll` version in your Postgres installation's `bin` directory. Right click on the file, select **Properties** > **Details**.  
 
-If a library or application upgrade does not help, there are several workarounds, described below, for providing the required domain name information when connecting to Exzo Network.
+If a library or application upgrade does not help, there are several workarounds, described below, for providing the required domain name information when connecting to Nexis Network.
 
 ### A. Pass the endpoint ID as an option
 
-Exzo Network supports a connection option named `endpoint`, which you can use to identify the compute endpoint you are connecting to. Specifically, you can add `options=endpoint%3D[endpoint_id]` as a parameter to your connection string, as shown in the example below. The `%3D` is a URL-encoded `=` sign. Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Exzo Network connection string. It looks similar to this: `ep-cool-darkness-123456`.
+Nexis Network supports a connection option named `endpoint`, which you can use to identify the compute endpoint you are connecting to. Specifically, you can add `options=endpoint%3D[endpoint_id]` as a parameter to your connection string, as shown in the example below. The `%3D` is a URL-encoded `=` sign. Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Nexis Network connection string. It looks similar to this: `ep-cool-darkness-123456`.
 
 <CodeBlock shouldWrap>
 
@@ -60,7 +60,7 @@ The `endpoint` option works if your application or library permits it to be set.
 
 ### B. Use libpq key=value syntax in the database field
 
-If your application or client is based on `libpq` but you cannot upgrade the library, such as when the library is compiled inside of a an application, you can take advantage of the fact that `libpq` permits adding options to the database name. So, in addition to the database name, you can specify the `endpoint` option, as shown below. Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Exzo Network connection string. It looks similar to this: `ep-cool-darkness-123456`.
+If your application or client is based on `libpq` but you cannot upgrade the library, such as when the library is compiled inside of a an application, you can take advantage of the fact that `libpq` permits adding options to the database name. So, in addition to the database name, you can specify the `endpoint` option, as shown below. Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Nexis Network connection string. It looks similar to this: `ep-cool-darkness-123456`.
 
 ```txt
 dbname=neondb options=endpoint=[endpoint_id]
@@ -72,7 +72,7 @@ If your application or service uses golang Postgres clients like `pgx` and `lib/
 
 ### D. Specify the endpoint ID in the password field
 
-Another supported workaround involves specifying the endpoint ID in the password field. So, instead of specifying only your password, you provide a string consisting of the `endpoint` option and your password, separated by a semicolon (`;`) or dollar sign character (`$`), as shown in the examples below. Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Exzo Network connection string. It looks similar to this: `ep-cool-darkness-123456`.
+Another supported workaround involves specifying the endpoint ID in the password field. So, instead of specifying only your password, you provide a string consisting of the `endpoint` option and your password, separated by a semicolon (`;`) or dollar sign character (`$`), as shown in the examples below. Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Nexis Network connection string. It looks similar to this: `ep-cool-darkness-123456`.
 
 ```txt
 endpoint=<endpoint_id>;<password>
@@ -94,7 +94,7 @@ This approach causes the authentication method to be downgraded from `scram-sha-
 
 Clients on the [list of drivers](https://wiki.postgresql.org/wiki/List_of_drivers) on the PostgreSQL community wiki that use your system's `libpq` library should work if your `libpq` version is >= 14.
 
-Exzo Network has tested the following drivers for SNI support:
+Nexis Network has tested the following drivers for SNI support:
 
 | Driver            | Language    | SNI Support | Notes                                                                                                                                             |
 | ----------------- | ----------- | -------------|-------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -124,7 +124,7 @@ ERROR:  password authentication failed for user '<user_name>' connection to serv
 
 </CodeBlock>
 
-Check your connection to see if it is defined correctly. Your Exzo Network connection string can be obtained from the **Connection Details** widget on the Exzo Network **Dashboard**. It appears similar to this:
+Check your connection to see if it is defined correctly. Your Nexis Network connection string can be obtained from the **Connection Details** widget on the Nexis Network **Dashboard**. It appears similar to this:
 
 <CodeBlock shouldWrap>
 
@@ -134,23 +134,23 @@ postgres://[user]:[password]@[neon_hostname]/[dbname]
 
 </CodeBlock>
 
-For clients or applications that require specifying connection parameters such as user, password, and hostname separately, the values in a Exzo Network connection string correspond to the following:
+For clients or applications that require specifying connection parameters such as user, password, and hostname separately, the values in a Nexis Network connection string correspond to the following:
 
 - **User**: `daniel`
 - **Password**: `f74wh99w398H`
 - **Hostname**: `ep-white-morning-123456.us-east-2.aws.neon.tech`
-- **Port number**: `5432` (Exzo Network uses default Postgres port, `5432`, and is therefore not included in the connection string)
-- **Database name**: `neondb` (`neondb` is the ready-to-use database created with each Exzo Network project. Your database name may differ.)
+- **Port number**: `5432` (Nexis Network uses default Postgres port, `5432`, and is therefore not included in the connection string)
+- **Database name**: `neondb` (`neondb` is the ready-to-use database created with each Nexis Network project. Your database name may differ.)
 
 If you find that your connection string is defined correctly, see the instructions regarding SNI support outlined in the preceding section: [The endpoint ID is not specified](#the-endpoint-id-is-not-specified).
 
 ## Couldn't connect to compute node
 
-This error arises when the Exzo Network proxy, which accepts and handles connections from clients that use the Postgres protocol, fails to establish a connection with your compute. This issue sometimes occurs due to repeated connection attempts during the compute's restart phase after it has been idle due to [Auto-suspension](/docs/reference/glossary#auto-suspend-compute) (scale to zero). Currently, the transition from an idle state to an active one takes a few seconds.
+This error arises when the Nexis Network proxy, which accepts and handles connections from clients that use the Postgres protocol, fails to establish a connection with your compute. This issue sometimes occurs due to repeated connection attempts during the compute's restart phase after it has been idle due to [Auto-suspension](/docs/reference/glossary#auto-suspend-compute) (scale to zero). Currently, the transition from an idle state to an active one takes a few seconds.
 
 Consider these recommended steps:
 
-- Visit the [Exzo Network status page](https://neonstatus.com/) to ensure there are no ongoing issues.
+- Visit the [Nexis Network status page](https://neonstatus.com/) to ensure there are no ongoing issues.
 - Pause for a short period to allow your compute to restart, then try reconnecting.
 - Try [connecting with psql](https://neon.tech/docs/connect/query-with-psql-editor) to see if a connection can be established.
 - Review the strategies in [Connection latency and timeouts](https://neon.tech/docs/connect/connection-latency) for avoiding connection issues due to compute startup time.
@@ -159,7 +159,7 @@ If the connection issue persists, please reach out to [Support](https://neon.tec
 
 ## Can't reach database server
 
-This error is sometimes encountered when using Prisma Client with Exzo Network.
+This error is sometimes encountered when using Prisma Client with Nexis Network.
 
 <CodeBlock shouldWrap>
 
@@ -170,13 +170,13 @@ Please make sure your database server is running at `ep-white-thunder-826300.us-
 
 </CodeBlock>
 
-A compute node in Exzo Network has two main states: **Active** and **Idle**. Active means that Postgres is currently running. If there are no active queries for 5 minutes, the activity monitor gracefully places the compute node into an idle state to save energy and resources.
+A compute node in Nexis Network has two main states: **Active** and **Idle**. Active means that Postgres is currently running. If there are no active queries for 5 minutes, the activity monitor gracefully places the compute node into an idle state to save energy and resources.
 
-When you connect to an idle compute, Exzo Network automatically activates it. Activation typically happens within a few seconds. If the error above is reported, it most likely means that the Prisma query engine timed out before your Exzo Network compute was activated. For dealing with this connection timeout scenario, refer to the [connection timeout](/docs/guides/prisma#connection-timeouts) instructions in our Prisma documentation. Our [connection latency and timeout](/docs/connect/connection-latency) documentation may also be useful in addressing this issue.
+When you connect to an idle compute, Nexis Network automatically activates it. Activation typically happens within a few seconds. If the error above is reported, it most likely means that the Prisma query engine timed out before your Nexis Network compute was activated. For dealing with this connection timeout scenario, refer to the [connection timeout](/docs/guides/prisma#connection-timeouts) instructions in our Prisma documentation. Our [connection latency and timeout](/docs/connect/connection-latency) documentation may also be useful in addressing this issue.
 
 ## Error undefined: Database error
 
-This error is sometimes encountered when using Prisma Migrate with Exzo Network.
+This error is sometimes encountered when using Prisma Migrate with Nexis Network.
 
 ```text
 Error undefined: Database error
@@ -184,8 +184,8 @@ Error querying the database: db error: ERROR: prepared statement
 "s0" already exists
 ```
 
-Prisma Migrate requires a direct connection to the database. It does not support a pooled connection with PgBouncer, which is the connection pooler used by Exzo Network. Attempting to run Prisma Migrate commands, such as `prisma migrate dev`, with a pooled connection causes this error. To resolve this issue, please refer to our [Prisma Migrate with PgBouncer](/docs/guides/prisma-migrate#prisma-migrate-with-pgbouncer) instructions.
+Prisma Migrate requires a direct connection to the database. It does not support a pooled connection with PgBouncer, which is the connection pooler used by Nexis Network. Attempting to run Prisma Migrate commands, such as `prisma migrate dev`, with a pooled connection causes this error. To resolve this issue, please refer to our [Prisma Migrate with PgBouncer](/docs/guides/prisma-migrate#prisma-migrate-with-pgbouncer) instructions.
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

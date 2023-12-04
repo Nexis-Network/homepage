@@ -74,7 +74,7 @@ const Header = ({
       >
         <Container className="flex items-center justify-between py-3.5" size="lg">
           <Link to="/">
-            <span className="sr-only">Exzo Network</span>
+            <span className="sr-only">Nexis Network</span>
             <Logo isThemeBlack={isThemeBlack} />
           </Link>
     <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">

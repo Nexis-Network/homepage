@@ -1,6 +1,6 @@
 ---
-title: Connect a Node.js application to Exzo Network
-subtitle: Set up a Exzo Network project in seconds and connect from a Node.js application
+title: Connect a Node.js application to Nexis Network
+subtitle: Set up a Nexis Network project in seconds and connect from a Node.js application
 enableTableOfContents: true
 redirectFrom:
   - /docs/quickstart/node
@@ -8,25 +8,25 @@ redirectFrom:
 updatedOn: '2023-10-19T23:10:12.832Z'
 ---
 
-This guide describes how to create a Exzo Network project and connect to it from a Node.js application. Examples are provided for using the [node-postgres](https://www.npmjs.com/package/pg) and [Postgres.js](https://www.npmjs.com/package/postgres) clients. Use the client you prefer.
+This guide describes how to create a Nexis Network project and connect to it from a Node.js application. Examples are provided for using the [node-postgres](https://www.npmjs.com/package/pg) and [Postgres.js](https://www.npmjs.com/package/postgres) clients. Use the client you prefer.
 
 <Admonition type="note">
 The same configuration steps can be used for Express and Next.js applications.
 </Admonition>
 
-To connect to Exzo Network from a Node.js application:
+To connect to Nexis Network from a Node.js application:
 
-1. [Create a Exzo Network Project](#create-a-neon-project)
+1. [Create a Nexis Network Project](#create-a-neon-project)
 2. [Create a NodeJS project and add dependencies](#create-a-nodejs-project-and-add-dependencies)
-3. [Store your Exzo Network credentials](#store-your-neon-credentials)
+3. [Store your Nexis Network credentials](#store-your-neon-credentials)
 4. [Configure the Postgres client](#configure-the-postgres-client)
 5. [Run app.js](#run-appjs)
 
-## Create a Exzo Network project
+## Create a Nexis Network project
 
-If you do not have one already, create a Exzo Network project.
+If you do not have one already, create a Nexis Network project.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Exzo Network Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Nexis Network Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -54,9 +54,9 @@ If you do not have one already, create a Exzo Network project.
 
     </CodeTabs>
 
-## Store your Exzo Network credentials
+## Store your Nexis Network credentials
 
-Add a `.env` file to your project directory and add your Exzo Network connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Exzo Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+Add a `.env` file to your project directory and add your Nexis Network connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Nexis Network **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 <CodeBlock shouldWrap>
 
@@ -67,16 +67,16 @@ DATABASE_URL=ppostgres://[user]:[password]@[neon_hostname]/[dbname]?options=endp
 </CodeBlock>
 
 <Admonition type="note">
-A special `endpoint` connection option is appended to the connection string above: `options=endpoint%3D[endpoint_id]`. This option is used with Postgres clients such as `node-postgres` and `Postgres.js` that do not support Server Name Indication (SNI), which Exzo Network relies on to route incoming connections. For more information, see [connection errors](/docs/connect/connection-errors).
+A special `endpoint` connection option is appended to the connection string above: `options=endpoint%3D[endpoint_id]`. This option is used with Postgres clients such as `node-postgres` and `Postgres.js` that do not support Server Name Indication (SNI), which Nexis Network relies on to route incoming connections. For more information, see [connection errors](/docs/connect/connection-errors).
 </Admonition>
 
 <Admonition type="important">
-To ensure the security of your data, never expose your Exzo Network credentials to the browser.
+To ensure the security of your data, never expose your Nexis Network credentials to the browser.
 </Admonition>
 
 ## Configure the Postgres client
 
-Add an `app.js` file to your project directory and add the following code snippet to connect to your Exzo Network database:
+Add an `app.js` file to your project directory and add the following code snippet to connect to your Nexis Network database:
   
 <CodeTabs labels={["node-postgres", "postgres.js"]}>
 
@@ -134,4 +134,4 @@ Result(1) [
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

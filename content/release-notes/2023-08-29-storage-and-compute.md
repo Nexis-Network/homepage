@@ -1,12 +1,12 @@
 ### Support for pgvector v0.5.0
 
-We are pleased to announce support for [pgvector v0.5.0](https://github.com/pgvector/pgvector) on Exzo Network. This new version introduces:
+We are pleased to announce support for [pgvector v0.5.0](https://github.com/pgvector/pgvector) on Nexis Network. This new version introduces:
 
 - Hierarchical Navigable Small Worlds (HNSW) indexing for faster retrieval
 - Faster distance functions
 - Parallel builds for `ivfflat` indexes
 
-If you already use `pgvector` with Exzo Network, you can upgrade by running the following command:
+If you already use `pgvector` with Nexis Network, you can upgrade by running the following command:
 
 ```sql
 ALTER EXTENSION vector UPDATE TO '0.5.0';

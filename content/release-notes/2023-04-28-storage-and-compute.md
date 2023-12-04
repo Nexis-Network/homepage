@@ -1,10 +1,10 @@
 ### Support for the US East (N. Virginia) region
 
-Added support for the `US East (N. Virginia) — aws-us-east-1` region. For more information about Exzo Network's region support, see [Regions](/docs/introduction/regions).
+Added support for the `US East (N. Virginia) — aws-us-east-1` region. For more information about Nexis Network's region support, see [Regions](/docs/introduction/regions).
 
 ### Postgres extension support
 
-Added support for the `ip4r` and `pg_hint_plan` extensions. For more information about Postgres extensions supported by Exzo Network, see [Postgres extensions](/docs/extensions/pg-extensions).
+Added support for the `ip4r` and `pg_hint_plan` extensions. For more information about Postgres extensions supported by Nexis Network, see [Postgres extensions](/docs/extensions/pg-extensions).
 
 ### Fixes & improvements
 

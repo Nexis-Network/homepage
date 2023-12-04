@@ -1,27 +1,27 @@
 ---
 title: The neon_utils extension
-subtitle: Monitor how Exzo Network's Autoscaling feature allocates compute resources
+subtitle: Monitor how Nexis Network's Autoscaling feature allocates compute resources
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.818Z'
 ---
 
-The `neon_utils` extension provides a `num_cpus()` function you can use to monitor how Exzo Network's _Autoscaling_ feature allocates vCPU in response to workload. The function returns the current number of allocated vCPUs.
+The `neon_utils` extension provides a `num_cpus()` function you can use to monitor how Nexis Network's _Autoscaling_ feature allocates vCPU in response to workload. The function returns the current number of allocated vCPUs.
 
-For information about Exzo Network's _Autoscaling_ feature, see [Autoscaling](https://neon.tech/docs/introduction/autoscaling).
+For information about Nexis Network's _Autoscaling_ feature, see [Autoscaling](https://neon.tech/docs/introduction/autoscaling).
 
 ## Install the `neon_utils` extension
 
-Install the `neon_utils` extension by running the following `CREATE EXTENSION` statement in the Exzo Network **SQL Editor** or from a client such as `psql` that is connected to Exzo Network.
+Install the `neon_utils` extension by running the following `CREATE EXTENSION` statement in the Nexis Network **SQL Editor** or from a client such as `psql` that is connected to Nexis Network.
 
 ```sql
 CREATE EXTENSION neon_utils;
 ```
 
-For information about using the Exzo Network **SQL Editor**, see [Query with Exzo Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Exzo Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
+For information about using the Nexis Network **SQL Editor**, see [Query with Nexis Network's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). For information about using the `psql` client with Nexis Network, see [Connect with psql](/docs/connect/query-with-psql-editor).
 
 ## Use the `num_cpus()` function
 
-In Exzo Network, computing capacity is measured in _Compute Units (CU)_. One CU has 1 vCPU and 4 GB of RAM, 2 CUs have 2 vCPUs and 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of CUs. A Exzo Network compute can have anywhere from .25 to 7 CUs.
+In Nexis Network, computing capacity is measured in _Compute Units (CU)_. One CU has 1 vCPU and 4 GB of RAM, 2 CUs have 2 vCPUs and 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of CUs. A Nexis Network compute can have anywhere from .25 to 7 CUs.
 
 When you enable _Autoscaling_ for a compute endpoint, you define a minimum and maximum compute size, as shown below:
 
@@ -44,7 +44,7 @@ The following limitations apply:
 
 ## Observe Autoscaling with `neon_utils` and `pgbench`
 
-The following instructions demonstrate how you can use the `num_cpus()` function with `pgbench` to observe how Exzo Network's Autoscaling feature responds to workload.
+The following instructions demonstrate how you can use the `num_cpus()` function with `pgbench` to observe how Nexis Network's Autoscaling feature responds to workload.
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@ The following instructions demonstrate how you can use the `num_cpus()` function
     SELECT txid_current();
     ```
 
-3. To avoid errors when running `pgbench`, initialize your database with the tables used by `pgbench`. This can be done using the `pgbench -i` command, specifying the connection string for your Exzo Network database. You can obtain a connection string from the **Connection Details** widget on the Exzo Network **Dashboard**.
+3. To avoid errors when running `pgbench`, initialize your database with the tables used by `pgbench`. This can be done using the `pgbench -i` command, specifying the connection string for your Nexis Network database. You can obtain a connection string from the **Connection Details** widget on the Nexis Network **Dashboard**.
 
     <CodeBlock shouldWrap>
 
@@ -139,4 +139,4 @@ The following instructions demonstrate how you can use the `num_cpus()` function
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

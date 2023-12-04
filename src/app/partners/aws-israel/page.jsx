@@ -25,7 +25,7 @@ const AWSPage = () => (
     <Regions />
     <Testimonial
       className="mt-40 xl:mt-[120px] lg:mt-28 md:mt-20"
-      quote="The combination of flexible resource limits and nearly instant database provisioning made Exzo Network a no-brainer."
+      quote="The combination of flexible resource limits and nearly instant database provisioning made Nexis Network a no-brainer."
       name="Lincoln Bergeson"
       position="Infrastructure Engineer at Replit"
     />
@@ -33,8 +33,8 @@ const AWSPage = () => (
     <CTAWithElephant
       className="mt-[136px] xl:mt-[104px] lg:mt-20 md:mt-16"
       buttonClassName="px-[78px] xl:px-14"
-      title="Try Exzo Network<br/> in the Israel region"
-      description="We are delighted to announce that Exzo Network is now available in the new Israel (Tel Aviv) AWS region."
+      title="Try Nexis Network<br/> in the Israel region"
+      description="We are delighted to announce that Nexis Network is now available in the new Israel (Tel Aviv) AWS region."
       buttonText="Sign up"
       buttonUrl={LINKS.signup}
       linkText="Learn more about AWS"

@@ -20,50 +20,50 @@ Project
                             |---- database (mydb)
 ```
 
-Exzo Network supports both read-write and read-only compute endpoints. Read-only compute endpoints are also referred to as [Read replicas](/docs/introduction/read-replicas). A branch can have a single read-write compute endpoint but supports multiple read-only compute endpoints.
+Nexis Network supports both read-write and read-only compute endpoints. Read-only compute endpoints are also referred to as [Read replicas](/docs/introduction/read-replicas). A branch can have a single read-write compute endpoint but supports multiple read-only compute endpoints.
 
-Tier limits define resources (vCPUs and RAM) available to a compute endpoint. The  [Exzo Network Free Tier](/docs/introduction/free-tier) provides a shared vCPU and up to 1 GB of RAM per compute endpoint. The [Exzo Network Pro Plan](/docs/introduction/pro-plan) supports larger compute sizes and _Autoscaling_.
+Tier limits define resources (vCPUs and RAM) available to a compute endpoint. The  [Nexis Network Free Tier](/docs/introduction/free-tier) provides a shared vCPU and up to 1 GB of RAM per compute endpoint. The [Nexis Network Pro Plan](/docs/introduction/pro-plan) supports larger compute sizes and _Autoscaling_.
 
 ## View a compute endpoint
 
-A compute endpoint is associated with a branch. To view a compute endpoint, select **Branches** in the Exzo Network Console, and select a branch. If the branch has a compute endpoint, it is shown on the branch page.
+A compute endpoint is associated with a branch. To view a compute endpoint, select **Branches** in the Nexis Network Console, and select a branch. If the branch has a compute endpoint, it is shown on the branch page.
 
 Compute endpoint details shown on the branch page include:
 
 - **Id**: The compute endpoint ID.
 -- **Type**: The type of compute endpoint. `R/W` (Read-write) or `R/O` (Read-only).
 - **Status**: The compute endpoint status (`Active`, `Idle`, or `Stopped`).
-- **Compute size**: The size of the compute endpoint. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can configure the amount of vCPU and RAM for a compute endpoint when creating or editing a compute endpoint. Shows _Autoscaling_ minimum and maximum vCPU values if _Autoscaling_ is enabled.
+- **Compute size**: The size of the compute endpoint. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can configure the amount of vCPU and RAM for a compute endpoint when creating or editing a compute endpoint. Shows _Autoscaling_ minimum and maximum vCPU values if _Autoscaling_ is enabled.
 - **Auto-suspend delay**: The number of seconds of inactivity after which a compute endpoint is automatically suspended. The default is 300 seconds (5 minutes). For more information, see [Auto-suspend configuration](#auto-suspend-configuration).
 - **Last active**: The date and time the compute was last active.
 
 ## Create a compute endpoint
 
-You can only create a read-write compute endpoint for a branch that does not have one, but a branch can have multiple read-only compute endpoints (referred to as "read replicas"). [Read replicas](/docs/guides/read-replica-guide) are a [Exzo Network Pro Plan](/docs/introduction/pro-plan) feature.
+You can only create a read-write compute endpoint for a branch that does not have one, but a branch can have multiple read-only compute endpoints (referred to as "read replicas"). [Read replicas](/docs/guides/read-replica-guide) are a [Nexis Network Pro Plan](/docs/introduction/pro-plan) feature.
 
 To create an endpoint:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch that does not have an endpoint
 1. Click **Add compute**.
 1. On the **Create compute endpoint** dialog, specify your settings and click **Create**. Selecting **Read-only** creates a [Read replica](/docs/introduction/read-replicas).
 
 ## Edit a compute endpoint
 
-Exzo Network paid plan users can edit a compute endpoint to change the [compute size](#compute-size-and-autoscaling-configuration) or [Auto-suspend](#auto-suspend-configuration) configuration.
+Nexis Network paid plan users can edit a compute endpoint to change the [compute size](#compute-size-and-autoscaling-configuration) or [Auto-suspend](#auto-suspend-configuration) configuration.
 
 To edit a compute endpoint:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch.
 1. Click the kebab menu in the **Computes** table, and select **Edit**.
 1. Specify your changes and click **Save**.
 
 ### Compute size and Autoscaling configuration
 
-[Exzo Network Pro Plan](/docs/introduction/pro-plan) users can change compute size settings when [editing a compute endpoint](#edit-a-compute-endpoint).
+[Nexis Network Pro Plan](/docs/introduction/pro-plan) users can change compute size settings when [editing a compute endpoint](#edit-a-compute-endpoint).
 
-_Compute size_ is the number of Compute Units (CUs) assigned to a Exzo Network compute endpoint. The number of CUs determines the processing capacity of the compute endpoint. One CU has 1 vCPU and 4 GB of RAM, 2 CUs have 2 vCPUs and 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of CUs, as shown in the table below. Currently, a Exzo Network compute can have anywhere from 1/4 (.25) to 7 CUs.
+_Compute size_ is the number of Compute Units (CUs) assigned to a Nexis Network compute endpoint. The number of CUs determines the processing capacity of the compute endpoint. One CU has 1 vCPU and 4 GB of RAM, 2 CUs have 2 vCPUs and 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of CUs, as shown in the table below. Currently, a Nexis Network compute can have anywhere from 1/4 (.25) to 7 CUs.
 
 | Compute Units | vCPU | RAM    |
 |:--------------|:-----|:-------|
@@ -77,10 +77,10 @@ _Compute size_ is the number of Compute Units (CUs) assigned to a Exzo Network c
 | 6             | 6    | 24 GB  |
 | 7             | 7    | 28 GB  |
 
-Exzo Network supports two compute size configuration options:
+Nexis Network supports two compute size configuration options:
 
 - **Fixed Size:** This option allows you to select a fixed compute size ranging from .25 CUs to 7 CUs. A fixed-size compute does not scale to meet workload demand.
-- **Autoscaling:** This option allows you to specify a minimum and maximum compute size. Exzo Network scales the compute size up and down within the selected compute size boundaries to meet workload demand. _Autoscaling_ currently supports a range of 1/4 (.25) to 7 CUs. For information about how Exzo Network implements the _Autoscaling_ feature, see [Autoscaling](/docs/introduction/autoscaling).
+- **Autoscaling:** This option allows you to specify a minimum and maximum compute size. Nexis Network scales the compute size up and down within the selected compute size boundaries to meet workload demand. _Autoscaling_ currently supports a range of 1/4 (.25) to 7 CUs. For information about how Nexis Network implements the _Autoscaling_ feature, see [Autoscaling](/docs/introduction/autoscaling).
 
 <Admonition type="info">
 The `neon_utils` extension provides a `num_cpus()` function you can use to monitor how the _Autoscaling_ feature allocates compute resources in response to workload. For more information, see [The neon_utils extension](/docs/extensions/neon-utils).
@@ -88,9 +88,9 @@ The `neon_utils` extension provides a `num_cpus()` function you can use to monit
 
 ### Auto-suspend configuration
 
-Exzo Network's _Auto-suspend_ feature automatically transitions a compute endpoint into an `Idle` state after a period of inactivity, also known as "scale-to-zero". By default, suspension occurs after 5 minutes of inactivity, but this delay can be adjusted. For instance, you can increase the delay to reduce the frequency of suspensions, or you can disable _Auto-suspend_ completely to maintain an "always-active" compute endpoint. An "always-active" configuration eliminates the few seconds of latency required to reactivate a compute endpoint but is likely to increase your compute time usage.
+Nexis Network's _Auto-suspend_ feature automatically transitions a compute endpoint into an `Idle` state after a period of inactivity, also known as "scale-to-zero". By default, suspension occurs after 5 minutes of inactivity, but this delay can be adjusted. For instance, you can increase the delay to reduce the frequency of suspensions, or you can disable _Auto-suspend_ completely to maintain an "always-active" compute endpoint. An "always-active" configuration eliminates the few seconds of latency required to reactivate a compute endpoint but is likely to increase your compute time usage.
 
-The maximum **Suspend compute after a period of inactivity** setting is 7 days. To configure a compute as "always-active", deselect **Suspend compute after a period of inactivity**. For more information, refer to [Configuring Auto-suspend for Exzo Network computes](/docs/guides/auto-suspend-guide).
+The maximum **Suspend compute after a period of inactivity** setting is 7 days. To configure a compute as "always-active", deselect **Suspend compute after a period of inactivity**. For more information, refer to [Configuring Auto-suspend for Nexis Network computes](/docs/guides/auto-suspend-guide).
 
 ## Delete a compute endpoint
 
@@ -98,34 +98,34 @@ Deleting a compute endpoint is a permanent action.
 
 To delete a compute endpoint:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch.
 1. Click the kebab menu in the **Computes** table, and select **Delete**.
 1. On the confirmation dialog, click **Delete**.
 
-## Manage compute endpoints with the Exzo Network API
+## Manage compute endpoints with the Nexis Network API
 
-Compute endpoint actions performed in the Exzo Network Console can also be performed using the [Exzo Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). The following examples demonstrate how to create, view, update, and delete compute endpoints using the Exzo Network API. For other compute endpoint API methods, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+Compute endpoint actions performed in the Nexis Network Console can also be performed using the [Nexis Network API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). The following examples demonstrate how to create, view, update, and delete compute endpoints using the Nexis Network API. For other compute endpoint API methods, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
 <Admonition type="note">
-The API examples that follow may not show all of the user-configurable request body attributes that are available to you. To view all attributes for a particular method, refer to method's request body schema in the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+The API examples that follow may not show all of the user-configurable request body attributes that are available to you. To view all attributes for a particular method, refer to method's request body schema in the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 </Admonition>
 
 The `jq` option specified in each example is an optional third-party tool that formats the `JSON` response, making it easier to read. For information about this utility, see [jq](https://stedolan.github.io/jq/).
 
 ### Prerequisites
 
-A Exzo Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Exzo Network API request.
+A Nexis Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Nexis Network API request.
 
 ### Create a compute endpoint with the API
 
-The following Exzo Network API method creates a compute endpoint.
+The following Nexis Network API method creates a compute endpoint.
 
 ```text
 POST /projects/{project_id}/endpoints
 ```
 
-The API method appears as follows when specified in a cURL command. The branch you specify cannot have an existing compute endpoint. A compute endpoint must be associated with a branch, and a branch can have only one compute endpoint. Exzo Network  supports read-write and read-only compute endpoints. Read-only compute endpoints are for creating [Read replicas](/docs/introduction/read-replicas). A branch can have a single read-write compute endpoint but supports multiple read-only compute endpoints.
+The API method appears as follows when specified in a cURL command. The branch you specify cannot have an existing compute endpoint. A compute endpoint must be associated with a branch, and a branch can have only one compute endpoint. Nexis Network  supports read-write and read-only compute endpoints. Read-only compute endpoints are for creating [Read replicas](/docs/introduction/read-replicas). A branch can have a single read-write compute endpoint but supports multiple read-only compute endpoints.
 
 ```bash
 curl -X 'POST' \
@@ -188,7 +188,7 @@ curl -X 'POST' \
 
 ### List compute endpoints with the API
 
-The following Exzo Network API method lists compute endpoints for the specified project. A compute endpoint belongs to a Exzo Network project. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/listprojectendpoints).
+The following Nexis Network API method lists compute endpoints for the specified project. A compute endpoint belongs to a Nexis Network project. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/listprojectendpoints).
 
 ```text
 GET /projects/{project_id}/endpoints
@@ -261,7 +261,7 @@ curl -X 'GET' \
 
 ### Update a compute endpoint with the API
 
-The following Exzo Network API method updates the specified compute endpoint. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/updateprojectendpoint).
+The following Nexis Network API method updates the specified compute endpoint. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/updateprojectendpoint).
 
 ```text
 PATCH /projects/{project_id}/endpoints/{endpoint_id}
@@ -341,7 +341,7 @@ curl -X 'PATCH' \
 
 ### Delete a compute endpoint with the API
 
-The following Exzo Network API method deletes the specified compute endpoint. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/deleteprojectendpoint).
+The following Nexis Network API method deletes the specified compute endpoint. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/deleteprojectendpoint).
 
 ```text
 DELETE /projects/{project_id}/endpoints/{endpoint_id}
@@ -391,4 +391,4 @@ curl -X 'DELETE' \
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

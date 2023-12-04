@@ -24,10 +24,10 @@ import StopIcon from './images/stop.inline.svg';
 import Message from './message';
 
 const items = [
-  'What’s Exzo Network?',
-  'How do I sign up for Exzo Network?',
+  'What’s Nexis Network?',
+  'How do I sign up for Nexis Network?',
   'How to create a project?',
-  'How to get started with the Exzo Network API?',
+  'How to get started with the Nexis Network API?',
 ];
 
 const ChatWidget = () => {
@@ -137,7 +137,7 @@ const ChatWidget = () => {
         <Dialog.Content className="fixed left-1/2 top-1/2 z-[150] mx-auto max-h-[85vh] w-full max-w-[756px] -translate-x-1/2 -translate-y-1/2 lg:h-full lg:max-h-full lg:max-w-full">
           <div className="relative flex h-full max-h-[85vh] flex-col rounded-[10px] border border-gray-new-90 bg-gray-new-98 pt-4 data-[state=closed]:animate-dialog-hide data-[state=open]:animate-dialog-show dark:border-gray-new-20 dark:bg-gray-new-8 dark:text-white dark:shadow-[4px_4px_10px_rgba(0,0,0,0.5)] lg:h-full lg:max-h-screen lg:rounded-none">
             <Dialog.Title className="text-20 flex items-center space-x-5 px-5 leading-tight xs:space-x-4">
-              <span>Ask Exzo Network AI a question</span>
+              <span>Ask Nexis Network AI a question</span>
               <div className="flex items-center rounded-[24px] border border-gray-new-94 bg-[rgba(239,239,240,0.4)] px-3 py-1.5 text-gray-new-30 dark:border-gray-new-15 dark:bg-gray-new-15/40 dark:text-gray-new-80 xs:px-2">
                 <ExperimentalIcon className="mr-1.5 h-3.5 w-3.5 xs:h-3 xs:w-3" />
                 <span className="text-sm leading-none">Experimental</span>
@@ -191,9 +191,9 @@ const ChatWidget = () => {
               >
                 <ChatInput ref={inputRef} onEnterPress={() => formRef.current.submit()} />
                 <div className="mt-2.5 flex flex-col space-y-1 text-center text-xs font-light leading-dense text-gray-new-30 dark:text-gray-new-80">
-                  <span>Exzo Network Docs AI has a cap of 1 message every 5 seconds.</span>
+                  <span>Nexis Network Docs AI has a cap of 1 message every 5 seconds.</span>
                   <span>
-                    Exzo Network Docs AI may produce inaccurate information. Evaluate answers carefully
+                    Nexis Network Docs AI may produce inaccurate information. Evaluate answers carefully
                     before implementing.
                   </span>
                 </div>
@@ -278,7 +278,7 @@ const ChatWidgetTrigger = ({ className, isSidebar }) => {
         className
       )}
       type="button"
-      aria-label="Open Exzo Network Docs AI"
+      aria-label="Open Nexis Network Docs AI"
       onClick={onClickHandler}
     >
       {isSidebar ? (
@@ -308,7 +308,7 @@ const ChatWidgetTrigger = ({ className, isSidebar }) => {
               'lg:hidden': !isSidebar,
             })}
           >
-            Exzo Network Docs AI
+            Nexis Network Docs AI
           </span>
           <span
             className={clsx('hidden text-gray-new-20 dark:text-gray-new-90 ', {
@@ -316,7 +316,7 @@ const ChatWidgetTrigger = ({ className, isSidebar }) => {
             })}
             aria-hidden
           >
-            Try Exzo Network Docs AI instead
+            Try Nexis Network Docs AI instead
           </span>
         </h3>
       </div>

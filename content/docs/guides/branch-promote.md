@@ -1,19 +1,19 @@
 ---
 title: Promote a branch
-subtitle: Learn how to promote a branch to the primary branch of your Exzo Network project using
-  the Exzo Network API
+subtitle: Learn how to promote a branch to the primary branch of your Nexis Network project using
+  the Nexis Network API
 enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.983Z'
 ---
 
-This guide describes how to create a new branch and promote it to the primary branch of your Exzo Network project in the context of a data recovery scenario. It also describes how to move the compute endpoint from your existing primary branch to the new branch to avoid having to reconfigure your application's database connection details.
+This guide describes how to create a new branch and promote it to the primary branch of your Nexis Network project in the context of a data recovery scenario. It also describes how to move the compute endpoint from your existing primary branch to the new branch to avoid having to reconfigure your application's database connection details.
 
 ## What is a primary branch?
 
-Each Exzo Network project has a primary branch. In the Exzo Network Console, your primary branch is identified on the **Branches** page by a `PRIMARY` tag. You can designate any branch as the primary branch. The advantage of the primary branch is that its compute endpoint remains accessible if you exceed your project's limits, ensuring uninterrupted access to data that resides on the primary branch, which is typically the branch used in production.
+Each Nexis Network project has a primary branch. In the Nexis Network Console, your primary branch is identified on the **Branches** page by a `PRIMARY` tag. You can designate any branch as the primary branch. The advantage of the primary branch is that its compute endpoint remains accessible if you exceed your project's limits, ensuring uninterrupted access to data that resides on the primary branch, which is typically the branch used in production.
 
-- For [Exzo Network Free Tier](/docs/introduction/free-tier) users, the compute endpoint associated with the primary branch remains accessible if you exceed the _Active time_ limit of 100 hours per month.
-- For [Exzo Network Pro Plan](/docs/introduction/pro-plan) users, the compute endpoint associated with the primary branch is exempt from the limit on simultaneously active computes, ensuring that it is always available. Exzo Network has a default limit of 20 simultaneously active computes to protect your account from unintended usage.
+- For [Nexis Network Free Tier](/docs/introduction/free-tier) users, the compute endpoint associated with the primary branch remains accessible if you exceed the _Active time_ limit of 100 hours per month.
+- For [Nexis Network Pro Plan](/docs/introduction/pro-plan) users, the compute endpoint associated with the primary branch is exempt from the limit on simultaneously active computes, ensuring that it is always available. Nexis Network has a default limit of 20 simultaneously active computes to protect your account from unintended usage.
 
 ## Why promote a branch to primary?
 
@@ -31,10 +31,10 @@ The procedure described below creates a new branch and promotes it to the primar
 
 The following information is required to perform the procedure:
 
-- A Exzo Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- The `project_id` for your Exzo Network project. You can obtain a `project_id` using the [List projects](https://api-docs.neon.tech/reference/listprojects) method, or you can find it on your project's **Settings** page in the Exzo Network Console.
-- The `branch_id` of the current primary branch. You can obtain a `branch_id` using the [List branches](https://api-docs.neon.tech/reference/listprojectbranches) method, or you can find it on the your project's **Branches** page in the Exzo Network Console. A `branch_id` has a `br-` prefix.
-- The `endpoint_id` of the compute endpoint associated with the current primary branch. You can obtain an `endpoint_id` using the [List endpoints](https://api-docs.neon.tech/reference/listprojectendpoints) method, or you can find it on the **Branches** page in the Exzo Network Console. An `endpoint_id` has an `ep-` prefix.
+- A Nexis Network API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- The `project_id` for your Nexis Network project. You can obtain a `project_id` using the [List projects](https://api-docs.neon.tech/reference/listprojects) method, or you can find it on your project's **Settings** page in the Nexis Network Console.
+- The `branch_id` of the current primary branch. You can obtain a `branch_id` using the [List branches](https://api-docs.neon.tech/reference/listprojectbranches) method, or you can find it on the your project's **Branches** page in the Nexis Network Console. A `branch_id` has a `br-` prefix.
+- The `endpoint_id` of the compute endpoint associated with the current primary branch. You can obtain an `endpoint_id` using the [List endpoints](https://api-docs.neon.tech/reference/listprojectendpoints) method, or you can find it on the **Branches** page in the Nexis Network Console. An `endpoint_id` has an `ep-` prefix.
 
 ## Creating a new point-in-time branch without a compute endpoint
 
@@ -121,7 +121,7 @@ The response body includes the `id` of your new branch. You will need this value
 </details>
 
 <Admonition type="note">
-Creating a point-in-time branch can also be performed using the Exzo Network Console or CLI. See [Create a point-in-time branch](/docs/guides/branching-pitr#create-a-point-in-time-branch) for Exzo Network Console instructions. See [Exzo Network CLI commands — branches](/docs/reference/cli-branches#create) for CLI instructions.
+Creating a point-in-time branch can also be performed using the Nexis Network Console or CLI. See [Create a point-in-time branch](/docs/guides/branching-pitr#create-a-point-in-time-branch) for Nexis Network Console instructions. See [Nexis Network CLI commands — branches](/docs/reference/cli-branches#create) for CLI instructions.
 </Admonition>
 
 ## Move the compute endpoint from your current primary branch to the new branch
@@ -180,7 +180,7 @@ curl --request PATCH \
 </details>
 
 <Admonition type="note">
-This procedure can only be performed using the Exzo Network API. You can expect Exzo Network Cole and CLI support to be added in a future release.
+This procedure can only be performed using the Nexis Network API. You can expect Nexis Network Cole and CLI support to be added in a future release.
 </Admonition>
 
 ## Rename the old primary branch
@@ -232,7 +232,7 @@ curl --request PATCH \
 </details>
 
 <Admonition type="note">
-Renaming a branch can also be performed using the Exzo Network Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Exzo Network Console instructions. See [Exzo Network CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
+Renaming a branch can also be performed using the Nexis Network Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Nexis Network Console instructions. See [Nexis Network CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
 </Admonition>
 
 ## Rename the new branch to the name of the old primary branch
@@ -287,7 +287,7 @@ curl --request PATCH \
 </details>
 
 <Admonition type="note">
-Renaming a branch can also be performed using the Exzo Network Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Exzo Network Console instructions. See [Exzo Network CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
+Renaming a branch can also be performed using the Nexis Network Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Nexis Network Console instructions. See [Nexis Network CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
 </Admonition>
 
 ## Promote the new branch to primary
@@ -334,7 +334,7 @@ curl --request POST \
 </details>
 
 <Admonition type="note">
-Promoting a branch to primary can also be performed using the Exzo Network Console or CLI. See [Set a branch as primary](/docs/manage/branches#set-a-branch-as-primary) for Exzo Network Console instructions. See [Exzo Network CLI commands — branches](/docs/reference/cli-branches#set-primary) for CLI instructions.
+Promoting a branch to primary can also be performed using the Nexis Network Console or CLI. See [Set a branch as primary](/docs/manage/branches#set-a-branch-as-primary) for Nexis Network Console instructions. See [Nexis Network CLI commands — branches](/docs/reference/cli-branches#set-primary) for CLI instructions.
 </Admonition>
 
 You should now have a new primary branch, and because you moved the compute endpoint from your old primary branch to the new one, you do not need to change the connection details in your applications. Once you have validated the change, consider deleting your old primary branch to save storage space. See [Delete a branch with the API](/docs/manage/branches#delete-a-branch-with-the-api).

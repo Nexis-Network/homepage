@@ -12,7 +12,7 @@ If you installed these extensions previously and want to upgrade to the latest v
 
 Additionally, the [pg_tiktoken](/docs/extensions/pg_tiktoken) extension is now supported with Postgres 16.
 
-For a complete list of Postgres extensions supported by Exzo Network, see [Postgres extensions](/docs/extensions/pg-extensions).
+For a complete list of Postgres extensions supported by Nexis Network, see [Postgres extensions](/docs/extensions/pg-extensions).
 
 ### Fixes & improvements
 

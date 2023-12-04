@@ -16,7 +16,7 @@ const snippet = {
       constructor() ERC20("MyToken", "MTK") ERC20Permit("MyToken") {}
   }`,
   text: 'Start building the future of Web3 today.',
-  linkUrl: 'https://github.com/exzo-network',
+  linkUrl: 'https://github.com/nexis-network',
 };
 
 const Integration = () => (

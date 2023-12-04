@@ -1,15 +1,15 @@
 ---
 title: Passwordless auth
-subtitle: Learn how to connect to Exzo Network without a password
+subtitle: Learn how to connect to Nexis Network without a password
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.817Z'
 ---
 
-Exzo Network's `psql` passwordless auth feature helps you quickly authenticate a connection to Exzo Network without providing a password.
+Nexis Network's `psql` passwordless auth feature helps you quickly authenticate a connection to Nexis Network without providing a password.
 
 The following instructions require a working installation of [psql](https://www.postgresql.org/download/), an interactive terminal for working with Postgres. For information about `psql`, refer to the [psql reference](https://www.postgresql.org/docs/15/app-psql.html), in the _PostgreSQL Documentation_.
 
-To connect using Exzo Network's `psql` passwordless auth feature:
+To connect using Nexis Network's `psql` passwordless auth feature:
 
 1. In your terminal, run the following command:
 
@@ -20,12 +20,12 @@ To connect using Exzo Network's `psql` passwordless auth feature:
    A response similar to the following is displayed:
 
    ```bash
-   NOTICE:  Welcome to Exzo Network!
+   NOTICE:  Welcome to Nexis Network!
    Authenticate by visiting:
        https://console.neon.tech/psql_session/6d32af5ef8215b62
    ```
 
-2. In your browser, navigate to the provided link. Log in to Exzo Network if you are not already logged in. You are asked to select a Exzo Network project to connect to. If your project has more than one compute endpoint, you are also asked to select one.
+2. In your browser, navigate to the provided link. Log in to Nexis Network if you are not already logged in. You are asked to select a Nexis Network project to connect to. If your project has more than one compute endpoint, you are also asked to select one.
 
    After making your selections, you are advised that you can return to your terminal or command window where information similar to the following is displayed:
 
@@ -69,4 +69,4 @@ SELECT 1
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

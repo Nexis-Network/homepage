@@ -1,11 +1,11 @@
 ---
 title: Connect a GUI application
-subtitle: Learn how to connect a GUI application to Exzo Network
+subtitle: Learn how to connect a GUI application to Nexis Network
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.813Z'
 ---
 
-This topic describes how to connect to a Exzo Network database from a GUI application or IDE. Most GUI applications and IDEs that support connecting to a Postgres database also support connecting to Exzo Network.
+This topic describes how to connect to a Nexis Network database from a GUI application or IDE. Most GUI applications and IDEs that support connecting to a Postgres database also support connecting to Nexis Network.
 
 ## Gather your connection details
 
@@ -17,12 +17,12 @@ The following details are typically required when configuring a connection:
 - role (user)
 - password
 
-You can gather these details from the **Connection Details** widget on the **Exzo Network Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
+You can gather these details from the **Connection Details** widget on the **Nexis Network Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
 <Admonition type="note">
-Exzo Network supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
+Nexis Network supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
 </Admonition>
 
 The connection string includes the role, password, hostname, and database name.
@@ -37,7 +37,7 @@ postgres://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
 - hostname: `ep-cool-darkness-123456.us-east-2.aws.neon.tech`
 - database name: `dbname`
 
-Exzo Network uses the default Postgres port, `5432`.
+Nexis Network uses the default Postgres port, `5432`.
 
 ## Connect to the database
 
@@ -45,16 +45,16 @@ In the GUI application or IDE, enter the connection details into the appropriate
 
 ![Register - Server](/docs/connect/pgadmin4.png)
 
-Some Java-based tools that use the pgJDBC driver for connecting to Postgres, such as DBeaver, DataGrip, and CLion, do not support including a role name and password in a database connection string or URL field. When you find that a connection string is not accepted, try entering the database name, role, and password values in the appropriate fields in the tool's connection UI when configuring a connection to Exzo Network. For example, the DBeaver client has a **URL** field, but connecting to Exzo Network requires specifying the connection details as shown:
+Some Java-based tools that use the pgJDBC driver for connecting to Postgres, such as DBeaver, DataGrip, and CLion, do not support including a role name and password in a database connection string or URL field. When you find that a connection string is not accepted, try entering the database name, role, and password values in the appropriate fields in the tool's connection UI when configuring a connection to Nexis Network. For example, the DBeaver client has a **URL** field, but connecting to Nexis Network requires specifying the connection details as shown:
 
 ![DBeaver connection](/docs/connect/dbeaver_connection.png)
 
 ## Tested GUI applications and IDEs
 
-Connections from the GUI applications and IDEs in the table below have been tested with Exzo Network.
+Connections from the GUI applications and IDEs in the table below have been tested with Nexis Network.
 
 <Admonition type="note">
-Some applications require an Server Name Indication (SNI) workaround. Exzo Network uses compute endpoint domain names to route incoming connections. However, the Postgres wire protocol does not transfer the server domain name, so Exzo Network relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Not all application clients support SNI. In these cases, a workaround is required. For more information, see [Connection errors](/docs/connect/connection-errors).
+Some applications require an Server Name Indication (SNI) workaround. Nexis Network uses compute endpoint domain names to route incoming connections. However, the Postgres wire protocol does not transfer the server domain name, so Nexis Network relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Not all application clients support SNI. In these cases, a workaround is required. For more information, see [Connection errors](/docs/connect/connection-errors).
 </Admonition>
 
 | Application or IDE | Notes |
@@ -72,8 +72,8 @@ Some applications require an Server Name Indication (SNI) workaround. Exzo Netwo
 | [DronaHQ hosted cloud version](https://www.dronahq.com/) | Requires selecting **Connect using SSL** when creating a connector |
 | [Forest Admin](https://www.forestadmin.com/) | The database requires at least one table |
 | [Grafana](https://grafana.com/docs/grafana/latest/datasources/postgres/)| Requires `sslmode=verify-full`. See [SNI workaround C](/docs/connect/connection-errors#c-set-verify-full-for-golang-based-clients). |
-| [Google Looker Studio](https://lookerstudio.google.com/) | Requires **Enable SSL** and uploading the [ISRG Root X1](https://letsencrypt.org/certificates/) self-signed `pem` root certificate from Let's Encrypt. See [Connect to Looker Studio](https://community.neon.tech/t/connect-to-data-studio-looker-studio/299/3), in the _Exzo Network Community_ forum. |
-| [Google Colab](https://colab.research.google.com/) | See [Use Google Colab with Exzo Network](/docs/ai/ai-google-colab). |
+| [Google Looker Studio](https://lookerstudio.google.com/) | Requires **Enable SSL** and uploading the [ISRG Root X1](https://letsencrypt.org/certificates/) self-signed `pem` root certificate from Let's Encrypt. See [Connect to Looker Studio](https://community.neon.tech/t/connect-to-data-studio-looker-studio/299/3), in the _Nexis Network Community_ forum. |
+| [Google Colab](https://colab.research.google.com/) | See [Use Google Colab with Nexis Network](/docs/ai/ai-google-colab). |
 | [ILLA Cloud](https://www.illacloud.com/) | |
 | [Luna Modeler](https://www.datensen.com/data-modeling/luna-modeler-for-relational-databases.html) | Requires enabling the SSL/TLS option |
 | [Metabase](https://www.metabase.com/) | |
@@ -87,7 +87,7 @@ Some applications require an Server Name Indication (SNI) workaround. Exzo Netwo
 
 ## Connection issues
 
-Applications that use older client libraries or drivers that do not support Server Name Indication (SNI) may not permit connecting to Exzo Network. If you encounter the following error, refer to [Connection errors](/docs/connect/connection-errors) for possible workarounds.
+Applications that use older client libraries or drivers that do not support Server Name Indication (SNI) may not permit connecting to Nexis Network. If you encounter the following error, refer to [Connection errors](/docs/connect/connection-errors) for possible workarounds.
 
 <CodeBlock shouldWrap>
 
@@ -99,4 +99,4 @@ ERROR: The endpoint ID is not specified. Either upgrade the Postgres client libr
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

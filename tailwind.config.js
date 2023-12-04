@@ -227,6 +227,10 @@ module.exports = {
         },
       }),
       animation: {
+        'fade-up': 'fade-up 0.5s',
+        'fade-down': 'fade-down 0.5s',
+        'slide-up-fade': 'slide-up-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-down-fade': 'slide-down-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         'text-blink': 'text-blink 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         'fade-in-overlay': 'fadeInOverlay 0.2s',
         'fade-out-overlay': 'fadeOutOverlay 0.2s',

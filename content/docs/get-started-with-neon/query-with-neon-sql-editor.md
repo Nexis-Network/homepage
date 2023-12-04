@@ -1,25 +1,25 @@
 ---
-title: Query with Exzo Network's SQL Editor
-subtitle: Query your database from the Exzo Network Console using the Exzo Network SQL Editor
+title: Query with Nexis Network's SQL Editor
+subtitle: Query your database from the Nexis Network Console using the Nexis Network SQL Editor
 enableTableOfContents: true
 redirectFrom:
   - /docs/get-started-with-neon/tutorials
 updatedOn: '2023-10-19T23:10:12.823Z'
 ---
 
-The Exzo Network SQL Editor allows you to run queries on your Exzo Network databases directly from the Exzo Network Console. In addition, the editor keeps a query history, permits saving queries, and provides [**Explain**](https://www.postgresql.org/docs/current/sql-explain.html) and [**Analyze**](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE) features.
+The Nexis Network SQL Editor allows you to run queries on your Nexis Network databases directly from the Nexis Network Console. In addition, the editor keeps a query history, permits saving queries, and provides [**Explain**](https://www.postgresql.org/docs/current/sql-explain.html) and [**Analyze**](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE) features.
 
 <a id="query-via-ui/"></a>
 
 To use the SQL Editor:
 
-1. Navigate to the [Exzo Network console](https://console.neon.tech/).
+1. Navigate to the [Nexis Network console](https://console.neon.tech/).
 2. Select your project.
 3. Select **SQL Editor**.
 4. Select a branch and database.
 5. Enter a query into the editor and click **Run** to view the results.
 
-![Exzo Network SQL Editor](/docs/get-started-with-neon/sql_editor.png)
+![Nexis Network SQL Editor](/docs/get-started-with-neon/sql_editor.png)
 
 You can use the following query to try the SQL Editor. The query creates a table, adds data, and retrieves the data from the table.
 
@@ -58,7 +58,7 @@ The SQL Editor maintains a query history for the project. To view your query his
 
 ## Explain and Analyze
 
-The Exzo Network SQL Editor provides **Explain** and **Analyze** features.
+The Nexis Network SQL Editor provides **Explain** and **Analyze** features.
 
 - The **Explain** feature runs the specified query with the Postgres [EXPLAIN](https://www.postgresql.org/docs/current/sql-explain.html) command, which returns the execution plan for the query. The **Explain** feature only returns a plan with estimates. It does not execute the query.
 - The **Analyze** feature runs the specified query with [EXPLAIN ANALYZE](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE). The `ANALYZE` parameter causes the query to be executed and returns actual row counts and run times for plan nodes along with the `EXPLAIN` estimates.
@@ -67,4 +67,4 @@ Understanding the information provided by the **Explain** and **Analyze** featur
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

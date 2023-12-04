@@ -19,11 +19,11 @@ import vercelLineSvg from './images/vercel-line.svg';
 
 const title = 'All-Things-Branching';
 const description =
-  ' Join us Wednesday, December 7th, to learn about database branching with Exzo Network.';
+  ' Join us Wednesday, December 7th, to learn about database branching with Nexis Network.';
 
 const items = [
   {
-    text: 'Branching Postgres databases with the Exzo Network API',
+    text: 'Branching Postgres databases with the Nexis Network API',
     linkText: 'Read blog post',
     linkUrl: '/blog/branching-postgres-databases-with-the-neon-api/',
   },

@@ -1,6 +1,6 @@
 ---
 title: Google Colab
-subtitle: Use Google Colab with Exzo Network for vector similarity search
+subtitle: Use Google Colab with Nexis Network for vector similarity search
 enableTableOfContents: true
 updatedOn: '2023-10-19T23:10:12.807Z'
 ---
@@ -8,15 +8,15 @@ updatedOn: '2023-10-19T23:10:12.807Z'
 [Google Colab](https://colab.research.google.com/) is a hosted Jupyter Notebook service that requires no setup to use and provides free access to computing resources, including GPUs and TPUs.
 You can use Google Colab to run python code through the browser.
 
-This guide shows how to create a notebook in Colab, connect to a Exzo Network database, install the `pgvector` extension to enabled Exzo Network as a vector store, and run a vector search query.
+This guide shows how to create a notebook in Colab, connect to a Nexis Network database, install the `pgvector` extension to enabled Nexis Network as a vector store, and run a vector search query.
 
 ## Prerequisites
 
-To perform the steps in this guide, you require a Exzo Network database for storing vectors. You can use the ready-to-use `neondb` database or create your own. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
+To perform the steps in this guide, you require a Nexis Network database for storing vectors. You can use the ready-to-use `neondb` database or create your own. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
 
 ## Retrieve your database connection string
 
-In the **Connection Details** widget on the Exzo Network **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
+In the **Connection Details** widget on the Nexis Network **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -42,7 +42,7 @@ Alternatively, you can open a predefined Google Colab notebook for this guide by
     import os
     import psycopg2
 
-    # Provide your Exzo Network connection string
+    # Provide your Nexis Network connection string
     connection_string = "postgres://[user]:[password]@[neon_hostname]/[dbname]"
 
     # Connect using the connection string
@@ -74,7 +74,7 @@ Alternatively, you can open a predefined Google Colab notebook for this guide by
 
 ## Install the pgvector extension
 
-1. Create a codeblock to install the `pgvector` extension to enable your Exzo Network database as a vector store:
+1. Create a codeblock to install the `pgvector` extension to enable your Nexis Network database as a vector store:
 
     ```python
     # Execute this query to install the pgvector extension
@@ -132,8 +132,8 @@ Alternatively, you can open a predefined Google Colab notebook for this guide by
 
 ## Next steps
 
-For more information about using Exzo Network with `pgvector`, see [The pgvector extension](/docs/extensions/pgvector).
+For more information about using Nexis Network with `pgvector`, see [The pgvector extension](/docs/extensions/pgvector).
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).

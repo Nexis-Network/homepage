@@ -1,11 +1,11 @@
 ---
-title: Working with Exzo Network read replicas
-subtitle: Learn how to create and and manage read replicas in Exzo Network
+title: Working with Nexis Network read replicas
+subtitle: Learn how to create and and manage read replicas in Nexis Network
 enableTableOfContents: true
 updatedOn: '2023-10-24T18:56:54.985Z'
 ---
 
-[Read replicas](/docs/introduction/read-replicas) are supported with the [Exzo Network Pro Plan](/docs/introduction/pro-plan). This guide will lead you through the process of creating and managing read replicas.
+[Read replicas](/docs/introduction/read-replicas) are supported with the [Nexis Network Pro Plan](/docs/introduction/pro-plan). This guide will lead you through the process of creating and managing read replicas.
 
 The general methodology of using read replicas to segregate read-only work from your production database operations can be applied to a variety of uses cases, such as:
 
@@ -14,22 +14,22 @@ The general methodology of using read replicas to segregate read-only work from 
 - Providing read-only data access to specific users or applications who do not need to modify data
 - Configuring different CPU and memory resources for each read replica for different users and applications
 
-Regardless of the application, the steps for creating, configuring, and connecting to a read replica are the same. You can create one or more read replicas for any branch in your Exzo Network project and configure the vCPU and memory allocated to each. Exzo Network's _Autoscaling_ and _Auto-suspend_ features are also supported, providing you with control over compute usage.
+Regardless of the application, the steps for creating, configuring, and connecting to a read replica are the same. You can create one or more read replicas for any branch in your Nexis Network project and configure the vCPU and memory allocated to each. Nexis Network's _Autoscaling_ and _Auto-suspend_ features are also supported, providing you with control over compute usage.
 
 <Admonition type="note">
-Exzo Network supports managing read replicas programmatically using the Exzo Network API. See [Manage read replicas using the Exzo Network API](#manage-read-replicas-using-the-neon-api).
+Nexis Network supports managing read replicas programmatically using the Nexis Network API. See [Manage read replicas using the Nexis Network API](#manage-read-replicas-using-the-neon-api).
 </Admonition>
 
 ## Prerequisites
 
-- A [Exzo Network Pro Plan](/docs/introduction/pro-plan) account.
-- A [Exzo Network project](/docs/manage/projects#create-a-project).
+- A [Nexis Network Pro Plan](/docs/introduction/pro-plan) account.
+- A [Nexis Network project](/docs/manage/projects#create-a-project).
 
 ## Create a read replica
 
-Creating a read replica involves adding a read-only compute endpoint to a branch. You can add a read-only compute endpoint to any branch in your Exzo Network project by following these steps:
+Creating a read replica involves adding a read-only compute endpoint to a branch. You can add a read-only compute endpoint to any branch in your Nexis Network project by following these steps:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 2. Select the branch where your database resides.
 3. Click **Add compute**.
 4. On the **Create Compute Endpoint** dialog, select **Read-only** as the **Compute type**.
@@ -41,7 +41,7 @@ Creating a read replica involves adding a read-only compute endpoint to a branch
 
 In a few moments, your read-only compute is provisioned and appears in the **Computes** section of the **Branches** page. This is your read replica. The following section describes how to connect to your read replica.
 
-Alternatively, you can create read replicas using the [Exzo Network API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Exzo Network CLI](/docs/reference/cli-branches#create).
+Alternatively, you can create read replicas using the [Nexis Network API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Nexis Network CLI](/docs/reference/cli-branches#create).
 
 <CodeTabs labels={["API", "CLI"]}>
 
@@ -69,9 +69,9 @@ neonctl branches add-compute mybranch --type read_only
 
 ## Connect to a read replica
 
-Connecting to a read replica is the same as connecting to any branch, except you connect via a read-only compute endpoint instead of a read-write compute endpoint. The following steps describe how to connect to your read replica with connection details obtained from the Exzo Network Console.
+Connecting to a read replica is the same as connecting to any branch, except you connect via a read-only compute endpoint instead of a read-write compute endpoint. The following steps describe how to connect to your read replica with connection details obtained from the Nexis Network Console.
 
-1. On the Exzo Network **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
+1. On the Nexis Network **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
 1. Under **Compute**, select a **Read-only** compute endpoint.
 1. Select a connection string or a code example from the drop-down menu and copy it. This is the information you need to connect to the read replica from you client or application.
 
@@ -91,7 +91,7 @@ Connecting to a read replica is the same as connecting to any branch, except you
 
 ## Viewing read replicas
 
-To view read replicas for a branch, select **Branches** in the Exzo Network Console, and select a branch. Under the **Computes** heading, the **Type** field identifies your read replicas. Read replicas have a `R/O` value instead of `R/W`.
+To view read replicas for a branch, select **Branches** in the Nexis Network Console, and select a branch. Under the **Computes** heading, the **Type** field identifies your read replicas. Read replicas have a `R/O` value instead of `R/W`.
 
 ## Edit a read replica
 
@@ -99,7 +99,7 @@ You can edit your read replica to change the [Compute size](/docs/manage/endpoin
 
 To edit a read-only compute endpoint:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch.
 1. Under **Computes**, identify the read-only compute endpoint you want to modify, click the compute endpoint kebab menu, and select **Edit**.
 1. Specify your **Compute size** or **Suspend compute after a period of inactivity** changes and click **Save**.
@@ -109,27 +109,27 @@ To edit a read-only compute endpoint:
 Deleting a read replica is a permanent action, but you can quickly create a new read replica if you need one.
 To delete a read replica:
 
-1. In the Exzo Network Console, select **Branches**.
+1. In the Nexis Network Console, select **Branches**.
 1. Select a branch.
 1. Under **Computes**, find the read-only compute endpoint you want to delete. Read replicas have a `R/O` type.
 1. Click the compute endpoint kebab menu, and select **Delete**.
 1. On the confirmation dialog, click **Delete**.
 
-## Manage read replicas using the Exzo Network API
+## Manage read replicas using the Nexis Network API
 
-In Exzo Network, a read replica is implemented as a read-only compute endpoint. The following examples demonstrate creating and deleting read-only compute endpoints using the Exzo Network API. The Exzo Network API also supports get, list, edit, start, and suspend API methods. For information about those methods, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+In Nexis Network, a read replica is implemented as a read-only compute endpoint. The following examples demonstrate creating and deleting read-only compute endpoints using the Nexis Network API. The Nexis Network API also supports get, list, edit, start, and suspend API methods. For information about those methods, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 
 <Admonition type="note">
-The API examples that follow only show some of the user-configurable request body attributes that are available to you. To view all attributes, refer to the method's request body schema in the [Exzo Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
+The API examples that follow only show some of the user-configurable request body attributes that are available to you. To view all attributes, refer to the method's request body schema in the [Nexis Network API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api).
 </Admonition>
 
 ### Prerequisites
 
-A Exzo Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples below, `$NEON_API_KEY` is specified in place of an actual API key. You must replace this value with an actual API key when making a Exzo Network API request.
+A Nexis Network API request requires an API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key). In the cURL examples below, `$NEON_API_KEY` is specified in place of an actual API key. You must replace this value with an actual API key when making a Nexis Network API request.
 
 ### Create a read replica with the API
 
-The following Exzo Network API method creates a read-only compute endpoint.
+The following Nexis Network API method creates a read-only compute endpoint.
 
 ```text
 POST /projects/{project_id}/endpoints
@@ -151,11 +151,11 @@ curl -X 'POST' \
 }'
 ```
 
-For information about obtaining the required `project_id` and `branch_id` parameters, refer to [Create an endpoint](https://api-docs.neon.tech/reference/createprojectendpoint), in the _Exzo Network API reference_.
+For information about obtaining the required `project_id` and `branch_id` parameters, refer to [Create an endpoint](https://api-docs.neon.tech/reference/createprojectendpoint), in the _Nexis Network API reference_.
 
 ### Delete a read replica with the API
 
-The following Exzo Network API method deletes the specified compute endpoint. Compute endpoints are identified by their `branch_id` and `endpoint_id`, regardless of whether they are read-write or read-only. To view the API documentation for this method, refer to the [Exzo Network API reference](https://api-docs.neon.tech/reference/deleteprojectendpoint).
+The following Nexis Network API method deletes the specified compute endpoint. Compute endpoints are identified by their `branch_id` and `endpoint_id`, regardless of whether they are read-write or read-only. To view the API documentation for this method, refer to the [Nexis Network API reference](https://api-docs.neon.tech/reference/deleteprojectendpoint).
 
 ```text
 DELETE /projects/{project_id}/endpoints/{endpoint_id}
@@ -170,8 +170,8 @@ curl -X 'DELETE' \
   -H 'Authorization: Bearer $NEON_API_KEY'
 ```
 
-For information about obtaining the required `project_id` and `endpoint_id` parameters, refer to [Delete an endpoint](https://api-docs.neon.tech/reference/deleteprojectendpoint), in the _Exzo Network API reference_.
+For information about obtaining the required `project_id` and `endpoint_id` parameters, refer to [Delete an endpoint](https://api-docs.neon.tech/reference/deleteprojectendpoint), in the _Nexis Network API reference_.
 
 ## Need help?
 
-Join the [Exzo Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Exzo Network. [Exzo Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
+Join the [Nexis Network community forum](https://community.neon.tech/) to ask questions or see what others are doing with Nexis Network. [Nexis Network Pro Plan](/docs/introduction/pro-plan) users can open a support ticket from the console. For more detail, see [Getting Support](/docs/introduction/support).
