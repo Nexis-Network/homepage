@@ -1,6 +1,5 @@
 import CalendarIcon from 'icons/calendar.inline.svg';
 import ConsoleIcon from 'icons/console.inline.svg';
-import partnersIcon from 'icons/team.inline.svg';
 import TransactionsIcon from 'icons/transactions.inline.svg';
 
 import LINKS from './links';
@@ -12,27 +11,27 @@ export default {
        items: [
           {
             icon: TransactionsIcon,
-            text: 'Exzo Web Wallet',
+            text: 'nexis Web Wallet',
             description: 'Store, swap, and delegate to earn rewards.',
-            to: 'https://wallet.exzo.network',
+            to: 'https://wallet.nexis.network',
           },
           {
             icon: TransactionsIcon,
-            text: 'Exzo Dex',
-            to: 'https://dex.exzo.network',
+            text: 'nexis Dex',
+            to: 'https://dex.nexis.network',
             description: 'Swap tokens, earn rewards, provide liquidity.',
           },
           {
             icon: TransactionsIcon,
             text: 'Cross-Chain Bridge',
-            to: 'https://bridge.exzo.network',
+            to: 'https://bridge.nexis.network',
             description: 'Bridge to and from other blockchains.',
           },
           {
             icon: TransactionsIcon,
             text: 'Governance Portal',
-            to: 'https://governance.exzo.technology',
-            description: 'Contribute to the growth of Exzo Network.',
+            to: 'https://governance.nexis.technology',
+            description: 'Contribute to the growth of nexis Network.',
           },
         ],
       },
@@ -40,22 +39,22 @@ export default {
         text: 'Network',
         items: [
           {
-            icon: partnersIcon,
+            icon: TransactionsIcon,
             text: 'EVM Block Explorer',
-            to: 'https://evm.exzoscan.io',
-            description: 'Track & explore EVM TXNs on Exzo Network.',
+            to: 'https://evm.nexscan.io',
+            description: 'Track & explore EVM TXNs on nexis Network.',
           },
           {
             icon: TransactionsIcon,
             text: 'Native Block Explorer',
-            to: 'https://exzoscan.io',
-            description: 'Track & explore native TXNs on Exzo Network.',
+            to: 'https://nexscan.io',
+            description: 'Track & explore native TXNs on nexis Network.',
           },
           {
             icon: TransactionsIcon,
             text: 'Testnet Block Explorer',
-            to: 'https://evm-testnet.exzoscan.io',
-            description: 'Test and explore Exzo Networks blockchain data in real time.',
+            to: 'https://evm-testnet.nexisscan.io',
+            description: 'Test and explore nexis Networks blockchain data in real time.',
           },
         ],
       },
@@ -65,44 +64,44 @@ export default {
           {
             icon: TransactionsIcon,
             text: 'Developer Documentation',
-            to: 'https://docs.exzo.network',
-            description: 'Learn how to integrate and build on Exzo Network.',
+            to: 'https://docs.nexis.network',
+            description: 'Learn how to integrate and build on nexis Network.',
           },
           {
             icon: TransactionsIcon,
             text: 'Node Validator Tutorial',
-            to: 'https://validator.exzo.network/',
+            to: 'https://validator.nexis.network/',
             description: 'Deploy your own node validator.',
           },
           {
             icon: TransactionsIcon,
-            text: 'Exzo Program Library',
-            to: 'https://github.com/ExzoNetwork/exzo-program-library',
-            description: 'Interact with nodes and build on Exzo Network.',
+            text: 'nexis Program Library',
+            to: 'https://github.com/Nexis-Network/nexis-program-library',
+            description: 'Interact with nodes and build on nexis Network.',
           },
           {
             icon: TransactionsIcon,
             text: 'Audit Reports & KYC',
-            to: 'https://github.com/ExzoNetwork/Smart-Contract-Audit-Reports',
+            to: 'https://github.com/Nexis-Network/Smart-Contract-Audit-Reports',
             description: 'View audit reports and KYC docs.',
           },
           {
             icon: TransactionsIcon,
             text: 'Hackathons',
-            to: 'https://dorahacks.io/org/exzonetwork/hackathon',
+            to: 'https://dorahacks.io/org/Nexis-Network/hackathon',
             description: 'Contribute to our ecosystem and earn rewards.',
           },
           {
             icon: TransactionsIcon,
             text: 'Bug Bounties',
-            to: 'https://hackenproof.com/programs?title=Exzo%20Network',
+            to: 'https://hackenproof.com/programs?title=nexis%20Network',
             description: 'Earn rewards for finding vulnerbilities.',
           },
           {
             icon: TransactionsIcon,
             text: 'GitHub',
-            to: 'https://github.com/ExzoNetwork/',
-            description: 'Core foundation of Exzo Network.',
+            to: 'https://github.com/Nexis-Network/',
+            description: 'Core foundation of nexis Network.',
           },
         ],
     },
@@ -111,7 +110,7 @@ export default {
         items: [
           {
             text: 'CoinMarketCap',
-            to: 'https://coinmarketcap.com/currencies/exzo-network/',
+            to: 'https://coinmarketcap.com/currencies/nexis-network/',
          },
           {
             text: 'Twitter',
@@ -119,7 +118,7 @@ export default {
           },
           {
             text: 'Telegram',
-            to: 'https://t.me/Exzo_Network',
+            to: 'https://t.me/nexis_Network',
          },
           {
              text: 'Discord',
@@ -127,7 +126,7 @@ export default {
           },
           {
             text: 'GitHub',
-            to: 'https://github.com/orgs/Exzo-Network/',
+            to: 'https://github.com/orgs/nexis-Network/',
           },
           {
             text: 'YouTube',
@@ -137,7 +136,7 @@ export default {
     },
     {
       text: 'Blog',
-      to: 'https://exzonetwork.medium.com',
+      to: 'https://Nexis-Network.medium.com',
     },
     // {
     //   text: 'AI',
@@ -153,24 +152,24 @@ export default {
       text: 'Company',
       links: [
         {
-          text: 'Exzo Web Wallet',
-          to: 'https://wallet.exzo.network',
+          text: 'nexis Web Wallet',
+          to: 'https://wallet.nexis.network',
         },
         {
-          text: 'Exzo Wallet Extension',
-          to: 'https://chrome.google.com/webstore/detail/exzo-wallet/jiieejiponjbbnldnklcbamkembhhpka',
+          text: 'nexis Wallet Extension',
+          to: 'https://chrome.google.com/webstore/detail/nexis-wallet/jiieejiponjbbnldnklcbamkembhhpka',
         },
         {
           text: 'Cross-chain Bridge',
-          to: 'https://bridge.exzo.network',
+          to: 'https://bridge.nexis.network',
         },
         {
           text: 'Governance',
-          to: 'https://governance.exzo.network',
+          to: 'https://governance.nexis.network',
         },
         {
-          text: 'Exzo Dex',
-          to: 'https://bridge.exzo.network',
+          text: 'nexis Dex',
+          to: 'https://bridge.nexis.network',
         },
 
         // {
@@ -184,27 +183,27 @@ export default {
       links: [
         {
           text: 'Developer Docs',
-          to: 'https://docs.exzo.network',
+          to: 'https://docs.nexis.network',
         },
         {
           text: 'Block Explorer',
-          to: 'https://exzoscan.io',
+          to: 'https://nexisscan.io',
         },
         {
           text: 'Native Explorer',
-          to: 'https://exzoscan.io',
+          to: 'https://nexisscan.io',
         },
         {
           text: 'Tutorials',
-          to: 'https://exzonetwork.medium.com/',
+          to: 'https://Nexis-Network.medium.com/',
         },
         {
           text: 'Developer Chat',
-          to: 'https://t.me/exzo_network_developers_official',
+          to: 'https://t.me/nexis_network_developers_official',
         },
         {
           text: 'Testnet Faucet',
-          to: 'https://evm-faucet.exzo.network/',
+          to: 'https://evm-faucet.nexis.network/',
         },
       ],
     },
@@ -223,7 +222,7 @@ export default {
         },
         {
           text: 'GitHub',
-          to: 'https://github.com/orgs/Exzo-Network/',
+          to: 'https://github.com/orgs/nexis-Network/',
           icon: 'github-icon',
         },
         {
@@ -236,24 +235,24 @@ export default {
   ],
   mobile: [
       {
-        text: 'Exzo Web Wallet',
-        to: 'https://wallet.exzo.network',
+        text: 'nexis Web Wallet',
+        to: 'https://wallet.nexis.network',
       },
       {
-        text: 'Exzo Wallet Extension',
-        to: 'https://chrome.google.com/webstore/detail/exzo-wallet/jiieejiponjbbnldnklcbamkembhhpka',
+        text: 'nexis Wallet Extension',
+        to: 'https://chrome.google.com/webstore/detail/nexis-wallet/jiieejiponjbbnldnklcbamkembhhpka',
       },
       {
         text: 'Cross-chain Bridge',
-        to: 'https://bridge.exzo.network',
+        to: 'https://bridge.nexis.network',
       },
       {
         text: 'Governance',
-        to: 'https://governance.exzo.network',
+        to: 'https://governance.nexis.network',
       },
       {
-        text: 'Exzo Dex',
-        to: 'https://bridge.exzo.network',
+        text: 'nexis Dex',
+        to: 'https://bridge.nexis.network',
       },
   ],
   docSidebar: [
